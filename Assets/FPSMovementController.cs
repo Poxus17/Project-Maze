@@ -18,8 +18,8 @@ public class FPSMovementController : MonoBehaviour
 
     private void Update()
     {
-        var horizontal = -rawMovement.x * speed * transform.forward;
-        var vertical = rawMovement.y * speed * transform.right;
+        var horizontal = rawMovement.y * speed * transform.forward;
+        var vertical = rawMovement.x * speed * transform.right;
 
         movement = horizontal + vertical;
 

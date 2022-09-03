@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class FPSMovementController : MonoBehaviour
 {
     [SerializeField] float speed = 1;
+    public static bool isWalking;
 
     Rigidbody rb;
     Vector2 rawMovement;
@@ -24,6 +25,7 @@ public class FPSMovementController : MonoBehaviour
         movement = horizontal + vertical;
 
         rb.velocity = new Vector3(movement.x, 0, movement.z);
+        isWalking = movement.magnitude > 0;
     }
 
     public void ReadMove(InputAction.CallbackContext context)

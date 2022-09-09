@@ -7,7 +7,7 @@ public class InteractionHandler : MonoBehaviour
     Vector3 viewportRaypoint;
     int castMask;
 
-
+    IInteractable detectedObject;
 
     private void Start()
     {
@@ -21,8 +21,18 @@ public class InteractionHandler : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 10000, castMask))
-            print("I'm looking at " + hit.transform.name);
+            detectedObject = hit.collider.gameObject.GetComponent<IInteractable>();
+        else
+            detectedObject = null; 
 
+    }
+
+    public void Interact()
+    {
+        if (detectedObject != null)
+        {
+            detectedObject.Interact();
+        }
     }
 }
 
@@ -30,3 +40,4 @@ public interface IInteractable
 {
     void Interact();
 }
+

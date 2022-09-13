@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: Teddy
   m_EditorClassIdentifier: 
   clip: {fileID: 8300000, guid: ca3cb9246096db04dbcda5d465211dc6, type: 3}
-  transcript: That's Georgie's Teddy bear.
+  transcript: "That's Georgy's teddy bear! Mom gave it to him at Christmas when he
+    was a boy. He used to carry it around everywhere, he couldn't do anything without
+    it. \n\nBut what is it doing?\n\nHow did I even get here?\n\nGotta look for answers."

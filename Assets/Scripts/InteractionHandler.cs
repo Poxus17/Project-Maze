@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractionHandler : MonoBehaviour
 {
+    [SerializeField] InteractionEvent EnterInspection;
     Vector3 viewportRaypoint;
     int castMask;
 
@@ -40,4 +42,12 @@ public interface IInteractable
 {
     void Interact();
 }
+
+public interface IDataOwner 
+{ 
+    public string text { get; }
+}
+
+public class InteractionEvent : UnityEvent<GameObject> { }
+
 

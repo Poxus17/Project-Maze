@@ -658,14 +658,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92440991}
-  m_LocalRotation: {x: -0.117489874, y: -0.28936532, z: 0.27046606, w: 0.9106657}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: 2.5895462}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1409974977}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -3.294, y: -36.268, z: 34.162}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &92440993
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1855,7 +1855,19 @@ MonoBehaviour:
     m_ActionId: 21ff9e87-4bf1-4226-bdfb-46833300f1c1
     m_ActionName: UI/Cancel[/Keyboard/escape]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 679370139}
+        m_TargetAssemblyTypeName: InspectionMeshController, Assembly-CSharp
+        m_MethodName: MoveInspection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 51d34673-2a41-49b2-92ca-0e7e66c88843
     m_ActionName: UI/Point[/Mouse/position]
   - m_PersistentCalls:
@@ -1871,7 +1883,19 @@ MonoBehaviour:
     m_ActionId: 83ad04e5-48fc-4db2-8a30-82f2a10d1028
     m_ActionName: UI/MiddleClick[/Mouse/middleButton]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 679370139}
+        m_TargetAssemblyTypeName: InspectionMeshController, Assembly-CSharp
+        m_MethodName: AllowInspectionRotation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 55bbdde3-4c66-43a0-9a4f-8e27b89bf2e0
     m_ActionName: UI/RightClick[/Mouse/rightButton]
   - m_PersistentCalls:
@@ -2332,6 +2356,7 @@ GameObject:
   - component: {fileID: 679370135}
   - component: {fileID: 679370134}
   - component: {fileID: 679370138}
+  - component: {fileID: 679370139}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2438,6 +2463,20 @@ MonoBehaviour:
   inspectionText: {fileID: 1206847484}
   inspectionMeshFilter: {fileID: 92440995}
   inspectionRenderer: {fileID: 92440994}
+--- !u!114 &679370139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 679370133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae73e3bbdc2f2a42af4b07fac0c8060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspectionMesh: {fileID: 92440991}
+  deltaRotationRatio: 0.7
 --- !u!1 &686721495
 GameObject:
   m_ObjectHideFlags: 0
@@ -4297,7 +4336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104511479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: 0, z: -2}
+  m_LocalPosition: {x: -6, y: 0, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4368,11 +4407,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0
+  far clip plane: 100
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 2.3094232
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

@@ -15,6 +15,8 @@ public class UI_InspectionUIManager : MonoBehaviour
     public void SetInspectionUIActive(bool active)
     {
         inspectionCanvas.SetActive(active); 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = active;
     }
     public void SetInspectionUI(PastObjectPacket packet)
     {

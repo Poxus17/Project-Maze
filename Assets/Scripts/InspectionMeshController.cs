@@ -25,7 +25,7 @@ public class InspectionMeshController : MonoBehaviour
                 currentMousePos = value;
             var delta = currentMousePos - value;
             delta *= deltaRotationRatio;
-            inspectionMesh.transform.eulerAngles += new Vector3(0,delta.x, delta.y);
+            inspectionMesh.transform.Rotate(delta.y, delta.x, 0, Space.World);
 
             currentMousePos = value;
         }

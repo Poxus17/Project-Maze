@@ -23,5 +23,6 @@ public class UI_InspectionUIManager : MonoBehaviour
         inspectionText.text = packet.text;
         inspectionMeshFilter.mesh = packet.mesh;
         inspectionRenderer.materials = packet.mats;
+        inspectionRenderer.transform.localScale = packet.scale;
     }
 }

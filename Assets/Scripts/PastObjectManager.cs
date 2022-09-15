@@ -26,7 +26,7 @@ public class PastObjectManager : MonoBehaviour, IInteractable, IDataOwner
         audioSource.clip = pastObjectData.clip;
         audioSource.Play();
 
-        objectPacket = new PastObjectPacket(pastObjectData.transcript, GetComponent<MeshFilter>().mesh, GetComponent<MeshRenderer>().materials);
+        objectPacket = new PastObjectPacket(pastObjectData.transcript, GetComponent<MeshFilter>().mesh, GetComponent<MeshRenderer>().materials, transform.localScale);
         WorldEventDispatcher.instance.BroadcastInteraction.Invoke(objectPacket);
     }
 }
@@ -36,12 +36,14 @@ public class PastObjectPacket
     public string text { get; protected set; }
     public Mesh mesh { get; protected set; }
     public Material[] mats { get; protected set; }
+    public Vector3 scale;
 
-    public PastObjectPacket(string t, Mesh m, Material[] ms)
+    public PastObjectPacket(string t, Mesh m, Material[] ms, Vector3 scale)
     {
         this.text = t;
         this.mesh = m;
         this.mats = ms;
+        this.scale = scale;
     }
 }
 

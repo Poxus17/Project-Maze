@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac04bb1827548d2428caa9f012ee89d2, type: 3}
   m_Name: Teddy
   m_EditorClassIdentifier: 
+  name: Georgy's Teddy bear
   clip: {fileID: 8300000, guid: ca3cb9246096db04dbcda5d465211dc6, type: 3}
   transcript: "That's Georgy's teddy bear! Mom gave it to him at Christmas when he
     was a boy. He used to carry it around everywhere, he couldn't do anything without
@@ -23,5 +24,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 00d17991b7757aa4fbf2e2c7755ba7c6, type: 2}
   - {fileID: 2100000, guid: 5c96e572a4eaefa448f924a0cbe3f952, type: 2}
   scale: {x: 30, y: 30, z: 30}
-  eularRotation: {x: -90, y: 0, z: 0}
+  eularRotation: {x: -90, y: 0, z: 180}
   colliderSize: {x: 0.05, y: 0.05, z: 0.05}

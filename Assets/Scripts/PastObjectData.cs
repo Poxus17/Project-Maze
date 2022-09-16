@@ -6,6 +6,8 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "NewPastObjectData", menuName = "ScriptableObjects/Past object data", order = 1)]
 public class PastObjectData : ScriptableObject
 {
+    public string name;
+
     public AudioClip clip;
 
     [TextArea(15, 20)]

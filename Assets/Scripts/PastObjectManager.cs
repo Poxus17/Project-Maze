@@ -35,6 +35,7 @@ public class PastObjectManager : MonoBehaviour
         audioSource.Play();
 
         WorldEventDispatcher.instance.BroadcastInteraction.Invoke(data);
+        InventoryManager.Instance.StoreToInventory(data);
     }
 
 

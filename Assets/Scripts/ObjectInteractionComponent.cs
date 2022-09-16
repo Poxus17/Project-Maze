@@ -17,12 +17,12 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
         GetComponent<MeshRenderer>().materials = data.materials;
         GetComponent<BoxCollider>().size = data.colliderSize;
         transform.localScale = data.scale;
-        transform.eulerAngles = data.eularRotation;
         gameObject.layer = 6;
     }
 
     public void Interact()
     {
         PastObjectManager.instance.Interact(data);
+        Destroy(gameObject);
     }
 }

@@ -7,6 +7,7 @@ public class WorldEventDispatcher : MonoBehaviour
 {
 
     public PastObjectEvent BroadcastInteraction;
+    public BoolEvent BroadcastSprint;
 
     public static WorldEventDispatcher instance;
     private void Awake()
@@ -25,3 +26,6 @@ public class WorldEventDispatcher : MonoBehaviour
 
 [System.Serializable]
 public class PastObjectEvent : UnityEvent<PastObjectData> { }
+
+[System.Serializable]
+public class BoolEvent : UnityEvent<bool> { }

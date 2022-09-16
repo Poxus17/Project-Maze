@@ -16,3 +16,12 @@ MonoBehaviour:
   transcript: "That's Georgy's teddy bear! Mom gave it to him at Christmas when he
     was a boy. He used to carry it around everywhere, he couldn't do anything without
     it. \n\nBut what is it doing?\n\nHow did I even get here?\n\nGotta look for answers."
+  mesh: {fileID: 6552503254863439366, guid: f03b98783eabfe24ca2942bb4a17a93c, type: 3}
+  materials:
+  - {fileID: 2100000, guid: ce5e725451b86ed4f854a10cfddd8148, type: 2}
+  - {fileID: 2100000, guid: f2b365bb11b40f746bf78cb5cebe0445, type: 2}
+  - {fileID: 2100000, guid: 00d17991b7757aa4fbf2e2c7755ba7c6, type: 2}
+  - {fileID: 2100000, guid: 5c96e572a4eaefa448f924a0cbe3f952, type: 2}
+  scale: {x: 30, y: 30, z: 30}
+  eularRotation: {x: -90, y: 0, z: 0}
+  colliderSize: {x: 0.05, y: 0.05, z: 0.05}

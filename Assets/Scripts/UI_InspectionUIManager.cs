@@ -18,11 +18,12 @@ public class UI_InspectionUIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = active;
     }
-    public void SetInspectionUI(PastObjectPacket packet)
+    public void SetInspectionUI(PastObjectData data)
     {
-        inspectionText.text = packet.text;
-        inspectionMeshFilter.mesh = packet.mesh;
-        inspectionRenderer.materials = packet.mats;
-        inspectionRenderer.transform.localScale = packet.scale;
+        inspectionText.text = data.transcript;
+        inspectionMeshFilter.mesh = data.mesh;
+        inspectionRenderer.materials = data.materials;
+        inspectionRenderer.transform.localScale = data.scale;
+        inspectionRenderer.transform.eulerAngles = data.eularRotation;
     }
 }

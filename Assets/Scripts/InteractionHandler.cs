@@ -43,11 +43,6 @@ public interface IInteractable
     void Interact();
 }
 
-public interface IDataOwner 
-{ 
-    public string text { get; }
-}
-
 public class InteractionEvent : UnityEvent<GameObject> { }
 
 

@@ -4,16 +4,24 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(MeshFilter))]
-[RequireComponent(typeof(MeshRenderer))]
-public class PastObjectManager : MonoBehaviour, IInteractable, IDataOwner
+public class PastObjectManager : MonoBehaviour
 {
-    [SerializeField] PastObjectData pastObjectData;
-
     AudioSource audioSource;
-    PastObjectPacket objectPacket;
 
     public string text { get; }
+
+    public static PastObjectManager instance;
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -21,29 +29,14 @@ public class PastObjectManager : MonoBehaviour, IInteractable, IDataOwner
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Interact()
+    public void Interact(PastObjectData data)
     {
-        audioSource.clip = pastObjectData.clip;
+        audioSource.clip = data.clip;
         audioSource.Play();
 
-        objectPacket = new PastObjectPacket(pastObjectData.transcript, GetComponent<MeshFilter>().mesh, GetComponent<MeshRenderer>().materials, transform.localScale);
-        WorldEventDispatcher.instance.BroadcastInteraction.Invoke(objectPacket);
+        WorldEventDispatcher.instance.BroadcastInteraction.Invoke(data);
     }
-}
 
-public class PastObjectPacket
-{
-    public string text { get; protected set; }
-    public Mesh mesh { get; protected set; }
-    public Material[] mats { get; protected set; }
-    public Vector3 scale;
 
-    public PastObjectPacket(string t, Mesh m, Material[] ms, Vector3 scale)
-    {
-        this.text = t;
-        this.mesh = m;
-        this.mats = ms;
-        this.scale = scale;
-    }
 }
 

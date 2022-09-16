@@ -24,4 +24,4 @@ public class WorldEventDispatcher : MonoBehaviour
 }
 
 [System.Serializable]
-public class PastObjectEvent : UnityEvent<PastObjectPacket> { }
+public class PastObjectEvent : UnityEvent<PastObjectData> { }

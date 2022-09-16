@@ -14,10 +14,10 @@ public class UI_InspectionUIManager : MonoBehaviour
 
     public void SetInspectionUIActive(bool active)
     {
-        inspectionCanvas.SetActive(active); 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = active;
+        inspectionCanvas.SetActive(active);
+        WorldEventDispatcher.instance.SetUIActive(active);
     }
+    
     public void SetInspectionUI(PastObjectData data)
     {
         inspectionText.text = data.transcript;

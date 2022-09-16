@@ -8,6 +8,7 @@ public class WorldEventDispatcher : MonoBehaviour
 
     public PastObjectEvent BroadcastInteraction;
     public BoolEvent BroadcastSprint;
+    public BoolEvent BroadcastInventoryActive;
 
     public static WorldEventDispatcher instance;
     private void Awake()
@@ -22,6 +23,11 @@ public class WorldEventDispatcher : MonoBehaviour
         }
     }
 
+    public void SetUIActive(bool active)
+    {
+        Cursor.lockState = active ? CursorLockMode.None: CursorLockMode.Locked;
+        Cursor.visible = active;
+    }
 }
 
 [System.Serializable]

@@ -37,14 +37,8 @@ public class InventoryManager : MonoBehaviour
     {
         if (context.ReadValue<float>() > 0 && context.action.triggered)
         {
-            Debug.Log("Inventory:");
-            if (inventory.Count > 0)
-            {
-                foreach (PastObjectData data in inventory)
-                {
-                    Debug.Log(data.name);
-                }
-            }
+            WorldEventDispatcher.instance.BroadcastInventoryActive.Invoke(true);
+            WorldEventDispatcher.instance.SetUIActive(true);
         }
     }
 }

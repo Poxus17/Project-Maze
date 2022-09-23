@@ -10,11 +10,14 @@ public class UI_InventorManager : MonoBehaviour
     [SerializeField] GameObject slotPrefab;
     [SerializeField] float initialY;
     [SerializeField] float posDeltaY;
+    [SerializeField] AudioSource audioSource;
     [Space(10)]
     [SerializeField] PastObjectEvent InspectSlot;
 
     bool inspectionOpen;
+    bool monologPlaying;
     Dictionary<string, PastObjectPacket> inventoryIndex;
+    AudioClip currentObjectClip;
 
     public static UI_InventorManager Instance;
 
@@ -30,6 +33,8 @@ public class UI_InventorManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        monologPlaying = false;
     }
 
     public void ShowInventory(bool active)
@@ -40,6 +45,12 @@ public class UI_InventorManager : MonoBehaviour
         {
             PastObjectPacket[] inventoryArr = InventoryManager.Instance.inventory.ToArray();
             int counter = 0;
+
+            for(int i = 0; i< scrollContent.GetComponent<RectTransform>().childCount; i++)
+            {
+                Destroy(scrollContent.GetComponent<RectTransform>().GetChild(i).gameObject);
+            }
+            inventoryIndex.Clear();
 
             foreach (PastObjectPacket item in inventoryArr)
             {
@@ -67,5 +78,26 @@ public class UI_InventorManager : MonoBehaviour
     {
         InspectSlot.Invoke(inventoryIndex[button]);
         background.SetActive(false);
+        currentObjectClip = inventoryIndex[button].data.clip;
+        inspectionOpen = true;
+    }
+
+    public void InventoryMonolog()
+    {
+        if (inspectionOpen)
+        {
+            monologPlaying = !monologPlaying;
+
+            if (monologPlaying)
+            {
+                audioSource.clip = currentObjectClip;
+                audioSource.Play();
+            }
+            else
+            {
+                audioSource.Stop();
+            }
+        }
+
     }
 }

@@ -10,6 +10,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] float fullStamina;
     [SerializeField] float staminaDepleteRate;
     [SerializeField] float staminaRestoreRate;
+    public FloatEvent StaminaBroadcast;
 
     public static bool isWalking;
 
@@ -58,7 +59,7 @@ public class FPSMovementController : MonoBehaviour
             }
         }
 
-        Debug.Log(stamina);
+        StaminaBroadcast.Invoke(stamina / fullStamina);
         #endregion
 
         #region Movement

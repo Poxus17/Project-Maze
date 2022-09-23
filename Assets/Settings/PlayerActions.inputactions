@@ -418,6 +418,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PlayMonolog",
+                    "type": "Button",
+                    "id": "d7398e03-5055-4834-b08a-84a504aad63b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -847,6 +856,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Leave",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6699c19e-cc74-46d6-ada3-2a9982092814",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PlayMonolog",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

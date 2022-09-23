@@ -37,6 +37,9 @@ public class InspectionMeshController : MonoBehaviour
 
     public void AllowInspectionRotation(InputAction.CallbackContext context)
     {
-        rightClick = !rightClick;
+        if (context.started)
+            rightClick = true;
+        else if(context.canceled)
+            rightClick = false;
     }
 }

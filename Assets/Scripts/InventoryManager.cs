@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    List<PastObjectData> inventory;
+    public List<PastObjectPacket> inventory { get; protected set; }
 
     public static InventoryManager Instance { get; private set; }
     private void Awake()
@@ -22,14 +22,14 @@ public class InventoryManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventory = new List<PastObjectData>();
+        inventory = new List<PastObjectPacket>();
     }
 
-    public void StoreToInventory(PastObjectData data)
+    public void StoreToInventory(PastObjectPacket packet)
     {
-        if (!inventory.Contains(data))
+        if (!inventory.Contains(packet))
         {
-            inventory.Add(data);
+            inventory.Add(packet);
         }
     }
 
@@ -41,4 +41,9 @@ public class InventoryManager : MonoBehaviour
             WorldEventDispatcher.instance.SetUIActive(true);
         }
     }
+}
+
+public class InventoryObject
+{
+
 }

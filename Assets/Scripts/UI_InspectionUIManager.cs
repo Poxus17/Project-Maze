@@ -8,9 +8,10 @@ using UnityEngine.Events;
 public class UI_InspectionUIManager : MonoBehaviour
 {
     [SerializeField] GameObject inspectionCanvas;
+    [SerializeField] Transform inspectionParent;
     [SerializeField] TMP_Text inspectionText;
-    [SerializeField] MeshFilter inspectionMeshFilter;
-    [SerializeField] MeshRenderer inspectionRenderer;
+
+    GameObject inspectionObject;
 
     public void SetInspectionUIActive(bool active)
     {
@@ -18,12 +19,17 @@ public class UI_InspectionUIManager : MonoBehaviour
         WorldEventDispatcher.instance.SetUIActive(active);
     }
     
-    public void SetInspectionUI(PastObjectData data)
+    public void SetInspectionUI(PastObjectPacket packet)
     {
-        inspectionText.text = data.transcript;
-        inspectionMeshFilter.mesh = data.mesh;
-        inspectionRenderer.materials = data.materials;
-        inspectionRenderer.transform.localScale = data.scale;
-        inspectionRenderer.transform.eulerAngles = data.eularRotation;
+        for(int i =0; i< inspectionParent.childCount; i++)
+        {
+            Destroy(inspectionParent.GetChild(i).gameObject);
+        }
+
+        inspectionObject = Instantiate(packet.gameObject, inspectionParent);
+        inspectionText.text = packet.data.transcript;
+        inspectionObject.transform.localScale = packet.scale;
+        inspectionObject.transform.eulerAngles = packet.eularRotation;
+        inspectionObject.transform.localPosition = Vector3.zero;
     }
 }

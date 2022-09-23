@@ -31,7 +31,7 @@ public class WorldEventDispatcher : MonoBehaviour
 }
 
 [System.Serializable]
-public class PastObjectEvent : UnityEvent<PastObjectData> { }
+public class PastObjectEvent : UnityEvent<PastObjectPacket> { }
 
 [System.Serializable]
 public class BoolEvent : UnityEvent<bool> { }

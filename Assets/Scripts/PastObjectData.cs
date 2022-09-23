@@ -12,14 +12,4 @@ public class PastObjectData : ScriptableObject
 
     [TextArea(15, 20)]
     public string transcript;
-
-    public Mesh mesh;
-
-    public Material[] materials;
-
-    public Vector3 scale;
-
-    public Vector3 eularRotation;
-
-    public Vector3 colliderSize;
 }

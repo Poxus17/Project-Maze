@@ -29,13 +29,13 @@ public class PastObjectManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Interact(PastObjectData data)
+    public void Interact(PastObjectPacket packet)
     {
-        audioSource.clip = data.clip;
+        audioSource.clip = packet.data.clip;
         audioSource.Play();
 
-        WorldEventDispatcher.instance.BroadcastInteraction.Invoke(data);
-        InventoryManager.Instance.StoreToInventory(data);
+        WorldEventDispatcher.instance.BroadcastInteraction.Invoke(packet);
+        InventoryManager.Instance.StoreToInventory(packet);
     }
 
 

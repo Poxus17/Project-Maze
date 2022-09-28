@@ -888,6 +888,7 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -902,11 +903,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 1
-  cloudProjectId: 
+  cloudProjectId: 6a4e3117-210a-432c-abb3-93fb1b8c500c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: Maze-Project
+  organizationId: nice-to-meet-studios
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

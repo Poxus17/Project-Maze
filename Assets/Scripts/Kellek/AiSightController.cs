@@ -8,9 +8,8 @@ using UnityEditor;
 
 public class AiSightController : MonoBehaviour
 {
-    [SerializeField] float sightRange;
+    [SerializeField] public float sightRange;
     [SerializeField] public float angleFromForward;
-    [SerializeField] GameObject player;
 
     float cosAngle;
 
@@ -21,7 +20,7 @@ public class AiSightController : MonoBehaviour
 
     private void Update()
     {
-        var targetVector = player.transform.position - transform.position;
+        var targetVector = CentralAI.Instance.player.transform.position - transform.position;
 
         if (targetVector.sqrMagnitude > sightRange * sightRange)
             return;
@@ -32,7 +31,7 @@ public class AiSightController : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, targetVector, out hit))
         {
-            if(hit.collider.gameObject == player)
+            if(hit.collider.gameObject == CentralAI.Instance.player)
                 Debug.Log("In sight");
         }
     }
@@ -41,7 +40,7 @@ public class AiSightController : MonoBehaviour
 
 #if UNITY_EDITOR
 [CustomEditor(typeof(AiSightController))]
-public class EnemyAIEditor : Editor
+public class EnemySightAIEditor : Editor
 {
     public void OnSceneGUI()
     {
@@ -53,7 +52,7 @@ public class EnemyAIEditor : Editor
 
         // draw the vision cone
         Handles.color = new Color(1,0,0,0.2f);
-        Handles.DrawSolidArc(ai.transform.position, Vector3.up, startPoint, ai.angleFromForward * 2f, ai.angleFromForward);
+        Handles.DrawSolidArc(ai.transform.position, Vector3.up, startPoint, ai.angleFromForward * 2f, ai.sightRange);
     }
 }
 #endif // UNITY_EDITOR

@@ -17,7 +17,7 @@ public class KellekHuntController : MainAiController
 
     public void GoToPlayer()
     {
-        controller.MoveTo(player.transform.position);
+        controller.MoveTo(CentralAI.Instance.player.transform.position);
     }
 }
 

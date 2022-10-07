@@ -13,6 +13,9 @@ public class FPSMovementController : MonoBehaviour
     public FloatEvent StaminaBroadcast;
 
     public static bool isWalking;
+    public delegate void ChangeIsWalking(bool val);
+    public static event ChangeIsWalking OnChangeIsWalking;
+    private static bool walkingMemory = false;
 
     Rigidbody rb;
     Vector2 rawMovement;
@@ -70,6 +73,13 @@ public class FPSMovementController : MonoBehaviour
 
         rb.velocity = new Vector3(movement.x, 0, movement.z);
         isWalking = movement.magnitude > 0;
+
+        //Notify change in IsWalking;
+        if (isWalking != walkingMemory)
+            OnChangeIsWalking(isWalking);
+
+        walkingMemory = isWalking;
+
         #endregion
     }
 

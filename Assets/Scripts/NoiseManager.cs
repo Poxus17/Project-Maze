@@ -8,6 +8,18 @@ public class NoiseManager : MonoBehaviour
 
     public static NoiseManager instance;
 
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     public void SendNoise(float noise)
     {
         CentralAI.Instance.BroadcastNoise(noise, transform.position);

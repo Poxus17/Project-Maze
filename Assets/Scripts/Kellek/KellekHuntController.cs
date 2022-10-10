@@ -18,7 +18,7 @@ public class KellekHuntController : MainAiController
         state = States.Prowl;
         AiMovementController.OnArrivedAtDestination += DestinationArrived;
 
-        RoamNextPoint();
+        Invoke("RoamNextPoint", 0.2f);
     }
 
     public void GoToPlayer()

@@ -15,7 +15,7 @@ public class AiListenerController : MonoBehaviour
 
     public void GetNoise(float noiseValue)
     {
-        Debug.Log(noiseValue);
+        //Debug.Log(noiseValue);
     }
 }
 

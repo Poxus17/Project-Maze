@@ -19,9 +19,10 @@ public class FootstepsManager : MonoBehaviour
 
     void SetActiveStep(bool val)
     {
+        var wasActive = activeStep;
         activeStep = val;
 
-        if (activeStep)
+        if (activeStep && !wasActive)
         {
             StartCoroutine(StepsLoop());
         }

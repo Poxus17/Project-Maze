@@ -7,6 +7,11 @@ using UnityEngine.AI;
 public class AiMovementController : MonoBehaviour
 {
     NavMeshAgent agent;
+
+    bool waitinForDestination = false;
+    public delegate void ArrivedAtDestination();
+    public static event ArrivedAtDestination OnArrivedAtDestination;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -15,10 +20,40 @@ public class AiMovementController : MonoBehaviour
     public void MoveTo(Vector3 toPosition)
     {
         agent.SetDestination(toPosition);
+
+        if(!waitinForDestination)
+            StartCoroutine(DestinationArrivalCheck());
     }
 
     public void SetSpeed(float newSpeed)
     {
         agent.speed = newSpeed;
+    }
+
+    public void CancelMovement()
+    {
+        agent.isStopped = true;
+    }
+
+    IEnumerator DestinationArrivalCheck()
+    {
+        waitinForDestination = true;
+
+        bool stillMoving = true;
+        float dist;
+        yield return null;
+
+        while (stillMoving)
+        {
+            dist = agent.remainingDistance;
+            stillMoving = !(dist != Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0);
+            yield return null;
+        }
+
+        waitinForDestination = false;
+
+        OnArrivedAtDestination();
+
+        
     }
 }

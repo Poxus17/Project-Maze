@@ -6,19 +6,40 @@ using UnityEngine;
 public class KellekHuntController : MainAiController
 {
     [SerializeField] AiSightController sightController;
+    [SerializeField] AiRoamManager roamManager;
 
     States state;
+
+    Vector3 lastRoam = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
     {
         state = States.Prowl;
+        AiMovementController.OnArrivedAtDestination += DestinationArrived;
+
+        RoamNextPoint();
     }
 
     public void GoToPlayer()
     {
         controller.MoveTo(CentralAI.Instance.player.transform.position);
     }
+
+    void DestinationArrived()
+    {
+        if (state == States.Prowl)
+        {
+            RoamNextPoint();
+        }
+    }
+
+    void RoamNextPoint()
+    {
+        lastRoam = roamManager.GetRoamPoint(lastRoam);
+        controller.MoveTo(lastRoam);
+    }
+
 }
 
 /// <summary>

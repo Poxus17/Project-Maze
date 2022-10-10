@@ -7,6 +7,7 @@ public class CentralAI : MonoBehaviour
 {
     [SerializeField] AiListenerController[] Listeners;
     [SerializeField] LayerMask wallsMask;
+    [SerializeField] float wallReductionPercent;
 
     public GameObject player;
 
@@ -28,22 +29,29 @@ public class CentralAI : MonoBehaviour
     {
         foreach(var listener in Listeners)
         {
-            if (Vector3.Distance(listener.gameObject.transform.position, noisePosition) > listener.range)
+            var distance = Vector3.Distance(listener.gameObject.transform.position, noisePosition);
+
+            if (distance > listener.range)
                 continue;
 
-
-            //conversion logic here
-
-            //Debug.Log(Vector3.Distance(listener.gameObject.transform.position, noisePosition));
             var ray = new Ray(listener.transform.position, noisePosition - listener.transform.position);
             var range = Vector3.Distance(noisePosition, listener.transform.position);
-
             RaycastHit[] hits = Physics.RaycastAll(ray, range,wallsMask);
 
-            Debug.Log(hits.Length);
+            //Debug.Log(NoiseReduction(level, hits.Length, (distance / listener.range)));
             Debug.DrawRay(listener.transform.position, noisePosition - listener.transform.position);
             listener.GetNoise(level);
         }
+    }
+
+    float NoiseReduction(float noise, int walls, float distanceFactor)
+    {
+        var redSqr = 100 - Mathf.Pow(noise, 2);
+        var redPercent = Mathf.Sqrt(redSqr) / 10;
+
+        var reduction = redPercent * wallReductionPercent * walls * distanceFactor;
+
+        return noise * (1 - reduction);
     }
 
 }

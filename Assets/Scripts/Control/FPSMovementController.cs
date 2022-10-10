@@ -7,6 +7,7 @@ public class FPSMovementController : MonoBehaviour
 {
     [SerializeField] float walkingSpeed = 1;
     [SerializeField] float runningSpeed = 2;
+    [SerializeField] float sneakSpeed = 0.7f;
     [SerializeField] float fullStamina;
     [SerializeField] float staminaDepleteRate;
     [SerializeField] float staminaRestoreRate;
@@ -22,6 +23,7 @@ public class FPSMovementController : MonoBehaviour
     Vector3 movement;
 
     bool isRunning;
+    bool isSneaking;
     bool staminaRecoveryMode;
 
     float speed;
@@ -74,7 +76,7 @@ public class FPSMovementController : MonoBehaviour
         rb.velocity = new Vector3(movement.x, 0, movement.z);
         isWalking = movement.magnitude > 0;
 
-        //Notify change in IsWalking;
+        //Notify change in IsWalking
         if (isWalking != walkingMemory)
             OnChangeIsWalking(isWalking);
 
@@ -90,16 +92,42 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sprint(InputAction.CallbackContext context)
     {
-        if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode)
+        if (!isSneaking)
         {
-            isRunning = context.ReadValue<float>() > 0;
-            SetSpeed();
-            WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
+            if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode)
+            {
+                SetSprint(context.ReadValue<float>() > 0);
+            }
+        }
+    }
+
+    public void Sneak(InputAction.CallbackContext context)
+    {
+        if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled))
+        {
+            SetSneak(context.ReadValue<float>() > 0);
         }
     }
 
     void SetSpeed()
     {
-        speed = isRunning ? runningSpeed : walkingSpeed;
+        speed = isSneaking ? sneakSpeed :
+            (isRunning ? runningSpeed : walkingSpeed);
+    }
+
+    void SetSprint(bool setTo)
+    {
+        isRunning = setTo;
+        SetSpeed();
+        WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
+    }
+
+    void SetSneak(bool setTo)
+    {
+        isSneaking = setTo;
+        SetSpeed();
+
+        if(isRunning && isSneaking)
+            SetSprint(false);
     }
 }

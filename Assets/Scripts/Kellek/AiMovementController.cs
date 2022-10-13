@@ -53,7 +53,10 @@ public class AiMovementController : MonoBehaviour
         waitinForDestination = false;
 
         OnArrivedAtDestination();
+    }
 
-        
+    public void SwitchToPlayer()
+    {
+        MoveTo(CentralAI.Instance.player.transform.position);
     }
 }

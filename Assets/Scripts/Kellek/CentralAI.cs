@@ -40,16 +40,18 @@ public class CentralAI : MonoBehaviour
 
             //Debug.Log(NoiseReduction(level, hits.Length, (distance / listener.range)));
             Debug.DrawRay(listener.transform.position, noisePosition - listener.transform.position);
-            listener.GetNoise(level);
+
+            var reducedNoise = NoiseReduction(level, hits.Length, (distance / listener.range));
+            listener.GetNoise(reducedNoise);
         }
     }
 
     float NoiseReduction(float noise, int walls, float distanceFactor)
     {
         var redSqr = 100 - Mathf.Pow(noise, 2);
-        var redPercent = Mathf.Sqrt(redSqr) / 10;
+        var redProfile = Mathf.Sqrt(redSqr) / 10;
 
-        var reduction = redPercent * wallReductionPercent * walls * distanceFactor;
+        var reduction = redProfile * distanceFactor * wallReductionPercent * walls;
 
         return noise * (1 - reduction);
     }

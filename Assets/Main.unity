@@ -1888,6 +1888,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 100
+  certainThreshold: 2.5
+  uncertainRangeMultiplier: 20
 --- !u!114 &135681518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4968,7 +4970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingStepTime: 0.5
-  stepNoiseValue: 3
+  stepNoiseValue: 2.5
   stepClips:
   - {fileID: 8300000, guid: 27c6f7887c7606144b6b10a639fc620e, type: 3}
   - {fileID: 8300000, guid: 71b503058c7b57c49bec6cb2e5ed2d72, type: 3}

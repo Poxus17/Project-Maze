@@ -13,6 +13,9 @@ public class AiSightController : MonoBehaviour
 
     float cosAngle;
 
+    public delegate void SeeTarget();
+    public static event SeeTarget OnSeeTarget;
+
     private void Start()
     {
         cosAngle = Mathf.Cos(angleFromForward * Mathf.Deg2Rad);
@@ -32,7 +35,10 @@ public class AiSightController : MonoBehaviour
         if(Physics.Raycast(transform.position, targetVector, out hit))
         {
             if(hit.collider.gameObject == CentralAI.Instance.player)
+            {
                 Debug.Log("In sight");
+                OnSeeTarget();
+            }
         }
     }
 }

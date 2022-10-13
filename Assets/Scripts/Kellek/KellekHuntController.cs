@@ -7,16 +7,20 @@ public class KellekHuntController : MainAiController
 {
     [SerializeField] AiSightController sightController;
     [SerializeField] AiRoamManager roamManager;
+    [SerializeField] float blindChaceTimeMax;
+    [SerializeField] float blindChaceTimeMin;
 
     States state;
 
     Vector3 lastRoam = Vector3.zero;
+    Vector3 lastHeardAt;
 
     // Start is called before the first frame update
     void Start()
     {
         state = States.Prowl;
         AiMovementController.OnArrivedAtDestination += DestinationArrived;
+        AiListenerController.OnNoticeNoise += ChaseNoise;
 
         Invoke("RoamNextPoint", 0.2f);
     }
@@ -32,6 +36,17 @@ public class KellekHuntController : MainAiController
         {
             RoamNextPoint();
         }
+        else if(state == States.Hunt)
+        {
+            state = States.Prowl;
+            RoamNextPoint();
+        }
+        else if(state == States.Chase)
+        {
+
+        }
+
+
     }
 
     void RoamNextPoint()
@@ -40,6 +55,22 @@ public class KellekHuntController : MainAiController
         controller.MoveTo(lastRoam);
     }
 
+    void ChaseNoise()
+    {
+        if(state != States.Chase)
+        {
+            state = States.Hunt;
+            controller.SwitchToPlayer();
+        }
+        else
+            lastHeardAt = CentralAI.Instance.player.transform.position;
+    }
+
+    void FoundYou()
+    {
+        state = States.Chase;
+
+    }
 }
 
 /// <summary>

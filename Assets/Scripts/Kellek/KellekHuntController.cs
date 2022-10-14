@@ -5,8 +5,18 @@ using UnityEngine;
 
 public class KellekHuntController : MainAiController
 {
+    [Header("AI Components")]
     [SerializeField] AiSightController sightController;
     [SerializeField] AiRoamManager roamManager;
+    [Space(5)]
+
+    [Header("Music Components")]
+    [SerializeField] AudioSource source;
+    [SerializeField] AudioClip prowlTheme;
+    [SerializeField] AudioClip chaseTheme;
+    [Space(5)]
+
+    [Header("Settings")]
     [SerializeField] float blindChaceTimeMax;
     [SerializeField] float blindChaceTimeMin;
 
@@ -21,6 +31,7 @@ public class KellekHuntController : MainAiController
         state = States.Prowl;
         AiMovementController.OnArrivedAtDestination += DestinationArrived;
         AiListenerController.OnNoticeNoise += ChaseNoise;
+        AiSightController.OnSeeTarget += FoundYou;
 
         Invoke("RoamNextPoint", 0.2f);
     }
@@ -43,14 +54,13 @@ public class KellekHuntController : MainAiController
         }
         else if(state == States.Chase)
         {
-
+            StopChase();
         }
-
-
     }
 
     void RoamNextPoint()
     {
+        lastHeardAt = Vector3.zero;
         lastRoam = roamManager.GetRoamPoint(lastRoam);
         controller.MoveTo(lastRoam);
     }
@@ -60,16 +70,46 @@ public class KellekHuntController : MainAiController
         if(state != States.Chase)
         {
             state = States.Hunt;
-            controller.SwitchToPlayer();
         }
-        else
-            lastHeardAt = CentralAI.Instance.player.transform.position;
+        controller.SwitchToPlayer();
     }
 
     void FoundYou()
     {
-        state = States.Chase;
+        if(state == States.Chase)
+            controller.SwitchToPlayer();
+        else
+        {
+            state = States.Chase;
+            controller.SetChaseSpeed(true);
+            StartCoroutine(ChaseTimer());
+            SetActiveChase();
+            Debug.Log("Start Chase");
+        }
+        
+    }
 
+    IEnumerator ChaseTimer()
+    {
+        yield return new WaitForSeconds(Random.Range(blindChaceTimeMin, blindChaceTimeMax));
+        StopChase();
+    }
+
+    void StopChase()
+    {
+        controller.SetChaseSpeed(false);
+
+        state = States.Prowl;
+
+        source.clip = prowlTheme;
+        source.Play();
+        Debug.Log("quit chase");
+    }
+
+    void SetActiveChase()
+    {
+        source.clip = chaseTheme;
+        source.Play();
     }
 }
 

@@ -6,6 +6,9 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class AiMovementController : MonoBehaviour
 {
+    [SerializeField] float walkSpeed;
+    [SerializeField] float runSpeed;
+
     NavMeshAgent agent;
 
     bool waitinForDestination = false;
@@ -58,5 +61,10 @@ public class AiMovementController : MonoBehaviour
     public void SwitchToPlayer()
     {
         MoveTo(CentralAI.Instance.player.transform.position);
+    }
+
+    public void SetChaseSpeed(bool isChase)
+    {
+        agent.speed = isChase ? runSpeed : walkSpeed;
     }
 }

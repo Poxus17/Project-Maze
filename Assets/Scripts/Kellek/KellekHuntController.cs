@@ -14,6 +14,7 @@ public class KellekHuntController : MainAiController
     [SerializeField] AudioSource source;
     [SerializeField] AudioClip prowlTheme;
     [SerializeField] AudioClip chaseTheme;
+    [SerializeField] AudioClip detectSE;
     [Space(5)]
 
     [Header("Settings")]
@@ -84,6 +85,7 @@ public class KellekHuntController : MainAiController
             controller.SetChaseSpeed(true);
             StartCoroutine(ChaseTimer());
             SetActiveChase();
+            MusicMan.instance.PlaySE(detectSE);
             Debug.Log("Start Chase");
         }
         
@@ -109,6 +111,7 @@ public class KellekHuntController : MainAiController
     void SetActiveChase()
     {
         source.clip = chaseTheme;
+
         source.Play();
     }
 }

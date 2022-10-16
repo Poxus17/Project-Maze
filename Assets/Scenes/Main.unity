@@ -4670,9 +4670,12 @@ MonoBehaviour:
   walkingStepTime: 0.7
   stepNoiseValue: 2.5
   stepClips:
-  - {fileID: 8300000, guid: 27c6f7887c7606144b6b10a639fc620e, type: 3}
-  - {fileID: 8300000, guid: 71b503058c7b57c49bec6cb2e5ed2d72, type: 3}
-  - {fileID: 8300000, guid: fd0e94bc3a44620449c067d08868af83, type: 3}
+  - {fileID: 8300000, guid: 53c0a17aacd44434dac1851b328e57d0, type: 3}
+  - {fileID: 8300000, guid: aede36db6157ce544be66be81b59ed49, type: 3}
+  - {fileID: 8300000, guid: bb9daecf483cb8a4187b3dfec601194f, type: 3}
+  - {fileID: 8300000, guid: a4d890ff713bfa845bc09f70738c72af, type: 3}
+  - {fileID: 8300000, guid: f54efae41f8c2574694a2dc6ffab0d18, type: 3}
+  - {fileID: 8300000, guid: 28613e7d282ea2448ad00ffa880d5f63, type: 3}
 --- !u!82 &431708787
 AudioSource:
   m_ObjectHideFlags: 0

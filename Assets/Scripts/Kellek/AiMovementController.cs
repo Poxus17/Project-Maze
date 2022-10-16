@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
 public class AiMovementController : MonoBehaviour
 {
+    [SerializeField] NavMeshAgent agent;
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
-
-    NavMeshAgent agent;
 
     bool waitinForDestination = false;
     public delegate void ArrivedAtDestination();
@@ -17,7 +15,6 @@ public class AiMovementController : MonoBehaviour
 
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
     }
 
     public void MoveTo(Vector3 toPosition)

@@ -1,23 +1,13 @@
 fileFormatVersion: 2
-guid: 0a14d4ddd9d7a4c46962e7abe39a7771
-labels:
-- Audio
-- Sound
-- FX
-- Footsteps
-- Carpet
-- Pack
-- Wav
-- Loop
-- Sprint
+guid: f54efae41f8c2574694a2dc6ffab0d18
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
   defaultSettings:
-    loadType: 1
+    loadType: 0
     sampleRateSetting: 0
-    sampleRateOverride: 0
-    compressionFormat: 0
+    sampleRateOverride: 44100
+    compressionFormat: 1
     quality: 1
     conversionMode: 0
   platformSettingOverrides: {}

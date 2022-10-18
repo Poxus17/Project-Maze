@@ -46,7 +46,8 @@ public class AiMovementController : MonoBehaviour
         while (stillMoving)
         {
             dist = agent.remainingDistance;
-            stillMoving = !(dist != Mathf.Infinity && agent.pathStatus == NavMeshPathStatus.PathComplete && agent.remainingDistance == 0);
+            stillMoving = !(dist != Mathf.Infinity && dist <= 0.25f);
+            Debug.Log(dist);
             yield return null;
         }
 

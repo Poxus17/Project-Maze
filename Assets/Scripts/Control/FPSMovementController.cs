@@ -5,12 +5,25 @@ using UnityEngine.InputSystem;
 
 public class FPSMovementController : MonoBehaviour
 {
+    [Header("Speed Settings")]
     [SerializeField] float walkingSpeed = 1;
     [SerializeField] float runningSpeed = 2;
     [SerializeField] float sneakSpeed = 0.7f;
+    [Space(10)]
+
+    [Header("Stamina Settings")]
     [SerializeField] float fullStamina;
     [SerializeField] float staminaDepleteRate;
     [SerializeField] float staminaRestoreRate;
+    [Space(10)]
+
+    [Header("Crouch Settings")]
+    [SerializeField] float localStandingY;
+    [SerializeField] float localCrouchingY;
+    [SerializeField] float crouchTranisitonSpeed;
+    [SerializeField] GameObject camera;
+    [Space(10)]
+
     public FloatEvent StaminaBroadcast;
 
     public static bool isWalking;
@@ -30,6 +43,7 @@ public class FPSMovementController : MonoBehaviour
     bool isRunning;
     bool isSneaking;
     bool staminaRecoveryMode;
+    bool isCrouching; //reffering to the act, not the state, the state is Sneak
 
     float speed;
     float stamina;
@@ -108,7 +122,7 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sneak(InputAction.CallbackContext context)
     {
-        if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled))
+        if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !isCrouching)
         {
             SetSneak(context.ReadValue<float>() > 0);
         }
@@ -133,9 +147,34 @@ public class FPSMovementController : MonoBehaviour
         isSneaking = setTo;
         SetSpeed();
         OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
+        StartCoroutine(TransitionCrouch(setTo));
 
         if (isRunning && isSneaking)
             SetSprint(false);
+    }
+
+    IEnumerator TransitionCrouch(bool toCrouch)
+    {
+        isCrouching = true;
+
+        var pos = camera.transform.localPosition;
+        var startY = toCrouch ? localStandingY : localCrouchingY;
+        var endY = toCrouch ? localCrouchingY : localStandingY;
+        camera.transform.localPosition = new Vector3(pos.x, startY, pos.z);
+
+        var alpha = 0.0f;
+
+        while(alpha < 1.0f)
+        {
+            alpha += Time.deltaTime * crouchTranisitonSpeed;
+            pos.y = Mathf.Lerp(startY, endY, alpha);
+            camera.transform.localPosition = pos;
+            yield return null;
+        }
+
+        camera.transform.localPosition = new Vector3(pos.x, endY, pos.z);
+
+        isCrouching = false;
     }
 }
 

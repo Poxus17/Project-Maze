@@ -8,6 +8,12 @@ public class DeathManager : MonoBehaviour
 {
     [SerializeField] VideoPlayer player;
 
+
+    private void Start()
+    {
+        player.Prepare();
+    }
+
     public void ActivateJumpscare()
     {
         gameObject.SetActive(true);

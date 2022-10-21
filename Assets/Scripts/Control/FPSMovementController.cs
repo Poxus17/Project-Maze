@@ -14,8 +14,13 @@ public class FPSMovementController : MonoBehaviour
     public FloatEvent StaminaBroadcast;
 
     public static bool isWalking;
+
     public delegate void ChangeIsWalking(bool val);
     public static event ChangeIsWalking OnChangeIsWalking;
+
+    public delegate void ChangeMovementType(MovementType moveType);
+    public static event ChangeMovementType OnChangeMovementType;
+
     private static bool walkingMemory = false;
 
     Rigidbody rb;
@@ -120,14 +125,18 @@ public class FPSMovementController : MonoBehaviour
         isRunning = setTo;
         SetSpeed();
         WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
+        OnChangeMovementType(setTo ? MovementType.Run : MovementType.Walk);
     }
 
     void SetSneak(bool setTo)
     {
         isSneaking = setTo;
         SetSpeed();
+        OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
 
-        if(isRunning && isSneaking)
+        if (isRunning && isSneaking)
             SetSprint(false);
     }
 }
+
+public enum MovementType { Walk, Run, Sneak}

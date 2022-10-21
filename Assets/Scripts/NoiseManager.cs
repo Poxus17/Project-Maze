@@ -32,4 +32,9 @@ public class NoiseManager : MonoBehaviour
 
         SendNoise(noise);
     }
+
+    public void SetPlaybackVolume(float vol)
+    {
+        source. volume = vol;
+    }
 }

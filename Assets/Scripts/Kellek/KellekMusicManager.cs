@@ -26,7 +26,7 @@ public class KellekMusicManager : MonoBehaviour
         chaseSource.enabled = active;
         ActivatePhases(!active);
 
-        if(active)
+        if (active)
             chaseSource.Play();
         else
             chaseSource.Stop();

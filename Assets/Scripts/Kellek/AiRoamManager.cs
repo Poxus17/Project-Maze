@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AiRoamManager : MonoBehaviour
 {
+    //RoamPointData[] roamPoints;
     List<RoamPointData> roamPoints;
     // Start is called before the first frame update
     void Start()
@@ -38,4 +39,9 @@ public class AiRoamManager : MonoBehaviour
 
         return roamPosition;
     }
+
+    /*public void LoadRoamPoints(RoamPointData[] roamPointArray)
+    {
+        roamPoints = roamPointArray;
+    }*/
 }

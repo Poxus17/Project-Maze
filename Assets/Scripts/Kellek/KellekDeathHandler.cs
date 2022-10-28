@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class KellekDeathHandler : MonoBehaviour
 {
     [SerializeField] UnityEvent deathEvent;
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.transform.tag == "Player")
+        if (other.transform.tag == "Player")
             deathEvent.Invoke();
     }
 }

@@ -12,9 +12,6 @@ public class KellekHuntController : MainAiController
     [Space(5)]
 
     [Header("Music Components")]
-    [SerializeField] AudioSource source;
-    [SerializeField] AudioClip prowlTheme;
-    [SerializeField] AudioClip chaseTheme;
     [SerializeField] AudioClip detectSE;
     public BoolEvent OnChase;
     [Space(5)]

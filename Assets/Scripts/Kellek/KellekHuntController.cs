@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class KellekHuntController : MainAiController
@@ -15,6 +16,7 @@ public class KellekHuntController : MainAiController
     [SerializeField] AudioClip prowlTheme;
     [SerializeField] AudioClip chaseTheme;
     [SerializeField] AudioClip detectSE;
+    public BoolEvent OnChase;
     [Space(5)]
 
     [Header("Settings")]
@@ -103,16 +105,13 @@ public class KellekHuntController : MainAiController
 
         state = States.Prowl;
 
-        source.clip = prowlTheme;
-        source.Play();
+        OnChase.Invoke(false);
         Debug.Log("quit chase");
     }
 
     void SetActiveChase()
     {
-        source.clip = chaseTheme;
-
-        source.Play();
+        OnChase.Invoke(true);
     }
 }
 

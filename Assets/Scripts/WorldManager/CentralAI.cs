@@ -8,6 +8,7 @@ public class CentralAI : MonoBehaviour
     [SerializeField] AiListenerController[] Listeners;
     [SerializeField] LayerMask wallsMask;
     [SerializeField] float wallReductionPercent;
+    [SerializeField] KellekHuntController kellek;
 
     public GameObject player;
 
@@ -54,6 +55,26 @@ public class CentralAI : MonoBehaviour
         var reduction = redProfile * distanceFactor * wallReductionPercent * walls;
 
         return noise * (1 - reduction);
+    }
+
+    //Ask kellek hunt controller to start shakeoff
+    void CommenseKellekShakeoff(bool active)
+    {
+
+    }
+
+
+    public void ShakeoffConfirmed()
+    {
+
+    }
+
+    public void TurnOffAi()
+    {
+        foreach(AiListenerController ai in Listeners)
+        {
+            ai.gameObject.SetActive(false);
+        }
     }
 
 }

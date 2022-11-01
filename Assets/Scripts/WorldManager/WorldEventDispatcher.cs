@@ -10,6 +10,7 @@ public class WorldEventDispatcher : MonoBehaviour
     public BoolEvent BroadcastSprint;
     public BoolEvent BroadcastInventoryActive;
 
+
     public static WorldEventDispatcher instance;
     private void Awake()
     {
@@ -27,6 +28,12 @@ public class WorldEventDispatcher : MonoBehaviour
     {
         Cursor.lockState = active ? CursorLockMode.None: CursorLockMode.Locked;
         Cursor.visible = active;
+    }
+
+    public void ShutThemDown()
+    {
+        CentralAI.Instance.player.SetActive(false);
+        CentralAI.Instance.TurnOffAi();
     }
 }
 

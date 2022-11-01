@@ -40,6 +40,24 @@ public class AiRoamManager : MonoBehaviour
         return roamPosition;
     }
 
+    public Vector3 FindFarthestPoint()
+    {
+        float max = -100;
+        Vector3 maxPoint = Vector3.zero;
+
+        foreach(RoamPointData roamPoint in roamPoints)
+        {
+            var playerPointDistance = Vector3.Distance(CentralAI.Instance.player.transform.position, roamPoint.transform.position);
+            if ( playerPointDistance > max)
+            {
+                max = playerPointDistance;
+                maxPoint = roamPoint.transform.position;
+            }
+        }
+
+        return maxPoint;
+    }
+
     /*public void LoadRoamPoints(RoamPointData[] roamPointArray)
     {
         roamPoints = roamPointArray;

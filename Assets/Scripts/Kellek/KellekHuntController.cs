@@ -19,16 +19,23 @@ public class KellekHuntController : MainAiController
     [Header("Settings")]
     [SerializeField] float blindChaceTimeMax;
     [SerializeField] float blindChaceTimeMin;
+    [SerializeField] float disengageRange;
 
     States state;
 
     Vector3 lastRoam = Vector3.zero;
     Vector3 lastHeardAt;
 
+    bool disengage = false;
+    bool queueShakeoff= false;
+
+    public GameObject parentObject { get; private set; }
+
     // Start is called before the first frame update
     void Start()
     {
         state = States.Prowl;
+        parentObject = gameObject.transform.parent.gameObject;
         AiMovementController.OnArrivedAtDestination += DestinationArrived;
         AiListenerController.OnNoticeNoise += ChaseNoise;
         AiSightController.OnSeeTarget += FoundYou;
@@ -36,44 +43,73 @@ public class KellekHuntController : MainAiController
         Invoke("RoamNextPoint", 0.2f);
     }
 
-    public void GoToPlayer()
-    {
-        controller.MoveTo(CentralAI.Instance.player.transform.position);
-    }
-
-    void DestinationArrived()
-    {
-        if (state == States.Prowl)
-        {
-            RoamNextPoint();
-        }
-        else if(state == States.Hunt)
-        {
-            state = States.Prowl;
-            RoamNextPoint();
-        }
-        else if(state == States.Chase)
-        {
-            StopChase();
-        }
-    }
-
+    //1 - Roam to random point
     void RoamNextPoint()
     {
         lastHeardAt = Vector3.zero;
         lastRoam = roamManager.GetRoamPoint(lastRoam);
         controller.MoveTo(lastRoam);
     }
-
+    /*
+     * |
+     * |
+     * V
+     * 
+     * 2 - Arrive to target position hub
+     */
+    void DestinationArrived()
+    {
+        if (state == States.Prowl)
+        {
+            if (disengage)
+                RoamAway();
+            else
+                RoamNextPoint();
+        }
+        else if (state == States.Hunt)
+        {
+            state = States.Prowl;
+            RoamNextPoint();
+        }
+        else if (state == States.Chase)
+        {
+            StopChase();
+        }
+    }
+    /*
+     * He finds a noise
+     * 
+     * |
+     * |
+     * V
+     * 
+     * 3 - Start going after noise
+     */
     void ChaseNoise()
     {
-        if(state != States.Chase)
+        if (!disengage)
         {
-            state = States.Hunt;
+            if (state != States.Chase)
+            {
+                state = States.Hunt;
+            }
+            controller.SwitchToPlayer();
         }
-        controller.SwitchToPlayer();
+    }
+    public void GoToPlayer()
+    {
+        controller.MoveTo(CentralAI.Instance.player.transform.position);
     }
 
+    /*
+     * He has line of sight
+     * 
+     * |
+     * |
+     * V
+     * 
+     * 4 - starting to chase
+     */
     void FoundYou()
     {
         if(state == States.Chase)
@@ -89,26 +125,89 @@ public class KellekHuntController : MainAiController
         }
         
     }
-
+    void SetActiveChase()
+    {
+        OnChase.Invoke(true);
+    }
+    /*
+     * Lost eyesight
+     * 
+     * |
+     * |
+     * V
+     * 5 - Countdown to cancel chase
+     */
     IEnumerator ChaseTimer()
     {
         yield return new WaitForSeconds(Random.Range(blindChaceTimeMin, blindChaceTimeMax));
         StopChase();
     }
-
+    /* Sight not replenished
+     * 
+     * |
+     * |
+     * V
+     * 
+     * 6 - Quit chase, commense shake off
+     */
     void StopChase()
     {
         controller.SetChaseSpeed(false);
 
-        state = States.Prowl;
+        state = States.Prowl; // Add here something to check if he still has a hearing target
 
         OnChase.Invoke(false);
+        StartCoroutine(LeaveAudibleArea());
         Debug.Log("quit chase");
     }
 
-    void SetActiveChase()
+    IEnumerator LeaveAudibleArea()
     {
-        OnChase.Invoke(true);
+        disengage = true;
+        RoamAway();
+
+        var playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
+        while (playerKellekDistacne > disengageRange)
+            yield return null;
+
+        Shakeoff();
+    }
+
+    void RoamAway()
+    {
+        controller.MoveTo(roamManager.FindFarthestPoint());
+    }
+
+    void Shakeoff()
+    {
+        if(queueShakeoff)
+        {
+            queueShakeoff = false;
+            CentralAI.Instance.ShakeoffConfirmed();
+        }
+
+        parentObject.SetActive(false);
+        //Restart timer Go here
+    }
+
+    
+
+
+    /*
+     * 7 - Outside Input
+     */
+
+    // Recive request to shakeoff, either confirm or queue for the end of the chase
+    public void RequestShakeoff()
+    {
+        if(state != States.Chase)
+        {
+            StartCoroutine(LeaveAudibleArea());
+        }
+        else
+        {
+            queueShakeoff = true;
+        }
     }
 }
 

@@ -167,8 +167,12 @@ public class KellekHuntController : MainAiController
         RoamAway();
 
         var playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
-        while (playerKellekDistacne > disengageRange)
+        while (playerKellekDistacne < disengageRange)
+        {
             yield return null;
+            playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
+        }
+            
 
         Shakeoff();
     }

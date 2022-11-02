@@ -73,9 +73,6 @@ MonoBehaviour:
   controller: {fileID: 5537062831781864661}
   sightController: {fileID: 5537062831781864669}
   roamManager: {fileID: 5537062831781864664}
-  source: {fileID: 5537062831781864671}
-  prowlTheme: {fileID: 8300000, guid: dbc236172484fbb48a692d1aac56277d, type: 3}
-  chaseTheme: {fileID: 8300000, guid: 107f4d9e8405f7247a6952b276757614, type: 3}
   detectSE: {fileID: 8300000, guid: 68db922795061704b9f4676d7883c1c2, type: 3}
   OnChase:
     m_PersistentCalls:
@@ -94,6 +91,7 @@ MonoBehaviour:
         m_CallState: 2
   blindChaceTimeMax: 10
   blindChaceTimeMin: 10
+  disengageRange: 100
 --- !u!114 &5537062831781864661
 MonoBehaviour:
   m_ObjectHideFlags: 0

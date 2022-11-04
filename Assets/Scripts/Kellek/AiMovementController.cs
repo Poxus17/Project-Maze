@@ -47,7 +47,7 @@ public class AiMovementController : MonoBehaviour
         {
             dist = agent.remainingDistance;
             stillMoving = !(dist != Mathf.Infinity && dist <= 0.25f);
-            Debug.Log(dist);
+            //Debug.Log(dist);
             yield return null;
         }
 

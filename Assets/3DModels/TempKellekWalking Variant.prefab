@@ -70,12 +70,13 @@ MonoBehaviour:
   controller: {fileID: 135681507}
   sightController: {fileID: 135681515}
   roamManager: {fileID: 135681518}
-  source: {fileID: 135681513}
-  prowlTheme: {fileID: 8300000, guid: dbc236172484fbb48a692d1aac56277d, type: 3}
-  chaseTheme: {fileID: 8300000, guid: 107f4d9e8405f7247a6952b276757614, type: 3}
   detectSE: {fileID: 8300000, guid: 68db922795061704b9f4676d7883c1c2, type: 3}
+  OnChase:
+    m_PersistentCalls:
+      m_Calls: []
   blindChaceTimeMax: 10
   blindChaceTimeMin: 10
+  disengageRange: 0
 --- !u!114 &135681507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d31c0e39ac272f844a79edffd41a2085, type: 3}
       propertyPath: m_Name
-      value: TempKellekWalking
+      value: TempKellekWalking Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d31c0e39ac272f844a79edffd41a2085, type: 3}
       propertyPath: m_Layer

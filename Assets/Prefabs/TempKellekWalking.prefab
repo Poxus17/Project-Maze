@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd1db9ab75c6314a9552233ab2da45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 70
+  sightRange: 50
   angleFromForward: 70
 --- !u!114 &5537062831781864667
 MonoBehaviour:
@@ -134,8 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 100
-  certainThreshold: 2.5
-  uncertainRangeMultiplier: 20
+  certainThreshold: 3.5
+  uncertainRangeMultiplier: 25
 --- !u!114 &5537062831781864664
 MonoBehaviour:
   m_ObjectHideFlags: 0

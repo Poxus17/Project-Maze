@@ -20,6 +20,11 @@ public class KellekHuntController : MainAiController
     [SerializeField] float blindChaceTimeMax;
     [SerializeField] float blindChaceTimeMin;
     [SerializeField] float disengageRange;
+    [Space(5)]
+
+    [Header("Spawn")]
+    public float _minSpawnTime = 1;
+    public float _maxSpawnTime = 30;
 
     States state;
 
@@ -43,7 +48,23 @@ public class KellekHuntController : MainAiController
         Invoke("RoamNextPoint", 0.2f);
     }
 
-    //1 - Roam to random point
+    //0 - Spawn in the ring
+    public void SpawnIn()
+    {
+        Vector3 SpawnPoint = roamManager.FindFarthestPoint();
+        parentObject.transform.position = SpawnPoint;
+        lastRoam = SpawnPoint;
+        parentObject.SetActive(true);
+
+        RoamNextPoint();
+    }
+    /*
+     * |
+     * |
+     * V
+     * 
+     * 1 - Roam to random point
+     */
     void RoamNextPoint()
     {
         lastHeardAt = Vector3.zero;
@@ -191,9 +212,9 @@ public class KellekHuntController : MainAiController
         }
 
         parentObject.SetActive(false);
-        //Restart timer Go here
+        CentralAI.Instance.ShakeoffConfirmed();
     }
-
+    
     
 
 

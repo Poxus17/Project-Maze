@@ -12,6 +12,8 @@ public class CentralAI : MonoBehaviour
 
     public GameObject player;
 
+    List<AiRoamManager> roamManagers;
+
     public static CentralAI Instance { get; private set; }
 
     private void Awake()
@@ -24,6 +26,27 @@ public class CentralAI : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    private void Start()
+    {
+        #region Load Roam managers
+        roamManagers = new List<AiRoamManager>();
+
+        var findRoamManagers = FindObjectsOfType<AiRoamManager>();
+
+        foreach(var roamManager in findRoamManagers)
+        {
+            if(roamManager != null)
+            {
+                roamManagers.Add(roamManager);
+            }
+        }
+
+        #endregion
+
+        kellek.parentObject.SetActive(false);
+
     }
 
     public void BroadcastNoise(float level, Vector3 noisePosition)
@@ -66,7 +89,7 @@ public class CentralAI : MonoBehaviour
 
     public void ShakeoffConfirmed()
     {
-
+        SpawnInRing();
     }
 
     public void TurnOffAi()
@@ -75,6 +98,23 @@ public class CentralAI : MonoBehaviour
         {
             ai.gameObject.SetActive(false);
         }
+    }
+
+    public void SpawnInRing()
+    {
+        foreach(AiRoamManager rm in roamManagers)
+        {
+            rm.LoadRoamData(1, SectionsManager.instance.currentSection);
+        }
+
+        //FIX THIS SHIT
+        StartCoroutine(SpawnTimer());
+    }
+
+    IEnumerator SpawnTimer()
+    {
+        yield return new WaitForSeconds(Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime));
+        kellek.SpawnIn();
     }
 
 }

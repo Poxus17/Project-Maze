@@ -8,21 +8,28 @@ public class AiRoamManager : MonoBehaviour
     List<RoamPointData> roamPoints;
 
     RoamPointData[] loadedRoampoints;
+
     // Start is called before the first frame update
     void Start()
     {
         roamPoints = new List<RoamPointData>();
         loadedRoampoints = new RoamPointData[0];
+        FirstLoadRoamPoints();
+    }
 
+    void FirstLoadRoamPoints()
+    {
         var roamPointObjects = GameObject.FindGameObjectsWithTag("RoamPoint");
 
-        foreach(var roamPoint in roamPointObjects)
+        foreach (var roamPoint in roamPointObjects)
         {
             RoamPointData roamData = roamPoint.GetComponent<RoamPointData>();
 
-            if(roamData != null)
+            if (roamData != null)
                 roamPoints.Add(roamData);
         }
+
+        LoadRoamData(1, 1);
     }
 
     public Vector3 GetRoamPoint(Vector3 lastRoamPosition)
@@ -34,8 +41,8 @@ public class AiRoamManager : MonoBehaviour
         Vector3 roamPosition;
         do
         {
-            randomIndex = Random.Range(0, roamPoints.Count);
-            roamPosition = roamPoints[randomIndex].transform.position;
+            randomIndex = Random.Range(0, loadedRoampoints.Length);
+            roamPosition = loadedRoampoints[randomIndex].transform.position;
         }
         while (roamPosition == lastRoamPosition);
 
@@ -47,7 +54,7 @@ public class AiRoamManager : MonoBehaviour
         float max = -100;
         Vector3 maxPoint = Vector3.zero;
 
-        foreach(RoamPointData roamPoint in roamPoints)
+        foreach(RoamPointData roamPoint in loadedRoampoints)
         {
             var playerPointDistance = Vector3.Distance(CentralAI.Instance.player.transform.position, roamPoint.transform.position);
             if ( playerPointDistance > max)
@@ -66,8 +73,15 @@ public class AiRoamManager : MonoBehaviour
 
         foreach(RoamPointData rpd in roamPoints)
         {
-            if(rpd.ring == ring && rpd.zone == section)
+            if (rpd.ring == ring && rpd.zone == section)
+            {
                 localRoamPoints.Add(rpd);
+                Debug.Log(rpd);
+            }
+            else
+            {
+                Debug.Log(section);
+            }
         }
 
         loadedRoampoints = localRoamPoints.ToArray();

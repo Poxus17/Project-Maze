@@ -6,11 +6,13 @@ public class AiRoamManager : MonoBehaviour
 {
     //RoamPointData[] roamPoints;
     List<RoamPointData> roamPoints;
+
+    RoamPointData[] loadedRoampoints;
     // Start is called before the first frame update
     void Start()
     {
         roamPoints = new List<RoamPointData>();
-
+        loadedRoampoints = new RoamPointData[0];
 
         var roamPointObjects = GameObject.FindGameObjectsWithTag("RoamPoint");
 
@@ -56,6 +58,19 @@ public class AiRoamManager : MonoBehaviour
         }
 
         return maxPoint;
+    }
+
+    public void LoadRoamData(int ring, int section)
+    {
+       List<RoamPointData> localRoamPoints = new List<RoamPointData>();
+
+        foreach(RoamPointData rpd in roamPoints)
+        {
+            if(rpd.ring == ring && rpd.zone == section)
+                localRoamPoints.Add(rpd);
+        }
+
+        loadedRoampoints = localRoamPoints.ToArray();
     }
 
     /*public void LoadRoamPoints(RoamPointData[] roamPointArray)

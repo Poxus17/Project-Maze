@@ -67,6 +67,7 @@ public class KellekHuntController : MainAiController
      */
     void RoamNextPoint()
     {
+        Debug.Log("Roam next");
         lastHeardAt = Vector3.zero;
         lastRoam = roamManager.GetRoamPoint(lastRoam);
         controller.MoveTo(lastRoam);

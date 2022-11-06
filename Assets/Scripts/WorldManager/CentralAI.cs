@@ -45,8 +45,6 @@ public class CentralAI : MonoBehaviour
 
         #endregion
 
-        kellek.parentObject.SetActive(false);
-
     }
 
     public void BroadcastNoise(float level, Vector3 noisePosition)
@@ -81,9 +79,9 @@ public class CentralAI : MonoBehaviour
     }
 
     //Ask kellek hunt controller to start shakeoff
-    void CommenseKellekShakeoff(bool active)
+    public void CommenseKellekShakeoff()
     {
-
+        kellek.RequestShakeoff();
     }
 
 

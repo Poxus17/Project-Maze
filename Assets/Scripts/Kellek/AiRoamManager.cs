@@ -80,7 +80,7 @@ public class AiRoamManager : MonoBehaviour
             }
             else
             {
-                Debug.Log(section);
+                Debug.Log(rpd.zone);
             }
         }
 

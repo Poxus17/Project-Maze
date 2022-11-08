@@ -3722,6 +3722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Section marker 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424412, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
 --- !u!1 &288553216
@@ -27777,6 +27781,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Section marker 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424412, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
 --- !u!1 &2048893382
@@ -34392,7 +34400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2710492630030187760, guid: fa891b051033b3844a211a9bc1ff3c03, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3190827953749627342, guid: fa891b051033b3844a211a9bc1ff3c03, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

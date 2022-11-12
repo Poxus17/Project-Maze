@@ -33,7 +33,7 @@ public class FootstepsManager : MonoBehaviour
 
     bool activeStep = false;
     bool running = false;
-
+    bool playingStep = false;
      // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +46,7 @@ public class FootstepsManager : MonoBehaviour
         var wasActive = activeStep;
         activeStep = val;
 
-        if (activeStep && !wasActive)
+        if (activeStep && !wasActive && !playingStep)
         {
             StartCoroutine(StepsLoop());
         }
@@ -78,6 +78,7 @@ public class FootstepsManager : MonoBehaviour
 
     IEnumerator StepsLoop()
     {
+        playingStep = true;
         var selectClip = stepClips[Random.Range(0, stepClips.Length)];
         NoiseManager.instance.PlayNoise(selectClip, stepNoiseValue);
 
@@ -85,6 +86,8 @@ public class FootstepsManager : MonoBehaviour
 
         if(activeStep)
             StartCoroutine(StepsLoop());
+        else
+            playingStep = false;
     }
 
 }

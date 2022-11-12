@@ -9,8 +9,9 @@ public class SectionComponent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" && SectionsManager.instance.currentSection != sectionNumber)
         {
+            Debug.Log(other.gameObject.name + " has entered section " + sectionNumber);
             SectionsManager.instance.EnterSection(sectionNumber);
         }
     }

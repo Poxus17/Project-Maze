@@ -94,7 +94,7 @@ public class CentralAI : MonoBehaviour
     {
         foreach(AiListenerController ai in Listeners)
         {
-            ai.gameObject.SetActive(false);
+            //ai.gameObject.SetActive(false);
         }
     }
 
@@ -111,7 +111,7 @@ public class CentralAI : MonoBehaviour
 
     IEnumerator SpawnTimer()
     {
-        yield return new WaitForSeconds(Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime));
+        yield return new WaitForSeconds(5); //Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime)
         kellek.SpawnIn();
     }
 

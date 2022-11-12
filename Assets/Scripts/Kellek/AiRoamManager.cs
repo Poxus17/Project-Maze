@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AiRoamManager : MonoBehaviour
@@ -29,7 +30,7 @@ public class AiRoamManager : MonoBehaviour
                 roamPoints.Add(roamData);
         }
 
-        LoadRoamData(1, 1);
+        //LoadRoamData(1, 1);
     }
 
     public Vector3 GetRoamPoint(Vector3 lastRoamPosition)
@@ -46,6 +47,7 @@ public class AiRoamManager : MonoBehaviour
         }
         while (roamPosition == lastRoamPosition);
 
+        Debug.Log(loadedRoampoints[randomIndex].transform.localPosition);
         return roamPosition;
     }
 
@@ -61,26 +63,25 @@ public class AiRoamManager : MonoBehaviour
             {
                 max = playerPointDistance;
                 maxPoint = roamPoint.transform.position;
+
             }
         }
+
 
         return maxPoint;
     }
 
     public void LoadRoamData(int ring, int section)
     {
-       List<RoamPointData> localRoamPoints = new List<RoamPointData>();
+        Debug.Log("Loading roam data for section " + section);
+        List<RoamPointData> localRoamPoints = new List<RoamPointData>();
 
         foreach(RoamPointData rpd in roamPoints)
         {
             if (rpd.ring == ring && rpd.zone == section)
             {
                 localRoamPoints.Add(rpd);
-                Debug.Log(rpd);
-            }
-            else
-            {
-                Debug.Log(rpd.zone);
+                //Debug.Log(rpd);
             }
         }
 

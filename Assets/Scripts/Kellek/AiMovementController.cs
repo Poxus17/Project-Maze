@@ -19,8 +19,9 @@ public class AiMovementController : MonoBehaviour
 
     public void MoveTo(Vector3 toPosition)
     {
+        SetStop(false);
         agent.SetDestination(toPosition);
-
+        //Debug.Log("Move to " + toPosition);
         if(!waitinForDestination)
             StartCoroutine(DestinationArrivalCheck());
     }
@@ -47,7 +48,7 @@ public class AiMovementController : MonoBehaviour
         {
             dist = agent.remainingDistance;
             stillMoving = !(dist != Mathf.Infinity && dist <= 2f);
-            Debug.Log(dist);
+            Debug.Log(stillMoving);
             yield return null;
         }
 
@@ -64,5 +65,15 @@ public class AiMovementController : MonoBehaviour
     public void SetChaseSpeed(bool isChase)
     {
         agent.speed = isChase ? runSpeed : walkSpeed;
+    }
+
+    public void Teleport(Vector3 pos)
+    {
+        agent.Warp(pos);
+    }
+
+    public void SetStop(bool setTo)
+    {
+        agent.isStopped = setTo;
     }
 }

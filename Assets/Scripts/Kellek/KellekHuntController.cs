@@ -30,6 +30,7 @@ public class KellekHuntController : MainAiController
 
     Vector3 lastRoam = Vector3.zero;
     Vector3 lastHeardAt;
+    Vector3 oblivion = new Vector3(-300, -300, -300);
 
     bool disengage = false;
     bool queueShakeoff= false;
@@ -45,16 +46,16 @@ public class KellekHuntController : MainAiController
         AiListenerController.OnNoticeNoise += ChaseNoise;
         AiSightController.OnSeeTarget += FoundYou;
 
-        Invoke("RoamNextPoint", 0.2f);
+        //Invoke("RoamNextPoint", 0.2f);
     }
 
     //0 - Spawn in the ring
     public void SpawnIn()
     {
+        //roamManager.LoadRoamData(1, 1);
         Vector3 SpawnPoint = roamManager.FindFarthestPoint();
-        parentObject.transform.position = SpawnPoint;
+        controller.Teleport(new Vector3(SpawnPoint.x, 6, SpawnPoint.z));
         lastRoam = SpawnPoint;
-        parentObject.SetActive(true);
 
         RoamNextPoint();
     }
@@ -67,7 +68,7 @@ public class KellekHuntController : MainAiController
      */
     void RoamNextPoint()
     {
-        Debug.Log("Roam next");
+        //Debug.Log("Roam next");
         lastHeardAt = Vector3.zero;
         lastRoam = roamManager.GetRoamPoint(lastRoam);
         controller.MoveTo(lastRoam);
@@ -185,17 +186,19 @@ public class KellekHuntController : MainAiController
 
     IEnumerator LeaveAudibleArea()
     {
-        disengage = true;
-        RoamAway();
-
         var playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
-        while (playerKellekDistacne < disengageRange)
-        {
-            yield return null;
-            playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
-        }
-            
 
+        if(playerKellekDistacne < disengageRange)
+        {
+            disengage = true;
+            RoamAway();
+
+            while (playerKellekDistacne < disengageRange)
+            {
+                yield return null;
+                playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
+            }
+        }
         Shakeoff();
     }
 
@@ -209,15 +212,13 @@ public class KellekHuntController : MainAiController
         if(queueShakeoff)
         {
             queueShakeoff = false;
-            CentralAI.Instance.ShakeoffConfirmed();
         }
 
-        parentObject.SetActive(false);
+        controller.SetStop(true);
+        controller.Teleport(oblivion);
         CentralAI.Instance.ShakeoffConfirmed();
     }
     
-    
-
 
     /*
      * 7 - Outside Input

@@ -13,6 +13,8 @@ public class KellekHuntController : MainAiController
 
     [Header("Music Components")]
     [SerializeField] AudioClip detectSE;
+    [SerializeField] AudioClip[] detectionLaughs;
+    [SerializeField] AudioSource laughAudioSource;
     public BoolEvent OnChase;
     [Space(5)]
 
@@ -56,6 +58,7 @@ public class KellekHuntController : MainAiController
         Vector3 SpawnPoint = roamManager.FindFarthestPoint();
         controller.Teleport(new Vector3(SpawnPoint.x, 6, SpawnPoint.z));
         lastRoam = SpawnPoint;
+        state = States.Prowl;
 
         RoamNextPoint();
     }
@@ -114,11 +117,21 @@ public class KellekHuntController : MainAiController
         {
             if (state != States.Chase)
             {
+                if (state != States.Hunt)
+                    PlayDetectionLaugh();
                 state = States.Hunt;
             }
             controller.SwitchToPlayer();
         }
     }
+    
+    void PlayDetectionLaugh()
+    {
+        var randomClip = detectionLaughs[Random.Range(0, detectionLaughs.Length)];
+        laughAudioSource.clip = randomClip;
+        laughAudioSource.Play();
+    }
+
     public void GoToPlayer()
     {
         controller.MoveTo(CentralAI.Instance.player.transform.position);

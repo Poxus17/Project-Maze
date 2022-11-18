@@ -3410,7 +3410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7373354186612996581, guid: 54ad48b4da966224283755e1a3642312, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7373354186612996582, guid: 54ad48b4da966224283755e1a3642312, type: 3}
       propertyPath: m_Enabled
@@ -9019,7 +9019,7 @@ MonoBehaviour:
   low: {fileID: 1462203912}
   mid: {fileID: 962135141}
   high: {fileID: 487003598}
-  relationValue: 0.15
+  relationValue: 0.3
   slider: {fileID: 1075519831}
 --- !u!1 &1171746715
 GameObject:
@@ -11794,7 +11794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Team Demo 1
+  m_text: Team Demo 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

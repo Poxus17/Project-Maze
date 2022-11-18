@@ -10,6 +10,7 @@ public class UI_InspectionUIManager : MonoBehaviour
     [SerializeField] GameObject inspectionCanvas;
     [SerializeField] Transform inspectionParent;
     [SerializeField] TMP_Text inspectionText;
+    [SerializeField] AudioSource inspectionAudioSource;
 
     GameObject inspectionObject;
 
@@ -17,6 +18,11 @@ public class UI_InspectionUIManager : MonoBehaviour
     {
         inspectionCanvas.SetActive(active);
         WorldEventDispatcher.instance.SetUIActive(active);
+
+        if (active)
+            inspectionAudioSource.Play();
+        else
+            inspectionAudioSource.Stop();
     }
     
     public void SetInspectionUI(PastObjectPacket packet)

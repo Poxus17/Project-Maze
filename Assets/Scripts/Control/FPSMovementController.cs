@@ -68,8 +68,8 @@ public class FPSMovementController : MonoBehaviour
                 staminaRecoveryMode = true;
                 isRunning = false;
                 stamina = 0;
-                SetSpeed();
-                WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
+                SetSprint(false);
+                //WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
             }
         }
         else if(stamina < fullStamina)

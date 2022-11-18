@@ -24,6 +24,6 @@ public class ExposureSet : MonoBehaviour
     public void SetBrightness(float exposure)
     {
         volume.enabled = true;
-        colorAdjustments.postExposure.value = exposure;
+        colorAdjustments.postExposure.value = exposure + 0.5f;
     }
 }

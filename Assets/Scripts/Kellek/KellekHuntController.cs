@@ -59,6 +59,7 @@ public class KellekHuntController : MainAiController
         controller.Teleport(new Vector3(SpawnPoint.x, 6, SpawnPoint.z));
         lastRoam = SpawnPoint;
         state = States.Prowl;
+        disengage = false;
 
         RoamNextPoint();
     }

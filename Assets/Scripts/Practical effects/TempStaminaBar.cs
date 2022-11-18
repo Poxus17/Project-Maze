@@ -24,6 +24,8 @@ public class TempStaminaBar : MonoBehaviour
                 0
                 );
         }
+
+        image.fillAmount = percent;
     }
 }
 

@@ -23,7 +23,7 @@ public class DeathManager : MonoBehaviour
 
     public void Restart(UnityEngine.Video.VideoPlayer vp)
     {
-        SceneManager.LoadScene(0);
+        Application.Quit();
     }
 
 }

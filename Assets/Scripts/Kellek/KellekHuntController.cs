@@ -22,6 +22,7 @@ public class KellekHuntController : MainAiController
     [SerializeField] float blindChaceTimeMax;
     [SerializeField] float blindChaceTimeMin;
     [SerializeField] float disengageRange;
+    [SerializeField] float chaseWaitTime;
     [Space(5)]
 
     [Header("Spawn")]
@@ -152,15 +153,25 @@ public class KellekHuntController : MainAiController
         if(state == States.Chase)
             controller.SwitchToPlayer();
         else
-        {
-            state = States.Chase;
-            controller.SetChaseSpeed(true);
-            StartCoroutine(ChaseTimer());
-            SetActiveChase();
-            MusicMan.instance.PlaySE(detectSE);
-            Debug.Log("Start Chase");
-        }
-        
+            StartCoroutine(IllGiveYouToTheCountOf());
+    }
+
+    IEnumerator IllGiveYouToTheCountOf()
+    {
+        state = States.Chase;
+        MusicMan.instance.PlaySE(detectSE);
+        controller.CancelMovement();
+        yield return new WaitForSeconds(chaseWaitTime);
+
+        //Ready or not
+        HereICome();
+    }
+    void HereICome()
+    {
+        controller.SetChaseSpeed(true);
+        StartCoroutine(ChaseTimer());
+        SetActiveChase();
+        Debug.Log("Start Chase");
     }
     void SetActiveChase()
     {

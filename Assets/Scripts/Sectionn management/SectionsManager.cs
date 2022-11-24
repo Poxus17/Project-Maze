@@ -10,6 +10,7 @@ public class SectionsManager : MonoBehaviour
 
     [SerializeField] UnityEvent OnSectionChanged;
     [SerializeField] UnityEvent OnRingChanged;
+    [SerializeField] SectionItemIndex[] itemsIndex;
 
     public static SectionsManager instance;
     private void Awake()
@@ -44,4 +45,28 @@ public class SectionsManager : MonoBehaviour
 
         return changed;
     }
+
+    public GameObject GetSectionItem()
+    {
+        foreach(var item in itemsIndex)
+        {
+            if(item.section == currentSection && item.ring == currentRing)
+            {
+                return item.item;
+            }
+        }
+
+         return null;
+    }
 }
+
+[System.Serializable]
+public class SectionItemIndex 
+{
+    public int section;
+    public int ring;
+    public GameObject item;
+
+    protected bool collected = false;
+}
+

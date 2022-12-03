@@ -261,6 +261,13 @@ public class KellekHuntController : MainAiController
             queueShakeoff = true;
         }
     }
+
+    private void OnDestroy()
+    {
+        AiMovementController.OnArrivedAtDestination -= DestinationArrived;
+        AiListenerController.OnNoticeNoise -= ChaseNoise;
+        AiSightController.OnSeeTarget -= FoundYou;
+    }
 }
 
 /// <summary>

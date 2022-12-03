@@ -6,19 +6,21 @@ using UnityEngine.UI;
 
 public class MainMenuExposureTransfer : MonoBehaviour
 {
-    [SerializeField] FloatEvent ExposureTransfer;
+    [Header("Asset variables")]
+    [SerializeField] FloatVariable exposure;
+    [SerializeField] FloatVariable lightIntensity;
+    [Space(10)]
+
+    [Header("Settings")]
     [SerializeField] Slider slider;
+    [SerializeField] float exposureMultiplier;
+    [SerializeField] float lightIntensityMultiplier;
 
-    private float exposure;
-
-    public void UpdateExposure()
+    public void UpdateAssetValues()
     {
-        exposure = -slider.value;
-    }
-
-    public void SendExposure()
-    {
-        ExposureTransfer.Invoke(exposure);
+        exposure.value = -slider.value * exposureMultiplier;
+        lightIntensity.value = -slider.value * lightIntensityMultiplier;
+        Debug.Log(exposure.value + " -- " + lightIntensity.value);
     }
 }
 

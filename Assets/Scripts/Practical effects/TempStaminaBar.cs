@@ -6,12 +6,19 @@ using UnityEngine.Events;
 public class TempStaminaBar : MonoBehaviour
 {
     [SerializeField] UnityEngine.UI.Image image;
-    public void UpdateImage(float percent)
+    [SerializeField] FloatVariable staminaPercent;
+
+    private void Update()
     {
-        if (percent > 0.5)
+        UpdateImage();
+    }
+
+    public void UpdateImage()
+    {
+        if (staminaPercent.value > 0.5)
         {
             image.color = new Color(
-                Mathf.Lerp(1, 0, (percent - 0.5f) * 2),
+                Mathf.Lerp(1, 0, (staminaPercent.value - 0.5f) * 2),
                 1,
                 0
                 );
@@ -20,12 +27,12 @@ public class TempStaminaBar : MonoBehaviour
         {
             image.color = new Color(
                 1,
-                Mathf.Lerp(0, 1, percent* 2),
+                Mathf.Lerp(0, 1, staminaPercent.value * 2),
                 0
                 );
         }
 
-        image.fillAmount = percent;
+        image.fillAmount = staminaPercent.value;
     }
 }
 

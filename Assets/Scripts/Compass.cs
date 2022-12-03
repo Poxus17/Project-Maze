@@ -15,10 +15,13 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(targetItem.transform);
-        var eular = transform.localEulerAngles;
-        eular.x = x;
-        transform.localEulerAngles = eular;
+        if(targetItem != null)
+        {
+            transform.LookAt(targetItem.transform);
+            var eular = transform.localEulerAngles;
+            eular.x = x;
+            transform.localEulerAngles = eular;
+        }
     }
 
     public void SwitchTarget()

@@ -1,0 +1,5 @@
+AssetsScenesMainLightingData.asset filter=lfs diff=lfs merge=lfs -text
+Assets/Scenes/Main/LightingData.asset
+git[[:space:]]lfs[[:space:]]track[[:space:]]AssetsScenesMainLightingData.asset
+ filter=lfs diff=lfs merge=lfs -text
+Assets/Scenes/Main/LightingData.asset filter=lfs diff=lfs merge=lfs -text

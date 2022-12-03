@@ -6,8 +6,13 @@ using UnityEngine.Rendering.Universal;
 
 public class ExposureSet : MonoBehaviour
 {
+    [SerializeField] float baseExposure;
+    [SerializeField] float baseIntensity;
     [SerializeField] Volume volume;
-    
+    [SerializeField] Light directionalLight;
+    [SerializeField] FloatVariable exposure;
+    [SerializeField] FloatVariable lightIntensity;
+
     private ColorAdjustments colorAdjustments;
 
     private void Awake()
@@ -19,11 +24,13 @@ public class ExposureSet : MonoBehaviour
     void Start()
     {
         volume.profile.TryGet(out colorAdjustments);
+        SetBrightness();
     }
 
-    public void SetBrightness(float exposure)
+    public void SetBrightness()
     {
         volume.enabled = true;
-        colorAdjustments.postExposure.value = exposure + 0.5f;
+        colorAdjustments.postExposure.value = exposure.value + baseExposure;
+        directionalLight.intensity = lightIntensity.value + baseIntensity;
     }
 }

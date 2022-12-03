@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Events;
 
 public class FPSMovementController : MonoBehaviour
 {
@@ -24,7 +25,14 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] GameObject camera;
     [Space(10)]
 
-    public FloatEvent StaminaBroadcast;
+    [Header("Local Events")]
+    [SerializeField] UnityEvent BrodSprint;
+    [Space(10)]
+
+    [Header("Asset Variables")]
+    [SerializeField] BoolVariable isSprint;
+    [SerializeField] BoolVariable isSneaking;
+    [SerializeField] FloatVariable staminaPercent;
 
     public static bool isWalking;
 
@@ -40,8 +48,6 @@ public class FPSMovementController : MonoBehaviour
     Vector2 rawMovement;
     Vector3 movement;
 
-    bool isRunning;
-    bool isSneaking;
     bool staminaRecoveryMode;
     bool isCrouching; //reffering to the act, not the state, the state is Sneak
 
@@ -59,17 +65,17 @@ public class FPSMovementController : MonoBehaviour
     private void Update()
     {
         #region Stamina management
-        if (isRunning)
+        if (isSprint.value)
         {
             stamina -= staminaDepleteRate * Time.deltaTime;
 
             if(stamina <= 0)
             {
                 staminaRecoveryMode = true;
-                isRunning = false;
+                isSprint.value = false;
                 stamina = 0;
                 SetSprint(false);
-                //WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
+                //WorldEventDispatcher.instance.BroadcastSprint.Invoke(isSprint.Value);
             }
         }
         else if(stamina < fullStamina)
@@ -83,7 +89,7 @@ public class FPSMovementController : MonoBehaviour
             }
         }
 
-        StaminaBroadcast.Invoke(stamina / fullStamina);
+        staminaPercent.value = (stamina / fullStamina);
         #endregion
 
         #region Movement
@@ -111,7 +117,7 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sprint(InputAction.CallbackContext context)
     {
-        if (!isSneaking)
+        if (!isSneaking.value)
         {
             if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode)
             {
@@ -130,26 +136,26 @@ public class FPSMovementController : MonoBehaviour
 
     void SetSpeed()
     {
-        speed = isSneaking ? sneakSpeed :
-            (isRunning ? runningSpeed : walkingSpeed);
+        speed = isSneaking.value ? sneakSpeed :
+            (isSprint.value ? runningSpeed : walkingSpeed);
     }
 
     void SetSprint(bool setTo)
     {
-        isRunning = setTo;
+        isSprint.value = setTo;
         SetSpeed();
-        WorldEventDispatcher.instance.BroadcastSprint.Invoke(isRunning);
+        BrodSprint.Invoke();
         OnChangeMovementType(setTo ? MovementType.Run : MovementType.Walk);
     }
 
     void SetSneak(bool setTo)
     {
-        isSneaking = setTo;
+        isSneaking.value = setTo;
         SetSpeed();
         OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
         StartCoroutine(TransitionCrouch(setTo));
 
-        if (isRunning && isSneaking)
+        if (isSprint.value && isSneaking.value)
             SetSprint(false);
     }
 

@@ -5,14 +5,15 @@ using UnityEngine.Events;
 
 public class CentralAI : MonoBehaviour
 {
-    [SerializeField] AiListenerController[] Listeners;
     [SerializeField] LayerMask wallsMask;
     [SerializeField] float wallReductionPercent;
     [SerializeField] KellekHuntController kellek;
 
+    [System.NonSerialized]
     public GameObject player;
 
     List<AiRoamManager> roamManagers;
+    List<AiListenerController> Listeners;
 
     public static CentralAI Instance { get; private set; }
 
@@ -31,10 +32,9 @@ public class CentralAI : MonoBehaviour
     private void Start()
     {
         #region Load Roam managers
+
         roamManagers = new List<AiRoamManager>();
-
         var findRoamManagers = FindObjectsOfType<AiRoamManager>();
-
         foreach(var roamManager in findRoamManagers)
         {
             if(roamManager != null)
@@ -43,8 +43,19 @@ public class CentralAI : MonoBehaviour
             }
         }
 
+        Listeners = new List<AiListenerController>();
+        var listeners = FindObjectsOfType<AiListenerController>();
+        foreach(var listener in listeners)
+        {
+            if(listener != null)
+            {
+                Listeners.Add(listener);
+            }
+        }
+
         #endregion
 
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void BroadcastNoise(float level, Vector3 noisePosition)
@@ -116,4 +127,9 @@ public class CentralAI : MonoBehaviour
         kellek.SpawnIn();
     }
 
+    private void OnDisable()
+    {
+        roamManagers.Clear();
+        Listeners.Clear();
+    }
 }

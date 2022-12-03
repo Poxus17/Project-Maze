@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class PastObjectManager : MonoBehaviour
 {
     AudioSource audioSource;
+    [SerializeField] PastObjectPacketVariable InspectionPacket;
+    [SerializeField] GameEvent EnterInspection;
 
     public string text { get; }
 
@@ -34,7 +36,8 @@ public class PastObjectManager : MonoBehaviour
         audioSource.clip = packet.data.clip;
         audioSource.Play();
 
-        WorldEventDispatcher.instance.BroadcastInteraction.Invoke(packet);
+        EnterInspection.Raise();
+        /*WorldEventDispatcher.instance.BroadcastInteraction.Invoke(packet);*/
         InventoryManager.Instance.StoreToInventory(packet);
     }
 

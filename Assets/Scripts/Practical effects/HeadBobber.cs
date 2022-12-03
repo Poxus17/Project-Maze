@@ -7,6 +7,7 @@ public class HeadBobber : MonoBehaviour
     public float walkingBobbingSpeed;
     public float runningBobbingSpeed;
     public float bobbingAmount = 0.05f;
+    [SerializeField] BoolVariable sprint;
 
     float defaultPosY = 0;
     float timer = 0;
@@ -36,8 +37,9 @@ public class HeadBobber : MonoBehaviour
         }
     }
 
-    public void changeBobbingSpeed(bool sprint)
+    public void changeBobbingSpeed()
     {
-        bobbingSpeed = sprint ? runningBobbingSpeed : walkingBobbingSpeed;
+        Debug.Log("change bobbing speed");
+        bobbingSpeed = sprint.value ? runningBobbingSpeed : walkingBobbingSpeed;
     }
 }

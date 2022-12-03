@@ -22,13 +22,10 @@ public class InputSystemHandler : MonoBehaviour
 
     public void SetUIMode(bool active)
     {
-        if (active)
-        {
-            playerInput.SwitchCurrentActionMap("UI");
-        }
-        else
-        {
-            playerInput.SwitchCurrentActionMap("Player");
-        }
+        var map = active ? "UI" : "Player";
+        playerInput.SwitchCurrentActionMap(map);
+
+        Cursor.lockState = active ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = active;
     }
 }

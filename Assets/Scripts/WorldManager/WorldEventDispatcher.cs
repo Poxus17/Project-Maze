@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class WorldEventDispatcher : MonoBehaviour
 {
-
+    [Space(15)]
+    [Header("DEPRECATED")]
     public PastObjectEvent BroadcastInteraction;
     public BoolEvent BroadcastSprint;
     public BoolEvent BroadcastInventoryActive;
@@ -22,6 +23,7 @@ public class WorldEventDispatcher : MonoBehaviour
         {
             Destroy(this);
         }
+
     }
 
     public void SetUIActive(bool active)

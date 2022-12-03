@@ -12,6 +12,7 @@ public class DeathManager : MonoBehaviour
     private void Start()
     {
         player.Prepare();
+        player.targetTexture.Release();
     }
 
     public void ActivateJumpscare()
@@ -23,7 +24,8 @@ public class DeathManager : MonoBehaviour
 
     public void Restart(UnityEngine.Video.VideoPlayer vp)
     {
-        Application.Quit();
+        //Application.Quit();
+        SceneManager.LoadScene(1);
     }
 
 }

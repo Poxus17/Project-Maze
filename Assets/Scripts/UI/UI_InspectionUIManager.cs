@@ -11,13 +11,13 @@ public class UI_InspectionUIManager : MonoBehaviour
     [SerializeField] Transform inspectionParent;
     [SerializeField] TMP_Text inspectionText;
     [SerializeField] AudioSource inspectionAudioSource;
+    [SerializeField] PastObjectPacketVariable inspectionPacket;
 
     GameObject inspectionObject;
 
     public void SetInspectionUIActive(bool active)
     {
         inspectionCanvas.SetActive(active);
-        WorldEventDispatcher.instance.SetUIActive(active);
 
         if (active)
             inspectionAudioSource.Play();
@@ -25,17 +25,17 @@ public class UI_InspectionUIManager : MonoBehaviour
             inspectionAudioSource.Stop();
     }
     
-    public void SetInspectionUI(PastObjectPacket packet)
+    public void SetInspectionUI()
     {
         for(int i =0; i< inspectionParent.childCount; i++)
         {
             Destroy(inspectionParent.GetChild(i).gameObject);
         }
 
-        inspectionObject = Instantiate(packet.gameObject, inspectionParent);
-        inspectionText.text = packet.data.transcript;
-        inspectionObject.transform.localScale = packet.scale;
-        inspectionObject.transform.eulerAngles = packet.eularRotation;
+        inspectionObject = Instantiate(inspectionPacket.Value.gameObject, inspectionParent);
+        inspectionText.text = inspectionPacket.Value.data.transcript;
+        inspectionObject.transform.localScale = inspectionPacket.Value.scale;
+        inspectionObject.transform.eulerAngles = inspectionPacket.Value.eularRotation;
         inspectionObject.transform.localPosition = Vector3.zero;
     }
 }

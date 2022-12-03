@@ -90,4 +90,10 @@ public class FootstepsManager : MonoBehaviour
             playingStep = false;
     }
 
+    private void OnDestroy()
+    {
+        FPSMovementController.OnChangeIsWalking -= SetActiveStep;
+        FPSMovementController.OnChangeMovementType -= SetType;
+    }
+
 }

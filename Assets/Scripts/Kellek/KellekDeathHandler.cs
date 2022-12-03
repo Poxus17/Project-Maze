@@ -5,11 +5,13 @@ using UnityEngine.Events;
 
 public class KellekDeathHandler : MonoBehaviour
 {
-    [SerializeField] UnityEvent deathEvent;
+    //[SerializeField] UnityEvent deathEvent;
+
+    [SerializeField] GameEvent initiateDeath;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Player")
-            deathEvent.Invoke();
+            initiateDeath.Raise();
     }
 }

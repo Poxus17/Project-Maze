@@ -7,6 +7,8 @@ using UnityEngine;
 public class ObjectInteractionComponent : MonoBehaviour, IInteractable
 {
     [SerializeField] PastObjectData data;
+    [SerializeField] PastObjectPacketVariable inspectionItem;
+    [SerializeField] GameEvent EnterInspection;
 
 
     PastObjectPacket pastObjectPacket;
@@ -19,7 +21,9 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        inspectionItem.Value = pastObjectPacket;
         PastObjectManager.instance.Interact(pastObjectPacket);
+        EnterInspection.Raise();
 
         //Send it to FUCKING HELL never to be seen again
         transform.position = new Vector3(-1000, -1000, -1000);

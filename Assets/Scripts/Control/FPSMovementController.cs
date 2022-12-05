@@ -33,6 +33,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] BoolVariable isSprint;
     [SerializeField] BoolVariable isSneaking;
     [SerializeField] FloatVariable staminaPercent;
+    [SerializeField] GameEvent LeaveUI;
 
     public static bool isWalking;
 
@@ -182,6 +183,12 @@ public class FPSMovementController : MonoBehaviour
 
         isCrouching = false;
     }
+
+    public void InvokeLeaveUI()
+    {
+        LeaveUI.Raise();
+    }
+
 }
 
 public enum MovementType { Walk, Run, Sneak}

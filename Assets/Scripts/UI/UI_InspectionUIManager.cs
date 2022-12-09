@@ -18,11 +18,6 @@ public class UI_InspectionUIManager : MonoBehaviour
     public void SetInspectionUIActive(bool active)
     {
         inspectionCanvas.SetActive(active);
-
-        if (active)
-            inspectionAudioSource.Play();
-        else
-            inspectionAudioSource.Stop();
     }
     
     public void SetInspectionUI()

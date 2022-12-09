@@ -15,6 +15,8 @@ public class CentralAI : MonoBehaviour
     List<AiRoamManager> roamManagers;
     List<AiListenerController> Listeners;
 
+    bool spawning;
+
     public static CentralAI Instance { get; private set; }
 
     private void Awake()
@@ -118,13 +120,16 @@ public class CentralAI : MonoBehaviour
         }
 
         //FIX THIS SHIT
-        StartCoroutine(SpawnTimer());
+        if(!spawning)
+            StartCoroutine(SpawnTimer());
     }
 
     IEnumerator SpawnTimer()
     {
+        spawning = true;
         yield return new WaitForSeconds(Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime));
         kellek.SpawnIn();
+        spawning = false;
     }
 
     private void OnDisable()

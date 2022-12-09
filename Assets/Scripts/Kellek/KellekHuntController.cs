@@ -262,6 +262,15 @@ public class KellekHuntController : MainAiController
         }
     }
 
+    public void TurnOff()
+    {
+        controller.Teleport(oblivion);
+    }
+    public void TurnOn()
+    {
+        SpawnIn();
+    }
+
     private void OnDestroy()
     {
         AiMovementController.OnArrivedAtDestination -= DestinationArrived;

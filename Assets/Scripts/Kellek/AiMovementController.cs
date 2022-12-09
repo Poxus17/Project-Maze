@@ -76,4 +76,9 @@ public class AiMovementController : MonoBehaviour
     {
         agent.isStopped = setTo;
     }
+
+    public static void Debug_PrintListeners()
+    {
+        Debug.Log(OnArrivedAtDestination.GetInvocationList().Length);
+    }
 }

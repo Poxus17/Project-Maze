@@ -8,6 +8,9 @@ public class HeadBobber : MonoBehaviour
     public float runningBobbingSpeed;
     public float bobbingAmount = 0.05f;
     [SerializeField] BoolVariable sprint;
+    [SerializeField] BoolVariable inTreehouse;
+    [SerializeField] float groundY;
+    [SerializeField] float treehouseY;
 
     float defaultPosY = 0;
     float timer = 0;
@@ -17,7 +20,7 @@ public class HeadBobber : MonoBehaviour
     void Start()
     {
         bobbingSpeed = walkingBobbingSpeed;
-        defaultPosY = transform.localPosition.y;
+        defaultPosY = treehouseY;
     }
 
     // Update is called once per frame
@@ -41,5 +44,10 @@ public class HeadBobber : MonoBehaviour
     {
         Debug.Log("change bobbing speed");
         bobbingSpeed = sprint.value ? runningBobbingSpeed : walkingBobbingSpeed;
+    }
+
+    public void ChangeDefaultY()
+    {
+        defaultPosY = inTreehouse.value ? treehouseY : groundY;
     }
 }

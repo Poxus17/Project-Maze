@@ -29,9 +29,9 @@ public class InteractionHandler : MonoBehaviour
 
     }
 
-    public void Interact()
+    public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if (detectedObject != null)
+        if (detectedObject != null && context.started)
         {
             detectedObject.Interact();
         }

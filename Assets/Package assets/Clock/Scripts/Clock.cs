@@ -18,6 +18,7 @@ public class Clock : MonoBehaviour {
     
     //-- time speed factor
     public float clockSpeed = 1.0f;     // 1.0f = realtime, < 1.0f = slower, > 1.0f = faster
+    public bool backwards;
 
     //-- internal vars
     int seconds;
@@ -25,6 +26,7 @@ public class Clock : MonoBehaviour {
     GameObject pointerSeconds;
     GameObject pointerMinutes;
     GameObject pointerHours;
+    int directionMod;
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -36,6 +38,7 @@ void Start()
 
     msecs = 0.0f;
     seconds = 0;
+    directionMod = backwards ? -1 : 1;
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------
@@ -51,11 +54,11 @@ void Update()
         if(seconds >= 60)
         {
             seconds = 0;
-            minutes++;
+            minutes += directionMod;
             if(minutes > 60)
             {
                 minutes = 0;
-                hour++;
+                hour += directionMod;
                 if(hour >= 24)
                     hour = 0;
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SectionComponent : MonoBehaviour
 {
-    [SerializeField, Range(1,4)] int sectionNumber;
+    [SerializeField, Range(0,4)] int sectionNumber;
     [SerializeField, Range(1,3)] int ringNumber;
 
     private void OnTriggerEnter(Collider other)

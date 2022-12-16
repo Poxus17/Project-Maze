@@ -43,8 +43,14 @@ public class Compass : MonoBehaviour
 
     public void SwitchTarget()
     {
-        targetItem = SectionsManager.instance.GetSectionItem();
-        idle = false;
+        if (SectionsManager.instance.currentSection == 0)
+            SetIdle();
+        else
+        {
+            targetItem = SectionsManager.instance.GetSectionItem();
+            idle = false;
+        }
+        
     }
 
     public void SetIdle()

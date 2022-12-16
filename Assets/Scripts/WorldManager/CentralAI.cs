@@ -95,7 +95,8 @@ public class CentralAI : MonoBehaviour
     //Ask kellek hunt controller to start shakeoff
     public void CommenseKellekShakeoff()
     {
-        kellek.RequestShakeoff();
+        if(SectionsManager.instance.currentSection != 0)
+            kellek.RequestShakeoff();
     }
 
 

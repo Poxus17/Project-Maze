@@ -33,7 +33,7 @@ public class KellekHuntController : MainAiController
 
     Vector3 lastRoam = Vector3.zero;
     Vector3 lastHeardAt;
-    Vector3 oblivion = new Vector3(-300, -300, -300);
+    Vector3 oblivion = new Vector3(-10000, -10000, -10000);
 
     bool disengage = false;
     bool queueShakeoff= false;
@@ -268,7 +268,8 @@ public class KellekHuntController : MainAiController
     }
     public void TurnOn()
     {
-        SpawnIn();
+        if (SectionsManager.instance.currentSection != 0)
+            SpawnIn();
     }
 
     private void OnDestroy()

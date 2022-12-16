@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class UI_InventorManager : MonoBehaviour
 {
+    [SerializeField] GameObject scrollObject;
     [SerializeField] GameObject scrollContent;
     [SerializeField] GameObject background;
     [SerializeField] GameObject slotPrefab;
@@ -37,12 +38,23 @@ public class UI_InventorManager : MonoBehaviour
         monologPlaying = false;
     }
 
+    private void Start()
+    {
+    }
+
     public void ShowInventory(bool active)
     {
         gameObject.SetActive(active);
 
         if (active)
         {
+            #region ResetScrollTransform
+
+            scrollObject.GetComponent<RectTransform>().pivot = new Vector2(0,0.5f);
+
+            #endregion
+
+
             PastObjectPacket[] inventoryArr = InventoryManager.Instance.inventory.ToArray();
             int counter = 0;
 

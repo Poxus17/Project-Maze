@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
+    //Put this script on your needle object
+
     [SerializeField] float needleSpeed;
     [SerializeField] float idleSpinSpeed;
-
+    [SerializeField] float rotationOffset;
+   
     GameObject targetItem;
     bool idle;
     float needleRotationMod;
@@ -29,7 +32,7 @@ public class Compass : MonoBehaviour
             var eularPointing = transform.localEulerAngles;
             transform.eulerAngles = eularAngles;
 
-            eularAngles.y = eularPointing.y + 90;
+            eularAngles.y = eularPointing.y + rotationOffset;
 
             var quaternionPointing = Quaternion.Euler(eularAngles);
             

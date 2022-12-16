@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac04bb1827548d2428caa9f012ee89d2, type: 3}
   m_Name: Teddy
   m_EditorClassIdentifier: 
-  name: Georgy's Teddy bear
+  name: Teddy bear
   clip: {fileID: 8300000, guid: ca3cb9246096db04dbcda5d465211dc6, type: 3}
   transcript: "That's Georgie's teddy bear! Mom gave it to him at Christmas when
     he was 4 years old. He used to carry it around everywhere, he couldn't do anything

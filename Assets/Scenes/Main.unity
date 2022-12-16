@@ -2916,6 +2916,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6852363651595745748, guid: 0a60c0967273f42489ead22bd1b0d2cc, type: 3}
   m_PrefabInstance: {fileID: 1852131121}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &167340905
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1859410085}
+    m_Modifications:
+    - target: {fileID: 8347785705645424409, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: sectionNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.062806
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -103.02407
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424411, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_Size.x
+      value: 35.77279
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424411, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_Size.z
+      value: 35.827568
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424411, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_Center.x
+      value: 14.129536
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424411, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_Center.z
+      value: -11.958492
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347785705645424412, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+      propertyPath: m_Name
+      value: Section 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+--- !u!4 &169480441 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8347785705645424410, guid: 141a2fb913306164a8313463d53c6c0f, type: 3}
+  m_PrefabInstance: {fileID: 167340905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &176245343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6852363651595745748, guid: 0a60c0967273f42489ead22bd1b0d2cc, type: 3}
@@ -6486,7 +6568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.9969997
+      value: -7.29
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6494,23 +6576,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.717428
+      value: 10.27
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7031073
+      value: 0.5564484
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.000000015366899
+      value: 0.000000018021176
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.71108377
+      value: -0.8308822
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000015541229
+      value: -0.000000012365626
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6518,7 +6600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.646
+      value: -112.379
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 61399d2f3ed456342b96a35b5c92fb45, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -6929,52 +7011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 0.25
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!1001 &421205005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9089,52 +9125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!108 &498280601
 Light:
   m_ObjectHideFlags: 0
@@ -10901,52 +10891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!108 &611088193
 Light:
   m_ObjectHideFlags: 0
@@ -17930,52 +17874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!108 &923238052
 Light:
   m_ObjectHideFlags: 0
@@ -21333,52 +21231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!1 &1104511479
 GameObject:
   m_ObjectHideFlags: 0
@@ -23638,7 +23490,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214095331}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -11.873, y: 3.49, z: 4.85}
+  m_LocalPosition: {x: -11.873, y: 3.49, z: 6.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -24604,52 +24456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!108 &1320281599
 Light:
   m_ObjectHideFlags: 0
@@ -26616,7 +26422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8029976
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -26624,19 +26430,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.584416
+      value: 0.6218936
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.58441603
+      value: -0.6218936
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.3980678
+      value: 0.33652404
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.39806783
+      value: 0.336524
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26648,7 +26454,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 68.521
+      value: 56.838
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -31312,7 +31118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1726901498}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -11.88, y: 1.93, z: 8.84}
+  m_LocalPosition: {x: -11.88, y: 2.42, z: 8.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34192,6 +33998,7 @@ Transform:
   - {fileID: 1116061274}
   - {fileID: 898024113}
   - {fileID: 856345216}
+  - {fileID: 169480441}
   m_Father: {fileID: 2108060755}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -34270,52 +34077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!108 &1868821020
 Light:
   m_ObjectHideFlags: 0
@@ -36332,52 +36093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01d29d88278f45458d99e6b5199e920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  strength: 1
-  useScattering: 0
-  overrideScattering: 0
-  overridingScattering: 0.5
-  scatteringBias: 0
-  useColorTemperatureTint: 0
-  overrideColor: 0
-  overridingColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 1
-  useShadow: 1
-  useCookie: 1
-  cookieMapRenderTexture: {fileID: 0}
-  enableOutOfPhaseColor: 0
-  outOfPhaseColorStrength: 0.1
-  outOfPhaseColor:
-    r: 0
-    g: 1
-    b: 1
-    a: 1
-  customDistanceFalloffThreshold: 0.5
-  customDistanceFalloffPower: 2
-  customCookieDistanceFalloffStartThreshold: 0.1
-  customCookieDistanceFalloffEndThreshold: 0.25
-  customCookieDistanceFalloffPower: 2
-  customAngularFalloffThreshold: 0.8
-  customAngularFalloffPower: 2
-  _storeDirectionalShadowDataShader: {fileID: 0}
-  _storeDirectionalSpotCookieMapShader: {fileID: 0}
-  _storePointLightShadowMapShader: {fileID: 0}
-  _storePointLightShadowMapMesh: {fileID: 0}
-  _storePointLightCookieMapShader: {fileID: 0}
-  _isInitialized: 0
-  _lightComponent: {fileID: 0}
-  _previousLightType: 0
-  _previousUseShadow: 0
-  _shadowMapIndex: 0
-  _previousUseCookie: 0
-  _cookieMapIndex: 0
-  _previousCookieTexture: {fileID: 0}
-  _storeShadowDataMaterial: {fileID: 0}
-  _storePointLightShadowMapMaterial: {fileID: 0}
-  _storeCookieMapMaterial: {fileID: 0}
-  <IsActive>k__BackingField: 0
 --- !u!108 &1979473394
 Light:
   m_ObjectHideFlags: 0
@@ -37281,7 +36996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8029976
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37289,19 +37004,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3372938
+      value: 0.50992656
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.3372938
+      value: -0.50992656
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.6214764
+      value: 0.48987234
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.6214764
+      value: 0.48987234
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37313,7 +37028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 123.02
+      value: 87.702
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 967131a7c9597974e82e82d4fcd0a5c5, type: 3}
       propertyPath: m_ConstrainProportionsScale

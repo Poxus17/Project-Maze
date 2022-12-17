@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - RoamPoint
+  - Interact
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,8 @@ using UnityEngine.Events;
 
 public class InteractionHandler : MonoBehaviour
 {
-    [SerializeField] InteractionEvent EnterInspection;
+    [SerializeField] StringVariable currentDetectionText;
+
     Vector3 viewportRaypoint;
     int castMask;
 
@@ -22,10 +23,26 @@ public class InteractionHandler : MonoBehaviour
     {
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 10000, castMask))
-            detectedObject = hit.collider.gameObject.GetComponent<IInteractable>();
-        else
-            detectedObject = null; 
+        if (Physics.Raycast(ray, out hit, 5000))
+        {
+            if(hit.collider.gameObject.tag == "Interact")
+            {
+                if (detectedObject == null)
+                    detectedObject = hit.collider.gameObject.GetComponent<IInteractable>();
+                currentDetectionText.value = detectedObject.GetInteractionText();
+            }
+            else if (detectedObject != null)
+            {
+                detectedObject = null;
+                currentDetectionText.value = "";
+            }
+        }
+        else if(detectedObject != null)
+        {
+            detectedObject = null;
+            currentDetectionText.value = "";
+        }
+            
 
     }
 
@@ -41,8 +58,9 @@ public class InteractionHandler : MonoBehaviour
 public interface IInteractable
 {
     void Interact();
+
+    string GetInteractionText();
 }
 
-public class InteractionEvent : UnityEvent<GameObject> { }
 
 

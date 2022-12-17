@@ -28,6 +28,11 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
         //Send it to FUCKING HELL never to be seen again
         transform.position = new Vector3(-1000, -1000, -1000);
     }
+
+    public string GetInteractionText()
+    {
+        return "Take";
+    }
 }
 
 public class PastObjectPacket

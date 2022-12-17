@@ -10,4 +10,9 @@ public class TreehouseEntracneComponent : MonoBehaviour, IInteractable
     {
         UseEntrance.Raise();
     }
+
+    public string GetInteractionText()
+    {
+        return "Use";
+    } 
 }

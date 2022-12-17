@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CandleTrigger : MonoBehaviour, IInteractable
 {
+    [SerializeField] string onText = "Light up";
+    [SerializeField] string offText = "Blow out";
+
     GameObject particles;
     public delegate void TriggerCandle(bool setTo);
     public event TriggerCandle OnTriggerCandle;
@@ -24,5 +27,10 @@ public class CandleTrigger : MonoBehaviour, IInteractable
         {
             OnTriggerCandle(lit);
         }
+    }
+
+    public string GetInteractionText()
+    {
+        return lit ? offText : onText;
     }
 }

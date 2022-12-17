@@ -6946,6 +6946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maze_High
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e05bd0141b6ac0d45aa5cb7529032eee, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e05bd0141b6ac0d45aa5cb7529032eee, type: 3}
 --- !u!1 &1002719934
@@ -8184,6 +8188,14 @@ PrefabInstance:
     - target: {fileID: 6794367447798532466, guid: ed47acb58b5bd4c41a530b396a1eceeb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072127767381356177, guid: ed47acb58b5bd4c41a530b396a1eceeb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145282460575672494, guid: ed47acb58b5bd4c41a530b396a1eceeb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed47acb58b5bd4c41a530b396a1eceeb, type: 3}
@@ -12752,7 +12764,7 @@ Light:
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 29.554659, y: 28.608864}
+  m_AreaSize: {x: 20, y: 20}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0

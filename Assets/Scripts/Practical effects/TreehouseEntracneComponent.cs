@@ -13,6 +13,6 @@ public class TreehouseEntracneComponent : MonoBehaviour, IInteractable
 
     public string GetInteractionText()
     {
-        return "Use";
+        return "Climb";
     } 
 }

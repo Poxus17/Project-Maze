@@ -20,7 +20,7 @@ public class HeadBobber : MonoBehaviour
     void Start()
     {
         bobbingSpeed = walkingBobbingSpeed;
-        defaultPosY = inTreehouse ? groundY : treehouseY;
+        defaultPosY = inTreehouse.value ? treehouseY : groundY;
     }
 
     // Update is called once per frame

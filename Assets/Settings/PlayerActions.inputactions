@@ -386,10 +386,10 @@
                 {
                     "name": "",
                     "id": "a12c5762-9c07-450f-aa9c-957fe9c60a06",
-                    "path": "",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Bring up compass",
                     "isComposite": false,
                     "isPartOfComposite": false

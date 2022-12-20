@@ -23,7 +23,7 @@ public class InteractionHandler : MonoBehaviour
     {
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 5000))
+        if (Physics.Raycast(ray, out hit, 500))
         {
             if(hit.collider.gameObject.tag == "Interact")
             {

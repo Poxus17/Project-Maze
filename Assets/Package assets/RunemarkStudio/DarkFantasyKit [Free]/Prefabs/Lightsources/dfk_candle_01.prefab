@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4560160398046466}
   - component: {fileID: 33106190743939988}
   - component: {fileID: 23257182146175736}
+  - component: {fileID: -5196407054039003221}
+  - component: {fileID: 7774424860228176054}
   m_Layer: 0
   m_Name: dfk_candle_01
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -84,6 +86,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5196407054039003221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500055415243300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c29a9d5639ae44e93f3c503ed7b8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onText: Light up
+  offText: Blow out
+--- !u!65 &7774424860228176054
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500055415243300}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.037452772, y: 0.13314064, z: 0.03882625}
+  m_Center: {x: -0.0009631347, y: 0.066408746, z: -0.0018901592}
 --- !u!1 &1680396080500948
 GameObject:
   m_ObjectHideFlags: 0

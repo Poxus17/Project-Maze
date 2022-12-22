@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreehouseEntracneComponent : MonoBehaviour, IInteractable
+public class TreehouseEntracneComponent : MonoBehaviour
 {
     [SerializeField] GameEvent UseEntrance;
 
@@ -10,9 +10,4 @@ public class TreehouseEntracneComponent : MonoBehaviour, IInteractable
     {
         UseEntrance.Raise();
     }
-
-    public string GetInteractionText()
-    {
-        return "Climb";
-    } 
 }

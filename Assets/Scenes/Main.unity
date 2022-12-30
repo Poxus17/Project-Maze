@@ -9493,7 +9493,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431708775}
   m_LocalRotation: {x: -0, y: 0.0107216565, z: -0, w: 0.99994254}
-  m_LocalPosition: {x: 17.72853, y: 4.34, z: 16.737038}
+  m_LocalPosition: {x: 6.92, y: 4.34, z: -3.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -31066,6 +31066,10 @@ PrefabInstance:
     - target: {fileID: 3509909819133342674, guid: d61cac1922f12e84bb08ca91d02b0d18, type: 3}
       propertyPath: m_Name
       value: Floating Dust Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 3509909819133342674, guid: d61cac1922f12e84bb08ca91d02b0d18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3509909819133342675, guid: d61cac1922f12e84bb08ca91d02b0d18, type: 3}
       propertyPath: m_Materials.Array.size

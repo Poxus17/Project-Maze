@@ -1,0 +1,2049 @@
+fileFormatVersion: 2
+guid: 686a24e1c68ee4045bc5425a4460f903
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pauseCountdownSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 225c3f7c8fa8c9743b157961baa01fc9
+      internalID: -396420098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_1
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ce93c7b60c5e24a91dca225564a511
+      internalID: -1375228110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_2
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea486db7bd663994ba29f0757724f492
+      internalID: -554237715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_3
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5271445fb113af468c5f196d38693f4
+      internalID: -1798966338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_4
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1a03afb415080e4987ba79e29f52ca7
+      internalID: 1449098569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9763617b4790d64b8662bee6355785e
+      internalID: -1190325259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_6
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d92c4f8b1589304eb24a0c733868b66
+      internalID: -738469504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_7
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 4450
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e63d5dae8c08f5745b8be11d75388865
+      internalID: -2116500736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f91163e92e78374887954d50840081c
+      internalID: -2037424633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1599a199f50314191fc1026309e142
+      internalID: 533952290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_10
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad52b43c465d854e937bb999824e7f9
+      internalID: -1475776810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_11
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1c6d35773daba44bc919b48e360c1a
+      internalID: 1270761048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_12
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b0fd8539a339247bde243ee8134045
+      internalID: 687568343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16eaa59c53479bd4480b5b84d12e4995
+      internalID: -812198703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_14
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b616e5a9b9ed41a43a65d0ed98a7e87f
+      internalID: 351472018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 4005
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b3e01cbd0325d41aef1c0dad74baee
+      internalID: -1613495109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a2a733da00df84c8a4b93e2efd9329
+      internalID: 978487757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_17
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf86626df4e90a49abe6e7f14011312
+      internalID: -1205105165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_18
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b06b7fe721a6314da2c6f112479470d
+      internalID: -2128906511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_19
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474982aa4d524664d8ca18e0ff04afe0
+      internalID: -1216741210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_20
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824ce562b01b9f846b1c99e4c072973a
+      internalID: 49077073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_21
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acf6b71c8dd2bf468d614b8eb93dffc
+      internalID: 21618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6e9152d2c2465042b10d0518b10e48f
+      internalID: 21961735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 3560
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8f4bec180d26634fbff5e2e0ef93399
+      internalID: -1034164726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd0cc5ef529d9f46977eb55bc92dd60
+      internalID: -924431818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_25
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c232635b7ae4584fa9d9305f6743d8a
+      internalID: -325999785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_26
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc76d75d78127c843adafa50bbf34f5b
+      internalID: -744745968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_27
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa5e4a06075039b47923e94a958815d1
+      internalID: 1661284153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_28
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea469f2c7bfe254bb2bb47f16f1c0b0
+      internalID: 999893583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_29
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3065adbe6cac5745ad53d976a4c0450
+      internalID: -1957166957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_30
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53e76fab7cdf8d4981584ba4befad83
+      internalID: 1199569380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_31
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 3115
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fba0b3e2652fa64d98bb92680a24a3a
+      internalID: -76087190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0528e0ad7b82449955d61a291a0aaf
+      internalID: -1686688507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_33
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cd493f752f0aa4a9deae550c38732a
+      internalID: 1595871853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_34
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173a5c57e3a0dcd4ba80d28024ab4817
+      internalID: -532795170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_35
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313adaed624a86b409e204b76087f2cd
+      internalID: -1253084369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_36
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52482cf2ebced042bfabd3073eb98df
+      internalID: -370866151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_37
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31af56b5977d68f4fb0aaeb2abef1d18
+      internalID: 837904463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_38
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26ba41bd1ea1c14ab7b4a009c4b9c20
+      internalID: -1762736027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_39
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 2670
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78c5b50434ca654b9f51ca904419f63
+      internalID: 179011908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc75c1639b7b714f8062935895f8dd9
+      internalID: -604875714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_41
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a3ac9e6eb69fe439dcee028919627f
+      internalID: -1770153252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_42
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5e5b418c59a010418ecf1ab9588134c
+      internalID: 1025868151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_43
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6077755c4f9fa14d93505458a3ab64d
+      internalID: 469382970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_44
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b2c7d1c83f5f54fbdb8a94220fc9c3
+      internalID: 1090490185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_45
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff2ccf7408f9b664f84db2bbfbfaffe2
+      internalID: 1967178183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_46
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 030c6701bfa0cf2458ed0c3747698ca0
+      internalID: 562729718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_47
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 2225
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe226af4fb36af042baf52dc4753cc82
+      internalID: -991385294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac729c26515f3a4eb7aa5464fdfaf61
+      internalID: -494380099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_49
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fc21fcc122ecf4cb0f58dfcfd081fa
+      internalID: -1577347541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_50
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b8a6e87f490444ab50c8b4f8c4013e
+      internalID: 2119113844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_51
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0abde224795ac647ab04b59f6a92061
+      internalID: -683070230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_52
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 349d8233093619749ac4aead4981db51
+      internalID: 726099758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_53
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e56316a0c7c2054b920bc44916710f3
+      internalID: -1721143475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c23362affd5e54d9d523c5d43812f0
+      internalID: -1838437320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_55
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1780
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa977b0cef814a1488009c0aa89623cf
+      internalID: 1029550391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875dcd78e37f3664985ef96fd6bb2221
+      internalID: -884597290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_57
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e4b73478453ed41bd8e434929a822a
+      internalID: -1204253761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_58
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1ddd84c9473a7489173f317268ec55
+      internalID: 2145809917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_59
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 618a1aeae14410c4e99b9bcd034805c0
+      internalID: 106486838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_60
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bafd75aecfaab7a4b8c52a113aff5e65
+      internalID: 1268127535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_61
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27bf0824c90ddfd4a8a17699d0b08d94
+      internalID: -1401484855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_62
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e908062021deec0459a5ac851e8daef5
+      internalID: -910732996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_63
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1335
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25335b5dcf755de439931b3835dbe617
+      internalID: 1480104250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a279de784e0070543a2deccd015b64b4
+      internalID: 1851412569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_65
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74acc1cd27e08134a8db6f73de9cb50d
+      internalID: 1977699774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_66
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30372c6511926c46a03116db0dc760c
+      internalID: -1435443572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_67
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 303c4e5d1af6f0741b1a59b1487e45b1
+      internalID: 728862967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_68
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16abd761126c12940829e0180302649c
+      internalID: -1039527012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_69
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b55105135314840bdf47a527b8ebe1
+      internalID: -1497418174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_70
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f7a40f08ce39342902502e6f07a27f
+      internalID: 626775064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_71
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 890
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67ba20e1d54d36647bb54861f4b10291
+      internalID: 994311423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62240d87cb27f7f428e2874f675dafc7
+      internalID: 432373502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_73
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 431c4727d071e424fbea02a5d3732298
+      internalID: -1466678625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_74
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1859de44e12f2c4ba051fc3863b76cf
+      internalID: 677620546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_75
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e10c5099b2d28f448cf2efe16173c2f
+      internalID: -570690970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_76
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6774484303637d647bd5575178da3d63
+      internalID: -908784694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_77
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5e40841b2237f418b6ab823bd7b1e2
+      internalID: -417237789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_78
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33c2bf6dc3a0a94a81a4d35097afd3d
+      internalID: -665524213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_79
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 445
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d98aa1140cada8d499cb7ed2ef8dadbb
+      internalID: -98069582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f688c68e0aa2ce44fbd7494b4e825108
+      internalID: -833573028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_81
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 415f3b72f566d91448ba90b0017e761f
+      internalID: 1755412303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_82
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399f4daa5d3caab40be0037572fc4d26
+      internalID: -458426459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_83
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410846d67f244c64fa5302712d82556c
+      internalID: -373700918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_84
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 775e3bb2cc6ab9b479ea61c040c43f88
+      internalID: 249991192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_85
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb19b3c50b034d468a09af4bee3c16c
+      internalID: 1406154319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pauseCountdownSheet_86
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 222
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5fd9d11c190ce4eb8676360537a703
+      internalID: -1690411244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 542d118a58a9b8149b23190e68ff75fc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pauseCountdownSheet_16: 978487757
+      pauseCountdownSheet_79: -98069582
+      pauseCountdownSheet_74: 677620546
+      pauseCountdownSheet_52: 726099758
+      pauseCountdownSheet_55: 1029550391
+      pauseCountdownSheet_53: -1721143475
+      pauseCountdownSheet_35: -1253084369
+      pauseCountdownSheet_48: -494380099
+      pauseCountdownSheet_47: -991385294
+      pauseCountdownSheet_51: -683070230
+      pauseCountdownSheet_42: 1025868151
+      pauseCountdownSheet_15: -1613495109
+      pauseCountdownSheet_80: -833573028
+      pauseCountdownSheet_43: 469382970
+      pauseCountdownSheet_85: 1406154319
+      pauseCountdownSheet_37: 837904463
+      pauseCountdownSheet_8: -2037424633
+      pauseCountdownSheet_31: -76087190
+      pauseCountdownSheet_62: -910732996
+      pauseCountdownSheet_18: -2128906511
+      pauseCountdownSheet_5: -1190325259
+      pauseCountdownSheet_70: 626775064
+      pauseCountdownSheet_44: 1090490185
+      pauseCountdownSheet_65: 1977699774
+      pauseCountdownSheet_84: 249991192
+      pauseCountdownSheet_71: 994311423
+      pauseCountdownSheet_20: 49077073
+      pauseCountdownSheet_78: -665524213
+      pauseCountdownSheet_27: 1661284153
+      pauseCountdownSheet_81: 1755412303
+      pauseCountdownSheet_64: 1851412569
+      pauseCountdownSheet_32: -1686688507
+      pauseCountdownSheet_40: -604875714
+      pauseCountdownSheet_50: 2119113844
+      pauseCountdownSheet_29: -1957166957
+      pauseCountdownSheet_76: -908784694
+      pauseCountdownSheet_3: -1798966338
+      pauseCountdownSheet_77: -417237789
+      pauseCountdownSheet_58: 2145809917
+      pauseCountdownSheet_13: -812198703
+      pauseCountdownSheet_86: -1690411244
+      pauseCountdownSheet_19: -1216741210
+      pauseCountdownSheet_68: -1039527012
+      pauseCountdownSheet_17: -1205105165
+      pauseCountdownSheet_2: -554237715
+      pauseCountdownSheet_11: 1270761048
+      pauseCountdownSheet_14: 351472018
+      pauseCountdownSheet_56: -884597290
+      pauseCountdownSheet_7: -2116500736
+      pauseCountdownSheet_34: -532795170
+      pauseCountdownSheet_72: 432373502
+      pauseCountdownSheet_61: -1401484855
+      pauseCountdownSheet_41: -1770153252
+      pauseCountdownSheet_59: 106486838
+      pauseCountdownSheet_46: 562729718
+      pauseCountdownSheet_57: -1204253761
+      pauseCountdownSheet_45: 1967178183
+      pauseCountdownSheet_38: -1762736027
+      pauseCountdownSheet_21: 21618
+      pauseCountdownSheet_10: -1475776810
+      pauseCountdownSheet_66: -1435443572
+      pauseCountdownSheet_36: -370866151
+      pauseCountdownSheet_30: 1199569380
+      pauseCountdownSheet_25: -325999785
+      pauseCountdownSheet_49: -1577347541
+      pauseCountdownSheet_82: -458426459
+      pauseCountdownSheet_26: -744745968
+      pauseCountdownSheet_12: 687568343
+      pauseCountdownSheet_24: -924431818
+      pauseCountdownSheet_0: -396420098
+      pauseCountdownSheet_73: -1466678625
+      pauseCountdownSheet_33: 1595871853
+      pauseCountdownSheet_75: -570690970
+      pauseCountdownSheet_28: 999893583
+      pauseCountdownSheet_39: 179011908
+      pauseCountdownSheet_69: -1497418174
+      pauseCountdownSheet_4: 1449098569
+      pauseCountdownSheet_63: 1480104250
+      pauseCountdownSheet_67: 728862967
+      pauseCountdownSheet_60: 1268127535
+      pauseCountdownSheet_1: -1375228110
+      pauseCountdownSheet_83: -373700918
+      pauseCountdownSheet_22: 21961735
+      pauseCountdownSheet_9: 533952290
+      pauseCountdownSheet_54: -1838437320
+      pauseCountdownSheet_6: -738469504
+      pauseCountdownSheet_23: -1034164726
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

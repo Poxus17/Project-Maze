@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 6371622941758566020}
   - component: {fileID: 6371622941755174566}
   - component: {fileID: 6371622941756140646}
+  - component: {fileID: 5218893808267360581}
   m_Layer: 0
   m_Name: SM_Vertical_Vine_Large03_LOD0
   m_TagString: Untagged
@@ -251,6 +252,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5218893808267360581
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371622941758075556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: c877f47b3a6a1c34b8fa8ba8ecedd79c, type: 3}
 --- !u!1 &6371622941758075558
 GameObject:
   m_ObjectHideFlags: 0

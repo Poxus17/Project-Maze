@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections;
 using UnityEngine.InputSystem;
 
 /// <summary>
@@ -10,10 +11,12 @@ public class StormLighter : MonoBehaviour
 
     #region Fields
 
-    //The key to open the lighter
-    public KeyCode OpenKey;
-    //the key to turn on the lighter (particle system)
-    public KeyCode TurnOnKey;
+    [SerializeField] Light mainLight;
+    [SerializeField] Light handLight;
+    [SerializeField] float openToLightDelay = 0.2f;
+    [SerializeField] float lightAttemptsMean = 2;
+    [SerializeField] float lightAttemptsDeviation = 2;
+    
     //The animator
     private Animator _animator;
     //The target particel system
@@ -24,8 +27,6 @@ public class StormLighter : MonoBehaviour
     private AudioClip[] _audioClips;
     //Determines if the lighter is open or not
     private bool _isOpen;
-
-    private Light _light;
 
     #endregion
 
@@ -40,7 +41,6 @@ public class StormLighter : MonoBehaviour
         {
             _animator = GetComponent<Animator>();
             _particleSystem = GetComponentInChildren<ParticleSystem>();
-            _light = GetComponentInChildren<Light>();
             _particleSystem.gameObject.SetActive(false);
 
             _audioClips = new AudioClip[3];
@@ -67,7 +67,8 @@ public class StormLighter : MonoBehaviour
                 //Close the lighter
                 _animator.SetTrigger("Close");
                 _particleSystem.gameObject.SetActive(false);
-                _light.enabled = false;
+                mainLight.enabled = false;
+                handLight.enabled = false;
                 _isOpen = false;
             }
             else
@@ -75,24 +76,34 @@ public class StormLighter : MonoBehaviour
                 if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
                 {
                     //open the lighter
-                    _animator.SetTrigger("Open");
-                    _isOpen = true;
+                    StartCoroutine(OpenLighter());
                 }
             }
         }
         
     }
 
-    public void TurnOn()
+    IEnumerator OpenLighter()
     {
-        if (_isOpen)
+        _animator.SetTrigger("Open");
+        yield return new WaitForSeconds(openToLightDelay);
+
+        var attempts = NormalDisRandom(lightAttemptsMean, lightAttemptsDeviation);
+        Debug.Log(attempts);
+        for(int i =0; i<attempts; i++)
         {
-            _animator.SetTrigger("TurnOn");
-            _particleSystem.gameObject.SetActive(true);
-            _light.enabled = true;
+            MusicMan.instance.PlaySE(_audioClips[2]);
+            yield return new WaitForSeconds(openToLightDelay);
         }
+
+        MusicMan.instance.PlaySE(_audioClips[2]);
+        _particleSystem.gameObject.SetActive(true);
+        mainLight.enabled = true;
+        handLight.enabled = true;
+        _isOpen = true;
     }
 
+    # region DEPRECATED
     //Plays the "open" sound effect (animation event)
     public void PlayOpenSound()
     {
@@ -112,6 +123,16 @@ public class StormLighter : MonoBehaviour
     {
         _audioSource.clip = _audioClips[2];
         _audioSource.Play();
+    }
+
+    #endregion
+
+    public int NormalDisRandom(float mean, float standardDeviation)
+    {
+        float u1 = 1.0f - UnityEngine.Random.value;
+        float u2 = 1.0f - UnityEngine.Random.value;
+        float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2);
+        return (int)Mathf.Round(mean + standardDeviation * randStdNormal);
     }
 
     #endregion

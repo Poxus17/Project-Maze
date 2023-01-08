@@ -168,20 +168,21 @@ public class FPSMovementController : MonoBehaviour
 
     void SetSneak(bool setTo)
     {
-        if(speed >= slideSpeedRequirement)
+        isSneaking.value = setTo;
+        SetSpeed();
+        OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
+        StartCoroutine(TransitionCrouch(setTo));
+
+        /*if (isSprint.value && isSneaking.value)
+            SetSprint(false);
+        if (speed >= slideSpeedRequirement)
         {
             slideAnim.Play();
         }
         else
         {
-            isSneaking.value = setTo;
-            SetSpeed();
-            OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
-            StartCoroutine(TransitionCrouch(setTo));
-
-            if (isSprint.value && isSneaking.value)
-                SetSprint(false);
-        }
+            
+        }*/
     }
 
     IEnumerator TransitionCrouch(bool toCrouch)

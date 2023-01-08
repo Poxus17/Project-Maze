@@ -37,7 +37,7 @@ public class SanityManager : MonoBehaviour
 
         audioSource.volume = Mathf.Lerp(minVolume, maxVolume, (1 - (sanity/fullSanity)) );
 
-        Debug.Log("Sanity - " + sanity + " | Sanity ratio - " + (1 - (sanity / fullSanity)));
+        //Debug.Log("Sanity - " + sanity + " | Sanity ratio - " + (1 - (sanity / fullSanity)));
         //audioSource.pitch = Mathf.Lerp(minPitch, maxPitch, (1 - (sanity / fullSanity)) );
     }
 }

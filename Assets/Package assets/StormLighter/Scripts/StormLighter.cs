@@ -89,7 +89,6 @@ public class StormLighter : MonoBehaviour
         yield return new WaitForSeconds(openToLightDelay);
 
         var attempts = NormalDisRandom(lightAttemptsMean, lightAttemptsDeviation);
-        Debug.Log(attempts);
         for(int i =0; i<attempts; i++)
         {
             MusicMan.instance.PlaySE(_audioClips[2]);
@@ -129,10 +128,11 @@ public class StormLighter : MonoBehaviour
 
     public int NormalDisRandom(float mean, float standardDeviation)
     {
-        float u1 = 1.0f - UnityEngine.Random.value;
-        float u2 = 1.0f - UnityEngine.Random.value;
-        float randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2);
-        return (int)Mathf.Round(mean + standardDeviation * randStdNormal);
+        var u1 = 1.0f - UnityEngine.Random.value;
+        var u2 = 1.0f - UnityEngine.Random.value;
+        var randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2);
+        var rolled = Mathf.Round(mean + standardDeviation * randStdNormal);
+        return (int)Mathf.Clamp(rolled,0f,4f);
     }
 
     #endregion

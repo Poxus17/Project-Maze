@@ -10,6 +10,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] float walkingSpeed = 1;
     [SerializeField] float runningSpeed = 2;
     [SerializeField] float sneakSpeed = 0.7f;
+    [SerializeField] float speedLerpTimePerUnit = 0.1f; //per unity is per 1 speed
     [Space(10)]
 
     [Header("Stamina Settings")]
@@ -24,6 +25,11 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] float crouchTranisitonSpeed;
     [SerializeField] GameObject camera;
     [Space(10)]
+
+    [Header("SlideSettings")]
+    [SerializeField] float slideSpeed;
+    [SerializeField] float slideSpeedRequirement;
+    [SerializeField] Animation slideAnim;
 
     [Header("Local Events")]
     [SerializeField] UnityEvent BrodSprint;
@@ -51,9 +57,12 @@ public class FPSMovementController : MonoBehaviour
 
     bool staminaRecoveryMode;
     bool isCrouching; //reffering to the act, not the state, the state is Sneak
+    bool isLerpingSpeed;
 
     float speed;
     float stamina;
+
+    SpeedLerpObject speedLerpObject;
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +70,8 @@ public class FPSMovementController : MonoBehaviour
         rb= GetComponent<Rigidbody>();
         speed = walkingSpeed;
         stamina = fullStamina;
+
+        speedLerpObject = new SpeedLerpObject();
     }
 
     private void Update()
@@ -137,8 +148,14 @@ public class FPSMovementController : MonoBehaviour
 
     void SetSpeed()
     {
-        speed = isSneaking.value ? sneakSpeed :
-            (isSprint.value ? runningSpeed : walkingSpeed);
+        speedLerpObject.SetObjectValues(
+            speed,
+            isSneaking.value ? sneakSpeed :
+                (isSprint.value ? runningSpeed : walkingSpeed)
+            );
+
+        if (!isLerpingSpeed)
+            StartCoroutine(SpeedLerp());
     }
 
     void SetSprint(bool setTo)
@@ -151,13 +168,20 @@ public class FPSMovementController : MonoBehaviour
 
     void SetSneak(bool setTo)
     {
-        isSneaking.value = setTo;
-        SetSpeed();
-        OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
-        StartCoroutine(TransitionCrouch(setTo));
+        if(speed >= slideSpeedRequirement)
+        {
+            slideAnim.Play();
+        }
+        else
+        {
+            isSneaking.value = setTo;
+            SetSpeed();
+            OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
+            StartCoroutine(TransitionCrouch(setTo));
 
-        if (isSprint.value && isSneaking.value)
-            SetSprint(false);
+            if (isSprint.value && isSneaking.value)
+                SetSprint(false);
+        }
     }
 
     IEnumerator TransitionCrouch(bool toCrouch)
@@ -189,6 +213,70 @@ public class FPSMovementController : MonoBehaviour
         LeaveUI.Raise();
     }
 
+    public float GetSpeedLerpTime()
+    {
+        if (isSneaking.value)
+            return Mathf.Abs(speed - sneakSpeed) * speedLerpTimePerUnit;
+        else if (isSprint.value)
+            return (Mathf.Abs(speed - runningSpeed) * speedLerpTimePerUnit);
+        else
+            return Mathf.Abs(speed - walkingSpeed) * speedLerpTimePerUnit;
+    }
+
+
+    IEnumerator SpeedLerp()
+    {
+        isLerpingSpeed = true;
+        float alphaDelta = 1 / GetSpeedLerpTime();
+        speedLerpObject.ConsumeRestart();
+
+        while (speedLerpObject.alpha < 1.0f)
+        {
+            if (speedLerpObject.restart)
+            {
+                speedLerpObject.ConsumeRestart();
+                alphaDelta = 1 / GetSpeedLerpTime();
+            }
+                
+
+            speed = Mathf.Lerp(speedLerpObject.speedA, speedLerpObject.speedB, speedLerpObject.alpha);
+            yield return null;
+
+
+            speedLerpObject.alpha += alphaDelta * Time.deltaTime;
+        }
+
+        isLerpingSpeed = false;
+    }
 }
 
 public enum MovementType { Walk, Run, Sneak}
+
+class SpeedLerpObject
+{
+    public float speedA { get; private set; }
+    public float speedB { get; private set; }
+    public float alpha;
+    public bool restart { get; private set; }
+
+    public SpeedLerpObject()
+    {
+        speedA = 0f;
+        speedB = 0f;
+        alpha = 0f;
+        restart = false;
+    }
+
+    public void SetObjectValues(float speedA, float speedB)
+    {
+        this.speedA = speedA;
+        this.speedB = speedB;
+        restart = true;
+    }
+
+    public void ConsumeRestart()
+    {
+        restart = false;
+        alpha = 0f;
+    }
+}

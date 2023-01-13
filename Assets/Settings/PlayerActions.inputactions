@@ -94,6 +94,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Whistle",
+                    "type": "Button",
+                    "id": "07825562-0a6d-47f9-8922-cd9b62c7c85e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -276,7 +285,7 @@
                 {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "Tap",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
@@ -320,7 +329,7 @@
                 {
                     "name": "",
                     "id": "abe257a2-e532-4942-afaa-4c9be0989f61",
-                    "path": "<Keyboard>/q",
+                    "path": "<Keyboard>/i",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -364,7 +373,7 @@
                 {
                     "name": "",
                     "id": "d7cd6575-0993-4169-acd5-c78d7baee2c0",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -375,7 +384,7 @@
                 {
                     "name": "",
                     "id": "a12c5762-9c07-450f-aa9c-957fe9c60a06",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -391,6 +400,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4e51a439-94e0-4767-bed0-25db3fcee3e4",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Whistle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

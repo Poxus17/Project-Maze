@@ -29,7 +29,8 @@ public class FPSMovementController : MonoBehaviour
     [Header("SlideSettings")]
     [SerializeField] float slideSpeed;
     [SerializeField] float slideSpeedRequirement;
-    [SerializeField] Animation slideAnim;
+    [SerializeField] string slideTrigger;
+    [SerializeField] Animator animator; //animator.
 
     [Header("Local Events")]
     [SerializeField] UnityEvent BrodSprint;
@@ -38,6 +39,7 @@ public class FPSMovementController : MonoBehaviour
     [Header("Asset Variables")]
     [SerializeField] BoolVariable isSprint;
     [SerializeField] BoolVariable isSneaking;
+    [SerializeField] BoolVariable controlLock;
     [SerializeField] FloatVariable staminaPercent;
     [SerializeField] GameEvent LeaveUI;
 
@@ -63,6 +65,8 @@ public class FPSMovementController : MonoBehaviour
     float stamina;
 
     SpeedLerpObject speedLerpObject;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -104,22 +108,26 @@ public class FPSMovementController : MonoBehaviour
         staminaPercent.value = (stamina / fullStamina);
         #endregion
 
-        #region Movement
-        var horizontal = rawMovement.y * speed * transform.forward;
-        var vertical = rawMovement.x * speed * transform.right;
+        if (!controlLock.value)
+        {
+            #region Movement
+            var horizontal = rawMovement.y * speed * transform.forward;
+            var vertical = rawMovement.x * speed * transform.right;
 
-        movement = horizontal + vertical;
+            movement = horizontal + vertical;
 
-        rb.velocity = new Vector3(movement.x, 0, movement.z);
-        isWalking = movement.magnitude > 0;
+            rb.velocity = new Vector3(movement.x, 0, movement.z);
+            isWalking = movement.magnitude > 0;
 
-        //Notify change in IsWalking
-        if (isWalking != walkingMemory)
-            OnChangeIsWalking(isWalking);
+            //Notify change in IsWalking
+            if (isWalking != walkingMemory)
+                OnChangeIsWalking(isWalking);
 
-        walkingMemory = isWalking;
+            walkingMemory = isWalking;
 
-        #endregion
+            #endregion
+        }
+
     }
 
     public void ReadMove(InputAction.CallbackContext context)
@@ -129,6 +137,9 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sprint(InputAction.CallbackContext context)
     {
+        if (controlLock.value)
+            return;
+
         if (!isSneaking.value)
         {
             if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode)
@@ -140,6 +151,9 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sneak(InputAction.CallbackContext context)
     {
+        if (controlLock.value)
+            return;
+
         if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !isCrouching)
         {
             SetSneak(context.ReadValue<float>() > 0);
@@ -168,21 +182,22 @@ public class FPSMovementController : MonoBehaviour
 
     void SetSneak(bool setTo)
     {
-        isSneaking.value = setTo;
-        SetSpeed();
-        OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
-        StartCoroutine(TransitionCrouch(setTo));
-
-        /*if (isSprint.value && isSneaking.value)
-            SetSprint(false);
+        
         if (speed >= slideSpeedRequirement)
         {
-            slideAnim.Play();
+            animator.SetTrigger(slideTrigger);
+            StartCoroutine(SlideAction());
         }
         else
         {
-            
-        }*/
+            isSneaking.value = setTo;
+            SetSpeed();
+            OnChangeMovementType(setTo ? MovementType.Sneak : MovementType.Walk);
+            StartCoroutine(TransitionCrouch(setTo));
+
+            if (isSprint.value && isSneaking.value)
+                SetSprint(false);
+        }
     }
 
     IEnumerator TransitionCrouch(bool toCrouch)
@@ -248,6 +263,23 @@ public class FPSMovementController : MonoBehaviour
         }
 
         isLerpingSpeed = false;
+    }
+
+    IEnumerator SlideAction()
+    {
+        controlLock.value = true;
+
+        Vector3 move;
+        var time = 0.0f;
+
+        while(time < 1)
+        {
+            move = slideSpeed * transform.forward;
+            rb.velocity = new Vector3(move.x, 0, move.z);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        controlLock.value = false;
     }
 }
 

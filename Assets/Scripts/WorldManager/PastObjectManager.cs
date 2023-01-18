@@ -9,6 +9,7 @@ public class PastObjectManager : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] PastObjectPacketVariable InspectionPacket;
     [SerializeField] GameEvent EnterInspection;
+    [SerializeField] FloatVariable itemCount;
 
     public string text { get; }
 
@@ -28,11 +29,17 @@ public class PastObjectManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+#if UNITY_EDITOR
+        itemCount.value = 0;
+#endif
         audioSource = GetComponent<AudioSource>();
+
     }
 
     public void Interact(PastObjectPacket packet)
     {
+        itemCount.value++;
+
         audioSource.clip = packet.data.clip;
         audioSource.Play();
 

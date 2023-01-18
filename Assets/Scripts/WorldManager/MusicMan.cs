@@ -24,8 +24,9 @@ public class MusicMan : MonoBehaviour
             Destroy(this);
     }
 
-    public void PlaySE(AudioClip clip)
+    public void PlaySE(AudioClip clip, float volume)
     {
+        seSource.volume = volume;
         seSource.PlayOneShot(clip);
     }
 

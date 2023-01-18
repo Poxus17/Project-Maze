@@ -159,7 +159,7 @@ public class KellekHuntController : MainAiController
     IEnumerator IllGiveYouToTheCountOf()
     {
         state = States.Chase;
-        MusicMan.instance.PlaySE(detectSE);
+        MusicMan.instance.PlaySE(detectSE, 1f);
         controller.CancelMovement();
         yield return new WaitForSeconds(chaseWaitTime);
 

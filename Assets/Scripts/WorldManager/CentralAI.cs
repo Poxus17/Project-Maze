@@ -8,6 +8,8 @@ public class CentralAI : MonoBehaviour
     [SerializeField] LayerMask wallsMask;
     [SerializeField] float wallReductionPercent;
     [SerializeField] KellekHuntController kellek;
+    [SerializeField] FloatVariable itemCount;
+    [SerializeField] float kellekItemCount;
 
     [System.NonSerialized]
     public GameObject player;
@@ -115,6 +117,9 @@ public class CentralAI : MonoBehaviour
 
     public void SpawnInRing()
     {
+        if (itemCount.value <= kellekItemCount)
+            return;
+
         foreach(AiRoamManager rm in roamManagers)
         {
             rm.LoadRoamData(1, SectionsManager.instance.currentSection);

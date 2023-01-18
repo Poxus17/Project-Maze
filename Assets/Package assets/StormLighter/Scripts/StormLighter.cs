@@ -16,6 +16,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] float openToLightDelay = 0.2f;
     [SerializeField] float lightAttemptsMean = 2;
     [SerializeField] float lightAttemptsDeviation = 2;
+    [SerializeField] float lightSeVolume = 0.5f;
     
     //The animator
     private Animator _animator;
@@ -91,11 +92,11 @@ public class StormLighter : MonoBehaviour
         var attempts = NormalDisRandom(lightAttemptsMean, lightAttemptsDeviation);
         for(int i =0; i<attempts; i++)
         {
-            MusicMan.instance.PlaySE(_audioClips[2]);
+            MusicMan.instance.PlaySE(_audioClips[2], lightSeVolume );
             yield return new WaitForSeconds(openToLightDelay);
         }
 
-        MusicMan.instance.PlaySE(_audioClips[2]);
+        MusicMan.instance.PlaySE(_audioClips[2],lightSeVolume);
         _particleSystem.gameObject.SetActive(true);
         mainLight.enabled = true;
         handLight.enabled = true;

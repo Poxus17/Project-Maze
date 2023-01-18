@@ -10,7 +10,7 @@ public class TriggeredSEHandler : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            MusicMan.instance.PlaySE(clipBatch.GetRandomAudioClip());
+            MusicMan.instance.PlaySE(clipBatch.GetRandomAudioClip(), 1);
 
         }
     }

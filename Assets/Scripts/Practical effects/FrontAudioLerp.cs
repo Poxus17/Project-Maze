@@ -15,6 +15,7 @@ public class FrontAudioLerp : MonoBehaviour
 
     Transform otherT;
 
+
     void Start()
     {
 
@@ -26,19 +27,21 @@ public class FrontAudioLerp : MonoBehaviour
         {
             float distance = Vector3.Distance(audioSource.transform.position, otherT.position);
             float lerpValue = Mathf.InverseLerp(minDistance, maxDistance, distance);
-            audioSource.volume = Mathf.Lerp(minVolume, maxVolume, lerpValue);
+            audioSource.volume = Mathf.Lerp(minVolume, maxVolume, 1-lerpValue);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
         if (other.tag != "MainCamera")
             return;
 
+        if (other.transform.position.z < transform.position.z)
+            return;
+
+        otherT = other.transform;        
         allowedLerp = true;
-        otherT = other.transform;
-        Debug.Log(Vector3.Distance(audioSource.transform.position, otherT.position));
+        audioSource.gameObject.SetActive(allowedLerp);
     }
     private void OnTriggerExit(Collider other)
     {
@@ -46,5 +49,7 @@ public class FrontAudioLerp : MonoBehaviour
             return;
 
         allowedLerp = false;
+        audioSource.gameObject.SetActive(allowedLerp);
     }
+
 }

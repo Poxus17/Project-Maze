@@ -38,3 +38,5 @@ sysinfo.txt
 *.unitypackage
 Assets/Audio/Music/Little Nightmares II OST_ Man in the Hat Chase Extended.wav
 Assets/Audio/Music/Outlast Richard Trager Attack OST Extended.wav
+*.wav
+*.mp3

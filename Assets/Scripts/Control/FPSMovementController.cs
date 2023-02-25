@@ -154,7 +154,8 @@ public class FPSMovementController : MonoBehaviour
         /*if (controlLock.value)
             return;*/
 
-        if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !isCrouching)
+
+        if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled))
         {
             SetSneak(context.ReadValue<float>() > 0);
         }

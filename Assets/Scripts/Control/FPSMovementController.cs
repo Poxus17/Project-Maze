@@ -137,8 +137,8 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sprint(InputAction.CallbackContext context)
     {
-        if (controlLock.value)
-            return;
+        /*if (controlLock.value)
+            return;*/
 
         if (!isSneaking.value)
         {
@@ -151,8 +151,8 @@ public class FPSMovementController : MonoBehaviour
 
     public void Sneak(InputAction.CallbackContext context)
     {
-        if (controlLock.value)
-            return;
+        /*if (controlLock.value)
+            return;*/
 
         if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !isCrouching)
         {

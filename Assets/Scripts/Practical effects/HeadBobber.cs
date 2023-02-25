@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeadBobber : MonoBehaviour
 {
+    public float delay;
     public float walkingBobbingSpeed;
     public float runningBobbingSpeed;
     public float bobbingAmount = 0.05f;
@@ -29,7 +30,7 @@ public class HeadBobber : MonoBehaviour
         if (FPSMovementController.isWalking)
         {
             //Player is moving
-            timer += Time.deltaTime * bobbingSpeed;
+            timer += (Time.deltaTime * bobbingSpeed) - delay;
             transform.localPosition = new Vector3(transform.localPosition.x, defaultPosY + Mathf.Sin(timer) * bobbingAmount, transform.localPosition.z);
         }
         else

@@ -76,6 +76,7 @@ public class FPSMovementController : MonoBehaviour
         stamina = fullStamina;
 
         speedLerpObject = new SpeedLerpObject();
+        Cursor.visible = false;
     }
 
     private void Update()

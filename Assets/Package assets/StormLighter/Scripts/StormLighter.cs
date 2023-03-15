@@ -84,6 +84,16 @@ public class StormLighter : MonoBehaviour
         
     }
 
+    public void BlowOut(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _particleSystem.gameObject.SetActive(false);
+            mainLight.enabled = false;
+            handLight.enabled = false;
+        }
+    }
+
     IEnumerator OpenLighter()
     {
         _animator.SetTrigger("Open");

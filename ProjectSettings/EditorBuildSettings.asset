@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 1c9ff1371352ce14d91f6bf97f667488
+  - enabled: 0
+    path: Assets/DarknessScene.unity
+    guid: 4afe89b315c77824c92b34d3f3b23c19
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 02fb344875b3d27459987a44b97ce432, type: 2}

@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class Debug_FlyingController : MonoBehaviour
 {
 
-    float normalspeed = 1;
-    float slowSpeed = 0.2f;
+    public float normalspeed = 1;
+    public float slowSpeed = 0.1f;
     float speed;
     bool slow = false;
     float raw3d;

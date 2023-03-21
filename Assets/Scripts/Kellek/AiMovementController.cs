@@ -48,7 +48,6 @@ public class AiMovementController : MonoBehaviour
         {
             dist = agent.remainingDistance;
             stillMoving = !(dist != Mathf.Infinity && dist <= 2f);
-            Debug.Log(stillMoving);
             yield return null;
         }
 
@@ -74,7 +73,8 @@ public class AiMovementController : MonoBehaviour
 
     public void SetStop(bool setTo)
     {
-        agent.isStopped = setTo;
+        if(agent.isOnNavMesh)
+            agent.isStopped = setTo;
     }
 
     public static void Debug_PrintListeners()

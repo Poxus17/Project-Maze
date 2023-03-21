@@ -10,6 +10,7 @@ public class AiSightController : MonoBehaviour
 {
     [SerializeField] public float sightRange;
     [SerializeField] public float angleFromForward;
+    [SerializeField] LayerMask layerMask;
 
     float cosAngle;
 
@@ -32,12 +33,16 @@ public class AiSightController : MonoBehaviour
             return;
 
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, targetVector, out hit))
+        if(Physics.Raycast(transform.position, targetVector, out hit, Mathf.Infinity, layerMask))
         {
-            if(hit.collider.gameObject == CentralAI.Instance.player)
+            if(hit.collider.gameObject == Camera.main.gameObject)
             {
                 Debug.Log("In sight");
                 OnSeeTarget();
+            }
+            else
+            {
+                Debug.Log(hit.collider.gameObject.name);
             }
         }
     }

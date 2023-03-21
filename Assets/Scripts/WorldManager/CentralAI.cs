@@ -117,7 +117,7 @@ public class CentralAI : MonoBehaviour
 
     public void SpawnInRing()
     {
-        if (itemCount.value <= kellekItemCount)
+        if (itemCount.value < kellekItemCount)
             return;
 
         foreach(AiRoamManager rm in roamManagers)

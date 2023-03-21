@@ -89,8 +89,8 @@ public class StormLighter : MonoBehaviour
         if (context.started)
         {
             _particleSystem.gameObject.SetActive(false);
-            mainLight.enabled = false;
-            handLight.enabled = false;
+            //mainLight.enabled = false;
+            //handLight.enabled = false;
         }
     }
 
@@ -103,7 +103,14 @@ public class StormLighter : MonoBehaviour
         for(int i =0; i<attempts; i++)
         {
             MusicMan.instance.PlaySE(_audioClips[2], lightSeVolume );
-            yield return new WaitForSeconds(openToLightDelay);
+
+            mainLight.enabled = true;
+            handLight.enabled = true;
+            yield return new WaitForSeconds(0.01f);
+            mainLight.enabled = false;
+            handLight.enabled = false;
+
+            yield return new WaitForSeconds(openToLightDelay - 0.01f);
         }
 
         MusicMan.instance.PlaySE(_audioClips[2],lightSeVolume);

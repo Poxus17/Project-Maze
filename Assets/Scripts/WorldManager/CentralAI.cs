@@ -77,7 +77,7 @@ public class CentralAI : MonoBehaviour
 
             //Debug.Log(NoiseReduction(level, hits.Length, (distance / listener.range)));
             Debug.DrawRay(listener.transform.position, noisePosition - listener.transform.position);
-            Debug.Log("Noise through " + hits.Length + " walls");
+            //Debug.Log("Noise through " + hits.Length + " walls");
 
             var reducedNoise = NoiseReduction(level, hits.Length, (distance / listener.range));
             listener.GetNoise(reducedNoise);
@@ -122,7 +122,7 @@ public class CentralAI : MonoBehaviour
 
         foreach(AiRoamManager rm in roamManagers)
         {
-            rm.LoadRoamData(1, SectionsManager.instance.currentSection);
+            rm.LoadRoamData(1, SectionsManager.instance.currentSection); 
         }
 
         //FIX THIS SHIT

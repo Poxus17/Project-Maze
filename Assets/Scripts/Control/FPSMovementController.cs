@@ -11,6 +11,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] float runningSpeed = 2;
     [SerializeField] float sneakSpeed = 0.7f;
     [SerializeField] float speedLerpTimePerUnit = 0.1f; //per unity is per 1 speed
+    [SerializeField] float speedDecay;
     [Space(10)]
 
     [Header("Stamina Settings")]
@@ -116,6 +117,11 @@ public class FPSMovementController : MonoBehaviour
             var vertical = rawMovement.x * speed * transform.right;
 
             movement = horizontal + vertical;
+
+            if (movement.magnitude == 0 && rb.velocity.x > 0 && speedDecay > 0)
+            {
+                movement = rb.velocity - (new Vector3(speedDecay, 0, 0));
+            }
 
             rb.velocity = new Vector3(movement.x, 0, movement.z);
             isWalking = movement.magnitude > 0;

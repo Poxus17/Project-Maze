@@ -6,6 +6,33 @@
             "id": "376f189d-884f-4678-aa2f-963dd378fe4f",
             "actions": [
                 {
+                    "name": "TestFeature",
+                    "type": "Button",
+                    "id": "8eed00f0-5b2f-4c6a-9523-39b3632c4ece",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TestFeature2",
+                    "type": "Button",
+                    "id": "8e381b41-9b2e-4e85-93f1-5eaeb54305bc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TestFeature3",
+                    "type": "Button",
+                    "id": "19b935bb-417f-4482-a473-9bc46c5cd0fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "859c8f60-6f35-4c44-a84d-93ca6bf6f3fb",
@@ -45,15 +72,6 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "3ead7971-3f03-407c-829d-77eefcfe02a2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "TestFeature",
-                    "type": "Button",
-                    "id": "8eed00f0-5b2f-4c6a-9523-39b3632c4ece",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -359,17 +377,6 @@
                 },
                 {
                     "name": "",
-                    "id": "5eeefdec-31f0-4050-9a9b-20c141e031aa",
-                    "path": "<Keyboard>/p",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "TestFeature",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "35791823-1183-4a68-9cad-effd50968e1f",
                     "path": "<Keyboard>/ctrl",
                     "interactions": "",
@@ -455,6 +462,39 @@
                     "action": "3d mv",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5eeefdec-31f0-4050-9a9b-20c141e031aa",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TestFeature",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "02dea0ae-5b6b-4044-b1e0-59f3ae3bdf0c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TestFeature2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1900f6d5-7e3e-4dc4-922e-0f7c45fe8185",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TestFeature3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

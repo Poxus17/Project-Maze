@@ -35,14 +35,9 @@ public class AiSightController : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, targetVector, out hit, Mathf.Infinity, layerMask))
         {
-            if(hit.collider.gameObject == Camera.main.gameObject)
+            if(hit.collider.gameObject.tag == "MainCamera")
             {
-                Debug.Log("In sight");
                 OnSeeTarget();
-            }
-            else
-            {
-                Debug.Log(hit.collider.gameObject.name);
             }
         }
     }

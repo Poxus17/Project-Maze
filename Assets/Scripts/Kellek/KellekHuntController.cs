@@ -13,6 +13,7 @@ public class KellekHuntController : MainAiController
 
     [Header("Music Components")]
     [SerializeField] AudioClip detectSE;
+    [SerializeField] AudioClip stepAway;
     [SerializeField] AudioClip[] detectionLaughs;
     [SerializeField] AudioSource laughAudioSource;
     public BoolEvent OnChase;
@@ -21,8 +22,10 @@ public class KellekHuntController : MainAiController
     [Header("Settings")]
     [SerializeField] float blindChaceTimeMax;
     [SerializeField] float blindChaceTimeMin;
+    [SerializeField] float minimalChaseTime;
     [SerializeField] float disengageRange;
     [SerializeField] float chaseWaitTime;
+    [SerializeField] Renderer renderer;
     [Space(5)]
 
     [Header("Spawn")]
@@ -33,17 +36,19 @@ public class KellekHuntController : MainAiController
 
     Vector3 lastRoam = Vector3.zero;
     Vector3 lastHeardAt;
+    Vector3 lastSeenAt;
     Vector3 oblivion = new Vector3(-10000, -10000, -10000);
 
     bool disengage = false;
-    bool queueShakeoff= false;
+    bool queueShakeoff = false;
+    bool blindChasing = false;
 
     public GameObject parentObject { get; private set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        state = States.Prowl;
+        state = States.OffMap;
         parentObject = gameObject.transform.parent.gameObject;
         AiMovementController.OnArrivedAtDestination += DestinationArrived;
         AiListenerController.OnNoticeNoise += ChaseNoise;
@@ -101,7 +106,10 @@ public class KellekHuntController : MainAiController
         }
         else if (state == States.Chase)
         {
-            StopChase();
+            if (blindChasing)
+                controller.SwitchToPlayer();
+            else
+                StartCoroutine(BlindChaseTimer());
         }
     }
     /*
@@ -124,6 +132,8 @@ public class KellekHuntController : MainAiController
                 state = States.Hunt;
             }
             controller.SwitchToPlayer();
+            if (state == States.Chase)
+                Debug.Log("Mid chase switch");
         }
     }
     
@@ -150,8 +160,9 @@ public class KellekHuntController : MainAiController
      */
     void FoundYou()
     {
-        if(state == States.Chase)
+        if (state == States.Chase)
             controller.SwitchToPlayer();
+            
         else
             StartCoroutine(IllGiveYouToTheCountOf());
     }
@@ -161,15 +172,14 @@ public class KellekHuntController : MainAiController
         state = States.Chase;
         MusicMan.instance.PlaySE(detectSE, 1f);
         controller.CancelMovement();
-        yield return new WaitForSeconds(chaseWaitTime);
 
-        //Ready or not
+        yield return new WaitForSeconds(chaseWaitTime); //Ready or not
+
         HereICome();
     }
     void HereICome()
     {
         controller.SetChaseSpeed(true);
-        StartCoroutine(ChaseTimer());
         SetActiveChase();
         Debug.Log("Start Chase");
     }
@@ -185,10 +195,14 @@ public class KellekHuntController : MainAiController
      * V
      * 5 - Countdown to cancel chase
      */
-    IEnumerator ChaseTimer()
+    IEnumerator BlindChaseTimer()
     {
-        yield return new WaitForSeconds(Random.Range(blindChaceTimeMin, blindChaceTimeMax));
+        blindChasing = true;
+        controller.SwitchToPlayer();
+        var random = Random.Range(blindChaceTimeMin, blindChaceTimeMax);
+        yield return new WaitForSeconds(random);
         StopChase();
+        blindChasing = false;
     }
     /* Sight not replenished
      * 
@@ -211,7 +225,27 @@ public class KellekHuntController : MainAiController
 
     IEnumerator LeaveAudibleArea()
     {
-        var playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
+        state = States.OffMap;
+
+        if (renderer.isVisible)
+        {
+            RoamAway();
+            Debug.Log(renderer.isVisible);
+            while (renderer.isVisible)
+                yield return null;
+        }
+        Debug.Log(renderer.isVisible);
+
+        Shakeoff();
+
+        AudioSource roamAwayAuS = gameObject.AddComponent<AudioSource>();
+        roamAwayAuS.clip = stepAway;
+        roamAwayAuS.Play();
+        roamAwayAuS.loop = false;
+
+        yield return new WaitForSeconds(stepAway.length);
+
+        /*var playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
 
         if(playerKellekDistacne < disengageRange)
         {
@@ -223,8 +257,7 @@ public class KellekHuntController : MainAiController
                 yield return null;
                 playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
             }
-        }
-        Shakeoff();
+        }*/
     }
 
     void RoamAway()
@@ -234,10 +267,10 @@ public class KellekHuntController : MainAiController
 
     void Shakeoff()
     {
-        if(queueShakeoff)
+        /*if(queueShakeoff)
         {
             queueShakeoff = false;
-        }
+        }*/
 
         controller.SetStop(true);
         controller.Teleport(oblivion);
@@ -252,7 +285,9 @@ public class KellekHuntController : MainAiController
     // Recive request to shakeoff, either confirm or queue for the end of the chase
     public void RequestShakeoff()
     {
-        if(state != States.Chase)
+        if (state == States.OffMap)
+            Shakeoff();
+        else if (state != States.Chase)
         {
             StartCoroutine(LeaveAudibleArea());
         }
@@ -285,5 +320,5 @@ public class KellekHuntController : MainAiController
 /// <para>Hunt - Go to last recieved stimuly</para>
 /// <para>Chase - Run for your life</para>
 /// </summary>
-enum States { Prowl, Hunt, Chase }
+enum States { OffMap, Prowl, Hunt, Chase }
 

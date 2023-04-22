@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FadeManager : MonoBehaviour
 {
     [SerializeField] float fadeSpeed;
-    Image fadeImage;
+    [SerializeField] Image fadeImage;
 
     public static FadeManager instance;
 
@@ -30,7 +30,7 @@ public class FadeManager : MonoBehaviour
 
         while(forward ? (alpha <1): (alpha > 0))
         {
-            alpha += fadeSpeed * mod;
+            alpha +=  mod * (Time.deltaTime / fadeSpeed);
             fadeImage.color = new Color(0, 0, 0, alpha);
             yield return null;
         }

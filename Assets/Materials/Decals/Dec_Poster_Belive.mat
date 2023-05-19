@@ -25,6 +25,7 @@ Material:
   m_ValidKeywords:
   - _COLORMAP
   - _MATERIAL_AFFECTS_ALBEDO
+  - _MATERIAL_AFFECTS_NORMAL
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
@@ -127,7 +128,7 @@ Material:
     - _AffectAlbedo: 1
     - _AffectEmission: 0
     - _AffectMetal: 0
-    - _AffectNormal: 0
+    - _AffectNormal: 1
     - _AffectSmoothness: 0
     - _AlphaClip: 0
     - _Blend: 0
@@ -138,7 +139,7 @@ Material:
     - _Cutoff: 0.5
     - _DecalBlend: 1
     - _DecalColorMask0: 15
-    - _DecalColorMask1: 0
+    - _DecalColorMask1: 15
     - _DecalColorMask2: 0
     - _DecalColorMask3: 0
     - _DecalMaskMapBlueScale: 1

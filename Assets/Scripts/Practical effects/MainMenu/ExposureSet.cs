@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Rendering.Universal;
+using UnityEngine.Rendering.HighDefinition;
 
 public class ExposureSet : MonoBehaviour
 {
@@ -10,10 +10,11 @@ public class ExposureSet : MonoBehaviour
     [SerializeField] float baseIntensity;
     [SerializeField] Volume volume;
     [SerializeField] Light directionalLight;
-    [SerializeField] FloatVariable exposure;
+    [SerializeField] FloatVariable exposureVal;
     [SerializeField] FloatVariable lightIntensity;
 
     private ColorAdjustments colorAdjustments;
+    private Exposure exposure;
 
     private void Awake()
     {
@@ -23,14 +24,20 @@ public class ExposureSet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        volume.profile.TryGet(out colorAdjustments);
-        SetBrightness();
+        if (volume.profile.TryGet(out exposure))
+            SetBrightness();
+        else
+            Debug.Log("No exposure");
     }
 
     public void SetBrightness()
     {
         volume.enabled = true;
-        colorAdjustments.postExposure.value = exposure.value + baseExposure;
-        directionalLight.intensity = lightIntensity.value + baseIntensity;
+        exposure.fixedExposure.value = baseExposure - exposureVal.value;
+
+        /*colorAdjustments.postExposure.value = exposureVal.value + baseExposure;
+        directionalLight.intensity = lightIntensity.value + baseIntensity;*/
+
+
     }
 }

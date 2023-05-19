@@ -142,7 +142,7 @@ MonoBehaviour:
   - {fileID: 3764964080761134271}
   - {fileID: 6789920012522733830}
   - {fileID: 3119879201477239701}
-  deltaIntensity: 1
+  deltaIntensity: 100
 --- !u!1001 &7978324938473503886
 PrefabInstance:
   m_ObjectHideFlags: 0

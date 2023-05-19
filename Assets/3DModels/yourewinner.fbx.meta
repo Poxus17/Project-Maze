@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: 54d03e804f7afbc4296bed154cfcd62e
 ModelImporter:
-  serializedVersion: 21202
+  serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trophy_base
+    second: {fileID: 2100000, guid: d885a102736c430428789bb03da480fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trophy_main
+    second: {fileID: 2100000, guid: a431d2f8f3c72d041b9726c330fe5993, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trophy_plate
+    second: {fileID: 2100000, guid: 5dba0c52dc2ffa240aae3b5160cd1daf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: trophy_text
+    second: {fileID: 2100000, guid: 15f66125e2013a440bbd7fb56a92a0b9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -99,6 +119,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

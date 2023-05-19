@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.HighDefinition;
 
 [RequireComponent(typeof(Light))]
 public class CandleLightingController : MonoBehaviour
@@ -8,14 +9,15 @@ public class CandleLightingController : MonoBehaviour
     [SerializeField] CandleTrigger[] triggers;
     [SerializeField] float deltaIntensity;
 
-    Light lightComponent;
+    HDAdditionalLightData lightComponent;
 
     float currentIntensity = 0;
     int litCandles = 0;
     // Start is called before the first frame update
     void Start()
     {
-        lightComponent = GetComponent<Light>();
+        lightComponent = GetComponent<HDAdditionalLightData>();
+        lightComponent.intensity = 0;
 
         foreach(CandleTrigger trigger in triggers)
         {

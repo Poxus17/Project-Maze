@@ -4256,7 +4256,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 3a2dcef6fe55d33469ee5076d1871e48, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0724a0ee7c9061e40a0a89b13de914c9, type: 2}
+      objectReference: {fileID: 2100000, guid: 38fa2efb57719be44bcdeb73e8251131, type: 2}
     - target: {fileID: 919132149155446097, guid: 3a2dcef6fe55d33469ee5076d1871e48, type: 3}
       propertyPath: m_Name
       value: Treehouse1

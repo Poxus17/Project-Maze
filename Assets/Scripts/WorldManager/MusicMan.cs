@@ -41,6 +41,11 @@ public class MusicMan : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
     public IEnumerator MusicTransition(AudioClip clip)
     {
         var vol = musicSource.volume;

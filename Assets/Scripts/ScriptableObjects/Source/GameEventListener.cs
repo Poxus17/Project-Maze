@@ -7,6 +7,8 @@ public class GameEventListener : MonoBehaviour
 {
     public GameEvent Event;
     public UnityEvent Response;
+    public float raiseTimer = 0;
+    public bool oneFrameDelay;
 
     private void OnEnable()
     { Event.RegisterListener(this); }
@@ -14,6 +16,16 @@ public class GameEventListener : MonoBehaviour
     private void OnDisable()
     { Event.UnregisterListener(this); }
     public void OnEventRaised() 
-    { Response.Invoke(); }
+    { StartCoroutine(RaiseTimer()); }
+
+    private IEnumerator RaiseTimer()
+    {
+        yield return 
+            (oneFrameDelay ? 
+            null : new WaitForSecondsRealtime(raiseTimer)
+            );
+
+        Response.Invoke();
+    }
 
 }

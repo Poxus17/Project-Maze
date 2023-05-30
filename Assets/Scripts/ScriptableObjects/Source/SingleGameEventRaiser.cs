@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SingleGameEventRaiser : MonoBehaviour
@@ -10,5 +9,16 @@ public class SingleGameEventRaiser : MonoBehaviour
     {
         if(context.started)
             raiseEvent.Raise();
+    }
+
+    public void RaiseEventByTimer(float time)
+    {
+        StartCoroutine(EventTimer(time));
+    }
+
+    private IEnumerator EventTimer(float time)
+    {
+        yield return new WaitForSecondsRealtime(time);
+        raiseEvent.Raise();
     }
 }

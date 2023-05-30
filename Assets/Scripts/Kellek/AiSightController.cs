@@ -11,6 +11,12 @@ public class AiSightController : MonoBehaviour
     [SerializeField] public float sightRange;
     [SerializeField] public float angleFromForward;
     [SerializeField] LayerMask layerMask;
+    [SerializeField] FloatVariable playerDistanceSqr;
+    [SerializeField] Vector3Variable targetVector;
+
+    //Remove this from here
+    /*[SerializeField] float jumpscareDistance;
+    [SerializeField] GameEvent initJumpscare;*/
 
     float cosAngle;
 
@@ -24,22 +30,22 @@ public class AiSightController : MonoBehaviour
 
     private void Update()
     {
-        var targetVector = CentralAI.Instance.player.transform.position - transform.position;
-
-        if (targetVector.sqrMagnitude > sightRange * sightRange)
+        if (playerDistanceSqr.value > sightRange * sightRange)
             return;
 
-        if (Vector3.Dot(targetVector, -transform.forward) > cosAngle)
+        if (Vector3.Dot(targetVector.value, -transform.forward) > cosAngle)
             return;
 
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, targetVector, out hit, Mathf.Infinity, layerMask))
+        if(Physics.Raycast(transform.position, targetVector.value, out hit, Mathf.Infinity, layerMask))
         {
-            if(hit.collider.gameObject.tag == "MainCamera")
+            if (hit.collider.gameObject.tag == "MainCamera")
             {
                 OnSeeTarget();
             }
         }
+
+
     }
 }
 

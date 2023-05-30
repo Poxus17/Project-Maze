@@ -8,13 +8,32 @@ public class AiMovementController : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] float walkSpeed;
     [SerializeField] float runSpeed;
+    [SerializeField] FloatVariable timeSinceLastSteeringTarget;
 
     bool waitinForDestination = false;
     public delegate void ArrivedAtDestination();
     public static event ArrivedAtDestination OnArrivedAtDestination;
 
+    //Debuging shit
+    Vector3 lastSteeringTarget;
+    float timeSinceLastTarget = 0;
     private void Start()
     {
+        lastSteeringTarget = Vector3.zero;
+    }
+
+    private void Update()
+    {
+        //might add checking range here
+
+        if(lastSteeringTarget != agent.steeringTarget)
+        {
+            lastSteeringTarget = agent.steeringTarget;
+            timeSinceLastTarget = 0;
+        }
+        timeSinceLastTarget += Time.deltaTime;
+
+        timeSinceLastSteeringTarget.value = timeSinceLastTarget;
     }
 
     public void MoveTo(Vector3 toPosition)
@@ -24,6 +43,7 @@ public class AiMovementController : MonoBehaviour
         //Debug.Log("Move to " + toPosition);
         if(!waitinForDestination)
             StartCoroutine(DestinationArrivalCheck());
+
     }
 
     public void SetSpeed(float newSpeed)

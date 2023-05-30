@@ -36,8 +36,6 @@ public class ChildRotationSmooth : MonoBehaviour
         var posX = Mathf.Lerp(basePosition.x, offsetX, Mathf.Abs(contextValue.x));
         var posY = Mathf.Lerp(basePosition.y, offsetY, Mathf.Abs(contextValue.y));
 
-        Debug.Log(offsetY);
-
         offsetPosition = new Vector3(posX, posY, basePosition.z);
     }
 }

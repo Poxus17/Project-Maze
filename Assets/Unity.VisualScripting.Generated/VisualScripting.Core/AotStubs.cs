@@ -683,6 +683,9 @@ namespace Unity.VisualScripting.Generated.Aot
 	// SanityManager.op_Implicit
 	// SanityManager.op_Equality
 	// SanityManager.op_Inequality
+	// SliderToValue.op_Implicit
+	// SliderToValue.op_Equality
+	// SliderToValue.op_Inequality
 	// Debug_EaseRorateTo.op_Implicit
 	// Debug_EaseRorateTo.op_Equality
 	// Debug_EaseRorateTo.op_Inequality
@@ -866,6 +869,9 @@ namespace Unity.VisualScripting.Generated.Aot
 	// TEMP_MainMenuCameraEffect.op_Implicit
 	// TEMP_MainMenuCameraEffect.op_Equality
 	// TEMP_MainMenuCameraEffect.op_Inequality
+	// TileTexture.op_Implicit
+	// TileTexture.op_Equality
+	// TileTexture.op_Inequality
 	// MainMenuEvents.op_Implicit
 	// MainMenuEvents.op_Equality
 	// MainMenuEvents.op_Inequality
@@ -8869,6 +8875,41 @@ namespace Unity.VisualScripting.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
+		// SliderToValue.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void SliderToValue_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// SliderToValue.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void SliderToValue_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// SliderToValue.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void SliderToValue_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
 		// Debug_EaseRorateTo.op_Implicit
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void Debug_EaseRorateTo_op_Implicit()
@@ -10995,6 +11036,41 @@ namespace Unity.VisualScripting.Generated.Aot
 		// TEMP_MainMenuCameraEffect.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void TEMP_MainMenuCameraEffect_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// TileTexture.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void TileTexture_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// TileTexture.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void TileTexture_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Unity.VisualScripting.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// TileTexture.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void TileTexture_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);

@@ -3,14 +3,12 @@ using UnityEngine.InputSystem;
 
 public class FPSCameraController : MonoBehaviour
 {
-    // horizontal rotation speed
-    public float horizontalSpeed = 1f;
-    // vertical rotation speed
-    public float verticalSpeed = 1f;
+    
     public float maxXRotation = 70f;
     public float smoothSpeed = 0.5f;
     public FloatVariable playerRotationXDelta;
     public FloatVariable playerRotationYDelta;
+    [SerializeField] FloatVariable mouseSensitivity;
 
     private float _xRotation;
     private float _yRotation;
@@ -33,8 +31,8 @@ public class FPSCameraController : MonoBehaviour
     public void Look(InputAction.CallbackContext context)
     {
         var contextValue = context.ReadValue<Vector2>();
-        _yRotation += contextValue.x * horizontalSpeed;
-        _xRotation -= contextValue.y * verticalSpeed;
+        _yRotation += contextValue.x * mouseSensitivity.value;
+        _xRotation -= contextValue.y * mouseSensitivity.value;
         _xRotation = Mathf.Clamp(_xRotation, -maxXRotation, maxXRotation);
         targetRotation = Quaternion.Euler(_xRotation, _yRotation, 0.0f);
     }

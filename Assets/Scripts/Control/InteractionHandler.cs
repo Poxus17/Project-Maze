@@ -5,7 +5,14 @@ using UnityEngine.Events;
 
 public class InteractionHandler : MonoBehaviour
 {
+    [Header("Shared values")]
     [SerializeField] StringVariable currentDetectionText;
+
+    [Space(5)]
+    [Header("LockedState")]
+    [SerializeField] BoolVariable interactionAllowed;
+    [SerializeField] StringVariable lockedStateDetectionText;
+    [SerializeField] GameEvent lockStateEvent;
 
     Vector3 viewportRaypoint;
     int castMask;
@@ -16,11 +23,24 @@ public class InteractionHandler : MonoBehaviour
     {
         castMask = LayerMask.GetMask("Interaction");
         viewportRaypoint = new Vector3(0.5f, 0.5f, 0);
+        interactionAllowed.value = true;
+        currentDetectionText.value = "";
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!interactionAllowed.value)
+        {
+            currentDetectionText.value = lockedStateDetectionText.value;
+            return;
+        }
+        else if(currentDetectionText.value == lockedStateDetectionText.value)
+        {
+            currentDetectionText.value = "";
+        }
+
+
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 500))
@@ -48,7 +68,13 @@ public class InteractionHandler : MonoBehaviour
 
     public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if (detectedObject != null && context.started)
+        if (!context.started)
+            return;
+        else if (!interactionAllowed.value)
+        {
+            lockStateEvent.Raise();
+        }
+        else if (detectedObject != null && context.started)
         {
             detectedObject.Interact();
         }

@@ -5,8 +5,9 @@ using UnityEngine.Events;
 
 public class InteractionHandler : MonoBehaviour
 {
-    [Header("Shared values")]
+    [Header("Settings")]
     [SerializeField] StringVariable currentDetectionText;
+    [SerializeField] float detectionRange;
 
     [Space(5)]
     [Header("LockedState")]
@@ -43,7 +44,7 @@ public class InteractionHandler : MonoBehaviour
 
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 500))
+        if (Physics.Raycast(ray, out hit, detectionRange))
         {
             if(hit.collider.gameObject.tag == "Interact")
             {
@@ -62,8 +63,6 @@ public class InteractionHandler : MonoBehaviour
             detectedObject = null;
             currentDetectionText.value = "";
         }
-            
-
     }
 
     public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)

@@ -34,20 +34,11 @@ public class KellekJumpscareHandler : MonoBehaviour
         AiSightController.OnSeeTarget += OnSeePlayer; //fuck that
     }
 
-
-    private void Update()
-    {
-        
-    }
-
     public void OnSeePlayer()
     {
         if (playerDistanceSqr.value > normalRangeSqr)
             return;
 
-        if (timeSinceLastSteeringTarget.value >= requiredTimeSinceSteeringTarget)
-        {
-            normalEvent.Raise();
-        }
+        normalEvent.Raise();
     }
 }

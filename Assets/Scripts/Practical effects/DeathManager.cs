@@ -6,25 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class DeathManager : MonoBehaviour
 {
-    [SerializeField] VideoPlayer player;
-
-
-    private void Start()
-    {
-        player.Prepare();
-        player.targetTexture.Release();
-    }
-
+    [SerializeField] float timeToRestart;
     public void ActivateJumpscare()
     {
-        gameObject.SetActive(true);
-        player.Play();
-        player.loopPointReached += Restart;
+        StartCoroutine(TimeDown());
     }
 
-    public void Restart(UnityEngine.Video.VideoPlayer vp)
+    IEnumerator TimeDown()
     {
-        //Application.Quit();
+        yield return new WaitForSecondsRealtime(timeToRestart);
+        Restart();
+    }
+
+    public void Restart()
+    {
         SceneManager.LoadScene(1);
     }
 

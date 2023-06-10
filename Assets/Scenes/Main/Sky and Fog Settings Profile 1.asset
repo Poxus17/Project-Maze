@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: -0.51849455
+    m_Value: -1.4023638
   compensation:
     m_OverrideState: 0
     m_Value: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
     m_Value: 0
   color:
     m_OverrideState: 1
-    m_Value: {r: 0.003921569, g: 0.003921569, b: 0.019607844, a: 1}
+    m_Value: {r: 0.0019607844, g: 0.0019607844, b: 0.009803922, a: 1}
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}

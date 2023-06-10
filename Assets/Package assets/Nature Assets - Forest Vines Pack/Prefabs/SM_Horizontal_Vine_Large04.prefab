@@ -246,9 +246,6 @@ GameObject:
   - component: {fileID: 4002589208253039564}
   - component: {fileID: 4002589208249648098}
   - component: {fileID: 4002589208250745122}
-  - component: {fileID: 7539066492250348766}
-  - component: {fileID: 1395808691864196563}
-  - component: {fileID: 8691748841664259015}
   m_Layer: 0
   m_Name: SM_Horizontal_Vine_Large04_LOD0
   m_TagString: Untagged
@@ -322,45 +319,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7539066492250348766
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4002589208253013996}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.3338556, y: 1.1362801, z: 0.6037689}
-  m_Center: {x: -5.3073764, y: -7.2893276, z: 0.49466297}
---- !u!65 &1395808691864196563
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4002589208253013996}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.709175, y: 2.2160697, z: 0.2619295}
-  m_Center: {x: -10.203266, y: -8.5154085, z: -0.777205}
---- !u!114 &8691748841664259015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4002589208253013996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9895f054a16af1846aac2f5d20676481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipBatch: {fileID: 11400000, guid: d86b451032889a246b172152049857b6, type: 2}
 --- !u!1 &4002589208253013998
 GameObject:
   m_ObjectHideFlags: 0

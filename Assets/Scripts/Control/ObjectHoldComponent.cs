@@ -13,11 +13,13 @@ public class ObjectHoldComponent : MonoBehaviour
 
     private void Awake()
     {
+#if UNITY_EDITOR
         heldObject = (GameobjectVariable)AssetDatabase.LoadAssetAtPath("Assets/Scripts/ScriptableObjects/Instances/Vars/HeldObject.asset", typeof(GameobjectVariable));
         callForHold = (GameEvent)AssetDatabase.LoadAssetAtPath("Assets/Scripts/ScriptableObjects/Instances/Events/CallHoldObject.asset", typeof(GameEvent));
         rigidbody = GetComponent<Rigidbody>();
         releaseDelay = (FloatVariable)AssetDatabase.LoadAssetAtPath("Assets/Scripts/ScriptableObjects/Instances/Vars/Floats/HeldObject_ReleaseDelay.asset", typeof(FloatVariable));
         throwPower = (FloatVariable)AssetDatabase.LoadAssetAtPath("Assets/Scripts/ScriptableObjects/Instances/Vars/Floats/HeldObject_ThrowPower.asset", typeof(FloatVariable));
+#endif
     }
 
     public void HoldMe()

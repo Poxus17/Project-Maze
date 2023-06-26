@@ -31,6 +31,8 @@ public class KellekHuntController : MainAiController
     [Header("Spawn")]
     public float _minSpawnTime = 1;
     public float _maxSpawnTime = 30;
+    public float _minDespawnTime = 30;
+    public float _maxDespawnTime = 120;
 
     States state;
 
@@ -42,6 +44,7 @@ public class KellekHuntController : MainAiController
     bool disengage = false;
     bool queueShakeoff = false;
     bool blindChasing = false;
+    bool despawnDisrupted;
 
     public GameObject parentObject { get; private set; }
 
@@ -66,8 +69,20 @@ public class KellekHuntController : MainAiController
         lastRoam = SpawnPoint;
         state = States.Prowl;
         disengage = false;
+        despawnDisrupted = false;
 
         RoamNextPoint();
+        StartCoroutine(DespawnTimer());
+    }
+
+    IEnumerator DespawnTimer()
+    {
+        yield return new WaitForSeconds(Random.Range(_minDespawnTime, _maxDespawnTime));
+
+        if (!despawnDisrupted)
+        {
+            StartCoroutine(LeaveAudibleArea());
+        }
     }
     /*
      * |
@@ -160,6 +175,8 @@ public class KellekHuntController : MainAiController
      */
     void FoundYou()
     {
+        despawnDisrupted = true;
+
         if (state == States.Chase)
             controller.SwitchToPlayer();
             

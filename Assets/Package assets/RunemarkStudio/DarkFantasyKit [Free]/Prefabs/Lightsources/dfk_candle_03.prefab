@@ -4923,6 +4923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c29a9d5639ae44e93f3c503ed7b8e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lighterLit: {fileID: 11400000, guid: 36f507b1edac9264cbc18392d08eee6a, type: 2}
   onText: Light up
   offText: Blow out
 --- !u!65 &989303799267626712

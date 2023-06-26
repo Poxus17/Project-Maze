@@ -85,7 +85,7 @@ public class FPSMovementController : MonoBehaviour
         #region Stamina management
         if (isSprint.value)
         {
-            stamina -= staminaDepleteRate * Time.deltaTime;
+            stamina -= staminaDepleteRate * Time.deltaTime * movement.normalized.magnitude;
 
             if(stamina <= 0)
             {
@@ -100,9 +100,8 @@ public class FPSMovementController : MonoBehaviour
         {
             stamina += staminaRestoreRate * Time.deltaTime;
 
-            if(stamina >= fullStamina)
+            if(stamina >= (fullStamina/4))
             {
-                stamina = fullStamina;
                 staminaRecoveryMode = false;
             }
         }

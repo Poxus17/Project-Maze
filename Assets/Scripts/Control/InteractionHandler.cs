@@ -11,12 +11,14 @@ public class InteractionHandler : MonoBehaviour
 
     [Space(5)]
     [Header("LockedState")]
-    [SerializeField] BoolVariable interactionAllowed;
+    [SerializeField] BoolVariable interactionLockedState; // an alternative state of interaction detection. This one is a permenant option, until explicitly turned off
     [SerializeField] StringVariable lockedStateDetectionText;
     [SerializeField] GameEvent lockStateEvent;
 
     Vector3 viewportRaypoint;
     int castMask;
+    int lastDetectedId;
+    bool exclusiveLocked; //True if currently in an interaction's exlusive time
 
     IInteractable detectedObject;
 
@@ -24,14 +26,15 @@ public class InteractionHandler : MonoBehaviour
     {
         castMask = LayerMask.GetMask("Interaction");
         viewportRaypoint = new Vector3(0.5f, 0.5f, 0);
-        interactionAllowed.value = true;
+        interactionLockedState.value = false;
         currentDetectionText.value = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!interactionAllowed.value)
+        //Handle locked state
+        if (interactionLockedState.value)
         {
             currentDetectionText.value = lockedStateDetectionText.value;
             return;
@@ -41,16 +44,22 @@ public class InteractionHandler : MonoBehaviour
             currentDetectionText.value = "";
         }
 
-
+        //Typical raycast
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, detectionRange))
         {
-            if(hit.collider.gameObject.tag == "Interact")
+            var hitObject = hit.collider.gameObject;
+            if ( hitObject.tag == "Interact")
             {
-                if (detectedObject == null)
+                var currentInstanceId = hitObject.GetInstanceID();
+
+                if (detectedObject == null || lastDetectedId != currentInstanceId)
+                {
                     detectedObject = hit.collider.gameObject.GetComponent<IInteractable>();
-                currentDetectionText.value = detectedObject.GetInteractionText();
+                    lastDetectedId = currentInstanceId;
+                    currentDetectionText.value = detectedObject.GetInteractionText();
+                }
             }
             else if (detectedObject != null)
             {
@@ -67,24 +76,39 @@ public class InteractionHandler : MonoBehaviour
 
     public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        if (!context.started)
+        if (!context.started || exclusiveLocked)
             return;
-        else if (!interactionAllowed.value)
+        else if (interactionLockedState.value)
         {
             lockStateEvent.Raise();
         }
-        else if (detectedObject != null && context.started)
+        else if (detectedObject != null)
         {
             detectedObject.Interact();
+            detectedObject = null;
+
+            if (detectedObject.exclusiveTime > 0)
+                StartCoroutine(PlayExclusiveTime(detectedObject.exclusiveTime));
         }
+    }
+
+    IEnumerator PlayExclusiveTime(float time)
+    {
+        exclusiveLocked = true;
+        yield return new WaitForSeconds(time);
+        exclusiveLocked = false;
     }
 }
 
 public interface IInteractable
 {
+    float exclusiveTime { get; set; } //The amount of time after the interaction when no other interaction can occure
+
     void Interact();
 
     string GetInteractionText();
+
+    bool InteractionAllowed();
 }
 
 

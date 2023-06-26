@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CandleTrigger : MonoBehaviour, IInteractable
 {
+    public float exclusiveTime { get; set; }
+    [SerializeField] BoolVariable lighterLit;
     [SerializeField] string onText = "Light up";
     [SerializeField] string offText = "Blow out";
 
@@ -20,6 +22,9 @@ public class CandleTrigger : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (!InteractionAllowed())
+            return;
+
         lit = !lit;
         particles.SetActive(lit);
 
@@ -32,5 +37,10 @@ public class CandleTrigger : MonoBehaviour, IInteractable
     public string GetInteractionText()
     {
         return lit ? offText : onText;
+    }
+
+    public bool InteractionAllowed()
+    {
+        return (lighterLit == null) ? true : lighterLit.value;
     }
 }

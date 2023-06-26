@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1991383105654133940}
   - component: {fileID: 1991383105654133943}
-  - component: {fileID: 8280698706248782370}
   - component: {fileID: 5072513288883761168}
+  - component: {fileID: -8965948077932231286}
   m_Layer: 0
   m_Name: CandleLight
   m_TagString: Untagged
@@ -96,20 +96,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &8280698706248782370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991383105654133947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e0d1568c6f94ca40ae8eaba89d8f32b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggers: []
-  deltaIntensity: 100
 --- !u!114 &5072513288883761168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,3 +218,17 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
+--- !u!114 &-8965948077932231286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991383105654133947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0d1568c6f94ca40ae8eaba89d8f32b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggers: []
+  deltaIntensity: 100

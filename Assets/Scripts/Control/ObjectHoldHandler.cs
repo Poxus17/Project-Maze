@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObjectHoldHandler : MonoBehaviour
 {
-    [SerializeField] BoolVariable interactionAllowed;
+    [SerializeField] BoolVariable interactionLockedState;
     [SerializeField] GameobjectVariable heldObject;
     [SerializeField] Transform holdBase;
     [SerializeField] float releaseDelay;
@@ -16,7 +16,7 @@ public class ObjectHoldHandler : MonoBehaviour
 
     public void EnterHoldState()
     {
-        interactionAllowed.value = false;
+        interactionLockedState.value = true;
         heldObject.value.transform.SetParent(holdBase);
         heldObject.value.transform.localPosition = Vector3.zero;
         OnCallRelease += heldObject.value.GetComponent<ObjectHoldComponent>().LetMeGo;
@@ -26,6 +26,7 @@ public class ObjectHoldHandler : MonoBehaviour
     {
         OnCallRelease();
         OnCallRelease -= heldObject.value.GetComponent<ObjectHoldComponent>().LetMeGo;
-        interactionAllowed.value = true;
+        interactionLockedState.value = false;
     }
+
 }

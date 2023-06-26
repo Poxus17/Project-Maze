@@ -17,6 +17,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] float lightAttemptsMean = 2;
     [SerializeField] float lightAttemptsDeviation = 2;
     [SerializeField] float lightSeVolume = 0.5f;
+    [SerializeField] BoolVariable lighterLit;
     
     //The animator
     private Animator _animator;
@@ -37,6 +38,7 @@ public class StormLighter : MonoBehaviour
     void Start()
     {
         _isOpen = false;
+        lighterLit.value = false;
 
         try
         {
@@ -56,7 +58,6 @@ public class StormLighter : MonoBehaviour
         {
             Debug.LogError(e.Message);
         }
-
     }
 
     public void ToggleOpen(InputAction.CallbackContext context)
@@ -71,6 +72,7 @@ public class StormLighter : MonoBehaviour
                 mainLight.enabled = false;
                 handLight.enabled = false;
                 _isOpen = false;
+                lighterLit.value = false;
             }
             else
             {
@@ -118,6 +120,7 @@ public class StormLighter : MonoBehaviour
         mainLight.enabled = true;
         handLight.enabled = true;
         _isOpen = true;
+        lighterLit.value = true;
     }
 
     # region DEPRECATED

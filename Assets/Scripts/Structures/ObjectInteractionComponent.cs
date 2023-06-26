@@ -6,6 +6,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ObjectInteractionComponent : MonoBehaviour, IInteractable
 {
+    public float exclusiveTime { get; set; }
     [SerializeField] PastObjectData data;
     [SerializeField] PastObjectPacketVariable inspectionItem;
     [SerializeField] GameEvent EnterInspection;
@@ -32,6 +33,11 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
     public string GetInteractionText()
     {
         return "Take";
+    }
+
+    public bool InteractionAllowed()
+    {
+        return true;
     }
 }
 

@@ -11,7 +11,7 @@ public class TreehouseEntranceHandler : MonoBehaviour
     [SerializeField] UnityEngine.Events.UnityEvent ChangeState;
     public BoolVariable inTreehouse;
 
-    private void Start()
+    private void Awake()
     {
         inTreehouse.value = startUp;
     }

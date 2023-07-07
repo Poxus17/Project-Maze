@@ -20,6 +20,7 @@ public class AiMovementController : MonoBehaviour
     private void Start()
     {
         lastSteeringTarget = Vector3.zero;
+        agent.speed = walkSpeed;
     }
 
     private void Update()

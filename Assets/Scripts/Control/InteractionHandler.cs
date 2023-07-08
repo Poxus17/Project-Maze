@@ -8,6 +8,7 @@ public class InteractionHandler : MonoBehaviour
     [Header("Settings")]
     [SerializeField] StringVariable currentDetectionText;
     [SerializeField] float detectionRange;
+    [SerializeField] LayerMask mask;
 
     [Space(5)]
     [Header("LockedState")]
@@ -47,7 +48,7 @@ public class InteractionHandler : MonoBehaviour
         //Typical raycast
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, detectionRange))
+        if (Physics.Raycast(ray, out hit, detectionRange,mask))
         {
             var hitObject = hit.collider.gameObject;
             if ( hitObject.tag == "Interact")
@@ -84,6 +85,7 @@ public class InteractionHandler : MonoBehaviour
         }
         else if (detectedObject != null)
         {
+            Debug.Log("In");
             detectedObject.Interact();
             detectedObject = null;
 

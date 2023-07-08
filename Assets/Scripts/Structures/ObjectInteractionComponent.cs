@@ -13,7 +13,7 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
 
 
     PastObjectPacket pastObjectPacket;
-    void Awake()
+    void Start()
     {
         gameObject.layer = 6;
 

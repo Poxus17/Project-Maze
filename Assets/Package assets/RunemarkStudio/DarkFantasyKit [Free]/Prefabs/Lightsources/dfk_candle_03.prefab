@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4194757227181990}
   - component: {fileID: 198814889047390672}
   - component: {fileID: 199363673550577580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Candlelight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4838,7 +4838,7 @@ GameObject:
   - component: {fileID: 23127007565756982}
   - component: {fileID: -5401919905038458900}
   - component: {fileID: 989303799267626712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dfk_candle_03
   m_TagString: Interact
   m_Icon: {fileID: 0}

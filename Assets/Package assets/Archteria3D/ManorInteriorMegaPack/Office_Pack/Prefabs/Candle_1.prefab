@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4463490968039803851}
   - component: {fileID: 1902585612561460511}
   - component: {fileID: 1526260623788599103}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Candle_1
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -124,6 +124,10 @@ PrefabInstance:
     - target: {fileID: 1636163223359884, guid: bca72e583eff98b4da7a72f35d508edf, type: 3}
       propertyPath: m_Name
       value: Candlelight
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636163223359884, guid: bca72e583eff98b4da7a72f35d508edf, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4069332725371506, guid: bca72e583eff98b4da7a72f35d508edf, type: 3}
       propertyPath: m_RootOrder

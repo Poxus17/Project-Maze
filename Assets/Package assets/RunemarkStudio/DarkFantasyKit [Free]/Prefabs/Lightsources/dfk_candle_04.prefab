@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23918712480358732}
   - component: {fileID: 5948860326839667710}
   - component: {fileID: 5189167574240174339}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dfk_candle_04
   m_TagString: Interact
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4987267401567378}
   - component: {fileID: 198895013570999020}
   - component: {fileID: 199298402826899180}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Candlelight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

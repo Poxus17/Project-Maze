@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049d1c7fbdfbd6849b48de385c654e88, type: 3}
+  m_Name: Note_Frank3
+  m_EditorClassIdentifier: 
+  value:
+    owner: 
+    text: "In this puzzling maze, even within the only place of comfort it offers
+      - an exact copy of my childhood room - my tired eyes find no rest. It beckons
+      me to close them and take a break, but I must resist. How can there be safety
+      in this strange place? Though it might seem like the best spot to stay, I can't
+      linger here forever. I must find a way to escape from this labyrinth, no matter
+      what! \n\nFrank"
+    clip: {fileID: 8300000, guid: f7e4f1db73a5ed34c92c17cfc57d849f, type: 3}

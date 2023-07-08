@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049d1c7fbdfbd6849b48de385c654e88, type: 3}
+  m_Name: Note_Frank1
+  m_EditorClassIdentifier: 
+  value:
+    owner: 
+    text: "The frigid air surrounding me brings back memories of the nights spent
+      traversing the scorching Sahara desert. Back then, they would say, \"The morning
+      always comes,\" offering a glimmer of hope. However, in this desolate place,
+      that hope seems elusive.   \n\nYet, I mustn't succumb to despair. I must press
+      on, relentless in my search for answers. Every step taken in this maze brings
+      me closer to unraveling its enigmatic secrets. The chilling cold may test my
+      resolve, but I refuse to be defeated.   \n\nFrank."
+    clip: {fileID: 8300000, guid: 0973ea7be2021d741b875a2697314594, type: 3}

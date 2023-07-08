@@ -11,6 +11,11 @@ public class SingleGameEventRaiser : MonoBehaviour
             raiseEvent.Raise();
     }
 
+    public void RaiseEventInstant()
+    {
+        raiseEvent.Raise();
+    }
+
     public void RaiseEventByTimer(float time)
     {
         StartCoroutine(EventTimer(time));
@@ -18,7 +23,7 @@ public class SingleGameEventRaiser : MonoBehaviour
 
     private IEnumerator EventTimer(float time)
     {
-        yield return new WaitForSecondsRealtime(time);
+        yield return new WaitForSeconds(time);
         raiseEvent.Raise();
     }
 }

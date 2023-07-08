@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1154939077840739323}
   - component: {fileID: 5465830742188332406}
-  - component: {fileID: 1325283575274957887}
+  - component: {fileID: 3261566009760900536}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -95,7 +95,7 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1325283575274957887
+--- !u!114 &3261566009760900536
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a68c43fe1f2a47cfa234b5eeaa98012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Intensity: 1000
+  m_Intensity: 600
   m_EnableSpotReflector: 1
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0

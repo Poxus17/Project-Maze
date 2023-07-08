@@ -8,6 +8,7 @@ public class InteractableComponent : MonoBehaviour, IInteractable
     [SerializeField] string intreactionText;
     [SerializeField] float _exclusiveTime;
     [SerializeField] BoolVariable interactionCondition;
+    [SerializeField] bool notCondition;
     [SerializeField] UnityEvent Interaction;
 
     public float exclusiveTime { get; set; }
@@ -19,7 +20,7 @@ public class InteractableComponent : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(interactionCondition)
+        if(InteractionAllowed())
             Interaction.Invoke();
     }
 
@@ -30,7 +31,7 @@ public class InteractableComponent : MonoBehaviour, IInteractable
 
     public bool InteractionAllowed()
     {
-        return (interactionCondition == null) ? true : interactionCondition.value;
+        return (interactionCondition == null) ? true : (interactionCondition.value && !notCondition);
     }
 
 }

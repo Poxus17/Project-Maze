@@ -85,12 +85,12 @@ public class InteractionHandler : MonoBehaviour
         }
         else if (detectedObject != null)
         {
-            Debug.Log("In");
             detectedObject.Interact();
-            detectedObject = null;
 
             if (detectedObject.exclusiveTime > 0)
                 StartCoroutine(PlayExclusiveTime(detectedObject.exclusiveTime));
+
+            detectedObject = null;
         }
     }
 

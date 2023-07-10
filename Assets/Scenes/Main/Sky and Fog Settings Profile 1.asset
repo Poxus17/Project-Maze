@@ -24,7 +24,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.2
   compensation:
     m_OverrideState: 0
     m_Value: 0
@@ -270,15 +270,15 @@ MonoBehaviour:
     m_Value: 1000
   baseHeight:
     m_OverrideState: 1
-    m_Value: 47.86
+    m_Value: 58.2
   maximumHeight:
     m_OverrideState: 0
-    m_Value: 59.74
+    m_Value: 84.2
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 15.39
+    m_Value: 17.65
   enableVolumetricFog:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   albedo:
     m_OverrideState: 0

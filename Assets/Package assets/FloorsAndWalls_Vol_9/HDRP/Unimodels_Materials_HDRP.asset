@@ -74,7 +74,7 @@ MonoBehaviour:
       maxDecalsOnScreen: 512
       maxPlanarReflectionOnScreen: 16
       maxLightsPerClusterCell: 8
-      maxLocalVolumetricFogSize: 32
+      maxLocalVolumetricFogSize: 64
       maxLocalVolumetricFogOnScreen: 64
     hdShadowInitParams:
       maxShadowRequests: 160
@@ -244,11 +244,11 @@ MonoBehaviour:
       Fog_Budget:
       - 0.166
       - 0.33
-      - 0.666
+      - 0.773
       Fog_DepthRatio:
       - 0.666
       - 0.666
-      - 0.5
+      - 0.809
     m_ObsoleteLightLayerName0: 
     m_ObsoleteLightLayerName1: 
     m_ObsoleteLightLayerName2: 

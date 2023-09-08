@@ -1,0 +1,5791 @@
+fileFormatVersion: 2
+guid: ae281f9dbc964a045935bfa6cd49c39f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4031dcf33ed66de4b913f797acd9b0ff
+      internalID: 429731322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54dc97677b9ba945895d88672c71571
+      internalID: 1349370810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 396f0ff80f687db4cbaeca197f8c7b2e
+      internalID: -1480799668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf5cd04ac042f945a81ad1ca13da41a
+      internalID: 1543441811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3f3b52796c58d4baa4cdcf682d800d
+      internalID: -1553772501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbfdaef559806449853c01e2f2c8358
+      internalID: -1370751253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2922416073e4ace4eae3353ddc8564a5
+      internalID: 951797478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fc4742cd3429b4da7fa3974be2c862
+      internalID: -1066036939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55689cee197536644bcae093c2360f26
+      internalID: 1927483464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b746ba58a31fc734abeebf480041df37
+      internalID: 524406847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96277ed187eee1642a7ae4e95f941a02
+      internalID: 1916121242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205d37daefff5634985cdf9ac84201aa
+      internalID: -314910347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f9f54fcfd223447a937cd057c7b5c9
+      internalID: -62379209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9734e25acce1244e98cb8b24f04d740
+      internalID: -471013478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f373a001a31563c45a52cf016bc789cb
+      internalID: 1805112870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 364f7df1a5116924db7a61ceb17f6c14
+      internalID: 600637487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 15000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802db87e4b15e7c4186bc2b073ffc6c3
+      internalID: 418383230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cd6d3c1c6a123488c81424cd8a914c
+      internalID: 1788736485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb028d88821c7bb45a3dcfbdd77d5121
+      internalID: 1993445899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175eb43d6a526c14090455bb7087b854
+      internalID: -778004988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb284fd98c9de04ab18b8096328a0d4
+      internalID: -796985794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b954202bd0fafee4c8e97a97c1f0a78c
+      internalID: 74559346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2477efc0385944b459ef6de8386edef5
+      internalID: 1407913043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3c77416fabf44943a7a32e88e38c295
+      internalID: -186111942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adf58cfa329e68458465e744314a99b
+      internalID: 1739783519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6645d90bf4188e84b9ce7fca2e345193
+      internalID: 1781561756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_26
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f10efc9e890ee64baa9d743272460e7
+      internalID: -195226358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a817d5b55be41a64c927823513645286
+      internalID: -792907046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6e57ffa4eaeeec4faa1eec7b083fecc
+      internalID: 841610927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd74ee71ac2476469c0be6932dc0dd9
+      internalID: -131060614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a73c51f5801cb841b5f2d519081ac5f
+      internalID: -1395721905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffd8ec67cd2011a4f9c2490b2c32f7e9
+      internalID: 1119768590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_32
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d1d160eaffd8be418af4884c69f1437
+      internalID: 721641323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 14000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949d085311f7f144d93fab22ba752dd1
+      internalID: 1364104094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eadd7aed83e726409d9d69227583bcc
+      internalID: -690477916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24abd50f9d73714bac772c3e00f546e
+      internalID: -447339375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_36
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1570e00b99ad9a54ba3a479d521f7c19
+      internalID: -1973326666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_37
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efc931f24002024187f4022d3358230
+      internalID: -67057692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_38
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234d0a234a3799d4182f01b9ada77dc4
+      internalID: -1042702671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_39
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649d68b88c0adf640bf011db9e160dfd
+      internalID: 1667092431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_40
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55ffcd184afc934aa52a6860f4c6abe
+      internalID: 493925181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_41
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789a5566adb880047977cf1f9f6e9214
+      internalID: -643057109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_42
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5372adc69fc7bb844a5645a022db9367
+      internalID: 1013254718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_43
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684c12e62bee7a54e8cf579ff5327635
+      internalID: 1563999877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_44
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d6e55d65319744b9fc03d3edc82da6
+      internalID: 836342610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_45
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c503d9cf0cca14a42b10fdbfb4be84bb
+      internalID: -820435907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_46
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 581d7ced33e95be478e47b2cb7a18442
+      internalID: 809992210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_47
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6f9c9c270eeab4e9cf5b160159368d
+      internalID: -428047789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_48
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83d1dc63cf3ab8478a1584ce49dcc60
+      internalID: -375039211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_49
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9dcc4b0ed52a94ca78b8ee57994d5c
+      internalID: 2053550315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_50
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 13000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1cf10a2c59ac74c8c71661e086e1e9
+      internalID: 1025045972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_51
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc2b218f0b58b384a84a12bbcde833db
+      internalID: 334070053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_52
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd17345a0fb051f4abb187c22f659353
+      internalID: 338754219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_53
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea08296dbf0def459df91b8b229bf17
+      internalID: -1563522858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_54
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0830abaa7297f254daa006c77b900609
+      internalID: -2083837719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_55
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0f6e0c909140a4286016a31f0eb5bf
+      internalID: 1517485828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_56
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5a836834c2eec4aadd43290ae59980
+      internalID: 152017116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_57
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a05587df9319f904ea891495657205ba
+      internalID: 1044688075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2323eb528afc5a14bb8e7c322ba0e903
+      internalID: 1792982847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83940228530ee06489c6375aca6e40db
+      internalID: -570014991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_60
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2ac584fb549d740bf27f5f7d5f9998
+      internalID: 277747171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_61
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b134237315815e4fa76a348e741b519
+      internalID: -2036583653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_62
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d6a7e34859ad242992b4f794ce0c7e
+      internalID: -333992754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_63
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1aeeab53da9300a4682683c7f5d3dd14
+      internalID: 1039517329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_64
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289348571895dcb4f9a9f6d3ffe52e40
+      internalID: -1794054209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_65
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87439e9501ce61b4e82e3c0e4caf7d3b
+      internalID: -1631505814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_66
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b1c70c68f3ed54e9d1191aacd3add7
+      internalID: -157843289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_67
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 12000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2349676f8a432459c94ad65161572c
+      internalID: -1039726855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_68
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fd9c3bc938c59e4f93f7c7e2d014615
+      internalID: 793632188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7178c157b658e6041890c3905f08d610
+      internalID: -1924247240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cac88cd698751545b42076a19f6ca3f
+      internalID: -1380384188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_71
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e3ca5e723534b4ca73e1cde12d4c21
+      internalID: -865330038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_72
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6c2ac7b1011ec4abb538ca9929c207
+      internalID: -766077387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_73
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0428153d9c265e84095ed4e1c6cb6c4a
+      internalID: -1538834099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d73a88f461f5042b046a677462168e
+      internalID: 814037573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39de3af5dbd260459583c9e5ef60093
+      internalID: -790370573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_76
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667332a0fc6ae1249a3237a844992e22
+      internalID: 1062710320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c31e71f74398014c9e6c6e577e8e2cc
+      internalID: -756898063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_78
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84036fca128b09049b4eeef2229dd5de
+      internalID: -428281218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_79
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ee17bb08ec208a40a14466d9d725497
+      internalID: -975458405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_80
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeff55baccf27ad45b7e82e5775a83fa
+      internalID: -1871006324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_81
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78cef435f6c9bc4fb4fc3c0bb37a3e2
+      internalID: -143516574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_82
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc0217e59bad9145a8eb5dbcd691a0f
+      internalID: 362858666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_83
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449d9393fd13f394bbc0e0cac2769dbd
+      internalID: -1380707672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_84
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 11000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8489d8c754563d4389241fe103b5e52
+      internalID: 69834174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_85
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a509cc6c50d7b409ba6a98a4bc9224
+      internalID: 41418464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_86
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b5040c72b34c5409a9a07b3768df97
+      internalID: -113915650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_87
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0426a2320604f48bd2b266a43634d3
+      internalID: 984032909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_88
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cd68c78fcd74d47b677807c41f0ab1
+      internalID: -1920505208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_89
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcf530ef4f4c7c4ea83a119042f5ac3
+      internalID: -321063822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_90
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc7ca2745a1621c46852b2a3628e9f84
+      internalID: -1607625036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_91
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1752214c75d0cb4494d7394aa7a25ac
+      internalID: 364392955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_92
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529c4a1f7d17c50488a1fa47a0d301c2
+      internalID: -116008908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_93
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf18e3539ff0e2842b5bf3bd61b6880e
+      internalID: -989494374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_94
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ba34c71f04f584885db0f48ae6d43c
+      internalID: -137223923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_95
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055ee733e39a6b14a9d83eca259864da
+      internalID: -621157618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_96
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896b19409830cc94897462f3546cb142
+      internalID: -1313638172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_97
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99a9253aa478bec46b911b18c02492dc
+      internalID: 1005763581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c6739d57fc72e4b99b74b704908d73
+      internalID: 860901998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 943539147f8c7d64b9a2f0ba3e232c12
+      internalID: 540270638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 291d3dca29321814389d0768637cb086
+      internalID: -758751767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 10000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03be3176ace3573419398e844e782aee
+      internalID: 713273315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40530cb6bada8a04493c0b6ac43c5fc1
+      internalID: -656680297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0c6f004fae4fb478d38868198f526b
+      internalID: 1019058732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06bce0bc22c28d346ad6c3e499834759
+      internalID: 807248597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8b4473c041ca0419cb1d3d66ec577d
+      internalID: -885718484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68dd2b451058469478143adb4e2cda4c
+      internalID: -753288880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_107
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53d685431a4282641a77e4cb9d5beb7c
+      internalID: -1881414812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f29a63faa75fc4ca4aa196ac68473c
+      internalID: 447082509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed4611b81a6de24394467fb9690a6f8
+      internalID: 962797079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff42e120f8e3d1d489e32014aefb40c0
+      internalID: -1385048914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57dea2576c650e84e82d95b85f0f13e0
+      internalID: 477239540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c87761de437acc54996b207c79b4f954
+      internalID: -1593959350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b3214633453b85448df48f2b0c735bb
+      internalID: -1020257559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_114
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b491a9bfbb02cf94e968ad35774a0351
+      internalID: -318255931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0764f148416ace64e83f62f525ee4b86
+      internalID: -140974016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078d40cb73452c54c8bf88fcc019b6c1
+      internalID: -689033369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72f9ddf0fbfaad64b83188aca73232d6
+      internalID: -1999891575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_118
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 9000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f07cf16459abd48aa731097c2c4483
+      internalID: 1247653809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee379b9aee1b72a43a68153a7e115417
+      internalID: -1292946536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_120
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58b476d25eca7b4fa6c009901cb6217
+      internalID: 468389055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_121
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c973b0c427bf0a94e85d5c9808af4da5
+      internalID: -1357502104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_122
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2258de66c5dcf1f4fb1fba9915f4f4ab
+      internalID: 399494156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_123
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e02d4f3a43d4349b6c2c7e35a04b88
+      internalID: -1207642922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_124
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64e1678f5dd91646baa923a5d0342e1
+      internalID: -1560262041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_125
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f539851297e3774094f77aca40b823a
+      internalID: -2022227999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_126
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59ca9648241d3c429f803a39bc0cdd9
+      internalID: 831506137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_127
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83738aaa2c958cf44be1326bf351bec6
+      internalID: -150421615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_128
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0b220737c0ddce4e8581117eec995e9
+      internalID: -795090916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_129
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8a39f415ff5ee4bba02af2258b00c7
+      internalID: 1322470325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_130
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9da0e3a4b8cef4199d5f89032ec852
+      internalID: 1493014172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_131
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e85fb37ecdc104ead4780d49e7c698
+      internalID: 1032715676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_132
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47151d335d993214e88f851fdb75a028
+      internalID: -962388502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_133
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319d303c9e0760641a4d0ee24822dc52
+      internalID: 246510463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_134
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb44a49f817def488d6695ad7a620d0
+      internalID: -1872549473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_135
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 8000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774e26c15a18fc5439eb61534e80dc06
+      internalID: 1743351653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_136
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b6b4b9c479dc974e89df022be1875ed
+      internalID: 1095130196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_137
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b20128177947404488e7d1d8bf4df46e
+      internalID: 304610027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_138
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e89621d6c1ba064b9e575b85695904e
+      internalID: 1468887233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_139
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d9b3ee142be3547afe64c3cff8d8c5
+      internalID: 2059119069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_140
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea553c9e6028ec4b94e4b7d66a852e5
+      internalID: -1719041442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_141
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f8f459a44d2a94b8b4a8c19b46ecc9
+      internalID: -1289628625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_142
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca2b7556d1f9a44183d310ee565f7fe
+      internalID: -2105148551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_143
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f43a97ece5a4244888562a2046caaa4
+      internalID: 1092179927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_144
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b55fe4d3102664c9305a471a77c9ca
+      internalID: 87985767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_145
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2d6598a12a9b2242a35ca493d39cf06
+      internalID: -486403380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_146
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f56a928f70d89947ae8b227db506bdd
+      internalID: -1078815138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_147
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5369bc584fb1794cab5c2ddae08da67
+      internalID: -2042197448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_148
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 634123932cb196e47bff21dab6fb67cf
+      internalID: -1424379052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_149
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1446d17387078448b0322d82ad3243
+      internalID: 2010411248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_150
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec383df9519bf9d46acda3f02e42599c
+      internalID: 247990223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_151
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0716ad90bedd2af45ad17037c357d2c3
+      internalID: 1628906574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_152
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 7000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ff9e922d6ae2449b2fda645689a2de
+      internalID: 1905587700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_153
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4ce36f65b1f3c4b80dd347849b0b12
+      internalID: -1153455603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_154
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9637b78ca9c1044db8b2b5a35c84e96
+      internalID: -2133330996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_155
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6ca035c451bc64eae234f4eadfcbde
+      internalID: -313783145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_156
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db0201bb5a605994289fb91ab72cd1b2
+      internalID: -337465651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_157
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18192bc709d41244bbd018a9539c4d41
+      internalID: -752966673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_158
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ba211a285fbe14697736b589c62d37
+      internalID: -411937299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_159
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07931a1d4a5fac4aa020798a68975dc
+      internalID: -1974490106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_160
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece6e4f3e3aa2534bac568c0fcbf754c
+      internalID: -1125789336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_161
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014039b6871cb5b428653ab04b179ccf
+      internalID: -1263648970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_162
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f026c13e879dba46b10f50268e81514
+      internalID: -2143912175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_163
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd7b942a0be95741949d34b78ea3c37
+      internalID: 1464127379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_164
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77a08517b45f354da3c1fd9e6de7c68
+      internalID: 400134034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_165
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1268a0641a119140bde57c25a25e495
+      internalID: -436394109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_166
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f99c501620c8440befd20e766068eb
+      internalID: -1567184263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_167
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12dc08f47124f7b4da11514d6162867d
+      internalID: 1647341381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_168
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecfdbd1488d63a84ea212bce7623268c
+      internalID: -1691207729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_169
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 6000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bc341f28403db46af12c2b746d8b6f
+      internalID: -1459789781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_170
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab093489e39ab1459e8e77c8baab3d4
+      internalID: -1074477032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_171
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82c738af90d34744a88d3e19fba92a8
+      internalID: -80382179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_172
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523ccbd28659f3447ae2e7eb263d5c28
+      internalID: 711433288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_173
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9574fed3d59df4293d6846b811b428
+      internalID: 2106970657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_174
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8392ec7c8a25c349aa26050f20fb31c
+      internalID: 1998880700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_175
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66250f5f136afa345bd8b0b19e26b34f
+      internalID: 521745031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_176
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a40b11e24b2c97419acde4454c126e1
+      internalID: -733031473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_177
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3968be30ab97ebc4e844f72ac98b92d1
+      internalID: 2018033063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_178
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 759d933402a93c1408b201d4178a7c10
+      internalID: 528690930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_179
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103d2eb0e54072e44afb03b02ea4d01d
+      internalID: -982018795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_180
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ece5640305938d94aaaab28630937e72
+      internalID: -1167827849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_181
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8f04728e8407d49a6e477271b59b87
+      internalID: -470413280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_182
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d3c29455bf72849847e8b5924e5e94
+      internalID: -986015406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_183
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779208c7469721a4fa68813153075e91
+      internalID: 563483305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_184
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1a2743e5898394f806d0773fed8dbb
+      internalID: -348448970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_185
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27766f51880484c46836dfcd95e5e35d
+      internalID: -1436938891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_186
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 5000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1edf2b840c50ee545b92d09f1e39a4a5
+      internalID: 1999486893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_187
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2427a72492a3b4a8e8600b2a9ae4d4
+      internalID: 859041552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_188
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc9e1ea2362496848993f37852e0ac4b
+      internalID: -258836495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_189
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8be0f07d5a89f46b88c79e2bb6f8ce
+      internalID: -182378809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_190
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b84135bd93bc548a2af1b9e3a77b58
+      internalID: -606394165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_191
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68c6f84933b0c343b6ee3c61d66f604
+      internalID: 262495853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_192
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba1db300da3e3504db23a9c74ce7b56a
+      internalID: 1108224703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_193
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5bf6e0d63739449b03a26bccdef6d5
+      internalID: -156310837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_194
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f743fcc00eb9104db033b07379fb58f
+      internalID: 105169254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_195
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8e5c1543c6a284c83cec32386db4e9
+      internalID: 277770302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_196
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344a6129a287a89499bc5e01c51aa3e9
+      internalID: -1181847060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_197
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5281162c96b4ed14cafa8000cc12978f
+      internalID: 1315892536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_198
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548c0ca4a01fb924cb4bad72bebfa887
+      internalID: 1331868540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_199
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46230d131a689a94784dc2781c753304
+      internalID: 777401727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_200
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2894656664754549aa616cf8a1b4d94
+      internalID: 2133057297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_201
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08df0ab97cdbbbd40ae2a7d0919bfd8c
+      internalID: -541305114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_202
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd70b80e9e360b419448727c3799ed0
+      internalID: 2059563065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_203
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 4000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2154fd304961d1f4e8335b284f386f67
+      internalID: 1136977468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_204
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012ccf153fafb7246ad94cc3694bd096
+      internalID: 1763489659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_205
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9412765bf7f1b45a6b15212482c7ec
+      internalID: 105171401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_206
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f1f410dab5c5243a92fb486b418997
+      internalID: -1029280034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_207
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08afeac8171bed744b90e04f68405d9b
+      internalID: -1058516877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_208
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33562365b602a314c8effd0ee2bf2357
+      internalID: 176948462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_209
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5005382d9e3c348b60d522d071533f
+      internalID: 170318697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_210
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2643f86d1b23d564c807ef944f1cfa48
+      internalID: 66007699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_211
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b2bf6894d5ae2458aaa55e9f84739c
+      internalID: 1409601389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_212
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ed62cbe37076f408bc2b3d7e9147a0
+      internalID: -557490336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_213
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5ed9d31fb6056428239494d36f05de
+      internalID: 1311309078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_214
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b96094bd96e154299c960945add650
+      internalID: -605707570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_215
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 670d95bca00dd6b438a16ebca05d6886
+      internalID: -791980751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_216
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6be60187c0b1fa846bb4428cffd74c1d
+      internalID: -2039556621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_217
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6013938dbd0874f9f026560aea375f
+      internalID: -1068663030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_218
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc09358dafccaa44697fb562e40d7720
+      internalID: 503213782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_219
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd37069f40da59489f9f04112e205fd
+      internalID: 236028675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_220
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 3000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d959912c733bd4c8168996353fe183
+      internalID: 1098403970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_221
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b367093030d27294490f3727b329354c
+      internalID: -1968373565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_222
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba30b8a5d7e6f2a4ca46a384b1c3f65e
+      internalID: -2123611947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_223
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cca6a452b47b09b4f8540f6003662a56
+      internalID: 1079572196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_224
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb91a3de8c0edb4daba3830c99e2377
+      internalID: 1723501857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_225
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79d55e7aff0f84549a6ff896fc6e8057
+      internalID: 1297021126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_226
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adb7ee5afc98e3742882e8326a7d9563
+      internalID: 1541643993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_227
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fdd3f06d9b0ef4c96d751fae518b49
+      internalID: -175651595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_228
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1b638a1085a904d8ad9fdf579484e1
+      internalID: 1549249281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_229
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0351a61e2c37dbe4ea2461828be7f832
+      internalID: 731921132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_230
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500290549341fb44bab69fc1ab089934
+      internalID: 1849170861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_231
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0b62ce55f77b343bb8d0dca22d8e64
+      internalID: 1457369564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_232
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed05a4baa29bfc44ebceb0a5a1572c0c
+      internalID: -1427095104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_233
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6e2e4f3f024ea4fb01f55a6dcb054f
+      internalID: -1401219029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_234
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48eeaa57c27c3f5458843c15a8f6bea4
+      internalID: -1746862829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_235
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70a97966fdeaca8478050c8ea5d8e066
+      internalID: -1501947699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_236
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be16ccd5304dc064f8c18653a742256d
+      internalID: 1219686573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_237
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 2000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905fb347f24661144bb9dd70582b4036
+      internalID: 2049083115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_238
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc75ee62ebf3da245b46fdd2d0f775fb
+      internalID: -1305158223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_239
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7aa2f2f3ead9ce44ad1bd902dbddbfb
+      internalID: 257953079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_240
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e943484a978836a41a99dd69300ed29b
+      internalID: 2089563945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_241
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebd5831dd4cea348981aa7f60a1a51b
+      internalID: -1462106107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_242
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a1b45bdb111da4bab51b81aa601bf3
+      internalID: 297288003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_243
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09eed2daffc7578468b90ce66646fa06
+      internalID: -2075782585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_244
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e632a7a8198f8458ca39ee76c8fc59
+      internalID: -1972125277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_245
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbebce0d6ca85684790d35d478d57b98
+      internalID: -1157454506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_246
+      rect:
+        serializedVersion: 2
+        x: 5184
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2e4ae45e3216a449895dbc539dbc58
+      internalID: 1049465869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_247
+      rect:
+        serializedVersion: 2
+        x: 5832
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a89685488c3b9b42a30fc06fae9a3ff
+      internalID: -1610131929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_248
+      rect:
+        serializedVersion: 2
+        x: 6480
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf68d25123220b547a4840a98c1d5ad9
+      internalID: -717619970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_249
+      rect:
+        serializedVersion: 2
+        x: 7128
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c893e62d518a86449eda4bf7de5d4ce
+      internalID: 812463621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_250
+      rect:
+        serializedVersion: 2
+        x: 7776
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4160d1ec510da742a07ec7df8351537
+      internalID: 741482203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_251
+      rect:
+        serializedVersion: 2
+        x: 8424
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f3696bcf7efa14db96bbf732a572cc
+      internalID: 59482674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_252
+      rect:
+        serializedVersion: 2
+        x: 9072
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffdfbfd213f0674cbcb33546592065d
+      internalID: 1763019689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_253
+      rect:
+        serializedVersion: 2
+        x: 9720
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2da6ffb32dcb5841a3713698cfe543d
+      internalID: -1230678952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_254
+      rect:
+        serializedVersion: 2
+        x: 10368
+        y: 1000
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40effd93cd3d4e46a04480d0148135f
+      internalID: 84750946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_255
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459e29973aabbec4d8775ddd54366906
+      internalID: 1166487931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TestShadow_SpriteSheet_256
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 648.17645
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fee4acf62a46ae4e83ba6e7c5760c88
+      internalID: 1019944257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5b2349678343b0749bf09b0f91c07cbf
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TestShadow_SpriteSheet_0: 429731322
+      TestShadow_SpriteSheet_1: 1349370810
+      TestShadow_SpriteSheet_10: 1916121242
+      TestShadow_SpriteSheet_100: -758751767
+      TestShadow_SpriteSheet_101: 713273315
+      TestShadow_SpriteSheet_102: -656680297
+      TestShadow_SpriteSheet_103: 1019058732
+      TestShadow_SpriteSheet_104: 807248597
+      TestShadow_SpriteSheet_105: -885718484
+      TestShadow_SpriteSheet_106: -753288880
+      TestShadow_SpriteSheet_107: -1881414812
+      TestShadow_SpriteSheet_108: 447082509
+      TestShadow_SpriteSheet_109: 962797079
+      TestShadow_SpriteSheet_11: -314910347
+      TestShadow_SpriteSheet_110: -1385048914
+      TestShadow_SpriteSheet_111: 477239540
+      TestShadow_SpriteSheet_112: -1593959350
+      TestShadow_SpriteSheet_113: -1020257559
+      TestShadow_SpriteSheet_114: -318255931
+      TestShadow_SpriteSheet_115: -140974016
+      TestShadow_SpriteSheet_116: -689033369
+      TestShadow_SpriteSheet_117: -1999891575
+      TestShadow_SpriteSheet_118: 1247653809
+      TestShadow_SpriteSheet_119: -1292946536
+      TestShadow_SpriteSheet_12: -62379209
+      TestShadow_SpriteSheet_120: 468389055
+      TestShadow_SpriteSheet_121: -1357502104
+      TestShadow_SpriteSheet_122: 399494156
+      TestShadow_SpriteSheet_123: -1207642922
+      TestShadow_SpriteSheet_124: -1560262041
+      TestShadow_SpriteSheet_125: -2022227999
+      TestShadow_SpriteSheet_126: 831506137
+      TestShadow_SpriteSheet_127: -150421615
+      TestShadow_SpriteSheet_128: -795090916
+      TestShadow_SpriteSheet_129: 1322470325
+      TestShadow_SpriteSheet_13: -471013478
+      TestShadow_SpriteSheet_130: 1493014172
+      TestShadow_SpriteSheet_131: 1032715676
+      TestShadow_SpriteSheet_132: -962388502
+      TestShadow_SpriteSheet_133: 246510463
+      TestShadow_SpriteSheet_134: -1872549473
+      TestShadow_SpriteSheet_135: 1743351653
+      TestShadow_SpriteSheet_136: 1095130196
+      TestShadow_SpriteSheet_137: 304610027
+      TestShadow_SpriteSheet_138: 1468887233
+      TestShadow_SpriteSheet_139: 2059119069
+      TestShadow_SpriteSheet_14: 1805112870
+      TestShadow_SpriteSheet_140: -1719041442
+      TestShadow_SpriteSheet_141: -1289628625
+      TestShadow_SpriteSheet_142: -2105148551
+      TestShadow_SpriteSheet_143: 1092179927
+      TestShadow_SpriteSheet_144: 87985767
+      TestShadow_SpriteSheet_145: -486403380
+      TestShadow_SpriteSheet_146: -1078815138
+      TestShadow_SpriteSheet_147: -2042197448
+      TestShadow_SpriteSheet_148: -1424379052
+      TestShadow_SpriteSheet_149: 2010411248
+      TestShadow_SpriteSheet_15: 600637487
+      TestShadow_SpriteSheet_150: 247990223
+      TestShadow_SpriteSheet_151: 1628906574
+      TestShadow_SpriteSheet_152: 1905587700
+      TestShadow_SpriteSheet_153: -1153455603
+      TestShadow_SpriteSheet_154: -2133330996
+      TestShadow_SpriteSheet_155: -313783145
+      TestShadow_SpriteSheet_156: -337465651
+      TestShadow_SpriteSheet_157: -752966673
+      TestShadow_SpriteSheet_158: -411937299
+      TestShadow_SpriteSheet_159: -1974490106
+      TestShadow_SpriteSheet_16: 418383230
+      TestShadow_SpriteSheet_160: -1125789336
+      TestShadow_SpriteSheet_161: -1263648970
+      TestShadow_SpriteSheet_162: -2143912175
+      TestShadow_SpriteSheet_163: 1464127379
+      TestShadow_SpriteSheet_164: 400134034
+      TestShadow_SpriteSheet_165: -436394109
+      TestShadow_SpriteSheet_166: -1567184263
+      TestShadow_SpriteSheet_167: 1647341381
+      TestShadow_SpriteSheet_168: -1691207729
+      TestShadow_SpriteSheet_169: -1459789781
+      TestShadow_SpriteSheet_17: 1788736485
+      TestShadow_SpriteSheet_170: -1074477032
+      TestShadow_SpriteSheet_171: -80382179
+      TestShadow_SpriteSheet_172: 711433288
+      TestShadow_SpriteSheet_173: 2106970657
+      TestShadow_SpriteSheet_174: 1998880700
+      TestShadow_SpriteSheet_175: 521745031
+      TestShadow_SpriteSheet_176: -733031473
+      TestShadow_SpriteSheet_177: 2018033063
+      TestShadow_SpriteSheet_178: 528690930
+      TestShadow_SpriteSheet_179: -982018795
+      TestShadow_SpriteSheet_18: 1993445899
+      TestShadow_SpriteSheet_180: -1167827849
+      TestShadow_SpriteSheet_181: -470413280
+      TestShadow_SpriteSheet_182: -986015406
+      TestShadow_SpriteSheet_183: 563483305
+      TestShadow_SpriteSheet_184: -348448970
+      TestShadow_SpriteSheet_185: -1436938891
+      TestShadow_SpriteSheet_186: 1999486893
+      TestShadow_SpriteSheet_187: 859041552
+      TestShadow_SpriteSheet_188: -258836495
+      TestShadow_SpriteSheet_189: -182378809
+      TestShadow_SpriteSheet_19: -778004988
+      TestShadow_SpriteSheet_190: -606394165
+      TestShadow_SpriteSheet_191: 262495853
+      TestShadow_SpriteSheet_192: 1108224703
+      TestShadow_SpriteSheet_193: -156310837
+      TestShadow_SpriteSheet_194: 105169254
+      TestShadow_SpriteSheet_195: 277770302
+      TestShadow_SpriteSheet_196: -1181847060
+      TestShadow_SpriteSheet_197: 1315892536
+      TestShadow_SpriteSheet_198: 1331868540
+      TestShadow_SpriteSheet_199: 777401727
+      TestShadow_SpriteSheet_2: -1480799668
+      TestShadow_SpriteSheet_20: -796985794
+      TestShadow_SpriteSheet_200: 2133057297
+      TestShadow_SpriteSheet_201: -541305114
+      TestShadow_SpriteSheet_202: 2059563065
+      TestShadow_SpriteSheet_203: 1136977468
+      TestShadow_SpriteSheet_204: 1763489659
+      TestShadow_SpriteSheet_205: 105171401
+      TestShadow_SpriteSheet_206: -1029280034
+      TestShadow_SpriteSheet_207: -1058516877
+      TestShadow_SpriteSheet_208: 176948462
+      TestShadow_SpriteSheet_209: 170318697
+      TestShadow_SpriteSheet_21: 74559346
+      TestShadow_SpriteSheet_210: 66007699
+      TestShadow_SpriteSheet_211: 1409601389
+      TestShadow_SpriteSheet_212: -557490336
+      TestShadow_SpriteSheet_213: 1311309078
+      TestShadow_SpriteSheet_214: -605707570
+      TestShadow_SpriteSheet_215: -791980751
+      TestShadow_SpriteSheet_216: -2039556621
+      TestShadow_SpriteSheet_217: -1068663030
+      TestShadow_SpriteSheet_218: 503213782
+      TestShadow_SpriteSheet_219: 236028675
+      TestShadow_SpriteSheet_22: 1407913043
+      TestShadow_SpriteSheet_220: 1098403970
+      TestShadow_SpriteSheet_221: -1968373565
+      TestShadow_SpriteSheet_222: -2123611947
+      TestShadow_SpriteSheet_223: 1079572196
+      TestShadow_SpriteSheet_224: 1723501857
+      TestShadow_SpriteSheet_225: 1297021126
+      TestShadow_SpriteSheet_226: 1541643993
+      TestShadow_SpriteSheet_227: -175651595
+      TestShadow_SpriteSheet_228: 1549249281
+      TestShadow_SpriteSheet_229: 731921132
+      TestShadow_SpriteSheet_23: -186111942
+      TestShadow_SpriteSheet_230: 1849170861
+      TestShadow_SpriteSheet_231: 1457369564
+      TestShadow_SpriteSheet_232: -1427095104
+      TestShadow_SpriteSheet_233: -1401219029
+      TestShadow_SpriteSheet_234: -1746862829
+      TestShadow_SpriteSheet_235: -1501947699
+      TestShadow_SpriteSheet_236: 1219686573
+      TestShadow_SpriteSheet_237: 2049083115
+      TestShadow_SpriteSheet_238: -1305158223
+      TestShadow_SpriteSheet_239: 257953079
+      TestShadow_SpriteSheet_24: 1739783519
+      TestShadow_SpriteSheet_240: 2089563945
+      TestShadow_SpriteSheet_241: -1462106107
+      TestShadow_SpriteSheet_242: 297288003
+      TestShadow_SpriteSheet_243: -2075782585
+      TestShadow_SpriteSheet_244: -1972125277
+      TestShadow_SpriteSheet_245: -1157454506
+      TestShadow_SpriteSheet_246: 1049465869
+      TestShadow_SpriteSheet_247: -1610131929
+      TestShadow_SpriteSheet_248: -717619970
+      TestShadow_SpriteSheet_249: 812463621
+      TestShadow_SpriteSheet_25: 1781561756
+      TestShadow_SpriteSheet_250: 741482203
+      TestShadow_SpriteSheet_251: 59482674
+      TestShadow_SpriteSheet_252: 1763019689
+      TestShadow_SpriteSheet_253: -1230678952
+      TestShadow_SpriteSheet_254: 84750946
+      TestShadow_SpriteSheet_255: 1166487931
+      TestShadow_SpriteSheet_256: 1019944257
+      TestShadow_SpriteSheet_257: 1278168083
+      TestShadow_SpriteSheet_258: -1684720249
+      TestShadow_SpriteSheet_26: -195226358
+      TestShadow_SpriteSheet_27: -792907046
+      TestShadow_SpriteSheet_28: 841610927
+      TestShadow_SpriteSheet_29: -131060614
+      TestShadow_SpriteSheet_3: 1543441811
+      TestShadow_SpriteSheet_30: -1395721905
+      TestShadow_SpriteSheet_31: 1119768590
+      TestShadow_SpriteSheet_32: 721641323
+      TestShadow_SpriteSheet_33: 1364104094
+      TestShadow_SpriteSheet_34: -690477916
+      TestShadow_SpriteSheet_35: -447339375
+      TestShadow_SpriteSheet_36: -1973326666
+      TestShadow_SpriteSheet_37: -67057692
+      TestShadow_SpriteSheet_38: -1042702671
+      TestShadow_SpriteSheet_39: 1667092431
+      TestShadow_SpriteSheet_4: -1553772501
+      TestShadow_SpriteSheet_40: 493925181
+      TestShadow_SpriteSheet_41: -643057109
+      TestShadow_SpriteSheet_42: 1013254718
+      TestShadow_SpriteSheet_43: 1563999877
+      TestShadow_SpriteSheet_44: 836342610
+      TestShadow_SpriteSheet_45: -820435907
+      TestShadow_SpriteSheet_46: 809992210
+      TestShadow_SpriteSheet_47: -428047789
+      TestShadow_SpriteSheet_48: -375039211
+      TestShadow_SpriteSheet_49: 2053550315
+      TestShadow_SpriteSheet_5: -1370751253
+      TestShadow_SpriteSheet_50: 1025045972
+      TestShadow_SpriteSheet_51: 334070053
+      TestShadow_SpriteSheet_52: 338754219
+      TestShadow_SpriteSheet_53: -1563522858
+      TestShadow_SpriteSheet_54: -2083837719
+      TestShadow_SpriteSheet_55: 1517485828
+      TestShadow_SpriteSheet_56: 152017116
+      TestShadow_SpriteSheet_57: 1044688075
+      TestShadow_SpriteSheet_58: 1792982847
+      TestShadow_SpriteSheet_59: -570014991
+      TestShadow_SpriteSheet_6: 951797478
+      TestShadow_SpriteSheet_60: 277747171
+      TestShadow_SpriteSheet_61: -2036583653
+      TestShadow_SpriteSheet_62: -333992754
+      TestShadow_SpriteSheet_63: 1039517329
+      TestShadow_SpriteSheet_64: -1794054209
+      TestShadow_SpriteSheet_65: -1631505814
+      TestShadow_SpriteSheet_66: -157843289
+      TestShadow_SpriteSheet_67: -1039726855
+      TestShadow_SpriteSheet_68: 793632188
+      TestShadow_SpriteSheet_69: -1924247240
+      TestShadow_SpriteSheet_7: -1066036939
+      TestShadow_SpriteSheet_70: -1380384188
+      TestShadow_SpriteSheet_71: -865330038
+      TestShadow_SpriteSheet_72: -766077387
+      TestShadow_SpriteSheet_73: -1538834099
+      TestShadow_SpriteSheet_74: 814037573
+      TestShadow_SpriteSheet_75: -790370573
+      TestShadow_SpriteSheet_76: 1062710320
+      TestShadow_SpriteSheet_77: -756898063
+      TestShadow_SpriteSheet_78: -428281218
+      TestShadow_SpriteSheet_79: -975458405
+      TestShadow_SpriteSheet_8: 1927483464
+      TestShadow_SpriteSheet_80: -1871006324
+      TestShadow_SpriteSheet_81: -143516574
+      TestShadow_SpriteSheet_82: 362858666
+      TestShadow_SpriteSheet_83: -1380707672
+      TestShadow_SpriteSheet_84: 69834174
+      TestShadow_SpriteSheet_85: 41418464
+      TestShadow_SpriteSheet_86: -113915650
+      TestShadow_SpriteSheet_87: 984032909
+      TestShadow_SpriteSheet_88: -1920505208
+      TestShadow_SpriteSheet_89: -321063822
+      TestShadow_SpriteSheet_9: 524406847
+      TestShadow_SpriteSheet_90: -1607625036
+      TestShadow_SpriteSheet_91: 364392955
+      TestShadow_SpriteSheet_92: -116008908
+      TestShadow_SpriteSheet_93: -989494374
+      TestShadow_SpriteSheet_94: -137223923
+      TestShadow_SpriteSheet_95: -621157618
+      TestShadow_SpriteSheet_96: -1313638172
+      TestShadow_SpriteSheet_97: 1005763581
+      TestShadow_SpriteSheet_98: 860901998
+      TestShadow_SpriteSheet_99: 540270638
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

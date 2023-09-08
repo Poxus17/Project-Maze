@@ -28,4 +28,12 @@ public class InputSystemHandler : MonoBehaviour
         Cursor.lockState = active ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = active;
     }
+
+    public void SetInputActive(bool active)
+    {
+        if (active)
+            playerInput.ActivateInput();
+        else
+            playerInput.DeactivateInput();
+    }
 }

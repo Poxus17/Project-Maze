@@ -21,4 +21,5 @@ MonoBehaviour:
       on, relentless in my search for answers. Every step taken in this maze brings
       me closer to unraveling its enigmatic secrets. The chilling cold may test my
       resolve, but I refuse to be defeated.   \n\nFrank."
-    clip: {fileID: 8300000, guid: 0973ea7be2021d741b875a2697314594, type: 3}
+    clip: {fileID: 8300000, guid: e979ed19dfdd53949974ba16335bb526, type: 3}
+    exitClip: {fileID: 8300000, guid: 4284b3a22fb7751448bfca3da905c68b, type: 3}

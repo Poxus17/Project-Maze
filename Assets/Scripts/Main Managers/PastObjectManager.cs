@@ -8,12 +8,13 @@ public class PastObjectManager : MonoBehaviour
 {
     AudioSource audioSource;
     [SerializeField] PastObjectPacketVariable InspectionPacket;
-    [SerializeField] GameEvent EnterInspection;
+    //[SerializeField] GameEvent EnterInspection;
     [SerializeField] FloatVariable itemCount;
 
     public string text { get; }
 
     public static PastObjectManager instance;
+
     void Awake()
     {
         if(instance == null)
@@ -43,7 +44,7 @@ public class PastObjectManager : MonoBehaviour
         audioSource.clip = packet.data.clip;
         audioSource.Play();
 
-        EnterInspection.Raise();
+        //EnterInspection.Raise();
         /*WorldEventDispatcher.instance.BroadcastInteraction.Invoke(packet);*/
         InventoryManager.Instance.StoreToInventory(packet);
     }

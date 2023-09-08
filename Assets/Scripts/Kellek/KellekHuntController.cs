@@ -29,10 +29,16 @@ public class KellekHuntController : MainAiController
     [Space(5)]
 
     [Header("Spawn")]
+    public bool instantSpawn;
     public float _minSpawnTime = 1;
     public float _maxSpawnTime = 30;
     public float _minDespawnTime = 30;
     public float _maxDespawnTime = 120;
+    [Space(5)]
+
+    [Header("Variable Assets")]
+    [SerializeField] BoolVariable chaseLock;
+    [SerializeField] FloatVariable itemCount;
 
     States state;
 
@@ -45,6 +51,9 @@ public class KellekHuntController : MainAiController
     bool queueShakeoff = false;
     bool blindChasing = false;
     bool despawnDisrupted;
+
+    //Suspension parameter
+    bool suspended;
 
     public GameObject parentObject { get; private set; }
 
@@ -60,9 +69,14 @@ public class KellekHuntController : MainAiController
         //Invoke("RoamNextPoint", 0.2f);
     }
 
+
+
     //0 - Spawn in the ring
     public void SpawnIn()
     {
+        if (itemCount.value < 2)
+            return;
+
         //roamManager.LoadRoamData(1, 1);
         Vector3 SpawnPoint = roamManager.FindFarthestPoint();
         controller.Teleport(new Vector3(SpawnPoint.x, 6, SpawnPoint.z));
@@ -187,6 +201,7 @@ public class KellekHuntController : MainAiController
     IEnumerator IllGiveYouToTheCountOf()
     {
         state = States.Chase;
+        chaseLock.value = true;
         MusicMan.instance.PlaySE(detectSE, 1f);
         controller.CancelMovement();
 
@@ -235,6 +250,7 @@ public class KellekHuntController : MainAiController
 
         state = States.Prowl; // Add here something to check if he still has a hearing target
 
+        chaseLock.value = false;
         OnChase.Invoke(false);
         StartCoroutine(LeaveAudibleArea());
         Debug.Log("quit chase");
@@ -316,12 +332,34 @@ public class KellekHuntController : MainAiController
 
     public void TurnOff()
     {
+        if (state == States.OffMap)
+            return;
+
+        suspended = true;
+        controller.SavePosition();
         controller.Teleport(oblivion);
     }
-    public void TurnOn()
+    public void TurnOn() //wink wink
     {
-        if (SectionsManager.instance.currentSection != 0)
-            SpawnIn();
+        if (!suspended || SectionsManager.instance.currentSection == 0)
+            return;
+
+        controller.RestorePosition();
+
+        switch(state)
+        {
+            case States.Prowl:
+                controller.MoveTo(lastRoam);
+                break;
+            case States.Hunt:
+                controller.SwitchToPlayer();
+                break;
+            default:
+                SpawnIn();
+                break;
+
+        }
+        
     }
 
     private void OnDestroy()

@@ -17,6 +17,9 @@ public class AiMovementController : MonoBehaviour
     //Debuging shit
     Vector3 lastSteeringTarget;
     float timeSinceLastTarget = 0;
+
+    Vector3 savedPos;
+
     private void Start()
     {
         lastSteeringTarget = Vector3.zero;
@@ -96,6 +99,16 @@ public class AiMovementController : MonoBehaviour
     {
         if(agent.isOnNavMesh)
             agent.isStopped = setTo;
+    }
+
+    public void SavePosition()
+    {
+        savedPos = agent.gameObject.transform.position;
+    }
+
+    public void RestorePosition()
+    {
+        Teleport(savedPos);
     }
 
     public static void Debug_PrintListeners()

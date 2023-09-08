@@ -7,7 +7,7 @@ public class MainMenuEvents : MonoBehaviour
 {
     public void Open()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadSceneAsync(1);
     }
 
     public void Leave()

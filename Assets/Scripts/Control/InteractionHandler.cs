@@ -21,7 +21,8 @@ public class InteractionHandler : MonoBehaviour
     int lastDetectedId;
     bool exclusiveLocked; //True if currently in an interaction's exlusive time
 
-    IInteractable detectedObject;
+    IInteractable interactableObject;
+    EnvoirmentSoundEffectComponent detectedObject;
 
     private void Start()
     {
@@ -55,23 +56,34 @@ public class InteractionHandler : MonoBehaviour
             {
                 var currentInstanceId = hitObject.GetInstanceID();
 
-                if (detectedObject == null || lastDetectedId != currentInstanceId)
+                if (interactableObject == null || lastDetectedId != currentInstanceId)
                 {
-                    detectedObject = hit.collider.gameObject.GetComponent<IInteractable>();
+                    interactableObject = hitObject.GetComponent<IInteractable>();
                     lastDetectedId = currentInstanceId;
-                    currentDetectionText.value = detectedObject.GetInteractionText();
+                    currentDetectionText.value = interactableObject.GetInteractionText();
                 }
             }
-            else if (detectedObject != null)
+            else if(hitObject.tag == "Detect")
             {
-                detectedObject = null;
-                currentDetectionText.value = "";
+                var currentInstanceId = hitObject.GetInstanceID();
+
+                if (detectedObject == null || lastDetectedId != currentInstanceId)
+                {
+                    detectedObject = hitObject.GetComponent<EnvoirmentSoundEffectComponent>();
+                    lastDetectedId = currentInstanceId;
+
+                    if (!detectedObject.Detect())
+                        detectedObject = null;
+                }
+            }
+            else if (interactableObject != null || detectedObject != null)
+            {
+                ClearDetection();
             }
         }
-        else if(detectedObject != null)
+        else if(interactableObject != null || detectedObject != null)
         {
-            detectedObject = null;
-            currentDetectionText.value = "";
+            ClearDetection();
         }
     }
 
@@ -83,15 +95,26 @@ public class InteractionHandler : MonoBehaviour
         {
             lockStateEvent.Raise();
         }
-        else if (detectedObject != null)
+        else if (interactableObject != null)
         {
-            detectedObject.Interact();
+            interactableObject.Interact();
 
-            if (detectedObject.exclusiveTime > 0)
-                StartCoroutine(PlayExclusiveTime(detectedObject.exclusiveTime));
+            if (interactableObject.exclusiveTime > 0)
+                StartCoroutine(PlayExclusiveTime(interactableObject.exclusiveTime));
 
-            detectedObject = null;
+            ClearDetection();
         }
+    }
+
+    private void ClearDetection()
+    {
+        interactableObject = null;
+        currentDetectionText.value = "";
+
+        if(detectedObject != null)
+            detectedObject.Lose();
+
+        detectedObject = null;
     }
 
     IEnumerator PlayExclusiveTime(float time)

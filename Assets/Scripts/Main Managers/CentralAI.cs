@@ -132,10 +132,13 @@ public class CentralAI : MonoBehaviour
 
     IEnumerator SpawnTimer()
     {
-        spawning = true;
-        var spawnTimer = Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime);
-        Debug.Log("He's coming in " + spawnTimer);
-        yield return new WaitForSeconds(spawnTimer);
+        if (!kellek.instantSpawn)
+        {
+            spawning = true;
+            var spawnTimer = Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime);
+            Debug.Log("He's coming in " + spawnTimer);
+            yield return new WaitForSeconds(spawnTimer);
+        }
         kellek.SpawnIn();
         spawning = false;
     }

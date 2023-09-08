@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-    [SerializeField] GameEvent openNoteEvent;
     [SerializeField] NoteDataVariable currentNoteData;
 
     public static NoteManager instance;
@@ -20,6 +19,6 @@ public class NoteManager : MonoBehaviour
     public void OpenNote(NoteData note)
     {
         currentNoteData.value = note;
-        openNoteEvent.Raise();
+        UIManager.Instance.LaunchUIComponent(2);
     }
 }

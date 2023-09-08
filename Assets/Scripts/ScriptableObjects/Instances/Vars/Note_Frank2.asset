@@ -24,4 +24,5 @@ MonoBehaviour:
       authenticity of his existence. Now, as I find myself trapped in this maze,
       a lingering uncertainty engulfs me\u2014was he truly real, or a mere mirage
       born from the illusions of the desert? \n\nFrank."
-    clip: {fileID: 8300000, guid: 6c066efa2d4240449b9d93c331083cc6, type: 3}
+    clip: {fileID: 8300000, guid: e7b5482a424291847bf68d9d99bcfa70, type: 3}
+    exitClip: {fileID: 8300000, guid: 28c198d8aa3e653459c172a9379e3674, type: 3}

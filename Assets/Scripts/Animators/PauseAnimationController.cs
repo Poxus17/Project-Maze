@@ -6,16 +6,19 @@ public class PauseAnimationController : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] AnimationClip animationClip;
-    [SerializeField] GameEvent enterPause;
+    [SerializeField] BoolVariable chaseLock;
 
     public void PlayAnimation()
     {
+        if (chaseLock.value)
+            return;
+
         animator.SetTrigger("PlayCountdown");
     }
 
     // This method will be called when the animation finishes
     public void OnAnimationFinished()
     {
-        enterPause.Raise();
+        UIManager.Instance.LaunchUIComponent(1);
     }
 }

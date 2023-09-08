@@ -8,6 +8,8 @@ public class CandleTrigger : MonoBehaviour, IInteractable
     [SerializeField] BoolVariable lighterLit;
     [SerializeField] string onText = "Light up";
     [SerializeField] string offText = "Blow out";
+    
+    Light volumatric;
 
     GameObject particles;
     public delegate void TriggerCandle(bool setTo);
@@ -18,6 +20,7 @@ public class CandleTrigger : MonoBehaviour, IInteractable
     {
         particles = transform.GetChild(0).gameObject;
         particles.SetActive(lit);
+        volumatric = GetComponentInChildren<Light>();
     }
 
     public void Interact()
@@ -27,6 +30,7 @@ public class CandleTrigger : MonoBehaviour, IInteractable
 
         lit = !lit;
         particles.SetActive(lit);
+        volumatric.enabled = lit;
 
         if (OnTriggerCandle != null)
         {

@@ -130,6 +130,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "CancelAction",
+                    "type": "Button",
+                    "id": "1c08dab8-ac51-4657-9b42-d31353137def",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -422,7 +431,7 @@
                 {
                     "name": "",
                     "id": "4e51a439-94e0-4767-bed0-25db3fcee3e4",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -493,6 +502,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "TestFeature3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0480bb8-58d7-4d85-882e-0842bdcbfb02",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "CancelAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

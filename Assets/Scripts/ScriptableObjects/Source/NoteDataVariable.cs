@@ -15,5 +15,6 @@ public class NoteData
     [TextArea(15, 20)]
     public string text;
     public AudioClip clip;
+    public AudioClip exitClip;
 }
 

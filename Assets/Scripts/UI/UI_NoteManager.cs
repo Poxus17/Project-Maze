@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_NoteManager : MonoBehaviour
+public class UI_NoteManager : UIComponent
 {
-    [SerializeField] GameObject NoteCanvas;
     [SerializeField] TMPro.TMP_Text NoteText;
     [SerializeField] NoteDataVariable CurrentNote;
 
+    public override void PersonalEventBindings()
+    {
+        LaunchComponentPersonalEvents += ReadNote;
+        CloseComponentPersonalEvents += LeaveNote;
+    }
+
     public void ReadNote()
     {
-        NoteCanvas.SetActive(true);
         NoteText.text = CurrentNote.value.text;
         MusicMan.instance.PlaySE(CurrentNote.value.clip, 1.0f);
     }
 
     public void LeaveNote()
     {
-        NoteCanvas.SetActive(false);
         MusicMan.instance.StopSE();
+        MusicMan.instance.PlaySE(CurrentNote.value.exitClip, 1.0f);
     }
 }

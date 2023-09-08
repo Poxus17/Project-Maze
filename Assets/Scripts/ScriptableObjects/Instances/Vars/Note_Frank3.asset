@@ -20,4 +20,5 @@ MonoBehaviour:
       in this strange place? Though it might seem like the best spot to stay, I can't
       linger here forever. I must find a way to escape from this labyrinth, no matter
       what! \n\nFrank"
-    clip: {fileID: 8300000, guid: f7e4f1db73a5ed34c92c17cfc57d849f, type: 3}
+    clip: {fileID: 8300000, guid: 26facd1e70e1b634f95b2b01e7c4b111, type: 3}
+    exitClip: {fileID: 8300000, guid: e56c587eaa1f4164b840c682d7d7f302, type: 3}

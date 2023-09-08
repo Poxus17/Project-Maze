@@ -30,6 +30,12 @@ public class MusicMan : MonoBehaviour
         seSource.PlayOneShot(clip);
     }
 
+    public void PlaySE(AudioClip clip)
+    {
+        seSource.volume = 1;
+        seSource.PlayOneShot(clip);
+    }
+
     public void PlayMusic(AudioClip clip, bool useTransition)
     {
         if (useTransition)

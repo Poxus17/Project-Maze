@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac04bb1827548d2428caa9f012ee89d2, type: 3}
+  m_Name: Helmet
+  m_EditorClassIdentifier: 
+  name: Bike helmet
+  icon: {fileID: 21300000, guid: 645229ddae8a94c43a9c5fde6a962522, type: 3}
+  clip: {fileID: 8300000, guid: 6cb3e248d04034f43921552882ea062e, type: 3}
+  transcript: I remember when dad bought Georgie his first bike, Georgie was so hyped
+    to ride them he couldn't stop smiling the entire ride home. Turns out He was
+    a naturel, In only a few days he was riding around our neighborhood showing off
+    the neighbors... Man... Everything was so simple back then.

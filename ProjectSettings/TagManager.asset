@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - RoamPoint
   - Interact
+  - Detect
   layers:
   - Default
   - TransparentFX

@@ -9,7 +9,7 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
     public float exclusiveTime { get; set; }
     [SerializeField] PastObjectData data;
     [SerializeField] PastObjectPacketVariable inspectionItem;
-    [SerializeField] GameEvent EnterInspection;
+    [SerializeField] GameEvent inspectionExitEvent;
 
 
     PastObjectPacket pastObjectPacket;
@@ -24,7 +24,11 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
     {
         inspectionItem.Value = pastObjectPacket;
         PastObjectManager.instance.Interact(pastObjectPacket);
-        EnterInspection.Raise();
+
+        UIManager.Instance.LaunchUIComponent(0);
+
+        if(inspectionExitEvent != null)
+            UIManager.Instance.BindGameEventToExit(inspectionExitEvent);
 
         //Send it to FUCKING HELL never to be seen again
         transform.position = new Vector3(-1000, -1000, -1000);

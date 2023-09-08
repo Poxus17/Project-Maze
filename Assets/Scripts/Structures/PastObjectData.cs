@@ -8,6 +8,8 @@ public class PastObjectData : ScriptableObject
 {
     public string name;
 
+    public Sprite icon;
+
     public AudioClip clip;
 
     [TextArea(15, 20)]

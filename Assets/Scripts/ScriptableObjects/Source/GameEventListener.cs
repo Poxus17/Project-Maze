@@ -16,7 +16,15 @@ public class GameEventListener : MonoBehaviour
     private void OnDisable()
     { Event.UnregisterListener(this); }
     public void OnEventRaised() 
-    { StartCoroutine(RaiseTimer()); }
+    { RaiseEvent(); }
+
+    void RaiseEvent()
+    {
+        if (raiseTimer > 0 || oneFrameDelay)
+            StartCoroutine(RaiseTimer());
+        else
+            Response.Invoke();
+    }
 
     private IEnumerator RaiseTimer()
     {

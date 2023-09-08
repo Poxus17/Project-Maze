@@ -11,11 +11,6 @@ public class InspectionMeshController : MonoBehaviour
     bool rightClick = false;
     Vector2 currentMousePos;
 
-    void Start()
-    {
-        
-    }
-
     public void MoveInspection(InputAction.CallbackContext context)
     {
         if (rightClick)

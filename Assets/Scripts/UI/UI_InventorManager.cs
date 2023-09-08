@@ -49,9 +49,7 @@ public class UI_InventorManager : MonoBehaviour
         if (active)
         {
             #region ResetScrollTransform
-
             scrollObject.GetComponent<RectTransform>().pivot = new Vector2(0,0.5f);
-
             #endregion
 
 

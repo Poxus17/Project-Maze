@@ -43,7 +43,8 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] BoolVariable controlLock;
     [SerializeField] FloatVariable staminaPercent;
     [SerializeField] GameEvent LeaveUI;
-
+    [SerializeField] BoolVariable adventureMode;
+ 
     public static bool isWalking;
 
     public delegate void ChangeIsWalking(bool val);
@@ -78,6 +79,9 @@ public class FPSMovementController : MonoBehaviour
 
         speedLerpObject = new SpeedLerpObject();
         Cursor.visible = false;
+
+        if (adventureMode.value)
+            staminaDepleteRate = 0;
     }
 
     private void Update()
@@ -112,15 +116,15 @@ public class FPSMovementController : MonoBehaviour
         if (!controlLock.value)
         {
             #region Movement
-            var horizontal = rawMovement.y * speed * transform.forward;
-            var vertical = rawMovement.x * speed * transform.right;
+            var horizontal = rawMovement.y * speed * camera.transform.forward;
+            var vertical = rawMovement.x * speed * camera.transform.right;
 
             movement = horizontal + vertical;
 
-            if (movement.magnitude == 0 && rb.velocity.x > 0 && speedDecay > 0)
+            /*if (movement.magnitude == 0 && rb.velocity.x > 0 && speedDecay > 0)
             {
                 movement = rb.velocity - (new Vector3(speedDecay, 0, 0));
-            }
+            }*/
 
             rb.velocity = new Vector3(movement.x, 0, movement.z);
             isWalking = movement.magnitude > 0;
@@ -238,10 +242,6 @@ public class FPSMovementController : MonoBehaviour
         isCrouching = false;
     }
 
-    public void InvokeLeaveUI()
-    {
-        LeaveUI.Raise();
-    }
 
     public float GetSpeedLerpTime()
     {
@@ -270,10 +270,8 @@ public class FPSMovementController : MonoBehaviour
                 
 
             speed = Mathf.Lerp(speedLerpObject.speedA, speedLerpObject.speedB, speedLerpObject.alpha);
-            yield return null;
-
-
             speedLerpObject.alpha += alphaDelta * Time.deltaTime;
+            yield return null;
         }
 
         isLerpingSpeed = false;

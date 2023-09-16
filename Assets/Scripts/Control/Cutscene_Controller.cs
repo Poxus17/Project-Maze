@@ -19,7 +19,7 @@ public class Cutscene_Controller : MonoBehaviour
     float bobbingSpeed = 15;
     float bobbingAmount = 0.2f;
     float defaultPosY;
-    float stepTime = 0.4f;
+    float stepTime = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +63,9 @@ public class Cutscene_Controller : MonoBehaviour
     public void ReadMove(InputAction.CallbackContext context)
     {
         rawMovement = context.ReadValue<Vector2>();
+
+        rawMovement.x = 0;
+        rawMovement.y = Mathf.Clamp(rawMovement.y, 0, 2);
     }
     void SetActiveStep(bool val)
     {
@@ -78,7 +81,7 @@ public class Cutscene_Controller : MonoBehaviour
     {
         playingStep = true;
         var selectClip = stepClips[Random.Range(0, stepClips.Length)];
-        NoiseManager.instance.PlayNoise(selectClip, 0);
+        MusicMan.instance.PlaySE(selectClip, 0.5f);
 
         yield return new WaitForSeconds(stepTime);
 

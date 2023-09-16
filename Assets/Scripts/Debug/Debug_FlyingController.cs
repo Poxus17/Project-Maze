@@ -8,10 +8,12 @@ public class Debug_FlyingController : MonoBehaviour
 
     public float normalspeed = 1;
     public float slowSpeed = 0.1f;
+    public GameObject camera;
     float speed;
     bool slow = false;
     float raw3d;
     Vector3 rawMovement;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +23,8 @@ public class Debug_FlyingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var horizontal = rawMovement.y * speed * transform.forward;
-        var vertical = rawMovement.x * speed * transform.right;
+        var horizontal = rawMovement.y * speed * camera.transform.forward;
+        var vertical = rawMovement.x * speed * camera.transform.right;
         var axis = new Vector3(0, raw3d * speed, 0);
 
         transform.position += horizontal + vertical + axis;

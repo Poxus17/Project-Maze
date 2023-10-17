@@ -5333,7 +5333,10 @@ MonoBehaviour:
   delay: 0
   walkingBobbingSpeed: 8
   runningBobbingSpeed: 15
-  bobbingAmount: 0.01
+  bobbingAmountX: 0
+  bobbingAmountY: 0
+  bobbingSwayRotationAmount: 0
+  testingSwayRotationAmount: {fileID: 0}
   sprint: {fileID: 11400000, guid: 2146ef35afdd2e9429c4e5ef9bf98714, type: 2}
   inTreehouse: {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
   groundY: -0.444
@@ -5368,7 +5371,7 @@ GameObject:
   - component: {fileID: 1385110148987287720}
   - component: {fileID: 1385110148987287721}
   - component: {fileID: 1385110148987287727}
-  - component: {fileID: 1385110148987287726}
+  - component: {fileID: 9142394825370847455}
   m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5383,7 +5386,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385110148987287772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5400,7 +5403,7 @@ Transform:
   - {fileID: 1385110149703178079}
   - {fileID: 1385110149134442764}
   - {fileID: 1384526666556457502}
-  m_Father: {fileID: 1385110150539732616}
+  m_Father: {fileID: 1940643881810454500}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1385110148987287714
@@ -5688,7 +5691,7 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
---- !u!114 &1385110148987287726
+--- !u!114 &9142394825370847455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5697,14 +5700,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385110148987287772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6df7de84898041489bf991bce606bae, type: 3}
+  m_Script: {fileID: 11500000, guid: 6640ed198bd98d049b662700cf1c2851, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxXRotation: 70
-  smoothSpeed: 0.2
-  playerRotationXDelta: {fileID: 11400000, guid: a1d567778fba464478cce701478e4f10, type: 2}
-  playerRotationYDelta: {fileID: 11400000, guid: 2aadfbed384c7eb4bacc90581c12e199, type: 2}
-  mouseSensitivity: {fileID: 11400000, guid: e5ee73580924aa4439c5fd21abb19e69, type: 2}
+  delay: 0
+  walkingBobbingSpeed: 2.4
+  runningBobbingSpeed: 4.1
+  bobbingAmountX: 0
+  bobbingAmountY: 0.1
+  bobbingSwayRotationAmount: 3
+  testingSwayRotationAmount: {fileID: 11400000, guid: c27ed36be89152745bd69e7717f53f1d, type: 2}
+  sprint: {fileID: 11400000, guid: 2146ef35afdd2e9429c4e5ef9bf98714, type: 2}
+  inTreehouse: {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
+  groundY: 0
+  treehouseY: 0
 --- !u!1 &1385110149134442765
 GameObject:
   m_ObjectHideFlags: 0
@@ -6276,6 +6285,7 @@ GameObject:
   - component: {fileID: 1385110150539732634}
   - component: {fileID: 1385110150539732624}
   - component: {fileID: 1385110150539732621}
+  - component: {fileID: 4344751986910879397}
   - component: {fileID: 1385110150539732639}
   - component: {fileID: 1385110150539732632}
   - component: {fileID: 1385110150539732635}
@@ -6297,6 +6307,7 @@ GameObject:
   - component: {fileID: 1385110150539732583}
   - component: {fileID: 1385110150539732581}
   - component: {fileID: 1385110150539732582}
+  - component: {fileID: 8211945785309997370}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -6316,7 +6327,7 @@ Transform:
   m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000002}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1385110148987287713}
+  - {fileID: 1940643881810454500}
   - {fileID: 619867504248902013}
   - {fileID: 619867502225226224}
   m_Father: {fileID: 0}
@@ -6552,7 +6563,7 @@ MonoBehaviour:
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1385110148987287726}
+      - m_Target: {fileID: 2443516958063162332}
         m_TargetAssemblyTypeName: FPSCameraController, Assembly-CSharp
         m_MethodName: Look
         m_Mode: 0
@@ -6998,11 +7009,39 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 1c08dab8-ac51-4657-9b42-d31353137def
     m_ActionName: Player/CancelAction[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8211945785309997370}
+        m_TargetAssemblyTypeName: UIControlRaise, Assembly-CSharp
+        m_MethodName: RaiseUI
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d8e3b418-4101-49e9-90ea-efd3056b8dfb
+    m_ActionName: Player/OpenMap[/Keyboard/m]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4344751986910879397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110150539732612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f39858a1b1107d4a9c06f162d4a1c79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1385110150539732639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7029,6 +7068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalspeed: 0.5
   slowSpeed: 0.1
+  camera: {fileID: 0}
 --- !u!114 &1385110150539732635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7182,7 +7222,10 @@ MonoBehaviour:
   delay: 0
   walkingBobbingSpeed: 8
   runningBobbingSpeed: 15
-  bobbingAmount: 0.2
+  bobbingAmountX: 0
+  bobbingAmountY: 0
+  bobbingSwayRotationAmount: 0
+  testingSwayRotationAmount: {fileID: 0}
   sprint: {fileID: 11400000, guid: 2146ef35afdd2e9429c4e5ef9bf98714, type: 2}
   inTreehouse: {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
   groundY: 6.3
@@ -7380,7 +7423,7 @@ MonoBehaviour:
   treehouseBase: {x: 8.82, y: 6.523, z: -8.24}
   treehouseTop: {x: 15.33, y: 45.466, z: -12.91}
   transitionSpeed: 0.2
-  startUp: 1
+  startUp: 0
   ChangeState:
     m_PersistentCalls:
       m_Calls:
@@ -7540,6 +7583,19 @@ MonoBehaviour:
   HoldItemTransform: {fileID: 1385110148981740175}
   inspectionItem: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
   isHolding: {fileID: 11400000, guid: 8c61224d919deb948ad7af3342551330, type: 2}
+--- !u!114 &8211945785309997370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110150539732612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514010b2ad3f3c74988d30e5bd988553, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raiseUIIndex: 0
 --- !u!1 &1385110150997124877
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,6 +9024,56 @@ Transform:
   m_Father: {fileID: 5380582208870857868}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6924395450143651060
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1940643881810454500}
+  - component: {fileID: 2443516958063162332}
+  m_Layer: 7
+  m_Name: CameraRotationParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1940643881810454500
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924395450143651060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1385110148987287713}
+  m_Father: {fileID: 1385110150539732616}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2443516958063162332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924395450143651060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6df7de84898041489bf991bce606bae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxXRotation: 70
+  smoothSpeed: 0.2
+  playerRotationXDelta: {fileID: 11400000, guid: a1d567778fba464478cce701478e4f10, type: 2}
+  playerRotationYDelta: {fileID: 11400000, guid: 2aadfbed384c7eb4bacc90581c12e199, type: 2}
+  mouseSensitivity: {fileID: 11400000, guid: e5ee73580924aa4439c5fd21abb19e69, type: 2}
 --- !u!1 &6996345740541368346
 GameObject:
   m_ObjectHideFlags: 0

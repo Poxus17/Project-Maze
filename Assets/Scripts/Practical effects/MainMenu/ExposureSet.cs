@@ -12,6 +12,7 @@ public class ExposureSet : MonoBehaviour
     [SerializeField] Light directionalLight;
     [SerializeField] FloatVariable exposureVal;
     [SerializeField] FloatVariable lightIntensity;
+    [SerializeField] FloatAnnouncerVariable debugExposureVar;
 
     private ColorAdjustments colorAdjustments;
     private Exposure exposure;
@@ -25,7 +26,7 @@ public class ExposureSet : MonoBehaviour
     void Start()
     {
         if (volume.profile.TryGet(out exposure))
-            SetBrightness();
+            SetDebugBrightness();
         else
             Debug.Log("No exposure");
     }
@@ -37,7 +38,11 @@ public class ExposureSet : MonoBehaviour
 
         /*colorAdjustments.postExposure.value = exposureVal.value + baseExposure;
         directionalLight.intensity = lightIntensity.value + baseIntensity;*/
+    }
 
-
+    public void SetDebugBrightness()
+    {
+        Debug.Log("Setting exposure");
+        exposure.fixedExposure.value = baseExposure - debugExposureVar.value;
     }
 }

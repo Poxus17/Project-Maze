@@ -81,7 +81,7 @@ public class UIComponent : MonoBehaviour
             System.Delegate[] deletegates = LaunchComponentPersonalEvents.GetInvocationList();
             for (int i = 0; i < deletegates.Length; i++)
             {
-                //Remove all event
+                //Remove all events
                 LaunchComponentPersonalEvents -= deletegates[i] as ComponentPersonalEvents;
             }
         }
@@ -91,7 +91,7 @@ public class UIComponent : MonoBehaviour
             System.Delegate[] deletegates = CloseComponentPersonalEvents.GetInvocationList();
             for (int i = 0; i < deletegates.Length; i++)
             {
-                //Remove all event
+                //Remove all events
                 CloseComponentPersonalEvents -= deletegates[i] as ComponentPersonalEvents;
             }
         }

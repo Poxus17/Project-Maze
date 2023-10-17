@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuEvents : MonoBehaviour
 {
-    public void Open()
+    public void Open(int scene)
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(scene);
     }
 
     public void Leave()

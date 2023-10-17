@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class SliderToValue : MonoBehaviour
 {
-    [SerializeField] FloatVariable mouseSensitivity;
+    [SerializeField] FloatVariable sliderVar;
     [SerializeField] float minValue;
     [SerializeField] float maxValue;
 
@@ -19,6 +19,13 @@ public class SliderToValue : MonoBehaviour
 
     public void ChangeValue()
     {
-        mouseSensitivity.value = Mathf.Lerp(minValue, maxValue, slider.value);
+        var lerpedValue = Mathf.Lerp(minValue, maxValue, slider.value);
+        if (sliderVar is FloatAnnouncerVariable)
+        {
+            FloatAnnouncerVariable castVar = (FloatAnnouncerVariable)sliderVar;
+            castVar.AnnounceSet(lerpedValue);
+        }
+        else    
+            sliderVar.value = lerpedValue;
     }
 }

@@ -43,15 +43,15 @@ public class StormLighter : MonoBehaviour
         try
         {
             _animator = GetComponent<Animator>();
-            _particleSystem = GetComponentInChildren<ParticleSystem>();
-            _particleSystem.gameObject.SetActive(false);
-
+            //_particleSystem = GetComponentInChildren<ParticleSystem>();
+            //_particleSystem.gameObject.SetActive(false);
+            /*
             _audioClips = new AudioClip[3];
             _audioClips[0] = (AudioClip)Resources.Load("Sounds/Clap_Open", typeof(AudioClip));
             _audioClips[1] = (AudioClip)Resources.Load("Sounds/Clap_Close", typeof(AudioClip));
             _audioClips[2] = (AudioClip)Resources.Load("Sounds/Fire_On", typeof(AudioClip));
 
-            _audioSource = GetComponent<AudioSource>();
+            _audioSource = GetComponent<AudioSource>();*/
 
         }
         catch (NullReferenceException e)
@@ -62,13 +62,13 @@ public class StormLighter : MonoBehaviour
 
     public void ToggleOpen(InputAction.CallbackContext context)
     {
-        if(context.started)
+        if (context.started)
         {
             if (_isOpen)
             {
                 //Close the lighter
-                _animator.SetTrigger("Close");
-                _particleSystem.gameObject.SetActive(false);
+                //_animator.SetTrigger("Close");
+                //_particleSystem.gameObject.SetActive(false);
                 mainLight.enabled = false;
                 handLight.enabled = false;
                 _isOpen = false;
@@ -76,35 +76,31 @@ public class StormLighter : MonoBehaviour
             }
             else
             {
-                if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-                {
-                    //open the lighter
-                    StartCoroutine(OpenLighter());
-                }
+                //open the lighter
+                StartCoroutine(OpenLighter());
             }
         }
-        
     }
 
     public void BlowOut(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            _particleSystem.gameObject.SetActive(false);
-            //mainLight.enabled = false;
+            //_particleSystem.gameObject.SetActive(false);
+            mainLight.enabled = false;
             //handLight.enabled = false;
         }
     }
 
     IEnumerator OpenLighter()
     {
-        _animator.SetTrigger("Open");
+        //_animator.SetTrigger("Open");
         yield return new WaitForSeconds(openToLightDelay);
 
         var attempts = NormalDisRandom(lightAttemptsMean, lightAttemptsDeviation);
         for(int i =0; i<attempts; i++)
         {
-            MusicMan.instance.PlaySE(_audioClips[2], lightSeVolume );
+            //MusicMan.instance.PlaySE(_audioClips[2], lightSeVolume );
 
             mainLight.enabled = true;
             handLight.enabled = true;
@@ -115,37 +111,14 @@ public class StormLighter : MonoBehaviour
             yield return new WaitForSeconds(openToLightDelay - 0.01f);
         }
 
-        MusicMan.instance.PlaySE(_audioClips[2],lightSeVolume);
-        _particleSystem.gameObject.SetActive(true);
+        //MusicMan.instance.PlaySE(_audioClips[2],lightSeVolume);
+        //_particleSystem.gameObject.SetActive(true);
         mainLight.enabled = true;
         handLight.enabled = true;
         _isOpen = true;
         lighterLit.value = true;
     }
 
-    # region DEPRECATED
-    //Plays the "open" sound effect (animation event)
-    public void PlayOpenSound()
-    {
-        _audioSource.clip = _audioClips[0];
-        _audioSource.Play();
-    }
-
-    //Plays the "close" sound effect (animation event)
-    public void PlayCloseSound()
-    {
-        _audioSource.clip = _audioClips[1];
-        _audioSource.Play();
-    }
-
-    //Plays the "turn on" sound effect (animation event)
-    public void PlayTurnOnSound()
-    {
-        _audioSource.clip = _audioClips[2];
-        _audioSource.Play();
-    }
-
-    #endregion
 
     public int NormalDisRandom(float mean, float standardDeviation)
     {

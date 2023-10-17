@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &297350301987967655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 58.160866
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5400416
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.90665
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000018099951
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636544006267653302, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2372682057856204453, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_Name
+      value: Candle_2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044258225435356640, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121693969462967765, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_VolumetricDimmer
+      value: 0.63
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1988706210225180674, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}

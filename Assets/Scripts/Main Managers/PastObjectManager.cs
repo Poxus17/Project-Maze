@@ -10,6 +10,7 @@ public class PastObjectManager : MonoBehaviour
     [SerializeField] PastObjectPacketVariable InspectionPacket;
     //[SerializeField] GameEvent EnterInspection;
     [SerializeField] FloatVariable itemCount;
+    [SerializeField] 
 
     public string text { get; }
 

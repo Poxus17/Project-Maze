@@ -7,13 +7,18 @@ public class HeadBobber : MonoBehaviour
     public float delay;
     public float walkingBobbingSpeed;
     public float runningBobbingSpeed;
-    public float bobbingAmount = 0.05f;
+    public float bobbingAmountX;
+    public float bobbingAmountY;
+    public float bobbingSwayRotationAmount;
+    public FloatVariable testingSwayRotationAmount;
     [SerializeField] BoolVariable sprint;
     [SerializeField] BoolVariable inTreehouse;
     [SerializeField] float groundY;
     [SerializeField] float treehouseY;
 
-    float defaultPosY = 0;
+
+    float defaultPosY;
+    float defaultPosX;
     float timer = 0;
     float bobbingSpeed;
 
@@ -22,6 +27,7 @@ public class HeadBobber : MonoBehaviour
     {
         bobbingSpeed = walkingBobbingSpeed;
         defaultPosY = inTreehouse.value ? treehouseY : groundY;
+        defaultPosX = transform.localPosition.x;
     }
 
     // Update is called once per frame
@@ -31,13 +37,26 @@ public class HeadBobber : MonoBehaviour
         {
             //Player is moving
             timer += (Time.deltaTime * bobbingSpeed) - delay;
-            transform.localPosition = new Vector3(transform.localPosition.x, defaultPosY + Mathf.Sin(timer) * bobbingAmount, transform.localPosition.z);
+
+            transform.localPosition = new Vector3(
+                defaultPosX + Mathf.Sin(timer * bobbingSpeed / 2) * bobbingAmountX, 
+                defaultPosY + Mathf.Sin(timer* bobbingSpeed) * bobbingAmountY, 
+                transform.localPosition.z
+                );
+
+            transform.localEulerAngles = new Vector3(0, 0, Mathf.Sin(-timer * bobbingSpeed / 2) * testingSwayRotationAmount.value);
         }
         else
         {
             //Idle
             timer = 0;
-            transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Lerp(transform.localPosition.y, defaultPosY, Time.deltaTime * bobbingSpeed), transform.localPosition.z);
+            transform.localPosition = new Vector3(
+                Mathf.Lerp(transform.localPosition.x,defaultPosX, Time.deltaTime * bobbingSpeed), 
+                Mathf.Lerp(transform.localPosition.y, defaultPosY, Time.deltaTime * bobbingSpeed), 
+                transform.localPosition.z
+                );
+
+            transform.localEulerAngles = new Vector3(0, 0, 0);
         }
     }
 

@@ -19,7 +19,7 @@ public class Debug_EaseRorateTo : MonoBehaviour
 
     public void RotateToObject()
     {
-        initialRotation = transform.rotation;
+        initialRotation = transform.localRotation;
         if (!isRotating)
         {
             targetRotation = Quaternion.Euler(targetEulerAngles);
@@ -31,13 +31,13 @@ public class Debug_EaseRorateTo : MonoBehaviour
     {
         isRotating = true;
 
-        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.01f)
+        while (Quaternion.Angle(transform.localRotation, targetRotation) > 0.01f)
         {
             // Calculate the rotation step based on the rotation speed and delta time
             float step = rotationSpeed * Time.deltaTime;
 
             // Rotate towards the target rotation using Slerp for ease-out effect
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, step);
+            transform.localRotation = Quaternion.Slerp(transform.rotation, targetRotation, step);
 
             yield return null; // Wait for the next frame
         }

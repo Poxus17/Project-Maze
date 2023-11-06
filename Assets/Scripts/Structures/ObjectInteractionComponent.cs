@@ -2,36 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
+//[RequireComponent(typeof(BoxCollider))]
 [ExecuteInEditMode]
 public class ObjectInteractionComponent : MonoBehaviour, IInteractable
 {
     public float exclusiveTime { get; set; }
     [SerializeField] PastObjectData data;
-    [SerializeField] PastObjectPacketVariable inspectionItem;
     [SerializeField] GameEvent inspectionExitEvent;
 
-
-    PastObjectPacket pastObjectPacket;
     void Start()
     {
         gameObject.layer = 6;
-
-        pastObjectPacket = new PastObjectPacket(data, gameObject);
     }
 
     public void Interact()
     {
-        inspectionItem.Value = pastObjectPacket;
-        PastObjectManager.instance.Interact(pastObjectPacket);
+        PastObjectManager.instance.Interact(data);
 
         UIManager.Instance.LaunchUIComponent(0);
 
         if(inspectionExitEvent != null)
             UIManager.Instance.BindGameEventToExit(inspectionExitEvent);
 
+        Banish();
+    }
+
+    private void Banish()
+    {
         //Send it to FUCKING HELL never to be seen again
-        transform.position = new Vector3(-1000, -1000, -1000);
+        transform.position = new Vector3(0, -100, 0);
     }
 
     public string GetInteractionText()
@@ -43,20 +42,14 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
     {
         return true;
     }
-}
 
-public class PastObjectPacket
-{
-    public PastObjectData data { get; protected set; }
-    public GameObject gameObject { get; protected set; }
-    public Vector3 scale { get; protected set; }
-    public Vector3 eularRotation { get; protected set; }
-
-    public PastObjectPacket(PastObjectData pastObject, GameObject gameObject)
+    public void SetItemObjectState(List<string> takenItems)
     {
-        this.data = pastObject;
-        this.gameObject = gameObject;
-        this.scale = gameObject.transform.localScale;
-        this.eularRotation = gameObject.transform.localEulerAngles;
+        if (takenItems.Contains(data.name))
+        {
+            Banish();
+        }
     }
 }
+
+

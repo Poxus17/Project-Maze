@@ -13,7 +13,7 @@ public class UIInspectionUIManager : UIComponent
     [SerializeField] GameObject inspectionCanvas;
     [SerializeField] Transform inspectionParent;
     [SerializeField] TMP_Text inspectionText;
-    [SerializeField] PastObjectPacketVariable inspectionPacket;
+    [SerializeField] PastObjectData inspectionPacket;
 
     GameObject inspectionObject;
 
@@ -29,10 +29,8 @@ public class UIInspectionUIManager : UIComponent
             Destroy(inspectionParent.GetChild(i).gameObject);
         }
 
-        inspectionObject = Instantiate(inspectionPacket.Value.gameObject, inspectionParent);
-        inspectionText.text = inspectionPacket.Value.data.transcript;
-        inspectionObject.transform.localScale = inspectionPacket.Value.scale;
-        inspectionObject.transform.eulerAngles = inspectionPacket.Value.eularRotation;
+        inspectionObject = Instantiate(inspectionPacket.itemPrefab, inspectionParent);
+        inspectionText.text = inspectionPacket.transcript;
         inspectionObject.transform.localPosition = Vector3.zero;
     }
 

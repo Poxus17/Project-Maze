@@ -9,32 +9,25 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
     [SerializeField] string placeItemName;
     [SerializeField] BoolVariable isHoldingItem;
     [SerializeField] BoolVariable itemPlaceBool;
-    [SerializeField] PastObjectPacketVariable heldItem;
+    [SerializeField] PastObjectData heldItem;
     [SerializeField] GameObject displayItem;
 
 
     public void Interact()
     {
-        if (heldItem.Value.data.name != placeItemName || !isHoldingItem.value)
+        if (heldItem.name != placeItemName || !isHoldingItem.value)
             return;
 
-        displayItem.SetActive(true);
-        isHoldingItem.value = false;
+        SetSlotActive();
         HoldItemManager.instance.ShelveItem();
-        InventoryManager.Instance.RemoveFromInventory(heldItem.Value);
-        itemPlaceBool.value = true;
-
-        ItemPlacementManager.instance.PlaceItem();
-
-        gameObject.layer = 0;
-        GetComponent<Light>().enabled = false;
+        PastObjectManager.instance.PlaceItem(heldItem.name);
     }
 
     public string GetInteractionText()
     {
         if (isHoldingItem.value)
         {
-            if (placeItemName == heldItem.Value.data.name)
+            if (placeItemName == heldItem.name)
                 return "Place item";
             else
                 return "Can't place this here";
@@ -48,5 +41,25 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
     public bool InteractionAllowed()
     {
         return isHoldingItem.value;
+    }
+
+    private void SetSlotActive()
+    {
+        displayItem.SetActive(true);
+        isHoldingItem.value = false;
+        
+        //InventoryManager.Instance.RemoveFromInventory(heldItem.Value);
+        itemPlaceBool.value = true;
+
+        ItemPlacementManager.instance.PlaceItem();
+
+        gameObject.layer = 0;
+        GetComponent<Light>().enabled = false;
+    }
+
+    public void MatchSlotToMemory(List<string> names)
+    {
+        if (names.Contains(placeItemName))
+            SetSlotActive();
     }
 }

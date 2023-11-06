@@ -5,11 +5,11 @@ using UnityEngine;
 public class InventoryManager : UIComponent
 {
     [SerializeField] InventorySlot[] slots;
-    [SerializeField] PastObjectPacketVariable inspectionItem;
+    [SerializeField] PastObjectData inspectionItem;
     [SerializeField] GameObject background;
     [SerializeField] GameObject holdButton;
 
-    public List<PastObjectPacket> inventory { get; protected set; }
+    //public List<PastObjectPacket> inventory { get; protected set; }
 
     public static InventoryManager Instance { get; private set; }
 
@@ -26,16 +26,15 @@ public class InventoryManager : UIComponent
 
         LaunchComponentPersonalEvents += DisplayInventory;
 
-        inventory = new List<PastObjectPacket>();
     }
 
-    public void StoreToInventory(PastObjectPacket packet)
+    /*public void StoreToInventory(PastObjectPacket packet)
     {
         if (!inventory.Contains(packet))
         {
             inventory.Add(packet);
         }
-    }
+    }*/
 
     public void DisplayInventory()
     {
@@ -43,12 +42,14 @@ public class InventoryManager : UIComponent
         int slotIndex = 0;
         background.SetActive(true);
 
-        if(inventory.Count <= 0)
+        List<PastObjectData> inventory = PastObjectManager.instance.ExportInventoryList();
+
+        if (inventory.Count <= 0)
             return;
 
-        foreach (PastObjectPacket pop in inventory)
+        foreach (PastObjectData pod in inventory)
         {
-            slots[slotIndex].PopulateSlot(pop.data);
+            slots[slotIndex].PopulateSlot(pod);
             slotIndex++;
         }
     }
@@ -64,21 +65,23 @@ public class InventoryManager : UIComponent
         background.SetActive(false);
         holdButton.SetActive(true);
 
-        foreach (PastObjectPacket pop in inventory)
+        List<PastObjectData> inventory = PastObjectManager.instance.ExportInventoryList();
+
+        foreach (PastObjectData pod in inventory)
         {
-            if(pop.data.name == name)
+            if(pod.name == name)
             {
-                inspectionItem.Value = pop;
+                inspectionItem.Copy(pod);
                 UIManager.Instance.LaunchNestedUIComponent(0);
             }
         }
     }
 
-    public void RemoveFromInventory(PastObjectPacket item)
+    /*public void RemoveFromInventory(PastObjectPacket item)
     {
         if (inventory.Contains(item))
         {
             inventory.Remove(item);
         }
-    }
+    }*/
 }

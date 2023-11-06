@@ -10,7 +10,7 @@ public class ItemGemComponent : MonoBehaviour
 
     MeshRenderer meshRenderer; //Mesh renderer.
 
-    private void Start()
+    private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
     }

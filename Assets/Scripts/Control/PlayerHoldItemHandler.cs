@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlayerHoldItemHandler : MonoBehaviour
 {
     [SerializeField] Transform HoldItemTransform;
-    [SerializeField] PastObjectPacketVariable inspectionItem;
+    [SerializeField] PastObjectData inspectionItem;
     [SerializeField] BoolVariable isHolding;
     public void RequestPlayerHoldItem()
     {
-        var success = HoldItemManager.instance.TakeItem(inspectionItem.Value.data.name, HoldItemTransform);
+        var success = HoldItemManager.instance.TakeItem(inspectionItem.name, HoldItemTransform);
 
         if (success)
             isHolding.value = true;

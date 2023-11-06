@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Bike helmet
   icon: {fileID: 21300000, guid: 645229ddae8a94c43a9c5fde6a962522, type: 3}
   clip: {fileID: 8300000, guid: 6cb3e248d04034f43921552882ea062e, type: 3}
+  itemPrefab: {fileID: 5667735594666687018, guid: 7586d961396739844a120d0e15f5eeed, type: 3}
   transcript: I remember when dad bought Georgie his first bike, Georgie was so hyped
     to ride them he couldn't stop smiling the entire ride home. Turns out He was
     a naturel, In only a few days he was riding around our neighborhood showing off

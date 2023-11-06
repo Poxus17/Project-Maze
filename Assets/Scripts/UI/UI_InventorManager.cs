@@ -17,14 +17,14 @@ public class UI_InventorManager : MonoBehaviour
 
     bool inspectionOpen;
     bool monologPlaying;
-    Dictionary<string, PastObjectPacket> inventoryIndex;
+    Dictionary<string, PastObjectData> inventoryIndex;
     AudioClip currentObjectClip;
 
     public static UI_InventorManager Instance;
 
     void Awake()
     {
-        inventoryIndex = new Dictionary<string, PastObjectPacket>();
+        inventoryIndex = new Dictionary<string, PastObjectData>();
 
         if (Instance == null)
         {
@@ -53,7 +53,7 @@ public class UI_InventorManager : MonoBehaviour
             #endregion
 
 
-            PastObjectPacket[] inventoryArr = InventoryManager.Instance.inventory.ToArray();
+            PastObjectData[] inventoryArr = PastObjectManager.instance.ExportInventoryList().ToArray();
             int counter = 0;
 
             for(int i = 0; i< scrollContent.GetComponent<RectTransform>().childCount; i++)
@@ -62,7 +62,7 @@ public class UI_InventorManager : MonoBehaviour
             }
             inventoryIndex.Clear();
 
-            foreach (PastObjectPacket item in inventoryArr)
+            foreach (PastObjectData item in inventoryArr)
             {
                 inventoryIndex.Add("Slot" + counter, item);
                 GameObject holder = Instantiate(slotPrefab, scrollContent.GetComponent<RectTransform>());
@@ -71,7 +71,7 @@ public class UI_InventorManager : MonoBehaviour
 
                 try
                 {
-                    holder.transform.GetChild(0).GetComponent<TMPro.TMP_Text>().text = item.data.name;
+                    holder.transform.GetChild(0).GetComponent<TMPro.TMP_Text>().text = item.name;
                 }
                 catch (MissingComponentException e) 
                 { 
@@ -88,7 +88,7 @@ public class UI_InventorManager : MonoBehaviour
     {
         InspectSlot.Invoke(inventoryIndex[button]);
         background.SetActive(false);
-        currentObjectClip = inventoryIndex[button].data.clip;
+        currentObjectClip = inventoryIndex[button].clip;
         inspectionOpen = true;
     }
 

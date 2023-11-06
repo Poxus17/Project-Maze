@@ -15,4 +15,5 @@ MonoBehaviour:
   name: Old radio
   icon: {fileID: 21300000, guid: c6b577ce3f3eb054984f31b0491c6824, type: 3}
   clip: {fileID: 0}
+  itemPrefab: {fileID: 8715874990073172086, guid: 15028148afeed4543a088389247c2aae, type: 3}
   transcript: This radio be old as shit

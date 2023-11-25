@@ -26,7 +26,7 @@ public class ScenesManager : MonoBehaviour
 
     public void LoadScene(int index)
     {
-
+        SceneManager.LoadScene(index);
     }
 
     public void Quit()

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DeathManager : MonoBehaviour
 {
     [SerializeField] float timeToRestart;
+    [SerializeField] int restartLevelIndex = 4;
     public void ActivateJumpscare()
     {
         StartCoroutine(TimeDown());
@@ -20,7 +21,7 @@ public class DeathManager : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(1);
+        ScenesManager.instance.LoadScene(restartLevelIndex);
     }
 
 }

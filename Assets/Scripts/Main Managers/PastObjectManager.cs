@@ -28,14 +28,15 @@ public class PastObjectManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+#if UNITY_EDITOR
+        itemCount.value = 0;
+#endif
     }
 
     // Start is called before the first frame update
     void Start()
     {
-#if UNITY_EDITOR
-        itemCount.value = 0;
-#endif
         audioSource = GetComponent<AudioSource>();
         inventoryMemory = new bool[allItems.Length];
         placedMemory = new bool[allItems.Length];
@@ -96,9 +97,13 @@ public class PastObjectManager : MonoBehaviour
 
     public void AddItem(string name)
     {
+        bool found = false;
         for (int i = 0; i < allItems.Length; i++)
             if (allItems[i].name == name)
+            {
                 inventoryMemory[i] = true;
+                found = true;
+            }
     }
 
     public void PlaceItem(string name)
@@ -119,6 +124,20 @@ public class PastObjectManager : MonoBehaviour
     public void SetInventoryData(bool[] inventoryData) { inventoryMemory = inventoryData; }
 
     public void SetPlacedData(bool[] placedData) { placedMemory = placedData; }
+
+    public void CountItems()
+    {
+        for(int i = 0; i<allItems.Length; i++)
+        {
+            if (inventoryMemory[i])
+                itemCount.value++;
+
+            if (placedMemory[i])
+            {
+                itemCount.value++;
+            }
+        }
+    }
 
     public void MatchItemObjectState()
     {

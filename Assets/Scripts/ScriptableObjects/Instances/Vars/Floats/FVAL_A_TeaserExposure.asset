@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ac7f201d3a594d8340229f5ed46e6, type: 3}
   m_Name: FVAL_A_TeaserExposure
   m_EditorClassIdentifier: 
-  value: 0.4
+  value: 2.1
   announceEvent: {fileID: 11400000, guid: 7cb3ae2369833b940943bc5d54d594fc, type: 2}

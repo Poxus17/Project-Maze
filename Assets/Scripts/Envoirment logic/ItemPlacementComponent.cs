@@ -21,6 +21,7 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
         SetSlotActive();
         HoldItemManager.instance.ShelveItem();
         PastObjectManager.instance.PlaceItem(heldItem.name);
+        SaveManager.instance.SaveGame(); //add something to account for chain placements
     }
 
     public string GetInteractionText()

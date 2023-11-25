@@ -25,6 +25,8 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
             UIManager.Instance.BindGameEventToExit(inspectionExitEvent);
 
         Banish();
+
+        SaveManager.instance.SaveGame();
     }
 
     private void Banish()

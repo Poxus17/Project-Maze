@@ -26,7 +26,7 @@ public class ItemPlacementManager : MonoBehaviour
             if (vgue.InvokeAllowed(itemCounter))
             {
                 vgue.gatedEvent.Raise();
-                return;
+                break;
             }
         }
     }

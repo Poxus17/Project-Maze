@@ -8,6 +8,20 @@ public class SaveManager : MonoBehaviour
     [SerializeField] GameEvent[] saveableEvents;
     bool[] eventsMemory;
 
+    public static SaveManager instance;
+
+    void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     private void Start()
     {
         eventsMemory = new bool[saveableEvents.Length];
@@ -32,6 +46,7 @@ public class SaveManager : MonoBehaviour
         PastObjectManager.instance.SetInventoryData(data.pastItemInventoryContents);
         PastObjectManager.instance.SetPlacedData(data.placedPastItems);
         PastObjectManager.instance.MatchItemObjectState();
+        PastObjectManager.instance.CountItems();
 
         eventsMemory = data.eventsToTrigger;
         for(int i = 0; i<eventsMemory.Length; i++)

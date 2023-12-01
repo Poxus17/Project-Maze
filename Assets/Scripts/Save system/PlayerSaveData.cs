@@ -10,8 +10,9 @@ public class PlayerSaveData
     public bool[] pastItemInventoryContents;
     public bool[] placedPastItems;
     public bool[] eventsToTrigger;
+    public bool[] bvals;
 
-    public PlayerSaveData(GameObject player, bool[] eventsMemory)
+    public PlayerSaveData(GameObject player, bool[] eventsMemory, bool[] bvalValues)
     {
         Vector3 playerPos = player.transform.position;
 
@@ -23,5 +24,6 @@ public class PlayerSaveData
         pastItemInventoryContents = PastObjectManager.instance.GetInventoryData();
         placedPastItems = PastObjectManager.instance.GetPlacementData();
         eventsToTrigger = eventsMemory;
+        bvals = bvalValues;
     }
 }

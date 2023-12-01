@@ -5,13 +5,13 @@ public static class SaveSystem
 {
     private static string path = Application.persistentDataPath + "/player.cannon";
 
-    public static void SavePlayer(GameObject player, bool[] eventsMemory)
+    public static void SavePlayer(GameObject player, bool[] eventsMemory, bool[] bvalValues)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory);
+        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, bvalValues);
 
         formatter.Serialize(stream, playerData);
 

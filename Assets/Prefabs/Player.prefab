@@ -6293,7 +6293,6 @@ GameObject:
   - component: {fileID: 1385110150539732577}
   - component: {fileID: 1385110150539732576}
   - component: {fileID: 1385110150539732578}
-  - component: {fileID: 1385110150539732627}
   - component: {fileID: 1385110150539732626}
   - component: {fileID: 1385110150539732625}
   - component: {fileID: 1385110150539732631}
@@ -7113,7 +7112,7 @@ MonoBehaviour:
   BrodSprint:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1385110150539732627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HeadBobber, Assembly-CSharp
         m_MethodName: changeBobbingSpeed
         m_Mode: 1
@@ -7207,29 +7206,6 @@ MonoBehaviour:
   heldObject: {fileID: 11400000, guid: 16f91f61bb8568a48b455b50b26dd5aa, type: 2}
   holdBase: {fileID: 1385110149317435786}
   releaseDelay: 0.2
---- !u!114 &1385110150539732627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385110150539732612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6640ed198bd98d049b662700cf1c2851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
-  walkingBobbingSpeed: 8
-  runningBobbingSpeed: 15
-  bobbingAmountX: 0
-  bobbingAmountY: 0
-  bobbingSwayRotationAmount: 0
-  testingSwayRotationAmount: {fileID: 0}
-  sprint: {fileID: 11400000, guid: 2146ef35afdd2e9429c4e5ef9bf98714, type: 2}
-  inTreehouse: {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
-  groundY: 6.3
-  treehouseY: 47
 --- !u!114 &1385110150539732626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7427,7 +7403,7 @@ MonoBehaviour:
   ChangeState:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1385110150539732627}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: HeadBobber, Assembly-CSharp
         m_MethodName: ChangeDefaultY
         m_Mode: 1

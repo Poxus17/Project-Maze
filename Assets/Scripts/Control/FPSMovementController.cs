@@ -125,7 +125,6 @@ public class FPSMovementController : MonoBehaviour
             {
                 movement = rb.velocity - (new Vector3(speedDecay, 0, 0));
             }*/
-
             rb.velocity = new Vector3(movement.x, 0, movement.z);
             isWalking = movement.magnitude > 0;
 

@@ -11,7 +11,7 @@ public class GameEventListener : MonoBehaviour
     public bool oneFrameDelay;
 
     private void OnEnable()
-    { Event.RegisterListener(this); }
+    { Event.RegisterListener(this);}
 
     private void OnDisable()
     { Event.UnregisterListener(this); }

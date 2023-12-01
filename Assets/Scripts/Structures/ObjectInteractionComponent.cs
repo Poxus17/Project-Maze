@@ -4,9 +4,8 @@ using UnityEngine;
 
 //[RequireComponent(typeof(BoxCollider))]
 [ExecuteInEditMode]
-public class ObjectInteractionComponent : MonoBehaviour, IInteractable
-{
-    public float exclusiveTime { get; set; }
+public class ObjectInteractionComponent : MonoBehaviour
+{ 
     [SerializeField] PastObjectData data;
     [SerializeField] GameEvent inspectionExitEvent;
 
@@ -33,16 +32,6 @@ public class ObjectInteractionComponent : MonoBehaviour, IInteractable
     {
         //Send it to FUCKING HELL never to be seen again
         transform.position = new Vector3(0, -100, 0);
-    }
-
-    public string GetInteractionText()
-    {
-        return "Take";
-    }
-
-    public bool InteractionAllowed()
-    {
-        return true;
     }
 
     public void SetItemObjectState(List<string> takenItems)

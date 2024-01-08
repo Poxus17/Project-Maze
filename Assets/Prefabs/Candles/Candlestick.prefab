@@ -105,7 +105,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candlestick_Single
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2692811673719708352, guid: bd8123ae1b46ee646812f8b295183567, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bd8123ae1b46ee646812f8b295183567, type: 3}
 --- !u!4 &7350875112940400054 stripped
 Transform:
@@ -177,6 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -5401919905038458900, guid: 504734b234267184a82f53a6f9f390db, type: 3}
+    - {fileID: 989303799267626712, guid: 504734b234267184a82f53a6f9f390db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 504734b234267184a82f53a6f9f390db, type: 3}
 --- !u!4 &7244753105130991847 stripped
 Transform:
@@ -236,10 +238,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991383105654133943, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
       propertyPath: m_Intensity
-      value: 10.345071
+      value: 3.1830988
       objectReference: {fileID: 0}
     - target: {fileID: 1991383105654133943, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
       propertyPath: m_Lightmapping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991383105654133943, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
+      propertyPath: m_BounceIntensity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1991383105654133943, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
@@ -252,7 +258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5072513288883761168, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
       propertyPath: m_Intensity
-      value: 130
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -8965948077932231286, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}

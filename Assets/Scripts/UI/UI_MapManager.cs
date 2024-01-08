@@ -6,6 +6,7 @@ public class UI_MapManager : UIComponent
 {
     [SerializeField] GameObject[] mapPieces;
     [SerializeField] BoolArrayVariable collectedMapParts;
+    [SerializeField] GameObject noMapText;
 
     public void CollectMapPiece(int pieceIndex)
     {
@@ -14,12 +15,16 @@ public class UI_MapManager : UIComponent
 
     public void LaunchMap()
     {
+        noMapText.SetActive(true);
         for(int i = 0; i < mapPieces.Length; i++)
         {
             try
             {
-                mapPieces[i].SetActive(
-                collectedMapParts.value[i]);
+                var mapPieceActive = collectedMapParts.value[i];
+                mapPieces[i].SetActive(mapPieceActive);
+
+                if (mapPieceActive)
+                    noMapText.SetActive(false);
             }
             catch(System.Exception e)
             {

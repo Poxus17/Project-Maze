@@ -28,10 +28,10 @@ public class BoolVariable : ScriptableObject
 #if UNITY_EDITOR
     void ResetValueEditor(PlayModeStateChange state)
     {
-        /*
+        
         if(state == PlayModeStateChange.ExitingPlayMode)
             value = defaultVal;
-        */
+        
     }
 #endif
     void ResetValue(Scene scene, LoadSceneMode loadSceneMode)

@@ -69,8 +69,6 @@ public class KellekHuntController : MainAiController
         //Invoke("RoamNextPoint", 0.2f);
     }
 
-
-
     //0 - Spawn in the ring
     public void SpawnIn()
     {

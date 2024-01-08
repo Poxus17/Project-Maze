@@ -27,6 +27,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] GameObject camera;
     [Space(10)]
 
+    
     [Header("SlideSettings")]
     [SerializeField] float slideSpeed;
     [SerializeField] float slideSpeedRequirement;
@@ -44,6 +45,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] FloatVariable staminaPercent;
     [SerializeField] GameEvent LeaveUI;
     [SerializeField] BoolVariable adventureMode;
+    [SerializeField] BoolVariable cameraTransition;
  
     public static bool isWalking;
 
@@ -60,7 +62,6 @@ public class FPSMovementController : MonoBehaviour
     Vector3 movement;
 
     bool staminaRecoveryMode;
-    bool isCrouching; //reffering to the act, not the state, the state is Sneak
     bool isLerpingSpeed;
 
     float speed;
@@ -97,7 +98,6 @@ public class FPSMovementController : MonoBehaviour
                 isSprint.value = false;
                 stamina = 0;
                 SetSprint(false);
-                //WorldEventDispatcher.instance.BroadcastSprint.Invoke(isSprint.Value);
             }
         }
         else if(stamina < fullStamina)
@@ -219,12 +219,12 @@ public class FPSMovementController : MonoBehaviour
 
     IEnumerator TransitionCrouch(bool toCrouch)
     {
-        isCrouching = true;
+        cameraTransition.value = true;
 
         var pos = camera.transform.localPosition;
-        var startY = toCrouch ? localStandingY : localCrouchingY;
+        var startY = pos.y;
         var endY = toCrouch ? localCrouchingY : localStandingY;
-        camera.transform.localPosition = new Vector3(pos.x, startY, pos.z);
+        //camera.transform.localPosition = new Vector3(pos.x, startY, pos.z);
 
         var alpha = 0.0f;
 
@@ -238,7 +238,7 @@ public class FPSMovementController : MonoBehaviour
 
         camera.transform.localPosition = new Vector3(pos.x, endY, pos.z);
 
-        isCrouching = false;
+        cameraTransition.value = false;
     }
 
 

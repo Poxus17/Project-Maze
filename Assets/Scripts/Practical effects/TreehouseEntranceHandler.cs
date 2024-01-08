@@ -7,14 +7,8 @@ public class TreehouseEntranceHandler : MonoBehaviour
     [SerializeField] Vector3 treehouseBase;
     [SerializeField] Vector3 treehouseTop;
     [SerializeField] float transitionSpeed;
-    [SerializeField] bool startUp;
     [SerializeField] UnityEngine.Events.UnityEvent ChangeState;
     public BoolVariable inTreehouse;
-
-    private void Awake()
-    {
-        inTreehouse.value = startUp;
-    }
 
     public void OnUseTreehouseDoor()
     {

@@ -13,4 +13,8 @@ public class MapComponent : MonoBehaviour
         UIManager.Instance.LaunchUIComponent(4);
         gameObject.SetActive(false);
     }
+
+    public void MatchMapState(){
+        gameObject.SetActive(!collectedMapPieces.value[mapIndex]);
+    }
 }

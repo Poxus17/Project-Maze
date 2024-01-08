@@ -18,7 +18,7 @@ public class CandleTrigger : MonoBehaviour, IInteractable
     bool lit = false;
     void Start()
     {
-        particles = transform.GetChild(0).gameObject;
+        particles = GetComponentInChildren<ParticleSystem>().gameObject;
         particles.SetActive(lit);
         volumatric = GetComponentInChildren<Light>();
     }

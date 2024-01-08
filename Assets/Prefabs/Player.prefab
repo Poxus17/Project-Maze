@@ -5338,9 +5338,10 @@ MonoBehaviour:
   bobbingSwayRotationAmount: 0
   testingSwayRotationAmount: {fileID: 0}
   sprint: {fileID: 11400000, guid: 2146ef35afdd2e9429c4e5ef9bf98714, type: 2}
-  inTreehouse: {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
-  groundY: -0.444
-  treehouseY: -0.444
+  isSneaking: {fileID: 0}
+  cameraTransition: {fileID: 0}
+  baseY: 0
+  sneakY: 0
 --- !u!114 &1385110148981740172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5711,9 +5712,10 @@ MonoBehaviour:
   bobbingSwayRotationAmount: 3
   testingSwayRotationAmount: {fileID: 11400000, guid: c27ed36be89152745bd69e7717f53f1d, type: 2}
   sprint: {fileID: 11400000, guid: 2146ef35afdd2e9429c4e5ef9bf98714, type: 2}
-  inTreehouse: {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
-  groundY: 0
-  treehouseY: 0
+  isSneaking: {fileID: 11400000, guid: c36c1e84383732d46872bc178673ea1a, type: 2}
+  cameraTransition: {fileID: 11400000, guid: 2c02413736c88c041b83dffbf0546c44, type: 2}
+  baseY: 0
+  sneakY: -1
 --- !u!1 &1385110149134442765
 GameObject:
   m_ObjectHideFlags: 0
@@ -7101,7 +7103,7 @@ MonoBehaviour:
   fullStamina: 30
   staminaDepleteRate: 3
   staminaRestoreRate: 2
-  localStandingY: 0.5
+  localStandingY: 0
   localCrouchingY: -1
   crouchTranisitonSpeed: 5
   camera: {fileID: 1385110148987287772}
@@ -7130,6 +7132,7 @@ MonoBehaviour:
   staminaPercent: {fileID: 11400000, guid: 6c8dd615b2381ec44817811c2e13f51a, type: 2}
   LeaveUI: {fileID: 0}
   adventureMode: {fileID: 11400000, guid: db8ed2dac0ff8904fad5b0a7d0c3a9af, type: 2}
+  cameraTransition: {fileID: 11400000, guid: 2c02413736c88c041b83dffbf0546c44, type: 2}
 --- !u!114 &1385110150539732577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7399,7 +7402,6 @@ MonoBehaviour:
   treehouseBase: {x: 8.82, y: 6.523, z: -8.24}
   treehouseTop: {x: 15.33, y: 45.466, z: -12.91}
   transitionSpeed: 0.2
-  startUp: 0
   ChangeState:
     m_PersistentCalls:
       m_Calls:

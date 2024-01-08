@@ -12,9 +12,10 @@ public class HeadBobber : MonoBehaviour
     public float bobbingSwayRotationAmount;
     public FloatVariable testingSwayRotationAmount;
     [SerializeField] BoolVariable sprint;
-    [SerializeField] BoolVariable inTreehouse;
-    [SerializeField] float groundY;
-    [SerializeField] float treehouseY;
+    [SerializeField] BoolVariable isSneaking;
+    [SerializeField] BoolVariable cameraTransition;
+    [SerializeField] float baseY;
+    [SerializeField] float sneakY;
 
 
     float defaultPosY;
@@ -22,17 +23,26 @@ public class HeadBobber : MonoBehaviour
     float timer = 0;
     float bobbingSpeed;
 
+
     // Start is called before the first frame update
     void Start()
     {
         bobbingSpeed = walkingBobbingSpeed;
-        defaultPosY = inTreehouse.value ? treehouseY : groundY;
+        defaultPosY = isSneaking.value ? sneakY : baseY;
         defaultPosX = transform.localPosition.x;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (cameraTransition.value)
+        {
+            timer = 0;
+            return;
+        }
+            
+
         if (FPSMovementController.isWalking)
         {
             //Player is moving
@@ -68,6 +78,6 @@ public class HeadBobber : MonoBehaviour
 
     public void ChangeDefaultY()
     {
-        defaultPosY = inTreehouse.value ? treehouseY : groundY;
+        defaultPosY = isSneaking.value ? sneakY : baseY;
     }
 }

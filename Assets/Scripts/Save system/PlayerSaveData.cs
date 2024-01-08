@@ -11,8 +11,9 @@ public class PlayerSaveData
     public bool[] placedPastItems;
     public bool[] eventsToTrigger;
     public bool[] bvals;
+    public bool[] collectdMapPieces;
 
-    public PlayerSaveData(GameObject player, bool[] eventsMemory, bool[] bvalValues)
+    public PlayerSaveData(GameObject player, bool[] eventsMemory, bool[] bvalValues, bool[] mapMemory)
     {
         Vector3 playerPos = player.transform.position;
 
@@ -25,5 +26,6 @@ public class PlayerSaveData
         placedPastItems = PastObjectManager.instance.GetPlacementData();
         eventsToTrigger = eventsMemory;
         bvals = bvalValues;
+        collectdMapPieces = mapMemory;
     }
 }

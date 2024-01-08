@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
     [SerializeField] GameEvent[] saveableEvents;
     [SerializeField] BoolVariable[] bvalsForMemory;
     [SerializeField] GameEvent varLoadEvent;
+    [SerializeField] BoolArrayVariable mapIndex;
     bool[] eventsMemory;
 
     public static SaveManager instance;
@@ -31,7 +32,8 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        SaveSystem.SavePlayer(player, eventsMemory, FormatBvalArrayForSave());
+        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), mapIndex.value);
+        SaveSystem.SavePlayer(playerData);
         Debug.Log("game saved");
     }
 
@@ -47,6 +49,8 @@ public class SaveManager : MonoBehaviour
             
 
         player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+
+        mapIndex.value = data.collectdMapPieces;
 
         #region Load item data
         PastObjectManager.instance.SetInventoryData(data.pastItemInventoryContents);
@@ -64,7 +68,19 @@ public class SaveManager : MonoBehaviour
         }
         #endregion
 
+        #region Match map states
+        // Get all instances of the map component in the scene
+        var mapComponents = GameObject.FindObjectsOfType<MapComponent>();
+
+        // Call MatchMapState on each instance
+        foreach (var mapComponent in mapComponents)
+        {
+            mapComponent.MatchMapState();
+        }
+        #endregion
+
         #region Load Bvals
+
         for(int i = 0; i < data.bvals.Length; i++)
         {
             bvalsForMemory[i].value = data.bvals[i];
@@ -74,6 +90,11 @@ public class SaveManager : MonoBehaviour
         #endregion
 
         Debug.Log("game loaded");
+    }
+
+    public void DeleteSave()
+    {
+        SaveSystem.DeleteSaveFile();
     }
 
     public void registerSavedEvent(int eventIndex)
@@ -93,3 +114,4 @@ public class SaveManager : MonoBehaviour
         return formatedBvals;
     }
 }
+

@@ -18,6 +18,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] float lightAttemptsDeviation = 2;
     [SerializeField] float lightSeVolume = 0.5f;
     [SerializeField] BoolVariable lighterLit;
+    [SerializeField] bool useParticles = true;
     
     //The animator
     private Animator _animator;
@@ -42,17 +43,16 @@ public class StormLighter : MonoBehaviour
 
         try
         {
-            _animator = GetComponent<Animator>();
-            //_particleSystem = GetComponentInChildren<ParticleSystem>();
-            //_particleSystem.gameObject.SetActive(false);
-            /*
             _audioClips = new AudioClip[3];
             _audioClips[0] = (AudioClip)Resources.Load("Sounds/Clap_Open", typeof(AudioClip));
             _audioClips[1] = (AudioClip)Resources.Load("Sounds/Clap_Close", typeof(AudioClip));
             _audioClips[2] = (AudioClip)Resources.Load("Sounds/Fire_On", typeof(AudioClip));
 
-            _audioSource = GetComponent<AudioSource>();*/
+            _audioSource = GetComponent<AudioSource>();
 
+            //_animator = GetComponent<Animator>();
+            _particleSystem = GetComponentInChildren<ParticleSystem>();
+            _particleSystem.gameObject.SetActive(false);
         }
         catch (NullReferenceException e)
         {
@@ -68,7 +68,10 @@ public class StormLighter : MonoBehaviour
             {
                 //Close the lighter
                 //_animator.SetTrigger("Close");
-                //_particleSystem.gameObject.SetActive(false);
+
+                if(useParticles)
+                    _particleSystem.gameObject.SetActive(false);
+
                 mainLight.enabled = false;
                 handLight.enabled = false;
                 _isOpen = false;
@@ -86,9 +89,10 @@ public class StormLighter : MonoBehaviour
     {
         if (context.started)
         {
-            //_particleSystem.gameObject.SetActive(false);
+            if(useParticles)
+                _particleSystem.gameObject.SetActive(false);
             mainLight.enabled = false;
-            //handLight.enabled = false;
+            handLight.enabled = false;
         }
     }
 
@@ -100,7 +104,7 @@ public class StormLighter : MonoBehaviour
         var attempts = NormalDisRandom(lightAttemptsMean, lightAttemptsDeviation);
         for(int i =0; i<attempts; i++)
         {
-            //MusicMan.instance.PlaySE(_audioClips[2], lightSeVolume );
+            MusicMan.instance.PlaySE(_audioClips[2], lightSeVolume );
 
             mainLight.enabled = true;
             handLight.enabled = true;
@@ -111,8 +115,11 @@ public class StormLighter : MonoBehaviour
             yield return new WaitForSeconds(openToLightDelay - 0.01f);
         }
 
-        //MusicMan.instance.PlaySE(_audioClips[2],lightSeVolume);
-        //_particleSystem.gameObject.SetActive(true);
+        MusicMan.instance.PlaySE(_audioClips[2],lightSeVolume);
+
+        if(useParticles)
+            _particleSystem.gameObject.SetActive(true);
+
         mainLight.enabled = true;
         handLight.enabled = true;
         _isOpen = true;

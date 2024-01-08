@@ -43,6 +43,6 @@ public class ExposureSet : MonoBehaviour
     public void SetDebugBrightness()
     {
         Debug.Log("Setting exposure");
-        exposure.fixedExposure.value = baseExposure - debugExposureVar.value;
+        exposure.compensation.value = baseExposure - debugExposureVar.value;
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapComponent : MonoBehaviour
+public class MapComponent : IndexedConsumable
 {
     [SerializeField] int mapIndex;
     [SerializeField] BoolArrayVariable collectedMapPieces;
@@ -11,10 +11,7 @@ public class MapComponent : MonoBehaviour
     {
         collectedMapPieces.value[mapIndex] = true;
         UIManager.Instance.LaunchUIComponent(4);
+        RegisterAsConsumed();
         gameObject.SetActive(false);
-    }
-
-    public void MatchMapState(){
-        gameObject.SetActive(!collectedMapPieces.value[mapIndex]);
     }
 }

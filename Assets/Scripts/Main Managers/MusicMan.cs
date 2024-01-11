@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MusicMan : MonoBehaviour
@@ -13,6 +14,7 @@ public class MusicMan : MonoBehaviour
     [SerializeField] float maxVolume;
     [SerializeField] float transitionTime;
 
+    private AudioClip mainMusicTrack;
 
     public static MusicMan instance;
 
@@ -36,8 +38,11 @@ public class MusicMan : MonoBehaviour
         seSource.PlayOneShot(clip);
     }
 
-    public void PlayMusic(AudioClip clip, bool useTransition)
+    public void PlayMusic(AudioClip clip, bool useTransition, bool isMainTrack = false)
     {
+        if (isMainTrack)
+            mainMusicTrack = clip;
+
         if (useTransition)
             StartCoroutine(MusicTransition(clip));
         else
@@ -45,6 +50,22 @@ public class MusicMan : MonoBehaviour
             musicSource.clip = clip;
             musicSource.Play();
         }
+    }
+
+    public void ResetToMainTrack()
+    {
+        //if there was no main track set, just stop the music
+        if (mainMusicTrack == null){
+            musicSource.Stop();
+            return;
+        }
+
+        //If it's reseting back to the already playing track, don't do anything
+        if(musicSource.clip == mainMusicTrack)
+            return;
+
+        musicSource.clip = mainMusicTrack;
+        musicSource.Play();
     }
 
     public void StopMusic()

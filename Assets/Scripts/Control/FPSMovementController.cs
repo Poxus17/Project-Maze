@@ -46,6 +46,10 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] GameEvent LeaveUI;
     [SerializeField] BoolVariable adventureMode;
     [SerializeField] BoolVariable cameraTransition;
+    [Space(10)]
+
+    [Header("Debug")]
+    [SerializeField] bool useStamina = true;
  
     public static bool isWalking;
 
@@ -90,7 +94,7 @@ public class FPSMovementController : MonoBehaviour
         #region Stamina management
         if (isSprint.value)
         {
-            stamina -= staminaDepleteRate * Time.deltaTime * movement.normalized.magnitude;
+            stamina -= staminaDepleteRate * Time.deltaTime * movement.normalized.magnitude * (useStamina ? 1 : 0);
 
             if(stamina <= 0)
             {

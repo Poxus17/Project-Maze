@@ -62,9 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464af3c908269a340ae8f9b2835cb54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseExposure: 0.04437107
-  baseIntensity: 0.23
+  baseExposure: -0.5
   volume: {fileID: 1112649645315988121}
-  directionalLight: {fileID: 0}
   exposureVal: {fileID: 11400000, guid: dfb215b86e2a3514fbc9ca257f5f5378, type: 2}
   lightIntensity: {fileID: 11400000, guid: d62f4007807a1e14eb7e02cc634a1e9b, type: 2}
+  debugExposureVar: {fileID: 0}

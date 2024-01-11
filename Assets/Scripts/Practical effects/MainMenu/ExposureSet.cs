@@ -7,12 +7,12 @@ using UnityEngine.Rendering.HighDefinition;
 public class ExposureSet : MonoBehaviour
 {
     [SerializeField] float baseExposure;
-    [SerializeField] float baseIntensity;
+    //[SerializeField] float baseIntensity;
     [SerializeField] Volume volume;
-    [SerializeField] Light directionalLight;
+    //[SerializeField] Light directionalLight;
     [SerializeField] FloatVariable exposureVal;
     [SerializeField] FloatVariable lightIntensity;
-    [SerializeField] FloatAnnouncerVariable debugExposureVar;
+    [SerializeField] FloatAnnouncerVariable liveExposureVar;
 
     private ColorAdjustments colorAdjustments;
     private Exposure exposure;
@@ -26,7 +26,7 @@ public class ExposureSet : MonoBehaviour
     void Start()
     {
         if (volume.profile.TryGet(out exposure))
-            SetDebugBrightness();
+            SetLiveBrightness();
         else
             Debug.Log("No exposure");
     }
@@ -40,9 +40,8 @@ public class ExposureSet : MonoBehaviour
         directionalLight.intensity = lightIntensity.value + baseIntensity;*/
     }
 
-    public void SetDebugBrightness()
+    public void SetLiveBrightness()
     {
-        Debug.Log("Setting exposure");
-        exposure.compensation.value = baseExposure - debugExposureVar.value;
+        exposure.limitMin.value = liveExposureVar.value;
     }
 }

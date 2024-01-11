@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SaveManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class SaveManager : MonoBehaviour
     [SerializeField] GameEvent varLoadEvent;
     [SerializeField] BoolArrayVariable mapIndex;
     bool[] eventsMemory;
+    List<int> consumableIndexes;
 
     public static SaveManager instance;
 
@@ -23,6 +25,8 @@ public class SaveManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        consumableIndexes = new List<int>();
     }
 
     private void Start()
@@ -32,7 +36,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), mapIndex.value);
+        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), mapIndex.value, FormatConsumablesForSave());
         SaveSystem.SavePlayer(playerData);
         Debug.Log("game saved");
     }
@@ -68,15 +72,16 @@ public class SaveManager : MonoBehaviour
         }
         #endregion
 
-        #region Match map states
-        // Get all instances of the map component in the scene
-        var mapComponents = GameObject.FindObjectsOfType<MapComponent>();
+        #region Remove consumed indexed items
 
-        // Call MatchMapState on each instance
-        foreach (var mapComponent in mapComponents)
+        consumableIndexes = data.consumableIndexes.ToList<int>(); //Re-save all the old indexes
+
+        var consumables = FindObjectsOfType<IndexedConsumable>();
+        foreach(IndexedConsumable consumable in consumables)
         {
-            mapComponent.MatchMapState();
+            consumable.KillMe(data.consumableIndexes);
         }
+
         #endregion
 
         #region Load Bvals
@@ -112,6 +117,16 @@ public class SaveManager : MonoBehaviour
         }
 
         return formatedBvals;
+    }
+
+    public void RegisterConsumable(int indexCosnumed)
+    {
+        consumableIndexes.Add(indexCosnumed);
+    }
+
+    int[] FormatConsumablesForSave()
+    {
+        return consumableIndexes.ToArray();
     }
 }
 

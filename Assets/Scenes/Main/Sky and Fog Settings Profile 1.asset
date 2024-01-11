@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 7.04
   limitMin:
     m_OverrideState: 1
-    m_Value: -1.5
+    m_Value: -0.7
   limitMax:
     m_OverrideState: 1
     m_Value: 0.3
@@ -217,7 +217,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 1
   cloudType:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   skyAmbientMode:
     m_OverrideState: 0

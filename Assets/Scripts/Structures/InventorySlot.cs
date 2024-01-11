@@ -10,6 +10,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] Image icon; // Item icon
     [SerializeField] Image overlay; // Hover overlay image
     [SerializeField] TMP_Text text; //text
+    [SerializeField] AudioClip clip; //clip
 
     bool isPopulated = false;
     string objectName;
@@ -55,7 +56,10 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void ChooseInventorySlot()
     {
-        if(isPopulated)
-            InventoryManager.Instance.InspectFromInventory(objectName);
+        if(!isPopulated)
+            return;
+
+        InventoryManager.Instance.InspectFromInventory(objectName);
+        MusicMan.instance.PlaySE(clip);
     }
 }

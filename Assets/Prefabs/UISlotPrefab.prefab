@@ -425,6 +425,7 @@ MonoBehaviour:
   icon: {fileID: 7012634078549682697}
   overlay: {fileID: 6197246054046471822}
   text: {fileID: 3205960648797193659}
+  clip: {fileID: 8300000, guid: 0149848ea12bb8543b77ec19548e1e53, type: 3}
 --- !u!114 &687207605055491778
 MonoBehaviour:
   m_ObjectHideFlags: 0

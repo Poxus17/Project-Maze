@@ -25,6 +25,11 @@ public class BoolVariable : ScriptableObject
         value = !value;
     }
 
+    public void SetValue(bool val)
+    {
+        value = val;
+    }
+
 #if UNITY_EDITOR
     void ResetValueEditor(PlayModeStateChange state)
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Schema;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,10 @@ public class InputSystemHandler : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+
+    void Start(){
+
     }
 
     public void SetUIMode(bool active)

@@ -18,6 +18,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] float lightAttemptsDeviation = 2;
     [SerializeField] float lightSeVolume = 0.5f;
     [SerializeField] BoolVariable lighterLit;
+    [SerializeField] BoolVariable hasLighter;
     [SerializeField] bool useParticles = true;
     
     //The animator
@@ -62,6 +63,9 @@ public class StormLighter : MonoBehaviour
 
     public void ToggleOpen(InputAction.CallbackContext context)
     {
+        if(!hasLighter.value)
+            return;
+        
         if (context.started)
         {
             if (_isOpen)

@@ -27,8 +27,7 @@ public class NoiseManager : MonoBehaviour
 
     public void PlayNoise(AudioClip clip, float noise)
     {
-        source.clip = clip;
-        source.Play();
+        MusicMan.instance.PlaySE(clip);
 
         SendNoise(noise);
     }

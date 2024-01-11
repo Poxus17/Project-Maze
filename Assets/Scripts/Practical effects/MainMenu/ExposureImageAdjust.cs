@@ -5,27 +5,18 @@ using UnityEngine.UI;
 
 public class ExposureImageAdjust : MonoBehaviour
 {
-
-    [SerializeField] Image low;
-    [SerializeField] Image mid;
-    [SerializeField] Image high;
-    [SerializeField] float relationValue;
-
     [SerializeField] Slider slider;
+    [SerializeField] FloatAnnouncerVariable exposureVar;
 
     private float baseLow;
 
     private void Start()
     {
-        baseLow = low.color.a;
+
     }
 
     public void ChangeSlider()
     {
-        var setLow = low.color;
-
-        setLow.a = baseLow + (slider.value * relationValue);
-
-        low.color = setLow;
+        exposureVar.AnnounceSet(slider.value);
     }
 }

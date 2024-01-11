@@ -62,8 +62,6 @@ public class InteractionHandler : MonoBehaviour
                     lastDetectedId = currentInstanceId;
                     currentDetectionText.value = interactableObject.GetInteractionText();
                 }
-
-                Debug.Log(interactableObject);
             }
             else if(hitObject.tag == "Detect")
             {

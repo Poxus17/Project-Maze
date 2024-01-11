@@ -7,9 +7,14 @@ public class MusicChangeRequestHandler : MonoBehaviour
 {
     [SerializeField] AudioClip clip;
     [SerializeField] bool useTransition;
+    [SerializeField] bool isMainTrack;
 
     public void ChangeToClip()
     {
-        MusicMan.instance.PlayMusic(clip, useTransition);
+        MusicMan.instance.PlayMusic(clip, useTransition, isMainTrack);
+    }
+
+    public void ReturnToMain(){
+        MusicMan.instance.ResetToMainTrack();
     }
 }

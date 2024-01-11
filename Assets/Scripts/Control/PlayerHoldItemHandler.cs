@@ -7,12 +7,18 @@ public class PlayerHoldItemHandler : MonoBehaviour
     [SerializeField] Transform HoldItemTransform;
     [SerializeField] PastObjectData inspectionItem;
     [SerializeField] BoolVariable isHolding;
+    [SerializeField] AudioClip TakeItemClip;
+    [SerializeField] AudioClip ShelveItemClip;
+
     public void RequestPlayerHoldItem()
     {
         var success = HoldItemManager.instance.TakeItem(inspectionItem.name, HoldItemTransform);
 
-        if (success)
+        if (success){
+            MusicMan.instance.PlaySE(TakeItemClip);
             isHolding.value = true;
+        }
+            
     }
 
     public void DismissPlayerHoldItem(UnityEngine.InputSystem.InputAction.CallbackContext context)
@@ -21,6 +27,7 @@ public class PlayerHoldItemHandler : MonoBehaviour
         {
             HoldItemManager.instance.ShelveItem();
             isHolding.value = false;
+            MusicMan.instance.PlaySE(ShelveItemClip);
         }
     }
 }

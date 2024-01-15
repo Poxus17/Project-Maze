@@ -6,6 +6,7 @@ public class UI_InteractionIconHandler : MonoBehaviour
 {
     [SerializeField] StringVariable detectionText;
     [SerializeField] TMPro.TMP_Text textComponent;
+    [SerializeField] GameObject icon;
 
 
     private void Start()
@@ -23,6 +24,10 @@ public class UI_InteractionIconHandler : MonoBehaviour
     void SetDetectionText()
     {
         textComponent.text = detectionText.value;
-        textComponent.enabled = (detectionText.value != "");
+
+        var enable = (detectionText.value != "");
+
+        textComponent.enabled = enable;
+        icon.SetActive(enable);
     }
 }

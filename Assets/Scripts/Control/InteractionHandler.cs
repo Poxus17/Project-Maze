@@ -63,7 +63,7 @@ public class InteractionHandler : MonoBehaviour
                     currentDetectionText.value = interactableObject.GetInteractionText();
                 }
             }
-            else if(hitObject.tag == "Detect")
+            /*else if(hitObject.tag == "Detect")
             {
                 var currentInstanceId = hitObject.GetInstanceID();
 
@@ -75,7 +75,7 @@ public class InteractionHandler : MonoBehaviour
                     if (!detectedObject.Detect())
                         detectedObject = null;
                 }
-            }
+            }*/
             else if (interactableObject != null || detectedObject != null)
             {
                 ClearDetection();

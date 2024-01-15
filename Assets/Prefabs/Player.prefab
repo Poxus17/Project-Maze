@@ -7133,6 +7133,7 @@ MonoBehaviour:
   LeaveUI: {fileID: 0}
   adventureMode: {fileID: 11400000, guid: db8ed2dac0ff8904fad5b0a7d0c3a9af, type: 2}
   cameraTransition: {fileID: 11400000, guid: 2c02413736c88c041b83dffbf0546c44, type: 2}
+  useStamina: 1
 --- !u!114 &1385110150539732577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7561,6 +7562,8 @@ MonoBehaviour:
   HoldItemTransform: {fileID: 1385110148981740175}
   inspectionItem: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
   isHolding: {fileID: 11400000, guid: 8c61224d919deb948ad7af3342551330, type: 2}
+  TakeItemClip: {fileID: 0}
+  ShelveItemClip: {fileID: 0}
 --- !u!114 &8211945785309997370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9048,7 +9051,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxXRotation: 70
-  smoothSpeed: 0.2
+  smoothSpeed: 0.1
   playerRotationXDelta: {fileID: 11400000, guid: a1d567778fba464478cce701478e4f10, type: 2}
   playerRotationYDelta: {fileID: 11400000, guid: 2aadfbed384c7eb4bacc90581c12e199, type: 2}
   mouseSensitivity: {fileID: 11400000, guid: e5ee73580924aa4439c5fd21abb19e69, type: 2}

@@ -12,7 +12,7 @@ public class SelfConsumingCollisionTrigger : IndexedConsumable
         {
             triggerEvent.Invoke();
             RegisterAsConsumed();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

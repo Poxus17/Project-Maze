@@ -10,6 +10,7 @@ public class InteractableComponent : MonoBehaviour, IInteractable
     [SerializeField] BoolVariable interactionCondition;
     [SerializeField] bool notCondition;
     [SerializeField] UnityEvent Interaction;
+    [SerializeField] bool consumeInteraction = false;
 
     public float exclusiveTime { get; set; }
 
@@ -20,8 +21,13 @@ public class InteractableComponent : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(InteractionAllowed())
-            Interaction.Invoke();
+        if(!InteractionAllowed())
+            return;
+
+        Interaction.Invoke();
+
+        if(consumeInteraction)
+            gameObject.tag = "Untagged";
     }
 
     public string GetInteractionText()

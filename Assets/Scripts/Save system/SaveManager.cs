@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 public class SaveManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SaveManager : MonoBehaviour
     [SerializeField] BoolArrayVariable mapIndex;
     bool[] eventsMemory;
     List<int> consumableIndexes;
+
+    public bool isLoading = false;
 
     public static SaveManager instance;
 
@@ -31,7 +34,9 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
+        Profiler.BeginSample("SaveManager.LoadGame()");
         LoadGame();
+        Profiler.EndSample();
     }
 
     public void SaveGame()
@@ -50,7 +55,8 @@ public class SaveManager : MonoBehaviour
             eventsMemory = new bool[saveableEvents.Length];
             return;
         }
-            
+        
+        isLoading = true;
 
         player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
 
@@ -95,6 +101,8 @@ public class SaveManager : MonoBehaviour
         #endregion
 
         Debug.Log("game loaded");
+
+        isLoading = false;
     }
 
     public void DeleteSave()

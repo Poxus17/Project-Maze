@@ -11,6 +11,7 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
     [SerializeField] BoolVariable itemPlaceBool;
     [SerializeField] PastObjectData heldItem;
     [SerializeField] GameObject displayItem;
+    [SerializeField] AudioClip placeSound;
 
 
     public void Interact()
@@ -56,6 +57,11 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
 
         gameObject.layer = 0;
         GetComponent<Light>().enabled = false;
+
+        if(!SaveManager.instance.isLoading)
+            MusicMan.instance.PlaySE(placeSound);
+
+        Debug.Log(SaveManager.instance.isLoading);
     }
 
     public void MatchSlotToMemory(List<string> names)

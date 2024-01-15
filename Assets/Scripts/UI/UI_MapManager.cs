@@ -7,6 +7,7 @@ public class UI_MapManager : UIComponent
     [SerializeField] GameObject[] mapPieces;
     [SerializeField] BoolArrayVariable collectedMapParts;
     [SerializeField] GameObject noMapText;
+    [SerializeField] AudioClip mapSe;
 
     public void CollectMapPiece(int pieceIndex)
     {
@@ -16,6 +17,7 @@ public class UI_MapManager : UIComponent
     public void LaunchMap()
     {
         noMapText.SetActive(true);
+        MusicMan.instance.PlaySE(mapSe);
         for(int i = 0; i < mapPieces.Length; i++)
         {
             try
@@ -28,8 +30,7 @@ public class UI_MapManager : UIComponent
             }
             catch(System.Exception e)
             {
-                Debug.LogError(e.Message);
-                Debug.Log(i);
+                UI_TextDisplay.Instance.DisplayText("Error message: " + e.Message, 5f);
             }
             
         }

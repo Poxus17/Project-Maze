@@ -4,12 +4,14 @@ using TMPro;
 
 public class UI_TextDisplay : MonoBehaviour
 {
+    [SerializeField] AudioClip textSe; // Sound effect to play when text is displayed.
     // Singleton instance
     public static UI_TextDisplay Instance { get; private set; }
 
     private TMP_Text text; // Text.
     private AnimatorCallBoard animatorCallBoard; // AnimatorCallBoard.
     private bool textQueuedForFadeOut = false; // Is text currently being displayed?
+    private bool occupied = false; // Is text currently being displayed?
     private float timer = 0f; // Timer for displaying text.
 
 
@@ -52,8 +54,15 @@ public class UI_TextDisplay : MonoBehaviour
     public void DisplayText(string textToDisplay, float duration)
     {
         text.text = textToDisplay;
-        animatorCallBoard.SetTrigger("TriggerFadeIn");
 
+        if(occupied)
+            textQueuedForFadeOut = false;
+        else
+            animatorCallBoard.SetTrigger("TriggerFadeIn");
+
+        occupied = true;
+        MusicMan.instance.PlaySE(textSe);
+        
         if(duration > 0f){
             timer = duration;
             textQueuedForFadeOut = true;
@@ -63,5 +72,6 @@ public class UI_TextDisplay : MonoBehaviour
     public void FadeOutText(){
         animatorCallBoard.SetTrigger("TriggerFadeOut");
         textQueuedForFadeOut = false;
+        occupied = false;
     }
 }

@@ -8,6 +8,7 @@ public class TextDisplayAgent : MonoBehaviour
     [SerializeField] string textToDisplay; // Text to display.
     [SerializeField] float duration; // Duration to display text. -1 for indefinite.
     [SerializeField] InputAction inputAction; // Input action to prematurelqy end text display.
+    [SerializeField] InputAction launchAction; // Input action to launch text display.
 
     void Start()
     {
@@ -19,6 +20,17 @@ public class TextDisplayAgent : MonoBehaviour
         inputAction.performed += KillCommand; // Add kill command to input action.
     }
 
+    public void BindLaucnhAction(){
+
+        if(launchAction==null){
+            Debug.Log("Trying to bind null action. I am " + gameObject.name);
+            return;
+        }
+
+        launchAction.performed += DisplayTextAction;
+        launchAction.Enable();
+    }
+
     public void DisplayText()
     {
         if(textToDisplay.Contains("\\n"))
@@ -28,6 +40,10 @@ public class TextDisplayAgent : MonoBehaviour
         inputAction.Enable();
     }
 
+    private void DisplayTextAction(InputAction.CallbackContext context){
+        DisplayText();
+    }
+
     public void DisplayText(string textToDisplay, float duration)
     {
         UI_TextDisplay.Instance.DisplayText(textToDisplay, duration);
@@ -35,8 +51,8 @@ public class TextDisplayAgent : MonoBehaviour
 
     public void KillCommand(InputAction.CallbackContext context)
     {
-        Debug.Log("KillCommand called");
         UI_TextDisplay.Instance.FadeOutText();
         inputAction.Disable();
+        launchAction.Disable();
     }
 }

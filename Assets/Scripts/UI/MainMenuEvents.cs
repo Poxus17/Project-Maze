@@ -10,6 +10,10 @@ public class MainMenuEvents : MonoBehaviour
         SceneManager.LoadSceneAsync(scene);
     }
 
+    public void Open(FloatVariable scene){
+        SceneManager.LoadSceneAsync((int)scene.value);
+    }
+
     public void Leave()
     {
         Application.Quit();

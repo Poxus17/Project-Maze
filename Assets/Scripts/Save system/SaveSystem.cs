@@ -43,7 +43,13 @@ public static class SaveSystem
 
     public static void DeleteSaveFile()
     {
+        //Check if save file exists
+        if (!File.Exists(path))
+            return;
+
         File.Delete(path);
         Debug.Log("Save file deleted");
     }
+
+
 }

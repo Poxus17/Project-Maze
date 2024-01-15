@@ -167,8 +167,7 @@ public class KellekHuntController : MainAiController
     void PlayDetectionLaugh()
     {
         var randomClip = detectionLaughs[Random.Range(0, detectionLaughs.Length)];
-        laughAudioSource.clip = randomClip;
-        laughAudioSource.Play();
+        MusicMan.instance.PlaySEWithReverb(randomClip, Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position));
     }
 
     public void GoToPlayer()

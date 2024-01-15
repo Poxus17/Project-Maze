@@ -15,6 +15,7 @@ public class MusicMan : MonoBehaviour
     [SerializeField] float transitionTime;
 
     private AudioClip mainMusicTrack;
+    private DynamicReverbMusicBoy reverbMusicBoy;
 
     public static MusicMan instance;
 
@@ -24,6 +25,8 @@ public class MusicMan : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+
+        reverbMusicBoy = GetComponentInChildren<DynamicReverbMusicBoy>();
     }
 
     public void PlaySE(AudioClip clip, float volume)
@@ -36,6 +39,11 @@ public class MusicMan : MonoBehaviour
     {
         seSource.volume = 1;
         seSource.PlayOneShot(clip);
+    }
+
+    public void PlaySEWithReverb(AudioClip clip, float distance)
+    {
+        reverbMusicBoy.PlayClipWithReverb(clip, distance);
     }
 
     public void PlayMusic(AudioClip clip, bool useTransition, bool isMainTrack = false)

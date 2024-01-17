@@ -46,8 +46,8 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0.00032848679, y: 0.05794871, z: 0.0012766998}
   m_Size: 0.14520943
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.25
@@ -611,8 +611,8 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: -0.006872982, y: 0.03976171, z: -0.00045255572}
   m_Size: 0.12675169
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.25
@@ -927,8 +927,8 @@ LODGroup:
   serializedVersion: 2
   m_LocalReferencePoint: {x: 0.0033694133, y: 0.031212337, z: -0.0010922719}
   m_Size: 0.07753773
-  m_FadeMode: 0
-  m_AnimateCrossFading: 0
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
   m_LastLODIsBillboard: 0
   m_LODs:
   - screenRelativeHeight: 0.25

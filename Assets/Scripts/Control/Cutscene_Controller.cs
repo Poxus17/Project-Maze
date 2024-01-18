@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Cutscene_Controller : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] float stepTime = 0.2f;
     [SerializeField] AudioClip[] stepClips;
     Vector3 rawMovement;
     Rigidbody rb;
@@ -19,7 +20,6 @@ public class Cutscene_Controller : MonoBehaviour
     float bobbingSpeed = 15;
     float bobbingAmount = 0.2f;
     float defaultPosY;
-    float stepTime = 0.2f;
 
     // Start is called before the first frame update
     void Start()
@@ -74,19 +74,17 @@ public class Cutscene_Controller : MonoBehaviour
 
         if (activeStep && !wasActive && !playingStep)
         {
-            StartCoroutine(StepsLoop());
+            GlobalTimerManager.instance.RegisterForTimer(PlayStep, stepTime);
         }
     }
-    IEnumerator StepsLoop()
-    {
+
+    public void PlayStep(){
         playingStep = true;
         var selectClip = stepClips[Random.Range(0, stepClips.Length)];
         MusicMan.instance.PlaySE(selectClip, 0.5f);
 
-        yield return new WaitForSeconds(stepTime);
-
-        if (activeStep)
-            StartCoroutine(StepsLoop());
+        if(activeStep)
+            GlobalTimerManager.instance.RegisterForTimer(PlayStep, stepTime);
         else
             playingStep = false;
     }

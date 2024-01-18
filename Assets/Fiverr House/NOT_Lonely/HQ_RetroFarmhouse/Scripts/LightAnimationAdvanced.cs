@@ -28,7 +28,7 @@ public class LightAnimationAdvanced : MonoBehaviour {
     void Start () {
         StartCoroutine (LightAnim ());
     }
-
+	
     IEnumerator LightAnim () {
 		StartIntensity = LightIntensity.intensity;
 

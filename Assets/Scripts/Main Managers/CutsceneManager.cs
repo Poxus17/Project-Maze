@@ -16,12 +16,6 @@ public class CutsceneManager : MonoBehaviour
     public void PlayCutscene(float time)
     {
         InputSystemHandler.instance.SetInputActive(false);
-        StartCoroutine(CutsceneTimer(time));
-    }
-
-    private IEnumerator CutsceneTimer(float time)
-    {
-        yield return new WaitForSeconds(time);
-        InputSystemHandler.instance.SetInputActive(true);
+        GlobalTimerManager.instance.RegisterForTimer(() => { InputSystemHandler.instance.SetInputActive(true); }, time);
     }
 }

@@ -100,7 +100,10 @@ public class InteractionHandler : MonoBehaviour
             interactableObject.Interact();
 
             if (interactableObject.exclusiveTime > 0)
-                StartCoroutine(PlayExclusiveTime(interactableObject.exclusiveTime));
+            {
+                exclusiveLocked = true;
+                GlobalTimerManager.instance.RegisterForTimer(() => { exclusiveLocked = false; }, interactableObject.exclusiveTime);
+            }
 
             ClearDetection();
         }
@@ -115,13 +118,6 @@ public class InteractionHandler : MonoBehaviour
             detectedObject.Lose();
 
         detectedObject = null;
-    }
-
-    IEnumerator PlayExclusiveTime(float time)
-    {
-        exclusiveLocked = true;
-        yield return new WaitForSeconds(time);
-        exclusiveLocked = false;
     }
 }
 

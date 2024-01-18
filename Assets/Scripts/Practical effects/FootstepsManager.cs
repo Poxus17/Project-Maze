@@ -48,7 +48,7 @@ public class FootstepsManager : MonoBehaviour
 
         if (activeStep && !wasActive && !playingStep)
         {
-            StartCoroutine(StepsLoop());
+            InitStepsLoop();
         }
     }
 
@@ -76,18 +76,28 @@ public class FootstepsManager : MonoBehaviour
         }
     }
 
-    IEnumerator StepsLoop()
-    {
+    void InitStepsLoop(){
         playingStep = true;
+        PlayStep();
+        GlobalTimerManager.instance.RegisterForTimer(StepsLoop, stepTime);
+    }
+
+    void StepsLoop()
+    {
+        if(activeStep)
+            GlobalTimerManager.instance.RegisterForTimer(StepsLoop, stepTime);
+        else
+        {
+            playingStep = false;
+            return;
+        }
+
+        PlayStep();
+    }
+
+    void PlayStep(){
         var selectClip = stepClips[Random.Range(0, stepClips.Length)];
         NoiseManager.instance.PlayNoise(selectClip, stepNoiseValue);
-
-        yield return new WaitForSeconds(stepTime);
-
-        if(activeStep)
-            StartCoroutine(StepsLoop());
-        else
-            playingStep = false;
     }
 
     private void OnDestroy()

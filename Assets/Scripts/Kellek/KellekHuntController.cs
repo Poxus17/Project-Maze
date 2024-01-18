@@ -84,17 +84,10 @@ public class KellekHuntController : MainAiController
         despawnDisrupted = false;
 
         RoamNextPoint();
-        StartCoroutine(DespawnTimer());
-    }
-
-    IEnumerator DespawnTimer()
-    {
-        yield return new WaitForSeconds(Random.Range(_minDespawnTime, _maxDespawnTime));
-
-        if (!despawnDisrupted)
-        {
-            StartCoroutine(LeaveAudibleArea());
-        }
+        GlobalTimerManager.instance.RegisterForTimer(
+            () => { if(!despawnDisrupted) StartCoroutine(LeaveAudibleArea()); }, 
+            Random.Range(_minSpawnTime, _maxSpawnTime)
+            );
     }
     /*
      * |
@@ -192,28 +185,19 @@ public class KellekHuntController : MainAiController
             controller.SwitchToPlayer();
             
         else
-            StartCoroutine(IllGiveYouToTheCountOf());
+        {
+            state = States.Chase;
+            chaseLock.value = true;
+            MusicMan.instance.PlaySE(detectSE, 1f);
+            controller.CancelMovement();
+
+            GlobalTimerManager.instance.RegisterForTimer(HereICome, chaseWaitTime);
+        }
     }
-
-    IEnumerator IllGiveYouToTheCountOf()
-    {
-        state = States.Chase;
-        chaseLock.value = true;
-        MusicMan.instance.PlaySE(detectSE, 1f);
-        controller.CancelMovement();
-
-        yield return new WaitForSeconds(chaseWaitTime); //Ready or not
-
-        HereICome();
-    }
+    
     void HereICome()
     {
         controller.SetChaseSpeed(true);
-        SetActiveChase();
-        Debug.Log("Start Chase");
-    }
-    void SetActiveChase()
-    {
         OnChase.Invoke(true);
     }
     /*
@@ -260,11 +244,9 @@ public class KellekHuntController : MainAiController
         if (renderer.isVisible)
         {
             RoamAway();
-            Debug.Log(renderer.isVisible);
             while (renderer.isVisible)
                 yield return null;
         }
-        Debug.Log(renderer.isVisible);
 
         Shakeoff();
 

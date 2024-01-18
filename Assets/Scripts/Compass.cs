@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//DEPRECATED
 public class Compass : MonoBehaviour
 {
     //Put this script on your needle object
@@ -56,10 +57,11 @@ public class Compass : MonoBehaviour
     public void SetIdle()
     {
         idle = true;
-        StartCoroutine(IdleAnimation());
+        //StartCoroutine(IdleAnimation());
     }
 
-    IEnumerator IdleAnimation()
+/*
+    Deprecated IdleAnimation()
     {
         var eularAngles = transform.localEulerAngles;
         while (idle)
@@ -69,4 +71,6 @@ public class Compass : MonoBehaviour
             yield return null;
         }
     }
+*/
+
 }

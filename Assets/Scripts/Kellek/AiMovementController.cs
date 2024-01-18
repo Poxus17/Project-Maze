@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Profiling;
 
 public class AiMovementController : MonoBehaviour
 {
@@ -47,7 +48,6 @@ public class AiMovementController : MonoBehaviour
         //Debug.Log("Move to " + toPosition);
         if(!waitinForDestination)
             StartCoroutine(DestinationArrivalCheck());
-
     }
 
     public void SetSpeed(float newSpeed)
@@ -62,6 +62,7 @@ public class AiMovementController : MonoBehaviour
 
     IEnumerator DestinationArrivalCheck()
     {
+        Profiler.BeginSample("AIMovement.DestinationArrivalCheck()");
         waitinForDestination = true;
 
         bool stillMoving = true;
@@ -78,6 +79,7 @@ public class AiMovementController : MonoBehaviour
         waitinForDestination = false;
 
         OnArrivedAtDestination();
+        Profiler.EndSample();
     }
 
     public void SwitchToPlayer()

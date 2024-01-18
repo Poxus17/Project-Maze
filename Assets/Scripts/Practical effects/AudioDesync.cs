@@ -11,12 +11,6 @@ public class AudioDesync : MonoBehaviour
     void Start()
     {
         source.loop = true;
-        StartCoroutine(playSource());
-    }
-
-    IEnumerator playSource()
-    {
-        yield return new WaitForSeconds(Random.Range(0, delay));
-        source.Play();
+        GlobalTimerManager.instance.RegisterForTimer( () => { source.Play(); }, Random.Range(0, delay));
     }
 }

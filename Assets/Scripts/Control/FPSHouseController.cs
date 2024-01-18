@@ -4,77 +4,90 @@ using UnityEngine.InputSystem;
 
 public class FPSHouseController : MonoBehaviour
 {
-    public GameObject directionObject;
-    public float speed = 5.0f;
-    public float gravity = -9.81f;
-    public float maxSlope;
-    public LayerMask groundLayer;
+    public Camera playerCamera;
+    public float walkSpeed = 6f;
+    public float runSpeed = 12f;
+    public float jumpPower = 7f;
+    public float gravity = 10f;
 
-    private Rigidbody rb;
-    private Vector2 currentMovementInput;
-    private bool isGrounded;
-    private Vector3 moveDirection;
 
-    private CapsuleCollider capsuleCollider;
+    public float lookSpeed = 2f;
+    public float lookXLimit = 45f;
 
-    private void Awake()
+
+    Vector3 moveDirection = Vector3.zero;
+    Vector2 rawMovement;
+    Vector2 rawLook;
+    float rotationX = 0;
+    public bool canMove = true;
+
+    CharacterController characterController;
+    
+    void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        capsuleCollider = GetComponent<CapsuleCollider>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation; // Prevent the Rigidbody from rotating.
+        characterController = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    private void Update()
+    void Update()
     {
-        DetermineMoveDirection();
-    }
 
-    private void FixedUpdate()
-    {
-        ApplyGravity();
-        if (isGrounded)
+        #region Handles Movment
+        Vector3 forward = transform.TransformDirection(Vector3.forward);
+        Vector3 right = transform.TransformDirection(Vector3.right);
+
+        // Press Left Shift to run
+        //bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        float curSpeedX = canMove ? (true ? runSpeed : walkSpeed) * rawMovement.y : 0;
+        float curSpeedY = canMove ? (true ? runSpeed : walkSpeed) * rawMovement.x : 0;
+        float movementDirectionY = moveDirection.y;
+        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        #endregion
+
+        if (!characterController.isGrounded)
         {
-            MovePlayer();
-        }
-    }
-
-    public void OnMovement(InputAction.CallbackContext context)
-    {
-        currentMovementInput = context.ReadValue<Vector2>();
-
-        FPSMovementController.isWalking = currentMovementInput != Vector2.zero;
-    }
-
-    void DetermineMoveDirection()
-    {
-        Vector3 forwardMovement = directionObject.transform.forward * currentMovementInput.y;
-        Vector3 rightMovement = directionObject.transform.right * currentMovementInput.x;
-        moveDirection = (forwardMovement + rightMovement).normalized;
-    }
-
-    void MovePlayer()
-    {
-        Vector3 movement = moveDirection * speed * Time.fixedDeltaTime;
-        Vector3 newPosition = transform.position + movement;
-        rb.MovePosition(newPosition);
-    }
-
-    void ApplyGravity()
-    {
-        // Ground check using a raycast for better ground detection
-        float extraHeightText = 0.1f;
-        RaycastHit hit;
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, out hit, (capsuleCollider.height * 0.5f) + extraHeightText, groundLayer);
-
-        // Checking the angle of the surface. If it's steeper than maxSlope, then consider the player as not grounded.
-        if (isGrounded && Vector3.Angle(hit.normal, Vector3.up) > maxSlope)
-        {
-            isGrounded = false;
+            moveDirection.y -= gravity * Time.deltaTime;
         }
 
-        if (!isGrounded)
+        characterController.Move(moveDirection * Time.deltaTime);
+
+        #region Handles Rotation
+        
+        if (canMove)
         {
-            rb.AddForce(new Vector3(0, gravity, 0), ForceMode.Acceleration);
+            rotationX += -rawLook.y * lookSpeed;
+            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, rawLook.x * lookSpeed, 0);
         }
+
+        #endregion
+
+        /*
+        #region Handles Jumping
+        if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
+        {
+            moveDirection.y = jumpPower;
+        }
+        else
+        {
+            moveDirection.y = movementDirectionY;
+        }
+
+        
+
+        #endregion
+        */
+    }
+
+    public void ReadMove(InputAction.CallbackContext context)
+    {
+        rawMovement = context.ReadValue<Vector2>();
+    }
+
+    public void ReadLook(InputAction.CallbackContext context){
+        rawLook = context.ReadValue<Vector2>();
     }
 }

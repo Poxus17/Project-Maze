@@ -37,7 +37,7 @@ public class Debug_EaseRorateTo : MonoBehaviour
             float step = rotationSpeed * Time.deltaTime;
 
             // Rotate towards the target rotation using Slerp for ease-out effect
-            transform.localRotation = Quaternion.Slerp(transform.rotation, targetRotation, step);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, step);
 
             yield return null; // Wait for the next frame
         }

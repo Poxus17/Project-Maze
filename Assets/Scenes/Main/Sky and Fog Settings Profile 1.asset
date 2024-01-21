@@ -342,6 +342,9 @@ MonoBehaviour:
   m_PhysicallyBased:
     m_OverrideState: 1
     m_Value: 0
+  m_LimitManualRangeNearBlur:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &5933436400917500581
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -363,7 +366,7 @@ MonoBehaviour:
     m_Value: 1
   colorMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   color:
     m_OverrideState: 1
     m_Value: {r: 0.08376968, g: 0.08376968, b: 0.08376968, a: 1}

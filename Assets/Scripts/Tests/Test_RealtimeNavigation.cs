@@ -1,4 +1,6 @@
 using UnityEngine;
+using Unity.VisualScripting;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -33,14 +35,20 @@ public class Test_RealtimeNavigation : MonoBehaviour
 
         RaycastHit hitRight;
 
-        if(Physics.Raycast(checkpoint, transform.right, out hitRight, 100, layerMask)){
-            marker.transform.position = checkpoint + transform.right * 2.5f;
-            return;
+        if(Physics.Raycast(checkpoint, transform.right, out hitRight, 100f, layerMask)){
+            if(hitRight.distance > wallDetectionThreshold){
+                targetMarker.transform.position = checkpoint + transform.right * (hitRight.distance > forwardTargetClearDistance ? forwardTargetClearDistance : hitRight.distance - 2);
+                return;
+            }
         }
         
-
         RaycastHit hitLeft;
-        bool findHitLeft = Physics.Raycast(checkpoint, -transform.right, out hitLeft, 20f, layerMask);
+        if(Physics.Raycast(checkpoint, -transform.right, out hitLeft, 100f, layerMask)){
+            if(hitLeft.distance > wallDetectionThreshold){
+                targetMarker.transform.position = checkpoint - transform.right * (hitLeft.distance > forwardTargetClearDistance ? forwardTargetClearDistance : hitLeft.distance - 2);
+                return;
+            }
+        }
     }
 }
 

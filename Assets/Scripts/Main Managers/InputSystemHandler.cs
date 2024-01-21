@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Schema;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InputSystemHandler : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
-    public static InputSystemHandler instance;
 
+
+
+    public static InputSystemHandler instance;
     private void Awake()
     {
         if(instance == null)
@@ -32,6 +35,10 @@ public class InputSystemHandler : MonoBehaviour
 
         Cursor.lockState = active ? CursorLockMode.None : CursorLockMode.Locked;
         Cursor.visible = active;
+    }
+
+    public void ResetMap(){
+        playerInput.SwitchCurrentActionMap("Player");
     }
 
     public void SetInputActive(bool active)

@@ -39,5 +39,4 @@ public class InteractableComponent : MonoBehaviour, IInteractable
     {
         return (interactionCondition == null) ? true : (interactionCondition.value && !notCondition);
     }
-
 }

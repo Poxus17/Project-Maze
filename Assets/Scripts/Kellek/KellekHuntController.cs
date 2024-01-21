@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 
 public class KellekHuntController : MainAiController
@@ -39,6 +40,7 @@ public class KellekHuntController : MainAiController
     [Header("Variable Assets")]
     [SerializeField] BoolVariable chaseLock;
     [SerializeField] FloatVariable itemCount;
+    [SerializeField] BoolVariable playerIsHiding;
 
     States state;
 
@@ -47,10 +49,11 @@ public class KellekHuntController : MainAiController
     Vector3 lastSeenAt;
     Vector3 oblivion = new Vector3(-10000, -10000, -10000);
 
-    bool disengage = false;
-    bool queueShakeoff = false;
-    bool blindChasing = false;
-    bool despawnDisrupted;
+    private bool disengage = false;
+    private bool queueShakeoff = false;
+    private bool blindChasing = false;
+    private bool despawnDisrupted;
+    private int blindChaseCallsCounter = 0;
 
     //Suspension parameter
     bool suspended;
@@ -127,9 +130,9 @@ public class KellekHuntController : MainAiController
         else if (state == States.Chase)
         {
             if (blindChasing)
-                controller.SwitchToPlayer();
+                GoToPlayer();
             else
-                StartCoroutine(BlindChaseTimer());
+                InitBlindChase();
         }
     }
     /*
@@ -151,7 +154,7 @@ public class KellekHuntController : MainAiController
                     PlayDetectionLaugh();
                 state = States.Hunt;
             }
-            controller.SwitchToPlayer();
+            GoToPlayer();
             if (state == States.Chase)
                 Debug.Log("Mid chase switch");
         }
@@ -165,7 +168,8 @@ public class KellekHuntController : MainAiController
 
     public void GoToPlayer()
     {
-        controller.MoveTo(CentralAI.Instance.player.transform.position);
+        blindChasing = false;
+        controller.SwitchToPlayer();
     }
 
     /*
@@ -179,11 +183,15 @@ public class KellekHuntController : MainAiController
      */
     void FoundYou()
     {
+        if(playerIsHiding.value)
+            return;
+
         despawnDisrupted = true;
 
-        if (state == States.Chase)
+        if (state == States.Chase){
             controller.SwitchToPlayer();
-            
+            Debug.Log("Mid chase switch");
+        }
         else
         {
             state = States.Chase;
@@ -208,15 +216,31 @@ public class KellekHuntController : MainAiController
      * V
      * 5 - Countdown to cancel chase
      */
-    IEnumerator BlindChaseTimer()
-    {
+     void InitBlindChase(){
         blindChasing = true;
         controller.SwitchToPlayer();
+
         var random = Random.Range(blindChaceTimeMin, blindChaceTimeMax);
+        GlobalTimerManager.instance.RegisterForTimer(CheckEndBlindChase, random);
+     }
+
+     void CheckEndBlindChase(){
+        if(blindChasing && blindChaseCallsCounter <= 0){
+            blindChasing = false;
+            StopChase();
+            return;
+        }
+
+        blindChaseCallsCounter--;
+     }
+    /*IEnumerator BlindChaseTimer()
+    {
+        
         yield return new WaitForSeconds(random);
         StopChase();
         blindChasing = false;
-    }
+    }*/
+
     /* Sight not replenished
      * 
      * |

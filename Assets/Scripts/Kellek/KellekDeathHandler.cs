@@ -9,10 +9,11 @@ public class KellekDeathHandler : MonoBehaviour
 
     [SerializeField] GameEvent initiateDeath;
     [SerializeField] float JumpscareDelay;
+    [SerializeField] BoolVariable playerIsHiding;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" && !playerIsHiding.value)
         {
             initiateDeath.Raise();
         }

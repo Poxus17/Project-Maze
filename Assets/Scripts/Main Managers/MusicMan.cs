@@ -14,6 +14,9 @@ public class MusicMan : MonoBehaviour
     [SerializeField] float maxVolume;
     [SerializeField] float transitionTime;
 
+    [Space(5)]
+    [SerializeField] GameObject localSePrefab;
+
     private AudioClip mainMusicTrack;
     private DynamicReverbMusicBoy reverbMusicBoy;
 
@@ -39,6 +42,13 @@ public class MusicMan : MonoBehaviour
     {
         seSource.volume = 1;
         seSource.PlayOneShot(clip);
+    }
+
+    public void PlayLocalSE(AudioClip clip, Vector3 position)
+    {
+        var go = Instantiate(localSePrefab, position, Quaternion.identity);
+        var handler = go.GetComponent<MusicManLocalSEHandler>();
+        handler.PlaySE(clip);
     }
 
     public void PlaySEWithReverb(AudioClip clip, float distance)

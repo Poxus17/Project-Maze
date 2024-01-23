@@ -31,24 +31,27 @@ public class Test_RealtimeNavigation : MonoBehaviour
         }
     }
 
-    public void FindNewRoute(Vector3 checkpoint){
+    public Vector3 FindNewRoute(Vector3 checkpoint){
 
         RaycastHit hitRight;
 
         if(Physics.Raycast(checkpoint, transform.right, out hitRight, 100f, layerMask)){
             if(hitRight.distance > wallDetectionThreshold){
-                targetMarker.transform.position = checkpoint + transform.right * (hitRight.distance > forwardTargetClearDistance ? forwardTargetClearDistance : hitRight.distance - 2);
-                return;
+                var toReturn = checkpoint + transform.right * (hitRight.distance > forwardTargetClearDistance ? forwardTargetClearDistance : hitRight.distance - 2);
+                targetMarker.transform.position = toReturn;
+                return toReturn;
             }
         }
-        
         RaycastHit hitLeft;
         if(Physics.Raycast(checkpoint, -transform.right, out hitLeft, 100f, layerMask)){
             if(hitLeft.distance > wallDetectionThreshold){
-                targetMarker.transform.position = checkpoint - transform.right * (hitLeft.distance > forwardTargetClearDistance ? forwardTargetClearDistance : hitLeft.distance - 2);
-                return;
+                var toReturn = checkpoint - transform.right * (hitLeft.distance > forwardTargetClearDistance ? forwardTargetClearDistance : hitLeft.distance - 2);
+                targetMarker.transform.position = toReturn;
+                return toReturn;
             }
         }
+
+        return Vector3.zero;
     }
 }
 

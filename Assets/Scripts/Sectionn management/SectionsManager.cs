@@ -29,7 +29,13 @@ public class SectionsManager : MonoBehaviour
 
     public void EnterSection(int section)
     {
-        var changed = currentSection != section;
+        if(currentSection == 0)
+        {
+            currentSection = section;
+            return;
+        }
+
+        var changed = (currentSection != section);
         if (changed)
         {
             currentSection = section;

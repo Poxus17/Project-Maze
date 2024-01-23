@@ -36,6 +36,13 @@ public class AiListenerController : MonoBehaviour
         Debug.Log("I HEAR YOU");
         OnNoticeNoise();
     }
+
+    public bool GetPointInRange(Vector3 point)
+    {
+        var distance = Vector3.Distance(transform.position, point);
+
+        return distance < range;
+    }
 }
 
 #if UNITY_EDITOR

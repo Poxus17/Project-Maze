@@ -12,11 +12,14 @@ public class ProfilerLogger : MonoBehaviour
         Profiler.logFile = baseLogName; //Also supports passing "myLog.raw"
         Profiler.enableBinaryLog = true;
         Profiler.enabled = true;
+        Profiler.SetAreaEnabled(ProfilerArea.GPU, true);
     }
 
     public void SnapProfile(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         if (context.started)
-            Profiler.logFile = baseLogName + "_" + System.DateTime.Now.Date.Month.ToString() + System.DateTime.Now.Date.Day.ToString() + "_" + System.DateTime.Now.TimeOfDay.Hours.ToString() + System.DateTime.Now.TimeOfDay.Minutes.ToString()+ System.DateTime.Now.TimeOfDay.Seconds.ToString();
+        {
+            Profiler.logFile = baseLogName + "_Section-" + SectionsManager.instance.currentSection + "_" + System.DateTime.Now.Date.Month.ToString() + System.DateTime.Now.Date.Day.ToString() + "_" + System.DateTime.Now.TimeOfDay.Hours.ToString() + System.DateTime.Now.TimeOfDay.Minutes.ToString()+ System.DateTime.Now.TimeOfDay.Seconds.ToString();
+        }
     }
 }

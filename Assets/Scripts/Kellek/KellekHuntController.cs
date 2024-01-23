@@ -24,7 +24,7 @@ public class KellekHuntController : MainAiController
     [SerializeField] float blindChaceTimeMax;
     [SerializeField] float blindChaceTimeMin;
     [SerializeField] float minimalChaseTime;
-    [SerializeField] float disengageRange;
+    [SerializeField] float stepAwayEffectRange;
     [SerializeField] float chaseWaitTime;
     [SerializeField] Renderer renderer;
     [Space(5)]
@@ -130,7 +130,7 @@ public class KellekHuntController : MainAiController
         else if (state == States.Chase)
         {
             if (blindChasing)
-                GoToPlayer();
+                FindBlindTarget();
             else
                 InitBlindChase();
         }
@@ -218,20 +218,29 @@ public class KellekHuntController : MainAiController
      */
      void InitBlindChase(){
         blindChasing = true;
-        controller.SwitchToPlayer();
+        blindChaseCallsCounter++;
+        FindBlindTarget();
 
         var random = Random.Range(blindChaceTimeMin, blindChaceTimeMax);
         GlobalTimerManager.instance.RegisterForTimer(CheckEndBlindChase, random);
      }
 
+     void FindBlindTarget(){
+        var blindTarget = FindRoute();
+
+        if(blindTarget == Vector3.zero)
+            StopChase();
+
+        controller.MoveTo(blindTarget);
+     }
+
      void CheckEndBlindChase(){
+        blindChaseCallsCounter--;
         if(blindChasing && blindChaseCallsCounter <= 0){
             blindChasing = false;
             StopChase();
             return;
         }
-
-        blindChaseCallsCounter--;
      }
     /*IEnumerator BlindChaseTimer()
     {
@@ -274,26 +283,8 @@ public class KellekHuntController : MainAiController
 
         Shakeoff();
 
-        AudioSource roamAwayAuS = gameObject.AddComponent<AudioSource>();
-        roamAwayAuS.clip = stepAway;
-        roamAwayAuS.Play();
-        roamAwayAuS.loop = false;
-
-        yield return new WaitForSeconds(stepAway.length);
-
-        /*var playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
-
-        if(playerKellekDistacne < disengageRange)
-        {
-            disengage = true;
-            RoamAway();
-
-            while (playerKellekDistacne < disengageRange)
-            {
-                yield return null;
-                playerKellekDistacne = Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position);
-            }
-        }*/
+        if(Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position) < stepAwayEffectRange)
+            MusicMan.instance.PlayLocalSE(stepAway, transform.position);
     }
 
     void RoamAway()
@@ -370,6 +361,64 @@ public class KellekHuntController : MainAiController
         AiMovementController.OnArrivedAtDestination -= DestinationArrived;
         AiListenerController.OnNoticeNoise -= ChaseNoise;
         AiSightController.OnSeeTarget -= FoundYou;
+    }
+
+    
+    [SerializeField] float forwardTargetClearDistance = 30;
+    [SerializeField] float wallDetectionThreshold = 5;
+    [SerializeField] LayerMask layerMask;
+    [SerializeField] GameObject markerPrefab;
+    private GameObject targetMarker;
+
+    public Vector3 FindRoute(){
+        RaycastHit hit; 
+
+        targetMarker = Instantiate(markerPrefab);
+        if(Physics.Raycast(transform.position, transform.forward, out hit, 100f, layerMask)){
+
+            var dir = transform.forward;
+            var checkpoint = hit.point - dir * 2.5f;
+            Debug.DrawLine(transform.position, hit.point, Color.red, 60f);
+            
+            if(hit.distance > forwardTargetClearDistance)
+            {
+                var toReturn = transform.position + (transform.forward * forwardTargetClearDistance);
+                targetMarker.transform.position = toReturn;
+                return toReturn;
+            } 
+            else
+                return FindNewRoute(checkpoint);
+        }
+
+        else return Vector3.zero;
+    }
+
+    public Vector3 FindNewRoute(Vector3 checkpoint){
+
+        RaycastHit checkFirst;
+
+        bool rightFirst = Random.Range(0, 2) == 0;
+        var firstDir = rightFirst ? transform.right : -transform.right;
+
+        if(Physics.Raycast(checkpoint, firstDir, out checkFirst, 100f, layerMask)){
+            if(checkFirst.distance > wallDetectionThreshold){
+                var toReturn = checkpoint + transform.right * (checkFirst.distance > forwardTargetClearDistance ? forwardTargetClearDistance : checkFirst.distance - 2);
+                targetMarker.transform.position = toReturn;
+                return toReturn;
+            }
+        }
+        
+        var secondDir = rightFirst ? -transform.right : transform.right;
+        RaycastHit checkSecond;
+        if(Physics.Raycast(checkpoint, secondDir, out checkSecond, 100f, layerMask)){
+            if(checkSecond.distance > wallDetectionThreshold){
+                var toReturn = checkpoint - transform.right * (checkSecond.distance > forwardTargetClearDistance ? forwardTargetClearDistance : checkSecond.distance - 2);
+                targetMarker.transform.position = toReturn;
+                return toReturn;
+            }
+        }
+
+        return Vector3.zero;
     }
 }
 

@@ -20,6 +20,13 @@ public class StormLighter : MonoBehaviour
     [SerializeField] BoolVariable lighterLit;
     [SerializeField] BoolVariable hasLighter;
     [SerializeField] bool useParticles = true;
+
+    [Space(10), Header("Fuel Settings")]
+    [SerializeField] float fuelMax = 300;
+    [SerializeField] float fuelDepletionRate = 1;
+    [SerializeField] float baseLightIntensity;
+    [SerializeField] float strongLightIntensity;
+    [SerializeField] FloatVariable fuel;
     
     //The animator
     private Animator _animator;
@@ -31,6 +38,7 @@ public class StormLighter : MonoBehaviour
     private AudioClip[] _audioClips;
     //Determines if the lighter is open or not
     private bool _isOpen;
+    private bool _isBaseFlame;
 
     #endregion
 
@@ -41,6 +49,8 @@ public class StormLighter : MonoBehaviour
     {
         _isOpen = false;
         lighterLit.value = false;
+        _isBaseFlame = true;
+        fuel.value = fuelMax;
 
         try
         {
@@ -61,6 +71,20 @@ public class StormLighter : MonoBehaviour
         }
     }
 
+    public void Update(){
+        if(_isOpen){
+            if(!_isBaseFlame)
+            {
+                if(fuel.value <= 0){
+                    SetLightMode(true);
+                    return;
+                }
+                fuel.value -= fuelDepletionRate * Time.deltaTime;
+            }
+            else if (fuel.value > 0) SetLightMode(false);
+        }
+    }
+
     public void ToggleOpen(InputAction.CallbackContext context)
     {
         if(!hasLighter.value)
@@ -72,7 +96,6 @@ public class StormLighter : MonoBehaviour
             {
                 //Close the lighter
                 //_animator.SetTrigger("Close");
-
                 if(useParticles)
                     _particleSystem.gameObject.SetActive(false);
 
@@ -138,6 +161,12 @@ public class StormLighter : MonoBehaviour
         var randStdNormal = Mathf.Sqrt(-2.0f * Mathf.Log(u1)) * Mathf.Sin(2.0f * Mathf.PI * u2);
         var rolled = Mathf.Round(mean + standardDeviation * randStdNormal);
         return (int)Mathf.Clamp(rolled,0f,4f);
+    }
+
+    public void SetLightMode(bool setBaseFlame){
+        _isBaseFlame = setBaseFlame;
+
+        mainLight.intensity = _isBaseFlame ? baseLightIntensity : strongLightIntensity;
     }
 
     #endregion

@@ -1,19 +1,28 @@
-﻿//Shady
-using UnityEngine;
+﻿using UnityEngine;
 
 [ExecuteInEditMode]
 public class RevealDecal : MonoBehaviour
 {
-    [SerializeField] Material Mat;
-    [SerializeField] Light SpotLight;
+    [SerializeField] Material DecalMaterial;
+    [SerializeField] Light MyLight;
 	
 	void Update ()
     {
-        if(Mat == null)
+        if(DecalMaterial == null)
             return;
 
-        Mat.SetVector("_MyLightPosition",  (SpotLight.transform.position));
-        Mat.SetVector("_MyLightDirection", -SpotLight.transform.forward );
-        Mat.SetFloat ("_MyLightAngle", SpotLight.spotAngle         );
-    }//Update() end
-}//class end
+        if (MyLight.type == LightType.Spot)
+        {
+            DecalMaterial.SetVector("_MyLightPosition", (MyLight.transform.position));
+            DecalMaterial.SetVector("_MyLightDirection", -MyLight.transform.forward);
+            DecalMaterial.SetFloat("_MyLightAngle", MyLight.spotAngle);
+            DecalMaterial.SetFloat("_LightType", 0);
+        }
+        else if(MyLight.type == LightType.Point)
+        {
+            DecalMaterial.SetVector("_MyLightPosition", (MyLight.transform.position));            
+            DecalMaterial.SetFloat("_MyLightRange", MyLight.range);
+            DecalMaterial.SetFloat("_LightType", 1);
+        }
+    }
+}

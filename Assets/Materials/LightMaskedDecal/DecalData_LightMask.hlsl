@@ -159,13 +159,21 @@ void GetSurfaceData(FragInputs input, float3 V, PositionInputs posInput, float a
 
     //--- light projection masking--
 
-    float  MyStrengthScalor = 50;
-
+    float  Strength = 1;
     float4 worldPos = float4(GetAbsolutePositionWS(posInput.positionWS), 0);
+
+    if(_LightType == 0){
+    float  MyStrengthScalor = 100;    
     float3 Dir      = normalize(_MyLightPosition - worldPos);
     float  Scale    = dot(Dir, _MyLightDirection);
-    float  Strength = Scale - cos(20 * (3.14 / 360.0));
+    Strength = Scale - cos(25 * (3.14 / 360.0));
     Strength = min(max(Strength * MyStrengthScalor, 0), 1);
+    }
+    else{
+    float distance = length(worldPos - _MyLightPosition);
+    Strength = (distance <= _MyLightRange) ? 1 : 0;
+
+    }
 
     surfaceData.baseColor.w *= Strength;
 

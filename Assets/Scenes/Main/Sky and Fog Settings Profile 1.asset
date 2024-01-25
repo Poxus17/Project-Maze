@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 7.04
   limitMin:
     m_OverrideState: 1
-    m_Value: -0.7
+    m_Value: -1.4632374
   limitMax:
     m_OverrideState: 1
     m_Value: 0.3

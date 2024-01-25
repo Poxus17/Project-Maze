@@ -11,6 +11,8 @@ public class AudioDesync : MonoBehaviour
     void Start()
     {
         source.loop = true;
-        GlobalTimerManager.instance.RegisterForTimer( () => { source.Play(); }, Random.Range(0, delay));
+
+        if(delay > 0)
+            GlobalTimerManager.instance.RegisterForTimer(source.Play, Random.Range(0, delay));
     }
 }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1991383105654133940}
   - component: {fileID: 1991383105654133943}
   - component: {fileID: 5072513288883761168}
-  - component: {fileID: -8965948077932231286}
   m_Layer: 0
   m_Name: CandleLight
   m_TagString: Untagged
@@ -26,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1991383105654133947}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &1991383105654133943
 Light:
@@ -88,7 +87,7 @@ Light:
   m_Lightmapping: 4
   m_LightShadowCasterMode: 2
   m_AreaSize: {x: 0.5, y: 0.5}
-  m_BounceIntensity: 3
+  m_BounceIntensity: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 1.19386e-39, y: 2.015625, z: 1.1e-44, w: 0}
@@ -218,17 +217,3 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
---- !u!114 &-8965948077932231286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1991383105654133947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e0d1568c6f94ca40ae8eaba89d8f32b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggers: []
-  deltaIntensity: 70

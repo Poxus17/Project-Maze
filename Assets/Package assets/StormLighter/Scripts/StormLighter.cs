@@ -27,6 +27,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] float baseLightIntensity;
     [SerializeField] float strongLightIntensity;
     [SerializeField] FloatVariable fuel;
+    [SerializeField] bool useFuel = true;
     
     //The animator
     private Animator _animator;
@@ -72,6 +73,9 @@ public class StormLighter : MonoBehaviour
     }
 
     public void Update(){
+        if(!useFuel)
+            return;
+
         if(_isOpen){
             if(!_isBaseFlame)
             {

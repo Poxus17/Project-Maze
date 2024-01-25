@@ -37,6 +37,8 @@ float _Metallic;
 float4 _MyLightPosition;
 float4 _MyLightDirection;
 float  _MyLightAngle;
+float _MyLightRange;
+int _LightType;
 
 CBUFFER_END
 

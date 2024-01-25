@@ -39,11 +39,19 @@ public class AiSightController : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position, targetVector.value, out hit, Mathf.Infinity, layerMask))
         {
-            if (hit.collider.gameObject.tag == "MainCamera")
+            if (hit.collider.gameObject.tag == "Player")
             {
                 OnSeeTarget();
             }
         }
+    }
+
+    public bool CustomPlayerCheck(){
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, targetVector.value, out hit, Mathf.Infinity, layerMask))
+            return hit.collider.gameObject.tag == "Player";
+
+        return false;
     }
 }
 

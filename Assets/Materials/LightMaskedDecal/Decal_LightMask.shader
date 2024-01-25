@@ -66,6 +66,8 @@ Shader "HDRP/Decal_LightMask"
         _MyLightDirection("Light Direction", Vector) = (0,0,1,0)
 		_MyLightPosition("Light Position", Vector) = (0,0,0,0)
 		_MyLightAngle("Light Angle", Range(0,180)) = 45
+        _MyLightRange("Light range", Float) = 1
+        _LightType("LightType", int) = 0
     }
 
     HLSLINCLUDE

@@ -7,6 +7,7 @@ public class PlayerCameraHandler : MonoBehaviour
 
     public Vector3 position => transform.position;
     public Quaternion rotation => transform.rotation;
+    public bool isActive => gameObject.activeSelf;
 
     public static PlayerCameraHandler instance;
     private void Awake()

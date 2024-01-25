@@ -12,4 +12,6 @@ public class BoolAnnouncerVariable : BoolVariable
         value = newValue;
         announceEvent.Raise();
     }
+
+    public void RaiseEvent() {announceEvent.Raise();}
 }

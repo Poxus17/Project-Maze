@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class HidingSpotComponent : MonoBehaviour
 {
     [SerializeField] BoolAnnouncerVariable isHiding;
+    [SerializeField] BoolAnnouncerVariable checkPlayerCaught;
     [SerializeField] InputAction exitAction;
     [SerializeField] GameObject hideCamera;
     [SerializeField] float getInTime = 1.5f;
@@ -30,6 +31,7 @@ public class HidingSpotComponent : MonoBehaviour
         hideCamera.transform.rotation = playerRot;
         hideCamera.SetActive(true);
         PlayerCameraHandler.instance.SetCameraActive(false);
+        checkPlayerCaught.RaiseEvent();
         StartCoroutine(GetIn());
     }
 
@@ -53,6 +55,11 @@ public class HidingSpotComponent : MonoBehaviour
     }
 
     public void Hide(){
+        if(checkPlayerCaught.value){
+            //Add like shuffling sound or something
+            return;
+        }
+
         isHiding.value = true;
         exitAction.Enable();
         UI_TextDisplay.Instance.DisplayText("Press E to exit", -1);

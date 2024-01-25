@@ -7,7 +7,8 @@ public class Gizmo_Generic : MonoBehaviour
 {
     enum GizmoPreset{
         Custom,
-        SETrigger
+        SETrigger,
+        CandleBatch
     }
 
     [SerializeField] GizmoPreset gizmoPreset = GizmoPreset.Custom;
@@ -22,6 +23,9 @@ public class Gizmo_Generic : MonoBehaviour
                 break;
             case GizmoPreset.SETrigger:
                 Gizmos.color = Color.blue;
+                break;
+            case GizmoPreset.CandleBatch:
+                Gizmos.color = Color.yellow;
                 break;
         }
         

@@ -46,6 +46,9 @@ public class InteractionHandler : MonoBehaviour
             currentDetectionText.value = "";
         }
 
+        if(!PlayerCameraHandler.instance.isActive)
+            return;
+            
         //Typical raycast
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
         RaycastHit hit;

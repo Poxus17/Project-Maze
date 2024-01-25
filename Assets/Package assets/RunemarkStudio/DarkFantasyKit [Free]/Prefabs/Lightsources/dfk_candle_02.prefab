@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4013185641152756}
   - component: {fileID: 33097057223440682}
   - component: {fileID: 23700290248164342}
-  - component: {fileID: -6327218578173438071}
   - component: {fileID: 598400412055907398}
+  - component: {fileID: 6778483665676986764}
   m_Layer: 6
   m_Name: dfk_candle_02
   m_TagString: Interact
@@ -27,6 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488664653168218}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
@@ -35,7 +36,6 @@ Transform:
   - {fileID: 5693876291588912848}
   - {fileID: 2766196241718679297}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33097057223440682
 MeshFilter:
@@ -87,22 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-6327218578173438071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488664653168218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72c29a9d5639ae44e93f3c503ed7b8e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lighterLit: {fileID: 11400000, guid: 36f507b1edac9264cbc18392d08eee6a, type: 2}
-  onText: Light up
-  offText: Blow out
-  volumatric: {fileID: 0}
 --- !u!65 &598400412055907398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -111,16 +95,42 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488664653168218}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.037452783, y: 0.07757853, z: 0.038826242}
   m_Center: {x: 0.0010515358, y: 0.038687862, z: -0.0018901424}
+--- !u!114 &6778483665676986764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488664653168218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f06a981c2b0014f828614f874790c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lighterLit: {fileID: 11400000, guid: 36f507b1edac9264cbc18392d08eee6a, type: 2}
+  onText: Light up
+  offText: Blow out
+  candleIntensity: 4
+  startLit: 0
 --- !u!1001 &2681189322917922785
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 4013185641152756}
     m_Modifications:
     - target: {fileID: 240660730330632416, guid: 5337598ce92fba9468ef8573bbc18ff3, type: 3}
@@ -172,6 +182,9 @@ PrefabInstance:
       value: volumatric candle light
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5337598ce92fba9468ef8573bbc18ff3, type: 3}
 --- !u!4 &2766196241718679297 stripped
 Transform:
@@ -183,6 +196,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 4013185641152756}
     m_Modifications:
     - target: {fileID: 168570, guid: 1ae4407779aac044eb4311098ffc6a70, type: 3}
@@ -234,6 +248,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ae4407779aac044eb4311098ffc6a70, type: 3}
 --- !u!4 &5693876291588912848 stripped
 Transform:

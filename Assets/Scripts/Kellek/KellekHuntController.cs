@@ -35,12 +35,14 @@ public class KellekHuntController : MainAiController
     public float _maxSpawnTime = 30;
     public float _minDespawnTime = 30;
     public float _maxDespawnTime = 120;
-    [Space(5)]
 
+    [Space(5)]
     [Header("Variable Assets")]
     [SerializeField] BoolVariable chaseLock;
     [SerializeField] FloatVariable itemCount;
     [SerializeField] BoolVariable playerIsHiding;
+    [SerializeField] BoolVariable playerIsCaught;
+    [SerializeField] GameEvent initiateDeath;
 
     States state;
 
@@ -50,7 +52,6 @@ public class KellekHuntController : MainAiController
     Vector3 oblivion = new Vector3(-10000, -10000, -10000);
 
     private bool disengage = false;
-    private bool queueShakeoff = false;
     private bool blindChasing = false;
     private bool despawnDisrupted;
     private int blindChaseCallsCounter = 0;
@@ -87,10 +88,7 @@ public class KellekHuntController : MainAiController
         despawnDisrupted = false;
 
         RoamNextPoint();
-        GlobalTimerManager.instance.RegisterForTimer(
-            () => { if(!despawnDisrupted) StartCoroutine(LeaveAudibleArea()); }, 
-            Random.Range(_minSpawnTime, _maxSpawnTime)
-            );
+        GlobalTimerManager.instance.RegisterForTimer(RequestShakeoff, Random.Range(_minSpawnTime, _maxSpawnTime));
     }
     /*
      * |
@@ -186,8 +184,6 @@ public class KellekHuntController : MainAiController
         if(playerIsHiding.value)
             return;
 
-        despawnDisrupted = true;
-
         if (state == States.Chase){
             controller.SwitchToPlayer();
             Debug.Log("Mid chase switch");
@@ -266,8 +262,10 @@ public class KellekHuntController : MainAiController
 
         chaseLock.value = false;
         OnChase.Invoke(false);
-        StartCoroutine(LeaveAudibleArea());
         Debug.Log("quit chase");
+
+        if(despawnDisrupted)
+            Shakeoff();
     }
 
     IEnumerator LeaveAudibleArea()
@@ -320,7 +318,7 @@ public class KellekHuntController : MainAiController
         }
         else
         {
-            queueShakeoff = true;
+            despawnDisrupted = true;
         }
     }
 
@@ -363,7 +361,20 @@ public class KellekHuntController : MainAiController
         AiSightController.OnSeeTarget -= FoundYou;
     }
 
-    
+    public void CustomPlayerCheck(){
+        playerIsCaught.value = sightController.CustomPlayerCheck();
+
+        if(playerIsCaught.value){
+            StopChase();
+            Shakeoff();
+
+            GlobalTimerManager.instance.RegisterForTimer(() => {initiateDeath.Raise();}, 5f);
+        }
+    }
+
+    #region Realtime navigation
+
+    [Space(10), Header("Realtime navigation settings")]
     [SerializeField] float forwardTargetClearDistance = 30;
     [SerializeField] float wallDetectionThreshold = 5;
     [SerializeField] LayerMask layerMask;
@@ -420,6 +431,8 @@ public class KellekHuntController : MainAiController
 
         return Vector3.zero;
     }
+
+    #endregion
 }
 
 /// <summary>

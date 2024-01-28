@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class LighterFuelComponent : MonoBehaviour
 {
-    [SerializeField] float fuelAmount;
-    [SerializeField] FloatVariable fuel;
+    [SerializeField] FloatVariable storedFuelCans;
 
     public void CollectFuel(){
-        fuel.value += fuelAmount;
+        storedFuelCans.value++;
         Destroy(gameObject);
     }
 }

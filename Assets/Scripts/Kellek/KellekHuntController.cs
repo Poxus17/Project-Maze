@@ -362,12 +362,14 @@ public class KellekHuntController : MainAiController
     }
 
     public void CustomPlayerCheck(){
+        if(state != States.Chase)
+            return;
+
         playerIsCaught.value = sightController.CustomPlayerCheck();
 
         if(playerIsCaught.value){
             StopChase();
             Shakeoff();
-
             GlobalTimerManager.instance.RegisterForTimer(() => {initiateDeath.Raise();}, 5f);
         }
     }

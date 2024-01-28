@@ -148,6 +148,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "RefuelLighter",
+                    "type": "Button",
+                    "id": "0dc01678-0b9f-47b2-b880-78aa4ae370c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -533,6 +542,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "OpenMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a9736265-9ce3-415c-b712-bd8aeed2fccd",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RefuelLighter",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

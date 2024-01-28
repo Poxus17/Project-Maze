@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[CreateAssetMenu(fileName = "NewPastObjectData", menuName = "ScriptableObjects/Past object data", order = 1)]
+[CreateAssetMenu(fileName = "NewPastObjectData", menuName = "\"Special\" Variables/Past object data")]
 public class PastObjectData : ScriptableObject
 {
     public string name;

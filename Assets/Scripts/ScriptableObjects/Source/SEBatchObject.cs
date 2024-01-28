@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "SEBatchObject")]
+[CreateAssetMenu(menuName = "\"Special\" Variables/SEBatchObject")]
 public class SEBatchObject : ScriptableObject
 {
     public AudioClip[] audioClips;

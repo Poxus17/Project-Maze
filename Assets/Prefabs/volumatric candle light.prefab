@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3819234199243051389}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0008, y: 0.2714, z: 0.0058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &7369429774099711122
 Light:
@@ -116,9 +116,9 @@ MonoBehaviour:
   m_VolumetricDimmer: 1
   m_LightUnit: 0
   m_FadeDistance: 10000
-  m_VolumetricFadeDistance: 10000
-  m_AffectDiffuse: 1
-  m_AffectSpecular: 1
+  m_VolumetricFadeDistance: 100
+  m_AffectDiffuse: 0
+  m_AffectSpecular: 0
   m_NonLightmappedOnly: 0
   m_ShapeWidth: 0.5
   m_ShapeHeight: 0.5
@@ -128,12 +128,12 @@ MonoBehaviour:
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
   m_MaxSmoothness: 0.99
-  m_ApplyRangeAttenuation: 1
+  m_ApplyRangeAttenuation: 0
   m_DisplayAreaLightEmissiveMesh: 0
   m_AreaLightCookie: {fileID: 0}
   m_IESPoint: {fileID: 0}
   m_IESSpot: {fileID: 0}
-  m_IncludeForRayTracing: 1
+  m_IncludeForRayTracing: 0
   m_AreaLightShadowCone: 120
   m_UseScreenSpaceShadows: 0
   m_InteractsWithSky: 1

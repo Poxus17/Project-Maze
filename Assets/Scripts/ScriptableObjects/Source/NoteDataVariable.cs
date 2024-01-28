@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "\"Special\" Variables/Note Data Variable")]
 public class NoteDataVariable : ScriptableObject
 {
     public NoteData value;

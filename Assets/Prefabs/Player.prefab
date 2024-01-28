@@ -7040,56 +7040,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Debug_EaseRorateTo, Assembly-CSharp
-        m_MethodName: RotateToObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1385110150539732639}
-        m_TargetAssemblyTypeName: Debug_PlayAudio, Assembly-CSharp
-        m_MethodName: PlaySE
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 06af3e0d1406aa440b95fabd773324ed, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicMan, Assembly-CSharp
-        m_MethodName: StopMusic
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: DeleteSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7103,17 +7055,17 @@ MonoBehaviour:
     m_ActionName: Player/TestFeature2[/Keyboard/leftBracket]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ProfilerLogger, Assembly-CSharp
-        m_MethodName: SnapProfile
-        m_Mode: 0
+      - m_Target: {fileID: 8755807441412150034}
+        m_TargetAssemblyTypeName: Debug_Teleporter, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: 19b935bb-417f-4482-a473-9bc46c5cd0fa
     m_ActionName: Player/TestFeature3[/Keyboard/3]
@@ -7149,6 +7101,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d8e3b418-4101-49e9-90ea-efd3056b8dfb
     m_ActionName: Player/OpenMap[/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1993246045837556994}
+        m_TargetAssemblyTypeName: FuelHandler, Assembly-CSharp
+        m_MethodName: UseFuelCan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0dc01678-0b9f-47b2-b880-78aa4ae370c3
+    m_ActionName: Player/RefuelLighter[/Keyboard/x]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -10419,6 +10387,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6483190810369575376, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4550607072551111120}
+    - targetCorrespondingSourceObject: {fileID: 6483190810369575376, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1993246045837556994}
   m_SourcePrefab: {fileID: 100100000, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
 --- !u!108 &355300121894753186 stripped
 Light:
@@ -10457,6 +10428,21 @@ MonoBehaviour:
   strongLightIntensity: 79.57747
   fuel: {fileID: 11400000, guid: 62b79c87371128b49bca0339fc0de56e, type: 2}
   useFuel: 1
+--- !u!114 &1993246045837556994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033828256395367893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1580d8b761bbe469bfccfbdbcd6133, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuelAmountPerCan: 60
+  fuelCounter: {fileID: 11400000, guid: 16c4118d3c5e1db4398e5d74214ca950, type: 2}
+  fuelAmount: {fileID: 11400000, guid: 62b79c87371128b49bca0339fc0de56e, type: 2}
 --- !u!108 &1385110149941773619 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 4942956453716793654, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}

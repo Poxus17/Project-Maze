@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu]
+[CreateAssetMenu (menuName = "Variables/Bool Variable")]
 public class BoolVariable : ScriptableObject
 {
     public bool value;

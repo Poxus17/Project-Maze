@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_VolumetricDimmer
       value: 0.63
       objectReference: {fileID: 0}
+    - target: {fileID: 3638140072437625665, guid: c5db76f523aa65f4da49bab2bab9fd94, type: 3}
+      propertyPath: m_VolumetricFadeDistance
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1526260623788599103, guid: c5db76f523aa65f4da49bab2bab9fd94, type: 3}
     - {fileID: -8992115935330331415, guid: c5db76f523aa65f4da49bab2bab9fd94, type: 3}

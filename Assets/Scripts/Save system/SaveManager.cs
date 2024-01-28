@@ -107,7 +107,9 @@ public class SaveManager : MonoBehaviour
 
     public void DeleteSave()
     {
+        #if UNITY_EDITOR
         SaveSystem.DeleteSaveFile();
+        #endif
     }
 
     public void registerSavedEvent(int eventIndex)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu]
+[CreateAssetMenu(menuName = "\"Special\" Variables/Bool Array Variable")]
 public class BoolArrayVariable : ScriptableObject
 {
     public bool[] value;

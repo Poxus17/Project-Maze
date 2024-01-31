@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Candle_2 Static Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4388527133460789263, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8044258225435356640, guid: d003cc0b49cc49d4b9cda24c185977a3, type: 3}
       propertyPath: m_Enabled
       value: 1

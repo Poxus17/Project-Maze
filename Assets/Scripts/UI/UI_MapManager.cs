@@ -9,11 +9,6 @@ public class UI_MapManager : UIComponent
     [SerializeField] GameObject noMapText;
     [SerializeField] AudioClip mapSe;
 
-    public void CollectMapPiece(int pieceIndex)
-    {
-        collectedMapParts.value[pieceIndex] = true;
-    }
-
     public void LaunchMap()
     {
         noMapText.SetActive(true);

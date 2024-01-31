@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_VolumetricFadeDistance
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 8074021084430366363, guid: c5db76f523aa65f4da49bab2bab9fd94, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1526260623788599103, guid: c5db76f523aa65f4da49bab2bab9fd94, type: 3}
     - {fileID: -8992115935330331415, guid: c5db76f523aa65f4da49bab2bab9fd94, type: 3}

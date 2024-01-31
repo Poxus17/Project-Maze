@@ -16,6 +16,7 @@ public class GameStartHandler : MonoBehaviour
         MusicMan.instance.PlaySE(startClip);
         camera = GetComponent<Camera>();
         audioListener = GetComponent<AudioListener>();
+        PlayerCameraHandler.instance.SetCameraActive(false);
         StartCoroutine(EndStart());
     }
 
@@ -23,6 +24,7 @@ public class GameStartHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(4.5f);
         player.SetActive(true);
+        PlayerCameraHandler.instance.SetCameraActive(true);
         SaveManager.instance.SaveGame();
         camera.enabled = false;
         audioListener.enabled = false;

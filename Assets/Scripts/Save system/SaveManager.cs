@@ -41,14 +41,37 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), mapIndex.value, FormatConsumablesForSave());
+        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave());
         SaveSystem.SavePlayer(playerData);
         Debug.Log("game saved");
+    }
+
+    public void SaveAbsoluteData(){
+        AbsoluteData absoluteData = new AbsoluteData(mapIndex.value, FormatConsumablesForSave());
+        SaveSystem.SaveAbsoluteData(absoluteData);
+        Debug.Log("absolute data saved");
     }
 
     public void LoadGame()
     {
         PlayerSaveData data = SaveSystem.LoadPlayer();
+        AbsoluteData absoluteData = SaveSystem.LoadAbsoluteData();
+
+        if(absoluteData != null)
+        {
+            mapIndex.value = absoluteData.collectdMapPieces;
+            
+            #region Remove consumed indexed items
+
+            consumableIndexes = absoluteData.consumableIndexes.ToList<int>(); //Re-save all the old indexes
+
+            var consumables = FindObjectsOfType<IndexedConsumable>();
+            foreach(IndexedConsumable consumable in consumables)
+            {
+                consumable.KillMe(absoluteData.consumableIndexes);
+            }
+            #endregion
+        }
 
         if (data == null)
         {
@@ -59,8 +82,6 @@ public class SaveManager : MonoBehaviour
         isLoading = true;
 
         player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
-
-        mapIndex.value = data.collectdMapPieces;
 
         #region Load item data
         PastObjectManager.instance.SetInventoryData(data.pastItemInventoryContents);
@@ -78,17 +99,6 @@ public class SaveManager : MonoBehaviour
         }
         #endregion
 
-        #region Remove consumed indexed items
-
-        consumableIndexes = data.consumableIndexes.ToList<int>(); //Re-save all the old indexes
-
-        var consumables = FindObjectsOfType<IndexedConsumable>();
-        foreach(IndexedConsumable consumable in consumables)
-        {
-            consumable.KillMe(data.consumableIndexes);
-        }
-
-        #endregion
 
         #region Load Bvals
 

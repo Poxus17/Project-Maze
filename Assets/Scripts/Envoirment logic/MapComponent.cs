@@ -11,12 +11,17 @@ public class MapComponent : IndexedConsumable
     {
         try{
             collectedMapPieces.value[mapIndex] = true;
+
             UIManager.Instance.LaunchUIComponent(4);
             RegisterAsConsumed();
+
+            SaveManager.instance.SaveAbsoluteData();
+
             gameObject.SetActive(false);
+            
         }
         catch(System.Exception e){
-            UI_TextDisplay.Instance.DisplayText("Error: " + e.Message, 5f);
+            Debug.LogError("Error message: " + e.Message);
         }
         
     }

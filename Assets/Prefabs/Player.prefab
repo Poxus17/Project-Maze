@@ -7194,6 +7194,7 @@ MonoBehaviour:
   fullStamina: 30
   staminaDepleteRate: 3
   staminaRestoreRate: 2
+  requiredRecoveryRatio: 0
   localStandingY: 0
   localCrouchingY: -1
   crouchTranisitonSpeed: 5
@@ -7611,7 +7612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e85658bec008034095006568b427ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportTarget: {x: -76.34925, y: 6.3, z: 52.19906}
+  teleportTarget: {x: 19.861097, y: 6.3, z: 54.369606}
 --- !u!114 &1385110150539732582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10441,7 +10442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuelAmountPerCan: 60
-  fuelCounter: {fileID: 11400000, guid: 16c4118d3c5e1db4398e5d74214ca950, type: 2}
+  fuelCounter: {fileID: 11400000, guid: 788ca1c6787790740b537fe9aee965ab, type: 2}
   fuelAmount: {fileID: 11400000, guid: 62b79c87371128b49bca0339fc0de56e, type: 2}
 --- !u!108 &1385110149941773619 stripped
 Light:

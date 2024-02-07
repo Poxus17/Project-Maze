@@ -9,20 +9,12 @@ public class MapComponent : IndexedConsumable
 
     public void CollectMapPiece()
     {
-        try{
-            collectedMapPieces.value[mapIndex] = true;
+        collectedMapPieces.value[mapIndex] = true;
 
             UIManager.Instance.LaunchUIComponent(4);
             RegisterAsConsumed();
 
-            SaveManager.instance.SaveAbsoluteData();
-
             gameObject.SetActive(false);
-            
-        }
-        catch(System.Exception e){
-            Debug.LogError("Error message: " + e.Message);
-        }
         
     }
 }

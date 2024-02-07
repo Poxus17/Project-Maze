@@ -61,6 +61,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1991383105654133943, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991383105654133943, guid: 141efb4488966334d84ed337d4a25dbc, type: 3}
       propertyPath: m_ColorTemperature
       value: 3293
       objectReference: {fileID: 0}

@@ -87,10 +87,12 @@ public static class SaveSystem
     public static void DeleteSaveFile()
     {
         //Check if save file exists
-        if (!File.Exists(path))
-            return;
-
-        File.Delete(path);
+        if (File.Exists(path))
+            File.Delete(path);
+        
+        if(File.Exists(absoluteDataPath))
+            File.Delete(absoluteDataPath);
+            
         Debug.Log("Save file deleted");
     }
 

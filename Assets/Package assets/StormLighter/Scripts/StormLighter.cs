@@ -51,7 +51,6 @@ public class StormLighter : MonoBehaviour
         _isOpen = false;
         lighterLit.value = false;
         _isBaseFlame = true;
-        fuel.value = fuelMax;
 
         try
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class FuelHandler : MonoBehaviour
 {
     [SerializeField] float fuelAmountPerCan = 60f;
-    [SerializeField] IntVariable fuelCounter;
+    [SerializeField] FloatVariable fuelCounter;
     [SerializeField] FloatVariable fuelAmount;
 
     public void CollectFuel(){
@@ -20,7 +20,7 @@ public class FuelHandler : MonoBehaviour
             return;
 
         fuelCounter.value--;
-        fuelAmount.value = Mathf.Clamp(fuelAmount.value + fuelAmountPerCan, 0f, 300f);
+        fuelAmount.value = Mathf.Clamp(fuelAmount.value + fuelAmountPerCan, 0f, 350f);
 
     }
 

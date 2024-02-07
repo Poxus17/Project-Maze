@@ -14,6 +14,7 @@ public class CandleBatchManager : MonoBehaviour
     void Start()
     {
         lightComponent = GetComponentsInChildren<Light>()[0];
+        lightComponent.intensity = 0;
 
         candleTriggers = new List<CandleComponent>();
         candleTriggers = GetComponentsInChildren<CandleComponent>().ToList();

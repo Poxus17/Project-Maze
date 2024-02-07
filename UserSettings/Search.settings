@@ -1,4 +1,5 @@
 trackSelection = true
+refreshSearchWindowsInPlayMode = false
 fetchPreview = true
 defaultFlags = 0
 keepOpen = false
@@ -16,6 +17,9 @@ scopes = {
 	"last_search.DE949528" = "combine mesh"
 	"OpenInspectorPreview.DE949528" = "0"
 	"currentGroup.DE949528" = "all"
+	"last_search.310DEAF1" = "SkyboxCubemapConvolution t:CubemapArray"
+	"OpenInspectorPreview.310DEAF1" = "0"
+	"currentGroup.310DEAF1" = "asset"
 }
 providers = {
 	adb = {
@@ -58,19 +62,48 @@ providers = {
 		priority = 50
 		defaultAction = null
 	}
+	profilermarkers = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	settings = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	calculator = {
+		active = true
+		priority = 10
+		defaultAction = null
+	}
+	static_methods = {
+		active = true
+		priority = 85
+		defaultAction = null
+	}
 }
 objectSelectors = {
 }
 recentSearches = [
+	"t:CubemapArray"
 	"combine mesh"
 ]
 searchItemFavorites = [
 ]
 savedSearchesSortOrder = 0
 showSavedSearchPanel = false
+hideTabs = false
 expandedQueries = [
 ]
 queryBuilder = false
 ignoredProperties = "id;name;classname;imagecontentshash"
 helperWidgetCurrentArea = "all"
 disabledIndexers = ""
+minIndexVariations = 2
+findProviderIndexHelper = true

@@ -19,6 +19,8 @@ public class MusicMan : MonoBehaviour
 
     private AudioClip mainMusicTrack;
     private DynamicReverbMusicBoy reverbMusicBoy;
+    private bool isTransitioning = false;
+    private AudioClip queuedMusic;
 
     public static MusicMan instance;
 
@@ -61,8 +63,15 @@ public class MusicMan : MonoBehaviour
         if (isMainTrack)
             mainMusicTrack = clip;
 
-        if (useTransition)
-            StartCoroutine(MusicTransition(clip));
+        if (useTransition){
+            if(isTransitioning)
+            {
+                queuedMusic = clip;
+                return;
+            }
+            else
+                StartCoroutine(MusicTransition(clip));
+        }  
         else
         {
             musicSource.clip = clip;
@@ -79,11 +88,10 @@ public class MusicMan : MonoBehaviour
         }
 
         //If it's reseting back to the already playing track, don't do anything
-        if(musicSource.clip == mainMusicTrack)
-            return;
+        /*if(musicSource.clip == mainMusicTrack)
+            return;*/
 
-        musicSource.clip = mainMusicTrack;
-        musicSource.Play();
+        PlayMusic(mainMusicTrack, true, true);
     }
 
     public void StopMusic()
@@ -98,6 +106,7 @@ public class MusicMan : MonoBehaviour
 
     public IEnumerator MusicTransition(AudioClip clip)
     {
+        isTransitioning = true;
         var vol = musicSource.volume;
         var delta = vol * transitionTime * Time.deltaTime;
 
@@ -122,5 +131,17 @@ public class MusicMan : MonoBehaviour
         }
 
         musicSource.volume = maxVolume;
+        isTransitioning = false;
+
+        CheckForQueuedMusic();
+    }
+
+    private void CheckForQueuedMusic()
+    {
+        if (queuedMusic != null)
+        {
+            StartCoroutine(MusicTransition(queuedMusic));
+            queuedMusic = null;
+        }
     }
 }

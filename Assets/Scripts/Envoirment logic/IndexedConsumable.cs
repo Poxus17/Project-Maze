@@ -20,6 +20,7 @@ public class IndexedConsumable : MonoBehaviour{
 
     public void RegisterAsConsumed(){
         SaveManager.instance.RegisterConsumable(indexD);
+        SaveManager.instance.SaveAbsoluteData();
     }
 
     public void KillMe(int[] indexes){

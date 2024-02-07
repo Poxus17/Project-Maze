@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: FVAL_MouseSensitivity
   m_EditorClassIdentifier: 
   value: 0.05
+  defaultVal: 0.05

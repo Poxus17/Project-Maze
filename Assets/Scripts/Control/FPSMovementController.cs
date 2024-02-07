@@ -18,6 +18,7 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] float fullStamina;
     [SerializeField] float staminaDepleteRate;
     [SerializeField] float staminaRestoreRate;
+    [SerializeField] float requiredRecoveryRatio;
     [Space(10)]
 
     [Header("Crouch Settings")]
@@ -108,7 +109,7 @@ public class FPSMovementController : MonoBehaviour
         {
             stamina += staminaRestoreRate * Time.deltaTime;
 
-            if(stamina >= (fullStamina/4))
+            if(stamina >= (fullStamina * requiredRecoveryRatio))
             {
                 staminaRecoveryMode = false;
             }

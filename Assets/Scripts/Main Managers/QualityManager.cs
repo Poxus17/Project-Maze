@@ -8,6 +8,6 @@ public class QualityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Application.targetFrameRate = targetFPS;
+        Application.targetFrameRate = targetFPS;
     }
 }

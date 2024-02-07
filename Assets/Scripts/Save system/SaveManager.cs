@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ public class SaveManager : MonoBehaviour
     [SerializeField] BoolVariable[] bvalsForMemory;
     [SerializeField] GameEvent varLoadEvent;
     [SerializeField] BoolArrayVariable mapIndex;
+    [SerializeField] BoolArrayVariable visitedMarkers;
+    [SerializeField] FloatVariable[] fvalsForMemory;
     bool[] eventsMemory;
     List<int> consumableIndexes;
 
-    public bool isLoading = false;
+    [NonSerialized] public bool isLoading = false;
 
     public static SaveManager instance;
 
@@ -47,7 +50,7 @@ public class SaveManager : MonoBehaviour
     }
 
     public void SaveAbsoluteData(){
-        AbsoluteData absoluteData = new AbsoluteData(mapIndex.value, FormatConsumablesForSave());
+        AbsoluteData absoluteData = new AbsoluteData(mapIndex.value, visitedMarkers.value, FormatConsumablesForSave(), FormatFvalArrayForSave());
         SaveSystem.SaveAbsoluteData(absoluteData);
         Debug.Log("absolute data saved");
     }
@@ -60,7 +63,8 @@ public class SaveManager : MonoBehaviour
         if(absoluteData != null)
         {
             mapIndex.value = absoluteData.collectdMapPieces;
-            
+            visitedMarkers.value = absoluteData.markedZones;
+
             #region Remove consumed indexed items
 
             consumableIndexes = absoluteData.consumableIndexes.ToList<int>(); //Re-save all the old indexes
@@ -69,6 +73,13 @@ public class SaveManager : MonoBehaviour
             foreach(IndexedConsumable consumable in consumables)
             {
                 consumable.KillMe(absoluteData.consumableIndexes);
+            }
+            #endregion
+
+            #region Load fvals
+            for(int i = 0; i < absoluteData.fvalValues.Length; i++)
+            {
+                fvalsForMemory[i].value = absoluteData.fvalValues[i];
             }
             #endregion
         }
@@ -137,6 +148,18 @@ public class SaveManager : MonoBehaviour
         }
 
         return formatedBvals;
+    }
+
+    float[] FormatFvalArrayForSave()
+    {
+        float[] formatedFvals = new float[fvalsForMemory.Length];
+
+        for(int i =0; i< formatedFvals.Length; i++)
+        {
+            formatedFvals[i] = fvalsForMemory[i].value;
+        }
+
+        return formatedFvals;
     }
 
     public void RegisterConsumable(int indexCosnumed)

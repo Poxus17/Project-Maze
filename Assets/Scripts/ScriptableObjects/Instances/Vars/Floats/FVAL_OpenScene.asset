@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67658be7cf41c74fa7d02b39e6395ad, type: 3}
   m_Name: FVAL_OpenScene
   m_EditorClassIdentifier: 
-  value: 2
+  value: 0
+  defaultVal: 0

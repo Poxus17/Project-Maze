@@ -35,18 +35,24 @@ public class AiSightController : MonoBehaviour
             return;
 
         var normilizedDotProduct = Vector3.Dot(targetVector.value.normalized, transform.forward.normalized);
-        Debug.DrawRay(transform.position, targetVector.value, Color.red);
+        
         if (normilizedDotProduct < cosAngle)
             return;
 
+        var toPlayer = CentralAI.Instance.player.transform.position - transform.position;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, targetVector.value, out hit, Mathf.Infinity, layerMask))
+        if(Physics.Raycast(transform.position, toPlayer, out hit, Mathf.Infinity, layerMask))
         {
             if (hit.collider.gameObject.tag == "Player")
             {
                 OnSeeTarget();
             }
+            else
+            {
+                Debug.Log("Kellek sight hit - " + hit.collider.gameObject.tag);
+            }
         }
+        Debug.DrawRay(transform.position, toPlayer, Color.red);
     }
 
     public bool CustomPlayerCheck(){

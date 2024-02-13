@@ -64,8 +64,8 @@ public class SaveManager : MonoBehaviour
 
     public void LoadGame()
     {
-        LoadPlayerData();
         LoadAbsoluteData();
+        LoadPlayerData();
     }
 
     private void LoadPlayerData(){

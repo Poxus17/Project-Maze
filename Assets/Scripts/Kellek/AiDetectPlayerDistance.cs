@@ -18,7 +18,8 @@ public class AiDetectPlayerDistance : MonoBehaviour
     }
 
     private void CalculateDistance(){
-        playerTargetVector.value = CentralAI.Instance.player.transform.position - transform.position;
+        var correctedPlayerPosition = new Vector3(CentralAI.Instance.player.transform.position.x, transform.position.y, CentralAI.Instance.player.transform.position.z);
+        playerTargetVector.value = correctedPlayerPosition - transform.position;
         distanceToPlayer.value = playerTargetVector.value.sqrMagnitude;
     }
 }

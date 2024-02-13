@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightRange: 50
-  angleFromForward: 20
+  angleFromForward: 10
   layerMask:
     serializedVersion: 2
     m_Bits: 640

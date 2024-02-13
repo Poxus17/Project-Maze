@@ -9,6 +9,7 @@ public class BoolVariable : ScriptableObject
 {
     public bool value;
     public bool defaultVal;
+    public bool useDefaultValue = true;
 
     private void OnEnable()
     {
@@ -41,7 +42,16 @@ public class BoolVariable : ScriptableObject
 #endif
     void ResetValue(Scene scene, LoadSceneMode loadSceneMode)
     {
-        value = defaultVal;
+        if (useDefaultValue)
+            value = defaultVal;
+    }
+
+    public void ParseInput(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            value = true;
+        else if(context.canceled)
+            value = false;
     }
 
 }

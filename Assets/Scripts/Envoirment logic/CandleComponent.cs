@@ -29,7 +29,7 @@ public class CandleComponent : MonoBehaviour, IInteractable
     public void InitCandle(CandleBatchIntensityVariable candleBatch){
         
         candleBatchIntensityVariable = candleBatch;
-        PostInit();
+        GlobalTimerManager.instance.RegisterForTimer(PostInit, 0.5f);
     }
 
     private void PostInit(){
@@ -44,7 +44,7 @@ public class CandleComponent : MonoBehaviour, IInteractable
 
         lit = !lit;
         particles.SetActive(lit);
-        volumatric.enabled = lit;
+        //volumatric.enabled = lit;
 
         var litMod = lit ? 1 : -1;
         candleBatchIntensityVariable.AddIntensity(litMod * candleIntensity);

@@ -11,7 +11,7 @@ public class AiRoamManager : MonoBehaviour
     RoamPointData[] loadedRoampoints;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         roamPoints = new List<RoamPointData>();
         loadedRoampoints = new RoamPointData[0];

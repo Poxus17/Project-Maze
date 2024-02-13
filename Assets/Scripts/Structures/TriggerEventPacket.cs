@@ -14,15 +14,10 @@ public class TriggerEventPacket{
     }
 
     public void Invoke(){
-
-        Profiler.BeginSample("TriggerEventPacket.Invoke");
-        
         localEvent.Invoke();
 
         foreach(GameEvent gameEvent in publicEvents){
             gameEvent.Raise();
         }
-
-        Profiler.EndSample();
     }
 }

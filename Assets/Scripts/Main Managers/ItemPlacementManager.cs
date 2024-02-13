@@ -5,7 +5,7 @@ public class ItemPlacementManager : MonoBehaviour
 {
     [SerializeField] GameEvent AnnouncePlacement;
     [SerializeField] ValueGatedUnityEvent[] events;
-    int itemCounter;
+    [SerializeField] int itemCounter;
 
     public static ItemPlacementManager instance;
     private void Awake()
@@ -14,6 +14,11 @@ public class ItemPlacementManager : MonoBehaviour
             instance = this;
         else
             Destroy(this);
+    }
+
+    public void ResetCounter()
+    {
+        itemCounter = 0;
     }
 
     public void PlaceItem()
@@ -30,7 +35,6 @@ public class ItemPlacementManager : MonoBehaviour
             }
         }
     }
-
 }
 
 [System.Serializable]

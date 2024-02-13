@@ -9,8 +9,6 @@ public class InputSystemHandler : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
 
-
-
     public static InputSystemHandler instance;
     private void Awake()
     {

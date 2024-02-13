@@ -28,6 +28,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] float strongLightIntensity;
     [SerializeField] FloatVariable fuel;
     [SerializeField] bool useFuel = true;
+    [SerializeField] bool overrideCondition = false;
     
     //The animator
     private Animator _animator;
@@ -90,7 +91,7 @@ public class StormLighter : MonoBehaviour
 
     public void ToggleOpen(InputAction.CallbackContext context)
     {
-        if(!hasLighter.value)
+        if(!hasLighter.value && !overrideCondition)
             return;
         
         if (context.started)

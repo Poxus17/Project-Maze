@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour
 {
     public static ScenesManager instance;
+    public int ActiveSceneIndex => SceneManager.GetActiveScene().buildIndex;
 
     void Awake()
     {
@@ -21,12 +22,12 @@ public class ScenesManager : MonoBehaviour
 
     public void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadScene(int index)
     {
-        SceneManager.LoadScene(index);
+        SceneManager.LoadSceneAsync(index);
     }
 
     public void Quit()

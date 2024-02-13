@@ -9,10 +9,10 @@ public class PlayerSaveData
     public bool[] placedPastItems;
     public bool[] eventsToTrigger;
     public bool[] bvals;
-    //public bool[] collectdMapPieces;
-    //public int[] consumableIndexes;
+    public int sceneIndex;
+    public int sectionIndex;
 
-    public PlayerSaveData(GameObject player, bool[] eventsMemory, bool[] bvalValues /*, bool[] mapMemory, int[] consumedIndexes*/)
+    public PlayerSaveData(GameObject player, bool[] eventsMemory, bool[] bvalValues, int sceneIndex, int sectionIndex)
     {
         Vector3 playerPos = player.transform.position;
 
@@ -25,7 +25,7 @@ public class PlayerSaveData
         placedPastItems = PastObjectManager.instance.GetPlacementData();
         eventsToTrigger = eventsMemory;
         bvals = bvalValues;
-        //collectdMapPieces = mapMemory;
-        //consumableIndexes = consumedIndexes;
+        this.sceneIndex = sceneIndex;
+        this.sectionIndex = sectionIndex;
     }
 }

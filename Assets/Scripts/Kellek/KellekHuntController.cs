@@ -62,7 +62,7 @@ public class KellekHuntController : MainAiController
     public GameObject parentObject { get; private set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         state = States.OffMap;
         parentObject = gameObject.transform.parent.gameObject;
@@ -113,6 +113,7 @@ public class KellekHuntController : MainAiController
      */
     void DestinationArrived()
     {
+        Debug.Log("Kellek arrived at destination. State: " + state);
         if (state == States.Prowl)
         {
             if (disengage)
@@ -377,6 +378,7 @@ public class KellekHuntController : MainAiController
     #region Realtime navigation
 
     [Space(10), Header("Realtime navigation settings")]
+    [SerializeField] bool placeMarkers = false;
     [SerializeField] float forwardTargetClearDistance = 30;
     [SerializeField] float wallDetectionThreshold = 5;
     [SerializeField] LayerMask layerMask;
@@ -386,7 +388,9 @@ public class KellekHuntController : MainAiController
     public Vector3 FindRoute(){
         RaycastHit hit; 
 
-        targetMarker = Instantiate(markerPrefab);
+        if(placeMarkers)
+            targetMarker = Instantiate(markerPrefab);
+
         if(Physics.Raycast(transform.position, transform.forward, out hit, 100f, layerMask)){
 
             var dir = transform.forward;
@@ -396,7 +400,10 @@ public class KellekHuntController : MainAiController
             if(hit.distance > forwardTargetClearDistance)
             {
                 var toReturn = transform.position + (transform.forward * forwardTargetClearDistance);
-                targetMarker.transform.position = toReturn;
+
+                if(placeMarkers)
+                    targetMarker.transform.position = toReturn;
+
                 return toReturn;
             } 
             else
@@ -416,7 +423,9 @@ public class KellekHuntController : MainAiController
         if(Physics.Raycast(checkpoint, firstDir, out checkFirst, 100f, layerMask)){
             if(checkFirst.distance > wallDetectionThreshold){
                 var toReturn = checkpoint + transform.right * (checkFirst.distance > forwardTargetClearDistance ? forwardTargetClearDistance : checkFirst.distance - 2);
-                targetMarker.transform.position = toReturn;
+                
+                if(placeMarkers)
+                    targetMarker.transform.position = toReturn;
                 return toReturn;
             }
         }
@@ -426,7 +435,8 @@ public class KellekHuntController : MainAiController
         if(Physics.Raycast(checkpoint, secondDir, out checkSecond, 100f, layerMask)){
             if(checkSecond.distance > wallDetectionThreshold){
                 var toReturn = checkpoint - transform.right * (checkSecond.distance > forwardTargetClearDistance ? forwardTargetClearDistance : checkSecond.distance - 2);
-                targetMarker.transform.position = toReturn;
+                if(placeMarkers)
+                    targetMarker.transform.position = toReturn;
                 return toReturn;
             }
         }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1112649645315988120}
   - component: {fileID: 1112649645315988121}
   - component: {fileID: 1112649645315988127}
+  - component: {fileID: 597986944992758703}
   m_Layer: 0
   m_Name: Sky and Fog Global Volume
   m_TagString: Untagged
@@ -25,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112649645315988122}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.899478, y: 20.455181, z: -20.904688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1112649645315988121
 MonoBehaviour:
@@ -62,8 +63,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 464af3c908269a340ae8f9b2835cb54d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseExposure: -0.5
+  baseExposure: 0.6
   volume: {fileID: 1112649645315988121}
   exposureVal: {fileID: 11400000, guid: dfb215b86e2a3514fbc9ca257f5f5378, type: 2}
   lightIntensity: {fileID: 11400000, guid: d62f4007807a1e14eb7e02cc634a1e9b, type: 2}
-  debugExposureVar: {fileID: 0}
+  liveExposureVar: {fileID: 11400000, guid: 3c49c81912cd56a4a81093496759dbdd, type: 2}
+--- !u!114 &597986944992758703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112649645315988122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68121290988963419e27bc6ed76adba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7cb3ae2369833b940943bc5d54d594fc, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1112649645315988127}
+        m_TargetAssemblyTypeName: ExposureSet, Assembly-CSharp
+        m_MethodName: SetDebugBrightness
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  raiseTimer: 0
+  oneFrameDelay: 0

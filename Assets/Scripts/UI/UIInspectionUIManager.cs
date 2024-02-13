@@ -24,14 +24,7 @@ public class UIInspectionUIManager : UIComponent
 
     public void SetInspectionUI()
     {
-        for(int i =0; i< inspectionParent.childCount; i++)
-        {
-            Destroy(inspectionParent.GetChild(i).gameObject);
-        }
-
-        inspectionObject = Instantiate(inspectionPacket.itemPrefab, inspectionParent);
         inspectionText.text = inspectionPacket.transcript;
-        inspectionObject.transform.localPosition = Vector3.zero;
     }
 
     

@@ -7,15 +7,18 @@ public class InspectionMeshController : MonoBehaviour
 {
     [SerializeField] GameObject inspectionMesh;
     [SerializeField] float deltaRotationRatio;
+    [SerializeField] BoolVariable rightClickVariable;
+    [SerializeField] Vector3Variable parsedInputMouseDelta;
+    [SerializeField] PastObjectData inspectionPacket;
 
-    bool rightClick = false;
+    //bool rightClick = false;
     Vector2 currentMousePos;
 
-    public void MoveInspection(InputAction.CallbackContext context)
+    public void MoveInspection()
     {
-        if (rightClick)
+        if (rightClickVariable.value)
         {
-            var value = context.ReadValue<Vector2>();
+            Vector2 value = parsedInputMouseDelta.value;
             if (currentMousePos == Vector2.zero)
                 currentMousePos = value;
             var delta = currentMousePos - value;
@@ -30,11 +33,14 @@ public class InspectionMeshController : MonoBehaviour
         }
     }
 
-    public void AllowInspectionRotation(InputAction.CallbackContext context)
-    {
-        if (context.started)
-            rightClick = true;
-        else if(context.canceled)
-            rightClick = false;
+    public void EnterInspection(){
+        for(int i =0; i< transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+
+        GameObject inspectionObject = Instantiate(inspectionPacket.itemPrefab, transform);
+        
+        inspectionObject.transform.localPosition = Vector3.zero;        
     }
 }

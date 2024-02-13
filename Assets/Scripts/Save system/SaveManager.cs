@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,15 +6,22 @@ using UnityEngine.Profiling;
 
 public class SaveManager : MonoBehaviour
 {
-    [SerializeField] GameObject player;
     [SerializeField] GameEvent[] saveableEvents;
     [SerializeField] BoolVariable[] bvalsForMemory;
     [SerializeField] GameEvent varLoadEvent;
     [SerializeField] BoolArrayVariable mapIndex;
     [SerializeField] BoolArrayVariable visitedMarkers;
     [SerializeField] FloatVariable[] fvalsForMemory;
+
+    [SerializeField] bool debugOverridePlayerLoad;
+    [SerializeField] bool debugOverrideAbsoluteLoad;
+    [SerializeField] int defaultSceneIndex;
+
     bool[] eventsMemory;
     List<int> consumableIndexes;
+    private PlayerSaveData data;
+    private AbsoluteData absoluteData;
+    private GameObject player;
 
     [NonSerialized] public bool isLoading = false;
 
@@ -33,6 +39,7 @@ public class SaveManager : MonoBehaviour
         }
 
         consumableIndexes = new List<int>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
@@ -44,7 +51,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave());
+        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), PersistantManager.instance.ActiveSceneIndex, SectionsManager.instance.currentSection);
         SaveSystem.SavePlayer(playerData);
         Debug.Log("game saved");
     }
@@ -57,36 +64,21 @@ public class SaveManager : MonoBehaviour
 
     public void LoadGame()
     {
-        PlayerSaveData data = SaveSystem.LoadPlayer();
-        AbsoluteData absoluteData = SaveSystem.LoadAbsoluteData();
+        LoadPlayerData();
+        LoadAbsoluteData();
+    }
 
-        if(absoluteData != null)
-        {
-            mapIndex.value = absoluteData.collectdMapPieces;
-            visitedMarkers.value = absoluteData.markedZones;
+    private void LoadPlayerData(){
 
-            #region Remove consumed indexed items
+        if(debugOverridePlayerLoad)
+            return;
 
-            consumableIndexes = absoluteData.consumableIndexes.ToList<int>(); //Re-save all the old indexes
-
-            var consumables = FindObjectsOfType<IndexedConsumable>();
-            foreach(IndexedConsumable consumable in consumables)
-            {
-                consumable.KillMe(absoluteData.consumableIndexes);
-            }
-            #endregion
-
-            #region Load fvals
-            for(int i = 0; i < absoluteData.fvalValues.Length; i++)
-            {
-                fvalsForMemory[i].value = absoluteData.fvalValues[i];
-            }
-            #endregion
-        }
-
+        data = SaveSystem.LoadPlayer();
+        
         if (data == null)
         {
             eventsMemory = new bool[saveableEvents.Length];
+            PersistantManager.instance.MidLoadSceneSet(defaultSceneIndex);
             return;
         }
         
@@ -124,6 +116,40 @@ public class SaveManager : MonoBehaviour
         Debug.Log("game loaded");
 
         isLoading = false;
+
+        PersistantManager.instance.MidLoadSceneSet(data.sceneIndex);
+        SectionsManager.instance.SetSection(data.sectionIndex);
+    }
+
+    private void LoadAbsoluteData(){
+
+        if(debugOverrideAbsoluteLoad)
+            return;
+
+        absoluteData = SaveSystem.LoadAbsoluteData();
+
+        if(absoluteData == null)
+            return;
+        
+        mapIndex.value = absoluteData.collectdMapPieces;
+        visitedMarkers.value = absoluteData.markedZones;
+
+        RemoveConsumedIndexedObjects();
+
+        #region Load fvals
+        for(int i = 0; i < absoluteData.fvalValues.Length; i++)
+        {
+            fvalsForMemory[i].value = absoluteData.fvalValues[i];
+        }
+        #endregion
+    }
+
+    public void DeathLoadCheck(){
+        if(LoadFlags.deathLoad){
+            LoadPlayerData();
+            LoadFlags.deathLoad = false;
+        }
+        
     }
 
     public void DeleteSave()
@@ -170,6 +196,20 @@ public class SaveManager : MonoBehaviour
     int[] FormatConsumablesForSave()
     {
         return consumableIndexes.ToArray();
+    }
+
+    public void RemoveConsumedIndexedObjects(){
+
+        if(absoluteData == null)
+            return;
+
+        consumableIndexes = absoluteData.consumableIndexes.ToList<int>(); //Re-save all the old indexes
+
+            var consumables = FindObjectsOfType<IndexedConsumable>();
+            foreach(IndexedConsumable consumable in consumables)
+            {
+                consumable.KillMe(absoluteData.consumableIndexes);
+            }
     }
 }
 

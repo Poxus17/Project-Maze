@@ -36,7 +36,14 @@ public class GlobalTimerManager : MonoBehaviour
 
         foreach(TimerListener listener in listeners.ToArray()){
             if(listener.exitTime <= timer){
-                listener.Invoke();
+                try{
+                    listener.Invoke();
+                }
+                catch{
+                    if(!listener.ValidAction())
+                        listeners.Remove(listener);
+                }
+                
                 listeners.Remove(listener);
             }
         }
@@ -51,6 +58,10 @@ public class GlobalTimerManager : MonoBehaviour
     public void RegisterForTimer(Action callback, float duration){
         listeners.Add(new TimerListener(callback, timer + duration));
         isRunning = true;
+    }
+
+    public void PurgeAllListeners(){
+        listeners.Clear();
     }
 }
 
@@ -69,5 +80,9 @@ class TimerListener{
 
     public void Invoke(){
         _callback();
+    }
+
+    public bool ValidAction(){
+        return _callback != null;
     }
 }

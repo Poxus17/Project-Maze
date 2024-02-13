@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 0
   defaultVal: 0
+  useDefaultValue: 1
   announceEvent: {fileID: 11400000, guid: dffe6cae9ee7161468f97b3e33345c29, type: 2}

@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: BVAL_InventoryOpen
   m_EditorClassIdentifier: 
   value: 0
+  defaultVal: 0
+  useDefaultValue: 1

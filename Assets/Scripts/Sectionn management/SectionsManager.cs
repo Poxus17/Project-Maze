@@ -10,7 +10,7 @@ public class SectionsManager : MonoBehaviour
 
     [SerializeField] UnityEvent OnSectionChanged;
     [SerializeField] UnityEvent OnRingChanged;
-    [SerializeField] SectionItemIndex[] itemsIndex;
+    [SerializeField] IntVariable enteredSectionVar;
 
     public static SectionsManager instance;
     private void Awake()
@@ -24,21 +24,27 @@ public class SectionsManager : MonoBehaviour
     private void Start()
     {
         currentRing = 1;
-        currentSection = 0;
+        currentSection = -1;
     }
 
-    public void EnterSection(int section)
+    public void SetSection(int section)
     {
-        if(currentSection == 0)
+        enteredSectionVar.value = section;
+    }
+
+    public void EnterSection()
+    {
+
+        if(currentSection == -1)
         {
-            currentSection = section;
+            currentSection = enteredSectionVar.value;
             return;
         }
 
-        var changed = (currentSection != section);
+        var changed = (currentSection != enteredSectionVar.value);
         if (changed)
         {
-            currentSection = section;
+            currentSection = enteredSectionVar.value;
             OnSectionChanged.Invoke();
         }
     }
@@ -52,27 +58,5 @@ public class SectionsManager : MonoBehaviour
         return changed;
     }
 
-    public GameObject GetSectionItem()
-    {
-        foreach(var item in itemsIndex)
-        {
-            if(item.section == currentSection && item.ring == currentRing)
-            {
-                return item.item;
-            }
-        }
-
-         return null;
-    }
-}
-
-[System.Serializable]
-public class SectionItemIndex 
-{
-    public int section;
-    public int ring;
-    public GameObject item;
-
-    protected bool collected = false;
 }
 

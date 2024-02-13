@@ -72,7 +72,6 @@ public class HeadBobber : MonoBehaviour
 
     public void changeBobbingSpeed()
     {
-        Debug.Log("change bobbing speed");
         bobbingSpeed = sprint.value ? runningBobbingSpeed : walkingBobbingSpeed;
     }
 

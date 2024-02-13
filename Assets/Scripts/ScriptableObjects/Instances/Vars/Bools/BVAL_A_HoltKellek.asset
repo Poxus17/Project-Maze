@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: BVAL_A_HoltKellek
   m_EditorClassIdentifier: 
   value: 0
+  defaultVal: 0
+  useDefaultValue: 1
   announceEvent: {fileID: 11400000, guid: 60a7b0b5a1409404c85d6d502b632be8, type: 2}

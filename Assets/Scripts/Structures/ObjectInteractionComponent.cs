@@ -31,7 +31,8 @@ public class ObjectInteractionComponent : MonoBehaviour
     private void Banish()
     {
         //Send it to FUCKING HELL never to be seen again
-        transform.position = new Vector3(0, -100, 0);
+        //transform.position = new Vector3(0, -100, 0);
+        gameObject.SetActive(false);
     }
 
     public void SetItemObjectState(List<string> takenItems)

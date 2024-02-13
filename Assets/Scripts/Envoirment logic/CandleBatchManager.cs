@@ -10,11 +10,14 @@ public class CandleBatchManager : MonoBehaviour
     private List<CandleComponent> candleTriggers;
     private CandleBatchIntensityVariable candleBatchIntensityVariable;
 
+    void Awake(){
+        lightComponent = GetComponentsInChildren<Light>()[0];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        lightComponent = GetComponentsInChildren<Light>()[0];
-        lightComponent.intensity = 0;
+        //lightComponent.intensity = 0;
 
         candleTriggers = new List<CandleComponent>();
         candleTriggers = GetComponentsInChildren<CandleComponent>().ToList();

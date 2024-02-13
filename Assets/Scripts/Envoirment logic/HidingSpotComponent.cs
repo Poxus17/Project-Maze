@@ -90,5 +90,9 @@ public class HidingSpotComponent : MonoBehaviour
         InputSystemHandler.instance.SetInputActive(true);
     }
 
-
+    private void OnDestroy() {
+        exitAction.performed -= LeaveHideSpot;
+        PlayerCameraHandler.instance.SetCameraActive(true);
+        InputSystemHandler.instance.SetInputActive(true);
+    }
 }

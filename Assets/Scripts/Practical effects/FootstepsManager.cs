@@ -27,13 +27,14 @@ public class FootstepsManager : MonoBehaviour
     [SerializeField] float sneakVolume;
 
 
-    float stepTime = 0.8f;
-    float stepNoiseValue = 3;
-    float stepVolume; 
+    private float stepTime = 0.8f;
+    private float stepNoiseValue = 3;
+    private float stepVolume; 
 
-    bool activeStep = false;
-    bool running = false;
-    bool playingStep = false;
+    private bool activeStep = false;
+    private bool running = false;
+    private bool playingStep = false;
+
      // Start is called before the first frame update
     void Start()
     {
@@ -59,19 +60,19 @@ public class FootstepsManager : MonoBehaviour
             case MovementType.Walk:
                 stepTime = walkStepTime;
                 stepNoiseValue = walkStepNoiseValue;
-                NoiseManager.instance.SetPlaybackVolume(walkVolume);
+                stepVolume = walkVolume;
                 break;
 
             case MovementType.Run:
                 stepTime = runStepTime;
                 stepNoiseValue = runStepNoiseValue;
-                NoiseManager.instance.SetPlaybackVolume(runVolume);
+                stepVolume = runVolume;
                 break;
 
             case MovementType.Sneak:
                 stepTime = sneakStepTime;
                 stepNoiseValue = sneakStepNoiseValue;
-                NoiseManager.instance.SetPlaybackVolume(sneakVolume);
+                stepVolume = sneakVolume;
                 break;
         }
     }
@@ -82,7 +83,7 @@ public class FootstepsManager : MonoBehaviour
         GlobalTimerManager.instance.RegisterForTimer(StepsLoop, stepTime);
     }
 
-    void StepsLoop()
+    private void StepsLoop()
     {
         if(activeStep)
             GlobalTimerManager.instance.RegisterForTimer(StepsLoop, stepTime);
@@ -97,7 +98,7 @@ public class FootstepsManager : MonoBehaviour
 
     void PlayStep(){
         var selectClip = stepClips[Random.Range(0, stepClips.Length)];
-        NoiseManager.instance.PlayNoise(selectClip, stepNoiseValue);
+        NoiseManager.instance.PlayNoise(selectClip, stepNoiseValue, stepVolume);
     }
 
     private void OnDestroy()

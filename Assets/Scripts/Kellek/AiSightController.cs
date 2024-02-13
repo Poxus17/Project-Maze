@@ -26,6 +26,7 @@ public class AiSightController : MonoBehaviour
     private void Start()
     {
         cosAngle = Mathf.Cos(angleFromForward * Mathf.Deg2Rad);
+        Debug.Log("Kellek sight cos angle - " + cosAngle);
     }
 
     private void Update()
@@ -33,7 +34,9 @@ public class AiSightController : MonoBehaviour
         if (playerDistanceSqr.value > sightRange * sightRange)
             return;
 
-        if (Vector3.Dot(targetVector.value, -transform.forward) > cosAngle)
+        var normilizedDotProduct = Vector3.Dot(targetVector.value.normalized, transform.forward.normalized);
+        Debug.DrawRay(transform.position, targetVector.value, Color.red);
+        if (normilizedDotProduct < cosAngle)
             return;
 
         RaycastHit hit;

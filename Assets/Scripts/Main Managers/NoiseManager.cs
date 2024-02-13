@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class NoiseManager : MonoBehaviour
 {
-    [SerializeField] AudioSource source;
-
     public static NoiseManager instance;
 
     private void Awake()
@@ -25,15 +23,10 @@ public class NoiseManager : MonoBehaviour
         CentralAI.Instance.BroadcastNoise(noise, transform.position);
     }
 
-    public void PlayNoise(AudioClip clip, float noise)
+    public void PlayNoise(AudioClip clip, float noise, float volume = 1.0f)
     {
-        MusicMan.instance.PlaySE(clip);
+        MusicMan.instance.PlaySE(clip, volume);
 
         SendNoise(noise);
-    }
-
-    public void SetPlaybackVolume(float vol)
-    {
-        source. volume = vol;
     }
 }

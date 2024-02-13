@@ -158,7 +158,9 @@ public class FPSMovementController : MonoBehaviour
         {
             if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode)
             {
-                SetSprint(context.ReadValue<float>() > 0);
+                var sprintValue =context.ReadValue<float>() > 0;
+                SetSprint(sprintValue);
+                Debug.Log("Sprint state changed. Setting sprint to " + sprintValue.ToString());
             }
         }
     }

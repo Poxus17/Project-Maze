@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 0
   defaultVal: 0
+  useDefaultValue: 1
   announceEvent: {fileID: 0}

@@ -28,15 +28,6 @@ public class PastObjectManager : MonoBehaviour
         {
             Destroy(this);
         }
-
-#if UNITY_EDITOR
-        itemCount.value = 0;
-#endif
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         audioSource = GetComponent<AudioSource>();
         inventoryMemory = new bool[allItems.Length];
         placedMemory = new bool[allItems.Length];
@@ -163,6 +154,8 @@ public class PastObjectManager : MonoBehaviour
         {
             oic.SetItemObjectState(takenObjects);
         }
+
+        ItemPlacementManager.instance.ResetCounter();
 
         ItemPlacementComponent[] placementComponents = FindObjectsOfType<ItemPlacementComponent>();
         foreach(ItemPlacementComponent ipc in placementComponents)

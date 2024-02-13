@@ -35,30 +35,8 @@ public class CentralAI : MonoBehaviour
 
     private void Start()
     {
-        #region Load Roam managers
-
         roamManagers = new List<AiRoamManager>();
-        var findRoamManagers = FindObjectsOfType<AiRoamManager>();
-        foreach(var roamManager in findRoamManagers)
-        {
-            if(roamManager != null)
-            {
-                roamManagers.Add(roamManager);
-            }
-        }
-
         Listeners = new List<AiListenerController>();
-        var listeners = FindObjectsOfType<AiListenerController>();
-        foreach(var listener in listeners)
-        {
-            if(listener != null)
-            {
-                Listeners.Add(listener);
-            }
-        }
-
-        #endregion
-
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -125,20 +103,22 @@ public class CentralAI : MonoBehaviour
             rm.LoadRoamData(1, SectionsManager.instance.currentSection); 
         }
 
-        //FIX THIS SHIT
-        if(!spawning)
-            StartCoroutine(SpawnTimer());
+        if(spawning)
+            return;
+
+        if(kellek.instantSpawn)
+        {
+            kellek.SpawnIn();
+            return;
+        }
+
+        spawning = true;
+        var spawnTimer = Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime);
+        Debug.Log("He's coming in " + spawnTimer);
+        GlobalTimerManager.instance.RegisterForTimer(SpawnKellek, spawnTimer);
     }
 
-    IEnumerator SpawnTimer()
-    {
-        if (!kellek.instantSpawn)
-        {
-            spawning = true;
-            var spawnTimer = Random.Range(kellek._minSpawnTime, kellek._maxSpawnTime);
-            Debug.Log("He's coming in " + spawnTimer);
-            yield return new WaitForSeconds(spawnTimer);
-        }
+    private void SpawnKellek(){
         kellek.SpawnIn();
         spawning = false;
     }
@@ -147,5 +127,29 @@ public class CentralAI : MonoBehaviour
     {
         roamManagers.Clear();
         Listeners.Clear();
+    }
+
+    public void FindKellek(){
+        kellek = FindObjectOfType<KellekHuntController>();
+
+        roamManagers.Clear();
+        var findRoamManagers = FindObjectsOfType<AiRoamManager>();
+        foreach(var roamManager in findRoamManagers)
+        {
+            if(roamManager != null)
+            {
+                roamManagers.Add(roamManager);
+            }
+        }
+
+        Listeners.Clear();
+        var listeners = FindObjectsOfType<AiListenerController>();
+        foreach(var listener in listeners)
+        {
+            if(listener != null)
+            {
+                Listeners.Add(listener);
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ public class PastObjectManager : MonoBehaviour
     [SerializeField] PastObjectData[] allItems;
     [SerializeField] PastObjectData InspectionPacket;
     [SerializeField] FloatVariable itemCount;
+    [SerializeField] IntVariable placedCount;
 
     bool[] inventoryMemory; //Has the data of which items are in the inventory
     bool[] placedMemory;
@@ -126,6 +127,7 @@ public class PastObjectManager : MonoBehaviour
             if (placedMemory[i])
             {
                 itemCount.value++;
+                placedCount.value++;
             }
         }
     }
@@ -154,8 +156,6 @@ public class PastObjectManager : MonoBehaviour
         {
             oic.SetItemObjectState(takenObjects);
         }
-
-        ItemPlacementManager.instance.ResetCounter();
 
         ItemPlacementComponent[] placementComponents = FindObjectsOfType<ItemPlacementComponent>();
         foreach(ItemPlacementComponent ipc in placementComponents)

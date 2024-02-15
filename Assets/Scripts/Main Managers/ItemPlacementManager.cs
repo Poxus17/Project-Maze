@@ -5,7 +5,7 @@ public class ItemPlacementManager : MonoBehaviour
 {
     [SerializeField] GameEvent AnnouncePlacement;
     [SerializeField] ValueGatedUnityEvent[] events;
-    [SerializeField] int itemCounter;
+    [SerializeField] IntVariable itemCounter;
 
     public static ItemPlacementManager instance;
     private void Awake()
@@ -18,20 +18,33 @@ public class ItemPlacementManager : MonoBehaviour
 
     public void ResetCounter()
     {
-        itemCounter = 0;
+        itemCounter.value = 0;
     }
 
     public void PlaceItem()
     {
         AnnouncePlacement.Raise();
-        itemCounter++;
+        itemCounter.value++;
 
         foreach(ValueGatedUnityEvent vgue in events)
         {
-            if (vgue.InvokeAllowed(itemCounter))
+            if (vgue.InvokeAllowed(itemCounter.value))
             {
                 vgue.gatedEvent.Raise();
                 break;
+            }
+        }
+    }
+
+    public void RaiseAllEventsLoad(){
+        for(int i = 0; i <= itemCounter.value; i++){
+            foreach(ValueGatedUnityEvent vgue in events)
+            {
+                if (vgue.InvokeAllowed(i))
+                {
+                    vgue.gatedEvent.Raise();
+                    break;
+                }
             }
         }
     }

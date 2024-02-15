@@ -64,9 +64,17 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
         Debug.Log(SaveManager.instance.isLoading);
     }
 
+    private void LoadSlot(){
+        displayItem.SetActive(true);
+        isHoldingItem.value = false;
+        itemPlaceBool.value = true;
+        gameObject.layer = 0;
+        GetComponent<Light>().enabled = false;
+    }
+
     public void MatchSlotToMemory(List<string> names)
     {
         if (names.Contains(placeItemName))
-            SetSlotActive();
+            LoadSlot();
     }
 }

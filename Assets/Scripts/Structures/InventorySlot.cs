@@ -43,6 +43,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (!isPopulated)
             return;
 
+        Debug.Log("Hovering over " + objectName + " slot");
         canvasGroup.alpha = 1;
     }
 

@@ -57,7 +57,7 @@ public class SaveManager : MonoBehaviour
     }
 
     public void SaveAbsoluteData(){
-        AbsoluteData absoluteData = new AbsoluteData(mapIndex.value, visitedMarkers.value, FormatConsumablesForSave(), FormatFvalArrayForSave());
+        absoluteData = new AbsoluteData(mapIndex.value, visitedMarkers.value, FormatConsumablesForSave(), FormatFvalArrayForSave());
         SaveSystem.SaveAbsoluteData(absoluteData);
         Debug.Log("absolute data saved");
     }

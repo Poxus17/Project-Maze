@@ -64105,14 +64105,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1385110150539732582, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
-      propertyPath: TakeItemClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 343af37cb82449e49a29796d731d72db, type: 3}
-    - target: {fileID: 1385110150539732582, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
-      propertyPath: ShelveItemClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 24b513f10a8108b4ead34b4e5f7977a3, type: 3}
     - target: {fileID: 1385110150539732612, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: m_Name
       value: Player

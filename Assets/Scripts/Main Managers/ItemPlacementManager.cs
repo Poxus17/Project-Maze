@@ -31,6 +31,7 @@ public class ItemPlacementManager : MonoBehaviour
             if (vgue.InvokeAllowed(itemCounter.value))
             {
                 vgue.gatedEvent.Raise();
+                vgue.placementEvent.Invoke();
                 break;
             }
         }
@@ -55,6 +56,7 @@ public class ValueGatedUnityEvent
 {
     public int requiredCount;
     public GameEvent gatedEvent;
+    public UnityEvent placementEvent; //Only fires when the item placed brings the count to the required count.
 
     public bool InvokeAllowed(int count)
     {

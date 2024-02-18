@@ -639,6 +639,7 @@ GameObject:
   - component: {fileID: 1168333729668616769}
   - component: {fileID: 8426206964265568109}
   - component: {fileID: 1817313670457800764}
+  - component: {fileID: 9109852420472121266}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1423,7 +1424,7 @@ MonoBehaviour:
   LeaveUI: {fileID: 0}
   adventureMode: {fileID: 11400000, guid: db8ed2dac0ff8904fad5b0a7d0c3a9af, type: 2}
   cameraTransition: {fileID: 11400000, guid: 2c02413736c88c041b83dffbf0546c44, type: 2}
-  useStamina: 0
+  useStamina: 1
 --- !u!114 &1385110150539732632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1661,8 +1662,8 @@ MonoBehaviour:
   HoldItemTransform: {fileID: 8215900959158682429}
   inspectionItem: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
   isHolding: {fileID: 11400000, guid: 8c61224d919deb948ad7af3342551330, type: 2}
-  TakeItemClip: {fileID: 0}
-  ShelveItemClip: {fileID: 0}
+  TakeItemClip: {fileID: 8300000, guid: 343af37cb82449e49a29796d731d72db, type: 3}
+  ShelveItemClip: {fileID: 8300000, guid: 24b513f10a8108b4ead34b4e5f7977a3, type: 3}
 --- !u!114 &8211945785309997370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,6 +1871,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raiseEvent: {fileID: 11400000, guid: b144b956e82f28a488fcf69d05ffbb05, type: 2}
+--- !u!114 &9109852420472121266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110150539732612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68121290988963419e27bc6ed76adba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b678b860e0d809a43970c8bfd2622bd3, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5855015895785669538}
+        m_TargetAssemblyTypeName: InputSystemHandler, Assembly-CSharp
+        m_MethodName: SetUIMode
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  raiseTimer: 0
+  oneFrameDelay: 0
 --- !u!1 &3523790353379100376
 GameObject:
   m_ObjectHideFlags: 0

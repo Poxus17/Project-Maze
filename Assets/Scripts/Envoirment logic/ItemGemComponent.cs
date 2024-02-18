@@ -15,6 +15,12 @@ public class ItemGemComponent : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    private void OnEnable()
+    {
+        CheckTurnOn();
+        Debug.Log("ItemGemComponent OnEnable");
+    }
+
     public void CheckTurnOn()
     {
         if (isOn.value)

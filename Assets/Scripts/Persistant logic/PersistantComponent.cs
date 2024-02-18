@@ -20,6 +20,7 @@ public class PersistantComponent : MonoBehaviour
             if(persistant.id == persistanceTag){
                 if(persistant.component != null && persistant.component != this)
                 {
+                    
                     Destroy(gameObject);
                     return;
                 }

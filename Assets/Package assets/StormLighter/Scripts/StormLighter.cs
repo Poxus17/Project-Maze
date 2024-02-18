@@ -50,7 +50,7 @@ public class StormLighter : MonoBehaviour
     void Start()
     {
         _isOpen = false;
-        lighterLit.value = false;
+        //lighterLit.value = false;
         _isBaseFlame = true;
 
         try

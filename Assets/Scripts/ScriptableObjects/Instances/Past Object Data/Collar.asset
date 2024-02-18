@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Church's collar
   icon: {fileID: 21300000, guid: 760b24d5f06b6024386b75b8dc6cd539, type: 3}
-  clip: {fileID: 8300000, guid: c45ba5805ee014c4a9695849947cfd54, type: 3}
+  clip: {fileID: 8300000, guid: 2ce916a1dacf5a8439974aa89afe92ab, type: 3}
   itemPrefab: {fileID: 7581322190839585951, guid: 49521092324aa3446bd8ea292f8c8474, type: 3}
-  transcript: This is Church's collar! He was the sweetest, most loyal dog. Georgy
-    and I loved him like he was our third brother. I remember the summer Church died.
-    We were so depressed, mom and dad tried everything to cheer us up. That was the
-    same summer dad built our treehouse.
+  transcript: "This collar belonged to church. He was the sweetest, most loyal dog.
+    Georgie and I loved him like he was our third brother. They say dogs are man's
+    best friend... I can't argue with that. \nI remember the summer Church died.
+    We were so depressed that mom and dad tried everything to cheer us up. That was
+    the same summer dad built our treehouse."

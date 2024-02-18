@@ -494,7 +494,7 @@ MonoBehaviour:
   stepAwayEffectRange: 0
   chaseWaitTime: 2
   renderer: {fileID: 748226807886027407}
-  instantSpawn: 1
+  instantSpawn: 0
   _minSpawnTime: 90
   _maxSpawnTime: 240
   _minDespawnTime: 50

@@ -291,7 +291,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 100
   field of view: 50
   orthographic: 0
   orthographic size: 5
@@ -454,7 +454,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   volumeAnchorOverride: {fileID: 0}
-  antialiasing: 2
+  antialiasing: 0
   SMAAQuality: 2
   dithering: 0
   stopNaNs: 0
@@ -629,7 +629,6 @@ GameObject:
   - component: {fileID: 1385110150539732581}
   - component: {fileID: 1385110150539732582}
   - component: {fileID: 8211945785309997370}
-  - component: {fileID: 6564002708995621533}
   - component: {fileID: 2613972717077508699}
   - component: {fileID: 902424072641693167}
   - component: {fileID: 5403442332309115810}
@@ -640,6 +639,9 @@ GameObject:
   - component: {fileID: 8426206964265568109}
   - component: {fileID: 1817313670457800764}
   - component: {fileID: 9109852420472121266}
+  - component: {fileID: 4887078483552859209}
+  - component: {fileID: 3320314511216760033}
+  - component: {fileID: 4701841907974640489}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -938,30 +940,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChildRotationSmooth, Assembly-CSharp
-        m_MethodName: Look
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChildRotationSmooth, Assembly-CSharp
-        m_MethodName: Look
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_ActionId: 8d7026d4-bd73-4adf-8870-28e7e879cbe9
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
@@ -1062,18 +1040,6 @@ MonoBehaviour:
     m_ActionName: UI/Leave[/Keyboard/escape]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6564002708995621533}
-        m_TargetAssemblyTypeName: InputParserEvent, Assembly-CSharp
-        m_MethodName: ParseInputAsStarted
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1385110150539732583}
         m_TargetAssemblyTypeName: UIControlRaise, Assembly-CSharp
         m_MethodName: RaiseUI
@@ -1153,18 +1119,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1385110150539732632}
         m_TargetAssemblyTypeName: Debug_FlyingController, Assembly-CSharp
         m_MethodName: ToggleSlow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 9142394825370847455}
-        m_TargetAssemblyTypeName: HeadBobber, Assembly-CSharp
-        m_MethodName: ChangeDefaultY
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1354,20 +1308,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2613972717077508699}
-        m_TargetAssemblyTypeName: MusicManAgent, Assembly-CSharp
-        m_MethodName: PlayClipAsSE
-        m_Mode: 2
+    m_ActionId: 0dc01678-0b9f-47b2-b880-78aa4ae370c3
+    m_ActionName: Player/RefuelLighter[/Keyboard/x]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4887078483552859209}
+        m_TargetAssemblyTypeName: InputParsedBoolEvent, Assembly-CSharp
+        m_MethodName: ParseInputAsHold
+        m_Mode: 0
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: c62d941aaa314314aae8794dc6b3058d, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0dc01678-0b9f-47b2-b880-78aa4ae370c3
-    m_ActionName: Player/RefuelLighter[/Keyboard/x]
+    m_ActionId: a886170b-154e-469b-87db-14314c9e53f6
+    m_ActionName: Player/Help[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1395,9 +1353,9 @@ MonoBehaviour:
   staminaRestoreRate: 2.5
   requiredRecoveryRatio: 0.35
   localStandingY: 0
-  localCrouchingY: -1
+  localCrouchingY: -2
   crouchTranisitonSpeed: 5
-  camera: {fileID: 1385110148987287772}
+  camera: {fileID: 6924395450143651060}
   slideSpeed: 15
   slideSpeedRequirement: 10
   slideTrigger: Slide
@@ -1424,6 +1382,7 @@ MonoBehaviour:
   LeaveUI: {fileID: 0}
   adventureMode: {fileID: 11400000, guid: db8ed2dac0ff8904fad5b0a7d0c3a9af, type: 2}
   cameraTransition: {fileID: 11400000, guid: 2c02413736c88c041b83dffbf0546c44, type: 2}
+  staminaRecoveryMode: {fileID: 11400000, guid: 0416e5e43e5af4a41b80dda9e9a9f3f9, type: 2}
   useStamina: 1
 --- !u!114 &1385110150539732632
 MonoBehaviour:
@@ -1456,7 +1415,7 @@ MonoBehaviour:
   detectionRange: 7
   mask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   interactionLockedState: {fileID: 11400000, guid: 51915fccb63249443adc58ffcee1d50e, type: 2}
   lockedStateDetectionText: {fileID: 11400000, guid: 0393eb0d2a1447445a9711d734cbf90c, type: 2}
   lockStateEvent: {fileID: 11400000, guid: 5c6fe87199291794ba1bae89e1f877e2, type: 2}
@@ -1534,13 +1493,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 45b43d03c197a4b75aa50df860ddade5, type: 3}
   walkStepTime: 0.8
   walkStepNoiseValue: 3
-  walkVolume: 0.7
+  walkVolume: 0.5
   runStepTime: 0.4
   runStepNoiseValue: 4
   runVolume: 1
   sneakStepTime: 1
   sneakStepNoiseValue: 1
-  sneakVolume: 0.3
+  sneakVolume: 0.2
 --- !u!114 &1385110150539732628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,8 +1512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f87b6ef7b35bd11459a92f4d83b1ea87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treehouseBase: {x: 8.82, y: 6.523, z: -8.24}
-  treehouseTop: {x: 15.33, y: 45.466, z: -12.91}
+  treehouseBase: {x: 8.82, y: 6.3, z: -8.24}
+  treehouseTop: {x: 15.33, y: 46.73065, z: -12.91}
   transitionSpeed: 0.2
   ChangeState:
     m_PersistentCalls:
@@ -1677,33 +1636,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raiseUIIndex: 4
---- !u!114 &6564002708995621533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1385110150539732612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb2ca88d0a364741aaaaf0011f63dd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parsedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2613972717077508699}
-        m_TargetAssemblyTypeName: MusicManAgent, Assembly-CSharp
-        m_MethodName: PlayClipAsSE
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 99ca0b91faccdd84091a9aff57dc1ef6, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2613972717077508699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1772,7 +1704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e85658bec008034095006568b427ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleportTarget: {x: 19.861097, y: 6.3, z: 54.369606}
+  teleportTarget: {x: 44.17179, y: 6.3, z: -70.48478}
 --- !u!114 &1385110150539732639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1901,6 +1833,68 @@ MonoBehaviour:
         m_CallState: 2
   raiseTimer: 0
   oneFrameDelay: 0
+--- !u!114 &4887078483552859209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110150539732612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc15804615bc2d4ba89d9d5f166ebd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parsedEvent:
+    localEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    publicEvents:
+    - {fileID: 11400000, guid: 54c12f9e2cb0f4e43809d8d6fe7aa4cc, type: 2}
+  boolVariable: {fileID: 11400000, guid: 7fe3142bde0e20741a507d67da0252f8, type: 2}
+--- !u!114 &3320314511216760033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110150539732612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68121290988963419e27bc6ed76adba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: eafb9528f75273e4c866e854d71f4912, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4701841907974640489}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: ElevatorTeleportation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  raiseTimer: 0
+  oneFrameDelay: 0
+--- !u!114 &4701841907974640489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385110150539732612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c9a28815c7b0514ebc1c7aeb92408d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deltaY: -150
 --- !u!1 &3523790353379100376
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,10 +2046,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxXRotation: 70
-  smoothSpeed: 0.1
+  smoothSpeed: 1
   playerRotationXDelta: {fileID: 11400000, guid: a1d567778fba464478cce701478e4f10, type: 2}
   playerRotationYDelta: {fileID: 11400000, guid: 2aadfbed384c7eb4bacc90581c12e199, type: 2}
   mouseSensitivity: {fileID: 11400000, guid: e5ee73580924aa4439c5fd21abb19e69, type: 2}
+  angleFromGlobalForward: {fileID: 11400000, guid: 8b01b08f4bb32e14d8a509d2e6d49e48, type: 2}
 --- !u!1 &8973709705063330599
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,7 +2076,7 @@ Transform:
   m_GameObject: {fileID: 8973709705063330599}
   serializedVersion: 2
   m_LocalRotation: {x: -0.25473878, y: -0.8566449, z: -0.09221771, w: 0.4390483}
-  m_LocalPosition: {x: -0.553, y: -0.388, z: 0.887}
+  m_LocalPosition: {x: -1.17, y: -0.664, z: 1.662}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2371,6 +2366,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4471361266108091498, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4550607072551111120}
     - target: {fileID: 4625487860155429768, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2655,7 +2654,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4471361266108091498, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2668,6 +2668,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6483190810369575376, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3813149417524433474}
+    - targetCorrespondingSourceObject: {fileID: 6483190810369575376, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4904680112262746401}
   m_SourcePrefab: {fileID: 100100000, guid: 0b571c00ef87a2042889b6ca93da1403, type: 3}
 --- !u!108 &355300121894753186 stripped
 Light:
@@ -2700,7 +2703,8 @@ MonoBehaviour:
   lighterLit: {fileID: 11400000, guid: 36f507b1edac9264cbc18392d08eee6a, type: 2}
   hasLighter: {fileID: 11400000, guid: abb3cfd4e97c3ff4ba11c74e50a37efb, type: 2}
   useParticles: 0
-  fuelMax: 350
+  inUI: {fileID: 11400000, guid: 914990af82954db478327b1b46c9ac63, type: 2}
+  fuelMax: 400
   fuelDepletionRate: 1
   baseLightIntensity: 7.957747
   strongLightIntensity: 79.57747
@@ -2719,9 +2723,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1580d8b761bbe469bfccfbdbcd6133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelAmountPerCan: 50
+  fuelAmountPerCan: 100
   fuelCounter: {fileID: 11400000, guid: 788ca1c6787790740b537fe9aee965ab, type: 2}
   fuelAmount: {fileID: 11400000, guid: 62b79c87371128b49bca0339fc0de56e, type: 2}
+  useClip: {fileID: 8300000, guid: c62d941aaa314314aae8794dc6b3058d, type: 3}
 --- !u!114 &3813149417524433474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2741,6 +2746,36 @@ MonoBehaviour:
       - m_Target: {fileID: 1993246045837556994}
         m_TargetAssemblyTypeName: FuelHandler, Assembly-CSharp
         m_MethodName: CollectFuel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  raiseTimer: 0
+  oneFrameDelay: 0
+--- !u!114 &4904680112262746401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033828256395367893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68121290988963419e27bc6ed76adba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b2471a37a71476b488d4c97483c9241b, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4550607072551111120}
+        m_TargetAssemblyTypeName: StormLighter, Assembly-CSharp
+        m_MethodName: ManualClose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

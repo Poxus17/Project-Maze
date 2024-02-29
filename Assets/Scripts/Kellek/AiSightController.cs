@@ -26,7 +26,6 @@ public class AiSightController : MonoBehaviour
     private void Start()
     {
         cosAngle = Mathf.Cos(angleFromForward * Mathf.Deg2Rad);
-        Debug.Log("Kellek sight cos angle - " + cosAngle);
     }
 
     private void Update()
@@ -41,15 +40,12 @@ public class AiSightController : MonoBehaviour
 
         var toPlayer = CentralAI.Instance.player.transform.position - transform.position;
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, toPlayer, out hit, Mathf.Infinity, layerMask))
+        if(Physics.Raycast(transform.position, toPlayer, out hit, sightRange, layerMask))
         {
             if (hit.collider.gameObject.tag == "Player")
             {
+                Debug.Log("Kellek has line of sight to player.\nDetection info:\nKellek position: " + transform.position + "\nKellek rotation: " + transform.eulerAngles + "\nPlayer position: " + CentralAI.Instance.player.transform.position);
                 OnSeeTarget();
-            }
-            else
-            {
-                Debug.Log("Kellek sight hit - " + hit.collider.gameObject.tag);
             }
         }
         Debug.DrawRay(transform.position, toPlayer, Color.red);
@@ -57,7 +53,7 @@ public class AiSightController : MonoBehaviour
 
     public bool CustomPlayerCheck(){
         RaycastHit hit;
-        if(Physics.Raycast(transform.position, targetVector.value, out hit, Mathf.Infinity, layerMask))
+        if(Physics.Raycast(transform.position, targetVector.value, out hit, sightRange, layerMask))
             return hit.collider.gameObject.tag == "Player";
 
         return false;

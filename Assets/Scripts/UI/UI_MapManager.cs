@@ -9,13 +9,11 @@ public class UI_MapManager : UIComponent
     [SerializeField] BoolArrayVariable collectedMapParts;
     [SerializeField] BoolArrayVariable visitedMarkers;
     [SerializeField] GameObject noMapText;
-    [SerializeField] AudioClip mapSe;
     [SerializeField] MapMarker[] markers;
 
     public void LaunchMap()
     {
         noMapText.SetActive(true);
-        MusicMan.instance.PlaySE(mapSe);
         bool hasMap = false;
         for(int i = 0; i < mapPieces.Length; i++)
         {

@@ -12,9 +12,14 @@ public class SliderToValue : MonoBehaviour
 
     Slider slider; //Slider.
 
-    private void Start()
+    private void Awake()
     {
         slider = GetComponent<Slider>();
+    }
+
+    private void OnEnable()
+    {
+        slider.value = Mathf.InverseLerp(minValue, maxValue, sliderVar.value);
     }
 
     public void ChangeValue()

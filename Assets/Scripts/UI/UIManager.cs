@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameEvent[] LaunchGlobalUIEvents;
     [SerializeField] GameEvent[] CloseGlobalUIEvents;
     [SerializeField] BoolVariable[] UILocks;
+    [SerializeField] BoolVariable inUI;
 
     GameEvent currentBoundEvent;
     UIComponent currentComponent;
@@ -36,14 +37,22 @@ public class UIManager : MonoBehaviour
     #region Handle main component
     public void LaunchUIComponent(int componentIndex)
     {
+        if(PersistantManager.instance.IsLoading)
+            return;
+
         foreach (BoolVariable bval in UILocks) // If any lock is true, straight out quit the launch
             if (bval.value)
                 return; // Replace with error messege
+
+        if(currentComponent != null)
+            CloseUIComponent();
 
         RaiseGlobalUIEvents(LaunchGlobalUIEvents);
 
         currentComponent = UIIndex[componentIndex];
         currentComponent.LaunchComponent();
+        inUI.value = true;
+        Debug.Log("Launched UI component: " + currentComponent.name);
     }
 
     public void CloseUIComponent()
@@ -61,10 +70,12 @@ public class UIManager : MonoBehaviour
             currentBoundEvent = null;
         }
 
+        Debug.Log("Closing UI component: " + currentComponent.name);
         currentComponent.CloseComponent();
         currentComponent = null;
 
         RaiseGlobalUIEvents(CloseGlobalUIEvents);
+        inUI.value = false;
     }
 
     public void BindGameEventToExit(GameEvent gameEvent)

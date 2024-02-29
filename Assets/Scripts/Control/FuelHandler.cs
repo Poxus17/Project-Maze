@@ -7,6 +7,7 @@ public class FuelHandler : MonoBehaviour
     [SerializeField] float fuelAmountPerCan = 60f;
     [SerializeField] FloatVariable fuelCounter;
     [SerializeField] FloatVariable fuelAmount;
+    [SerializeField] AudioClip useClip;
 
     public void CollectFuel(){
         fuelCounter.value++;
@@ -20,7 +21,8 @@ public class FuelHandler : MonoBehaviour
             return;
 
         fuelCounter.value--;
-        fuelAmount.value = Mathf.Clamp(fuelAmount.value + fuelAmountPerCan, 0f, 350f);
+        fuelAmount.value = Mathf.Clamp(fuelAmount.value + fuelAmountPerCan, 0f, 400f);
+        MusicMan.instance.PlaySE(useClip, 0.5f);
 
     }
 

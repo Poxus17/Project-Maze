@@ -11,7 +11,7 @@ public class SectionComponent : MonoBehaviour
     {
         if (other.transform.tag == "Player" && SectionsManager.instance.currentSection != sectionNumber)
         {
-            Debug.Log(other.gameObject.name + " has entered section " + sectionNumber);
+            Debug.Log("Player has entered section " + sectionNumber);
             SectionsManager.instance.EnterSection();
         }
     }

@@ -26,9 +26,6 @@ public class InteractableComponent : MonoBehaviour, IInteractable
     {
         if(!InteractionAllowed()){
             failInteraction.Invoke();
-            Debug.Log(!notCondition);
-            Debug.Log((interactionCondition.value && !notCondition));
-            Debug.Log((interactionCondition.value && (!notCondition)));
             return;
         }
             

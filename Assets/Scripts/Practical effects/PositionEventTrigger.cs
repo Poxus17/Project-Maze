@@ -34,7 +34,6 @@ public class PositionEventTrigger : MonoBehaviour //UNFINISED TOOL
 
     void Update()
     {
-        Debug.Log(Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position) > checkDistance);
         if (Vector3.Distance(transform.position, CentralAI.Instance.player.transform.position) > checkDistance)
             return;
 

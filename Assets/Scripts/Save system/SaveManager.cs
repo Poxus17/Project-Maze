@@ -53,13 +53,13 @@ public class SaveManager : MonoBehaviour
     {
         PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), PersistantManager.instance.ActiveSceneIndex, SectionsManager.instance.currentSection);
         SaveSystem.SavePlayer(playerData);
-        Debug.Log("game saved");
+        Debug.Log("Game saved");
     }
 
     public void SaveAbsoluteData(){
         absoluteData = new AbsoluteData(mapIndex.value, visitedMarkers.value, FormatConsumablesForSave(), FormatFvalArrayForSave());
         SaveSystem.SaveAbsoluteData(absoluteData);
-        Debug.Log("absolute data saved");
+        Debug.Log("Absolute data saved");
     }
 
     public void LoadGame()
@@ -113,7 +113,7 @@ public class SaveManager : MonoBehaviour
         varLoadEvent.Raise();
         #endregion
 
-        Debug.Log("game loaded");
+        Debug.Log("Game loaded");
 
         isLoading = false;
 

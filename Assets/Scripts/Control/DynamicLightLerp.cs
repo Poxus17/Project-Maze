@@ -28,7 +28,6 @@ public class DynamicLightLerp : MonoBehaviour
             float t = (lerpDistance - hit.distance) / lerpDistance;
             t = Mathf.Clamp01(t);
 
-            Debug.Log("Distance - " + hit.distance + " | Lerp - " + t);
             // Lerp the intensity of the lights.
             farLight.intensity = Mathf.Lerp(farLightMaxIntensity, 0.0f, t);
             nearLight.intensity = Mathf.Lerp(0, nearLightMaxIntensity, t);

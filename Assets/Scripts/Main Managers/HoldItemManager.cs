@@ -33,6 +33,9 @@ public class HoldItemManager : MonoBehaviour
         }
         #endregion
 
+        if (heldItem != null)
+            ShelveItem();
+
         var rotationRecord = item.item.transform.localEulerAngles;
 
         item.item.transform.SetParent(holdParent);
@@ -54,6 +57,8 @@ public class HoldItemManager : MonoBehaviour
         heldItem.transform.SetParent(gameObject.transform);
         heldItem.transform.localPosition = Vector3.zero;
         heldItem.transform.localEulerAngles = rotationRecord;
+
+        heldItem = null;
     }
 
     HoldItem GetItemByName(string name)

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
 
-
 public class KellekHuntController : MainAiController
 {
     [Header("AI Components")]
@@ -43,7 +42,8 @@ public class KellekHuntController : MainAiController
     [SerializeField] BoolVariable playerIsHiding;
     [SerializeField] BoolVariable playerIsCaught;
     [SerializeField] GameEvent initiateDeath;
-
+    [SerializeField] FloatVariable playerDistance; //I don't like this
+ 
     States state;
 
     Vector3 lastRoam = Vector3.zero;
@@ -51,10 +51,18 @@ public class KellekHuntController : MainAiController
     Vector3 lastSeenAt;
     Vector3 oblivion = new Vector3(-10000, -10000, -10000);
 
+    private bool turnedOn = true;
+    private bool spawnDisrupted = false;
     private bool disengage = false;
     private bool blindChasing = false;
     private bool despawnDisrupted;
     private int blindChaseCallsCounter = 0;
+
+    //Roam rng limiter
+    private float closeDistance = 40f;
+    private float playerDistanceLast = 0;
+    private int closeRoamCounter = 0;
+    private int closeRoamCountThreshold = 3;
 
     //Suspension parameter
     bool suspended;
@@ -64,6 +72,7 @@ public class KellekHuntController : MainAiController
     // Start is called before the first frame update
     void Awake()
     {
+        turnedOn = true;
         state = States.OffMap;
         parentObject = gameObject.transform.parent.gameObject;
         AiMovementController.OnArrivedAtDestination += DestinationArrived;
@@ -79,6 +88,12 @@ public class KellekHuntController : MainAiController
         if (itemCount.value < 2)
             return;
 
+        if(!turnedOn){
+            spawnDisrupted = true;
+            Debug.Log("Kellek spawn was disrupted by UI lock");
+            return;
+        }
+
         //roamManager.LoadRoamData(1, 1);
         Vector3 SpawnPoint = roamManager.FindFarthestPoint();
         controller.Teleport(new Vector3(SpawnPoint.x, 6, SpawnPoint.z));
@@ -89,6 +104,7 @@ public class KellekHuntController : MainAiController
 
         RoamNextPoint();
         GlobalTimerManager.instance.RegisterForTimer(RequestShakeoff, Random.Range(_minSpawnTime, _maxSpawnTime));
+        Debug.Log("Kellek spawned in");
     }
     /*
      * |
@@ -99,7 +115,6 @@ public class KellekHuntController : MainAiController
      */
     void RoamNextPoint()
     {
-        //Debug.Log("Roam next");
         lastHeardAt = Vector3.zero;
         lastRoam = roamManager.GetRoamPoint(lastRoam);
         controller.MoveTo(lastRoam);
@@ -117,6 +132,8 @@ public class KellekHuntController : MainAiController
         if (state == States.Prowl)
         {
             if (disengage)
+                RoamAway();
+            else if(CheckCloseRoamCap())
                 RoamAway();
             else
                 RoamNextPoint();
@@ -168,7 +185,9 @@ public class KellekHuntController : MainAiController
     public void GoToPlayer()
     {
         blindChasing = false;
-        controller.SwitchToPlayer();
+        var valid = controller.SwitchToPlayer();
+        if(!valid)
+            StopChase();
     }
 
     /*
@@ -191,6 +210,7 @@ public class KellekHuntController : MainAiController
         }
         else
         {
+            Debug.Log("Kellek found you");
             state = States.Chase;
             chaseLock.value = true;
             MusicMan.instance.PlaySE(detectSE, 1f);
@@ -228,6 +248,7 @@ public class KellekHuntController : MainAiController
         if(blindTarget == Vector3.zero)
             StopChase();
 
+        Debug.Log("Blind chase to " + blindTarget);
         controller.MoveTo(blindTarget);
      }
 
@@ -263,7 +284,7 @@ public class KellekHuntController : MainAiController
 
         chaseLock.value = false;
         OnChase.Invoke(false);
-        Debug.Log("quit chase");
+        Debug.Log("Quit chase");
 
         if(despawnDisrupted)
             Shakeoff();
@@ -301,6 +322,7 @@ public class KellekHuntController : MainAiController
         controller.SetStop(true);
         controller.Teleport(oblivion);
         CentralAI.Instance.ShakeoffConfirmed();
+        Debug.Log("Kellek despawned");
     }
     
 
@@ -311,6 +333,7 @@ public class KellekHuntController : MainAiController
     // Recive request to shakeoff, either confirm or queue for the end of the chase
     public void RequestShakeoff()
     {
+        Debug.Log("Kellek despawn requested");
         if (state == States.OffMap)
             Shakeoff();
         else if (state != States.Chase)
@@ -325,19 +348,31 @@ public class KellekHuntController : MainAiController
 
     public void TurnOff()
     {
+        Debug.Log("Kellek turned off by UI lock");
+        turnedOn = false;
         if (state == States.OffMap)
             return;
 
-        suspended = true;
         controller.SavePosition();
         controller.Teleport(oblivion);
+        
     }
     public void TurnOn() //wink wink
     {
-        if (!suspended || SectionsManager.instance.currentSection == 0)
+        Debug.Log("UI lock on Kellek was lifted");
+        turnedOn = true;
+        if (SectionsManager.instance.currentSection == 0)
             return;
 
         controller.RestorePosition();
+        
+        if (spawnDisrupted)
+        {
+            Debug.Log("Restoring disrupted Kellek spawn");
+            spawnDisrupted = false;
+            SpawnIn();
+            return;
+        }
 
         switch(state)
         {
@@ -348,7 +383,6 @@ public class KellekHuntController : MainAiController
                 controller.SwitchToPlayer();
                 break;
             default:
-                SpawnIn();
                 break;
 
         }
@@ -373,6 +407,29 @@ public class KellekHuntController : MainAiController
             Shakeoff();
             GlobalTimerManager.instance.RegisterForTimer(() => {initiateDeath.Raise();}, 5f);
         }
+    }
+
+    public bool CheckCloseRoamCap(){
+        playerDistanceLast = playerDistance.value;
+
+        if(playerDistance.value < closeDistance)
+        {
+            closeRoamCounter++;
+
+            if(closeRoamCounter >= closeRoamCountThreshold)
+            {
+                closeRoamCounter = 0;
+                return true;
+            }
+
+            return false;
+        }
+        else
+        {
+            closeRoamCounter = 0;
+            return false;
+        }
+            
     }
 
     #region Realtime navigation

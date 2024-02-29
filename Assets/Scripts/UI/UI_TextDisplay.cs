@@ -69,8 +69,14 @@ public class UI_TextDisplay : MonoBehaviour
         }
     }
 
-    public void FadeOutText(){
+    public void FadeOutText(){  
         animatorCallBoard.SetTrigger("TriggerFadeOut");
+        textQueuedForFadeOut = false;
+        occupied = false;
+    }
+
+    public void ClearText(){
+        text.text = "";
         textQueuedForFadeOut = false;
         occupied = false;
     }

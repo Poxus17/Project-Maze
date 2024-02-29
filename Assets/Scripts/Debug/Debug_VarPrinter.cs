@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Debug_VarPrinter : MonoBehaviour
 {
-    public PastObjectData obj;
+    public FloatVariable obj;
     public bool printOnTick;
 
     private void Update()
     {
         if (printOnTick)
-            Debug.Log(obj.name);
+            Debug.Log(obj.value);
     }
 }

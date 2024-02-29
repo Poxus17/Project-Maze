@@ -47,6 +47,8 @@ public class FPSMovementController : MonoBehaviour
     [SerializeField] GameEvent LeaveUI;
     [SerializeField] BoolVariable adventureMode;
     [SerializeField] BoolVariable cameraTransition;
+    [SerializeField] BoolVariable staminaRecoveryMode;
+
     [Space(10)]
 
     [Header("Debug")]
@@ -65,8 +67,6 @@ public class FPSMovementController : MonoBehaviour
     Rigidbody rb;
     Vector2 rawMovement;
     Vector3 movement;
-
-    bool staminaRecoveryMode;
     bool isLerpingSpeed;
 
     float speed;
@@ -99,7 +99,7 @@ public class FPSMovementController : MonoBehaviour
 
             if(stamina <= 0)
             {
-                staminaRecoveryMode = true;
+                staminaRecoveryMode.value = true;
                 isSprint.value = false;
                 stamina = 0;
                 SetSprint(false);
@@ -111,10 +111,11 @@ public class FPSMovementController : MonoBehaviour
 
             if(stamina >= (fullStamina * requiredRecoveryRatio))
             {
-                staminaRecoveryMode = false;
+                staminaRecoveryMode.value = false;
             }
         }
 
+        stamina = Mathf.Clamp(stamina, 0, fullStamina);
         staminaPercent.value = (stamina / fullStamina);
         #endregion
 
@@ -156,11 +157,10 @@ public class FPSMovementController : MonoBehaviour
 
         if (!isSneaking.value)
         {
-            if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode)
+            if ((context.action.triggered || context.action.phase == InputActionPhase.Canceled) && !staminaRecoveryMode.value)
             {
-                var sprintValue =context.ReadValue<float>() > 0;
+                var sprintValue = context.ReadValue<float>() > 0;
                 SetSprint(sprintValue);
-                Debug.Log("Sprint state changed. Setting sprint to " + sprintValue.ToString());
             }
         }
     }

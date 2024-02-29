@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -52,6 +53,16 @@ public class TextDisplayAgent : MonoBehaviour
     public void KillCommand(InputAction.CallbackContext context)
     {
         UI_TextDisplay.Instance.FadeOutText();
+        inputAction.Disable();
+        launchAction.Disable();
+    }
+
+    private void OnDestroy()
+    {
+        inputAction.performed -= KillCommand;
+        launchAction.performed -= DisplayTextAction;
+
+        //UI_TextDisplay.Instance.FadeOutText();
         inputAction.Disable();
         launchAction.Disable();
     }

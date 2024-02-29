@@ -52,10 +52,8 @@ public class CentralAI : MonoBehaviour
             var ray = new Ray(listener.transform.position, noisePosition - listener.transform.position);
             var range = Vector3.Distance(noisePosition, listener.transform.position);
             RaycastHit[] hits = Physics.RaycastAll(ray, range, wallsMask);
-
-            //Debug.Log(NoiseReduction(level, hits.Length, (distance / listener.range)));
+            
             Debug.DrawRay(listener.transform.position, noisePosition - listener.transform.position);
-            //Debug.Log("Noise through " + hits.Length + " walls");
 
             var reducedNoise = NoiseReduction(level, hits.Length, (distance / listener.range));
             listener.GetNoise(reducedNoise);
@@ -119,6 +117,9 @@ public class CentralAI : MonoBehaviour
     }
 
     private void SpawnKellek(){
+        if(SectionsManager.instance.currentSection == 0)
+            return;
+
         kellek.SpawnIn();
         spawning = false;
     }

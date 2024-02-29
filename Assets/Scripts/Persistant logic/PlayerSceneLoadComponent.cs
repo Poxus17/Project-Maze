@@ -11,9 +11,9 @@ public class PlayerSceneLoadComponent : MonoBehaviour
 
         if(!LoadFlags.movementLoad) 
             return;
-
         transform.position = targetPositionVar.value;
         transform.eulerAngles = targetEulerRotationVar.value;
         LoadFlags.movementLoad = false;
+        SaveManager.instance.SaveGame();
     }
 }

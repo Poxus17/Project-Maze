@@ -35,5 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Split/Ring_1_Section_4.unity
     guid: 22b64c857bb0ef547a87e21b4da7e651
+  - enabled: 0
+    path: Assets/Scenes/Split/Ring_1_Section_4_PT.unity
+    guid: 694dc9f85173c4e479c80acaf7d1ab22
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 02fb344875b3d27459987a44b97ce432, type: 2}

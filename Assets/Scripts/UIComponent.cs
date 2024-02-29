@@ -13,6 +13,7 @@ public class UIComponent : MonoBehaviour
     [Space(2)]
     public GameEvent[] LaunchComponentPublicEvents;
     public GameEvent[] CloseComponentPublicEvents;
+    public AudioClip launchSound;
 
     [Tooltip("false for fire personal first")] public bool FirePublicFirst = false;
 
@@ -30,6 +31,9 @@ public class UIComponent : MonoBehaviour
             RaisePersonalEvents(true);
             RaisePublicEvents(true);
         }
+
+        if(launchSound != null)
+            MusicMan.instance.PlaySE(launchSound);
             
     }
 
@@ -75,7 +79,7 @@ public class UIComponent : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log(gameObject.name + "Has been disabled");
+        Debug.Log("UI Canvas " + gameObject.name + "Has been destoryed. Unbinding events.");
         if (LaunchComponentPersonalEvents != null)
         {
             System.Delegate[] deletegates = LaunchComponentPersonalEvents.GetInvocationList();

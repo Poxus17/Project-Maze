@@ -9,7 +9,6 @@ public class PersistantComponent : MonoBehaviour
 
     private static List<PersistantID> _persistantTags = new List<PersistantID>();
     private void Awake(){
-        Debug.Log("Perisistant component is awake");
 
         if(persistanceTag == "Generic"){
             Debug.LogError("Persistant tag not set for " + gameObject.name + ". Please set a tag in the editor.");
@@ -45,7 +44,6 @@ public class PersistantComponent : MonoBehaviour
 
     public void OnGameSceneLoaded(){
         onGameSceneLoaded.Invoke();
-        Debug.Log("Persistant object tag " + persistanceTag + " correctly fired scene start event");
     }
 }
 

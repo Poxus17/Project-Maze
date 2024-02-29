@@ -85,7 +85,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     publicEvents: []
-  consumeable: 0
+  consumeable: 1
   triggerOnce: 0
   active: 1
   targetTag: Player

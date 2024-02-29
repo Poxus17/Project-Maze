@@ -25,6 +25,7 @@ public class AiMovementController : MonoBehaviour
     {
         lastSteeringTarget = Vector3.zero;
         agent.speed = walkSpeed;
+        savedPos = transform.position;
     }
 
     private void Update()
@@ -45,7 +46,7 @@ public class AiMovementController : MonoBehaviour
     {
         SetStop(false);
         agent.SetDestination(toPosition);
-        //Debug.Log("Move to " + toPosition);
+        Debug.Log("Kellek move to " + toPosition);
         if(!waitinForDestination)
             StartCoroutine(DestinationArrivalCheck());
     }
@@ -82,9 +83,13 @@ public class AiMovementController : MonoBehaviour
         Profiler.EndSample();
     }
 
-    public void SwitchToPlayer()
+    public bool SwitchToPlayer()
     {
+        if(!agent.CalculatePath(CentralAI.Instance.player.transform.position, new NavMeshPath()))
+            return false;
+
         MoveTo(CentralAI.Instance.player.transform.position);
+        return true;
     }
 
     public void SetChaseSpeed(bool isChase)

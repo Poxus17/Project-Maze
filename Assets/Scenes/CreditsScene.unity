@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 262.43973, g: 325.1885, b: 430.42584, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -970,7 +970,7 @@ MonoBehaviour:
   - Jimmy's voice by\nFinnian C Redman
   - Soundtrack by\nEthan Romem
   - Executive producer\nAlon Yanir
-  - A game by\nYoav Nativ\nand\nNaveh Romem
+  - A game by\nNice to meet studios
   - Thank you for playing this Alpha
   text: {fileID: 587695044}
   canvasGroup: {fileID: 1991030553}

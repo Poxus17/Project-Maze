@@ -20,6 +20,7 @@ public class StormLighter : MonoBehaviour
     [SerializeField] BoolVariable lighterLit;
     [SerializeField] BoolVariable hasLighter;
     [SerializeField] bool useParticles = true;
+    [SerializeField] BoolVariable inUI;
 
     [Space(10), Header("Fuel Settings")]
     [SerializeField] float fuelMax = 300;
@@ -51,7 +52,7 @@ public class StormLighter : MonoBehaviour
     {
         _isOpen = false;
         //lighterLit.value = false;
-        _isBaseFlame = true;
+        _isBaseFlame = false;
 
         try
         {
@@ -76,13 +77,20 @@ public class StormLighter : MonoBehaviour
         if(!useFuel)
             return;
 
+        if(PersistantManager.instance.IsLoading)
+            return;
+        
         if(_isOpen){
             if(!_isBaseFlame)
             {
+                if(inUI.value)
+                    return;
+                    
                 if(fuel.value <= 0){
                     SetLightMode(true);
                     return;
                 }
+
                 fuel.value -= fuelDepletionRate * Time.deltaTime;
             }
             else if (fuel.value > 0) SetLightMode(false);
@@ -113,6 +121,21 @@ public class StormLighter : MonoBehaviour
                 //open the lighter
                 StartCoroutine(OpenLighter());
             }
+        }
+    }
+
+    public void ManualClose(){
+        if (_isOpen)
+        {
+            //Close the lighter
+            //_animator.SetTrigger("Close");
+            if(useParticles)
+                _particleSystem.gameObject.SetActive(false);
+
+            mainLight.enabled = false;
+            handLight.enabled = false;
+            _isOpen = false;
+            lighterLit.value = false;
         }
     }
 

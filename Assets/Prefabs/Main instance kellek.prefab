@@ -299,7 +299,7 @@ NavMeshAgent:
   m_Speed: 6
   m_Acceleration: 20
   avoidancePriority: 50
-  m_AngularSpeed: 100
+  m_AngularSpeed: 100000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -496,8 +496,8 @@ MonoBehaviour:
   renderer: {fileID: 748226807886027407}
   instantSpawn: 0
   _minSpawnTime: 90
-  _maxSpawnTime: 240
-  _minDespawnTime: 50
+  _maxSpawnTime: 150
+  _minDespawnTime: 60
   _maxDespawnTime: 120
   chaseLock: {fileID: 11400000, guid: 922a5861cce965a4f84bbdf91bb2270b, type: 2}
   itemCount: {fileID: 11400000, guid: cd5ab9c6241946e46b6c7742a7651c06, type: 2}
@@ -539,8 +539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dd1db9ab75c6314a9552233ab2da45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 50
-  angleFromForward: 10
+  sightRange: 70
+  angleFromForward: 40
   layerMask:
     serializedVersion: 2
     m_Bits: 640
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_ShadowVariant: 0
   m_ShadowPrecision: 0
   useOldInspector: 0
-  useVolumetric: 1
+  useVolumetric: 0
   featuresFoldout: 1
   m_AreaLightEmissiveMeshShadowCastingMode: 0
   m_AreaLightEmissiveMeshMotionVectorGenerationMode: 0

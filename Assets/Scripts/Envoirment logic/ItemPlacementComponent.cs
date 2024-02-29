@@ -61,7 +61,7 @@ public class ItemPlacementComponent : MonoBehaviour, IInteractable
         if(!SaveManager.instance.isLoading)
             MusicMan.instance.PlaySE(placeSound);
 
-        Debug.Log(SaveManager.instance.isLoading);
+        Debug.Log("Placed " + heldItem.name + " in " + gameObject.name);
     }
 
     private void LoadSlot(){

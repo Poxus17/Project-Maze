@@ -47,7 +47,7 @@ public class AiRoamManager : MonoBehaviour
         }
         while (roamPosition == lastRoamPosition);
 
-        Debug.Log(loadedRoampoints[randomIndex].transform.localPosition);
+        Debug.Log("Roaming to" + roamPosition);
         return roamPosition;
     }
 
@@ -81,7 +81,6 @@ public class AiRoamManager : MonoBehaviour
             if (rpd.ring == ring && rpd.zone == section)
             {
                 localRoamPoints.Add(rpd);
-                //Debug.Log(rpd);
             }
         }
 

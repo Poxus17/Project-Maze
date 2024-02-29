@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765149778855598589}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: -11.197, y: 1.286, z: -4.727}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &765149778855598585
 Light:
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_LightDimmer: 1
   m_VolumetricDimmer: 13.27
   m_LightUnit: 0
-  m_FadeDistance: 10000
-  m_VolumetricFadeDistance: 10000
+  m_FadeDistance: 7
+  m_VolumetricFadeDistance: 7
   m_AffectDiffuse: 1
   m_AffectSpecular: 1
   m_NonLightmappedOnly: 0
@@ -227,9 +227,17 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 765149778855598589}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1875923184500845862
@@ -246,5 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   placeItemName: 
   isHoldingItem: {fileID: 11400000, guid: 8c61224d919deb948ad7af3342551330, type: 2}
+  itemPlaceBool: {fileID: 0}
   heldItem: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
   displayItem: {fileID: 0}
+  placeSound: {fileID: 0}

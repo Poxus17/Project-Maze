@@ -10,7 +10,7 @@ public class BaseTrigger : MonoBehaviour
     [SerializeField] protected bool triggerOnce = false; //if true, trigger will only activate once.
     [SerializeField] protected bool active = true; //if false, trigger will not activate.
 
-    public void SetActive(bool active){
+    public virtual void SetActive(bool active){
         this.active = active;
     }
 

@@ -11,4 +11,9 @@ public class UIControlRaise : MonoBehaviour
         if (context.started)
             UIManager.Instance.LaunchUIComponent(raiseUIIndex);
     }
+
+    public void RaiseUI()
+    {
+        UIManager.Instance.LaunchUIComponent(raiseUIIndex);
+    }
 }

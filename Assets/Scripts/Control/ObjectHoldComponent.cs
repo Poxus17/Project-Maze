@@ -45,7 +45,6 @@ public class ObjectHoldComponent : MonoBehaviour
         rigidbody.isKinematic = false;
 
         var throwVector = transform.position - throwPosition0;
-        Debug.Log(throwVector);
         rigidbody.velocity = throwVector * throwPower.value;
     }
 

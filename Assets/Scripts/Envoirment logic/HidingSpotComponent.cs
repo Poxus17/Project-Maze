@@ -29,8 +29,7 @@ public class HidingSpotComponent : MonoBehaviour
         playerRot = PlayerCameraHandler.instance.rotation;
         hideCamera.transform.position = playerPos;
         hideCamera.transform.rotation = playerRot;
-        hideCamera.SetActive(true);
-        PlayerCameraHandler.instance.SetCameraActive(false);
+        PlayerCameraHandler.instance.LendCameraTo(hideCamera.transform);
         checkPlayerCaught.RaiseEvent();
         StartCoroutine(GetIn());
     }
@@ -85,14 +84,13 @@ public class HidingSpotComponent : MonoBehaviour
             yield return null;
         }
 
-        PlayerCameraHandler.instance.SetCameraActive(true);
-        hideCamera.SetActive(false);
+        PlayerCameraHandler.instance.ReturnCamera();
         InputSystemHandler.instance.SetInputActive(true);
     }
 
     private void OnDestroy() {
         exitAction.performed -= LeaveHideSpot;
-        PlayerCameraHandler.instance.SetCameraActive(true);
+        PlayerCameraHandler.instance.ReturnCamera();
         InputSystemHandler.instance.SetInputActive(true);
     }
 }

@@ -42,6 +42,7 @@ public class ExposureSet : MonoBehaviour
 
     public void SetLiveBrightness()
     {
+
         exposure.limitMin.value = liveExposureVar.value;
     }
 }

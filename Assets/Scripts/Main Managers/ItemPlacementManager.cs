@@ -26,6 +26,8 @@ public class ItemPlacementManager : MonoBehaviour
         AnnouncePlacement.Raise();
         itemCounter.value++;
 
+        Debug.Log("Item placed. ItemPlacementManager updated count: " + itemCounter.value);
+
         foreach(ValueGatedUnityEvent vgue in events)
         {
             if (vgue.InvokeAllowed(itemCounter.value))
@@ -38,11 +40,14 @@ public class ItemPlacementManager : MonoBehaviour
     }
 
     public void RaiseAllEventsLoad(){
+        Debug.Log("Loading all item place events. Item count: " + itemCounter.value);
+
         for(int i = 0; i <= itemCounter.value; i++){
             foreach(ValueGatedUnityEvent vgue in events)
             {
                 if (vgue.InvokeAllowed(i))
                 {
+                    Debug.Log("Raising event: " + vgue.gatedEvent.name + " with count: " + i);
                     vgue.gatedEvent.Raise();
                     break;
                 }

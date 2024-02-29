@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,13 @@ public class PersistantManager : MonoBehaviour
     [SerializeField] IntVariable sceneToLoad;
     [SerializeField] GameEvent deathLoadEvent;
     [SerializeField] int loadSceneIndex;
+
+    /*public delegate void LoadingStateChanged(bool isLoading);
+    public event LoadingStateChanged OnLoadingStateChanged;*/
+
+    private bool isLoading = false;
+    public bool IsLoading => isLoading;
+
     public int ActiveSceneIndex => SceneManager.GetActiveScene().buildIndex;
 
     private List<PersistantComponent> persistantComponents;
@@ -44,6 +52,11 @@ public class PersistantManager : MonoBehaviour
     }
 
     public void LoadScene(int sceneIndex){
+        
+        /*if(OnLoadingStateChanged != null)
+            OnLoadingStateChanged(true);*/
+        isLoading = true;
+
         sceneToLoad.value = sceneIndex;
         FadeManager.instance.Fade(true, LoadSceneAction);
     }
@@ -57,6 +70,11 @@ public class PersistantManager : MonoBehaviour
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode){
+
+        /*if(OnLoadingStateChanged != null)
+            OnLoadingStateChanged(false);*/
+        isLoading = false;
+
         if(scene.buildIndex == loadSceneIndex){
             Debug.Log("Detected load scene. Preparing data");
 

@@ -9,6 +9,7 @@ public class FPSCameraController : MonoBehaviour
     public FloatVariable playerRotationXDelta;
     public FloatVariable playerRotationYDelta;
     [SerializeField] FloatVariable mouseSensitivity;
+    [SerializeField] FloatVariable angleFromGlobalForward;
 
     private float _xRotation;
     private float _yRotation;
@@ -26,6 +27,8 @@ public class FPSCameraController : MonoBehaviour
 
         playerRotationXDelta.value = targetRotation.eulerAngles.x - transform.eulerAngles.x;
         playerRotationYDelta.value = targetRotation.eulerAngles.y - transform.eulerAngles.y;
+
+        angleFromGlobalForward.value = transform.eulerAngles.y;
     }
 
     public void Look(InputAction.CallbackContext context)

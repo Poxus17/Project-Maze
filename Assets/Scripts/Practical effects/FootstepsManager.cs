@@ -40,6 +40,7 @@ public class FootstepsManager : MonoBehaviour
     {
         FPSMovementController.OnChangeIsWalking += SetActiveStep;
         FPSMovementController.OnChangeMovementType += SetType;
+        stepVolume = walkVolume;
     }
 
     void SetActiveStep(bool val)

@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class GlobalTimerManager : MonoBehaviour
 {
@@ -60,21 +63,31 @@ public class GlobalTimerManager : MonoBehaviour
         isRunning = true;
     }
 
+    public void ValidateAllListeners(){
+        listeners.RemoveAll(listener => !listener.ValidAction());
+    }
+
     public void PurgeAllListeners(){
         listeners.Clear();
     }
+
+    public void PrintListeners(){
+        for(int i = 0; i < listeners.Count; i++){
+            Debug.Log("Listener " + i + " has finishes in " + (listeners[i].exitTime - timer) + " seconds, and has callback " + listeners[i].callbackName);
+        }
+    }
+
 }
-
-
 class TimerListener{
     protected Action _callback;
     protected float _exitTime;
 
     public float exitTime => _exitTime;
+    public String callbackName => _callback.Method.Name;
 
     public TimerListener(Action timerAction, float exitTime)
     {
-        _callback = new Action(timerAction);
+        _callback = timerAction;
         _exitTime = exitTime;
     }
 
@@ -86,3 +99,45 @@ class TimerListener{
         return _callback != null;
     }
 }
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(GlobalTimerManager), true)]
+public class GlobalTimerManagerEditor : Editor{
+    public override void OnInspectorGUI()
+    {
+        //Called whenever the inspector is drawn for this object.
+        DrawDefaultInspector();
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        GUILayout.Label("Custom Inspector buttons");
+
+        if(GUILayout.Button("Purge all listeners")){
+            var manager = (GlobalTimerManager)target;
+            manager.PurgeAllListeners();
+        }
+
+        if(GUILayout.Button("Print all listeners")){
+            var manager = (GlobalTimerManager)target;
+            manager.PrintListeners();
+        }
+
+        EditorGUILayout.LabelField("", GUI.skin.horizontalSlider);
+        GUILayout.Label("Time speed controls");
+
+        if(GUILayout.Button("Dounle time speed")){
+            Time.timeScale = 2;
+        }
+
+        if(GUILayout.Button("Ultra fast time speed")){
+            Time.timeScale = 10;
+        }
+
+        if(GUILayout.Button("Half time speed")){
+            Time.timeScale = 0.5f;
+        }
+
+        if(GUILayout.Button("Normal time speed")){
+            Time.timeScale = 1;
+        }
+    }
+}
+#endif

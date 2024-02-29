@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearColorMode: 1
-  backgroundColorHDR: {r: 0.025, g: 0.07, b: 0.19, a: 0}
+  backgroundColorHDR: {r: 0, g: 0, b: 0, a: 0}
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
@@ -190,11 +190,11 @@ MonoBehaviour:
   xrRendering: 1
   fullscreenPassthrough: 0
   allowDynamicResolution: 0
-  customRenderingSettings: 0
+  customRenderingSettings: 1
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   hasPersistentHistory: 0
   screenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
   screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
@@ -210,8 +210,8 @@ MonoBehaviour:
   materialMipBias: 0
   m_RenderingPathCustomFrameSettings:
     bitDatas:
-      data1: 72198260625768269
-      data2: 13763000477350330392
+      data1: 140666185154317
+      data2: 13763000512515375128
     lodBias: 1
     lodBiasMode: 0
     lodBiasQualityLevel: 0
@@ -225,8 +225,8 @@ MonoBehaviour:
     materialQuality: 0
   renderingPathCustomFrameSettingsOverrideMask:
     mask:
-      data1: 0
-      data2: 0
+      data1: 134250560
+      data2: 268435456
   defaultFrameSettings: 0
   m_Version: 9
   m_ObsoleteRenderingPath: 0
@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 6653397402100410418}
   - component: {fileID: 1603413662844996897}
   - component: {fileID: 6424971283311154296}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1211,6 +1211,7 @@ GameObject:
   - component: {fileID: 6569928675241519348}
   - component: {fileID: 2988022453628246839}
   - component: {fileID: 3537838984877956492}
+  - component: {fileID: 820112773274581967}
   m_Layer: 0
   m_Name: Main Manager
   m_TagString: Untagged
@@ -1512,6 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1482e4439e3efe4faf3578f56d657b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limitFps: 1
   targetFPS: 60
 --- !u!114 &6569928675241519348
 MonoBehaviour:
@@ -1652,6 +1654,18 @@ MonoBehaviour:
         m_CallState: 2
   raiseTimer: 0
   oneFrameDelay: 0
+--- !u!114 &820112773274581967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026873814267628513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f060ddb526cb14c9bad34415a7454e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5475224339670655486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2610,7 +2624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 283165834312604097, guid: b0ac294b464faae49bfa370c57a0641c, type: 3}
       propertyPath: maxVolume
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 283165834312604097, guid: b0ac294b464faae49bfa370c57a0641c, type: 3}
       propertyPath: localSePrefab

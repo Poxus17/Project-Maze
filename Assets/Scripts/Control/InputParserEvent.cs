@@ -4,8 +4,7 @@ using UnityEngine.Events;
 
 public class InputParserEvent : MonoBehaviour
 {
-    public UnityEvent parsedEvent;
-
+    public TriggerEventPacket parsedEvent;
 
     public void ParseInputAsStarted(InputAction.CallbackContext context)
     {

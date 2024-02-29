@@ -119,6 +119,9 @@ public class PastObjectManager : MonoBehaviour
 
     public void CountItems()
     {
+        itemCount.value = 0;
+        placedCount.value = 0;
+        
         for(int i = 0; i<allItems.Length; i++)
         {
             if (inventoryMemory[i])
@@ -130,6 +133,8 @@ public class PastObjectManager : MonoBehaviour
                 placedCount.value++;
             }
         }
+
+        Debug.Log("Items counted. Updated item count: " + itemCount.value + ", Updated placed count: " + placedCount.value);
     }
 
     public void MatchItemObjectState()

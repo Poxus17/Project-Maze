@@ -37,6 +37,7 @@ public class SectionsManager : MonoBehaviour
 
         if(currentSection == -1)
         {
+            Debug.Log("First section entered, setting current section to " + enteredSectionVar.value);
             currentSection = enteredSectionVar.value;
             return;
         }
@@ -44,9 +45,13 @@ public class SectionsManager : MonoBehaviour
         var changed = (currentSection != enteredSectionVar.value);
         if (changed)
         {
+            Debug.Log("Section changed from " + currentSection + " to " + enteredSectionVar.value);
             currentSection = enteredSectionVar.value;
             OnSectionChanged.Invoke();
+            return;
         }
+
+        Debug.Log("Section not changed. Current section " + currentSection + " supposed entered section " + enteredSectionVar.value);
     }
 
     public bool EnterRing(int ring)

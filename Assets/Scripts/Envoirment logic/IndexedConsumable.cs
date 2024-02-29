@@ -11,6 +11,8 @@ public class IndexedConsumable : MonoBehaviour{
     private static int indexParent = 0;
     [SerializeField] int indexD;
 
+    public int IndexD => indexD;
+
     #if UNITY_EDITOR
     void Awake(){
         if(indexD == -1)
@@ -21,11 +23,16 @@ public class IndexedConsumable : MonoBehaviour{
     public void RegisterAsConsumed(){
         SaveManager.instance.RegisterConsumable(indexD);
         SaveManager.instance.SaveAbsoluteData();
+
+        Debug.Log("Registered " + gameObject.name + " as consumed");
     }
 
     public void KillMe(int[] indexes){
         if(indexes.Contains(indexD))
-            gameObject.SetActive(false);
+        {
+            Debug.Log("Killing " + gameObject.name + " since registered as consumed");
+            Destroy(gameObject);
+        }
     }
 
     public static void ResetParentIndex(){
@@ -68,13 +75,25 @@ public class IndexedConsumableEditor : Editor{
 
         }
 
-        if(GUILayout.Button("Reset parent indexD")) {
-            if(EditorUtility.DisplayDialog("Reset parent indexD", "This will reset the parent indexD to 0. Are you SURE?", "Yes", "Wait no fuck go back"))
-                IndexedConsumable.ResetParentIndex();
-            else
-                Debug.Log("Parent indexD not reset");
+        if(GUILayout.Button("Ensure index integrity")){
+            var all = FindObjectsOfType<IndexedConsumable>();
 
-            
+            var indexes = new List<int>();
+            bool integrity = true;
+
+            for(int i = 0; i < all.Length; i++){
+                if(indexes.Contains(all[i].IndexD)){
+                    Debug.Log("Duplicate indexD found on " + all[i].gameObject.name);
+                    integrity = false;
+                }
+                else
+                {
+                    indexes.Add(all[i].IndexD);
+                }
+
+                if(integrity)
+                    Debug.Log("Index integrity is OK");
+            }
         }
 
         if(GUILayout.Button("Assign this indexD")) {

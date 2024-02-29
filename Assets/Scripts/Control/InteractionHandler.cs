@@ -51,9 +51,12 @@ public class InteractionHandler : MonoBehaviour
             
         //Typical raycast
         Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
+
+
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, detectionRange,mask))
         {
+            //Debug.Log("Hit " + hit.collider.gameObject);
             var hitObject = hit.collider.gameObject;
             if ( hitObject.tag == "Interact")
             {
@@ -92,15 +95,18 @@ public class InteractionHandler : MonoBehaviour
 
     public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
+        Debug.Log("Interact called");
         if (!context.started || exclusiveLocked)
             return;
         else if (interactionLockedState.value)
         {
+            Debug.Log("Interaction locked");
             lockStateEvent.Raise();
         }
         else if (interactableObject != null)
         {
             interactableObject.Interact();
+            Debug.Log("Successfuly interacting with " + interactableObject);
 
             if (interactableObject.exclusiveTime > 0)
             {
@@ -109,6 +115,9 @@ public class InteractionHandler : MonoBehaviour
             }
 
             ClearDetection();
+        }
+        else{
+            Debug.Log("No interactable object detected");
         }
     }
 

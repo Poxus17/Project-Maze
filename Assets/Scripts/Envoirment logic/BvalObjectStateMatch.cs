@@ -10,7 +10,6 @@ public class BvalObjectStateMatch : MonoBehaviour
     {
         // This is the weirdest, most far fetched piece of code I eve wrote. Good luck figuring this shit out
         gameObject.SetActive(matchAsNot ? !matchValue.value : matchValue.value);
-        Debug.Log(matchValue.value);
     }
 }
 enum valueMatchType { ObjectActive, Test};

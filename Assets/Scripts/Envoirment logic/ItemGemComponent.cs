@@ -18,7 +18,6 @@ public class ItemGemComponent : MonoBehaviour
     private void OnEnable()
     {
         CheckTurnOn();
-        Debug.Log("ItemGemComponent OnEnable");
     }
 
     public void CheckTurnOn()

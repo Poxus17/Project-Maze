@@ -427,11 +427,11 @@ RectTransform:
   - {fileID: 4467280354320930585}
   - {fileID: 4467280354471163279}
   - {fileID: 4467280354812820919}
-  m_Father: {fileID: 4467280355096797626}
+  m_Father: {fileID: 4467280354551062405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -687, y: 468}
+  m_AnchoredPosition: {x: -640, y: -464}
   m_SizeDelta: {x: 500, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4467280353507591303
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84bde803f5dd8a4592a181fbe604bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderVar: {fileID: 11400000, guid: 1e343135d76e848499aff37187fec6f9, type: 2}
+  sliderVar: {fileID: 11400000, guid: 3c49c81912cd56a4a81093496759dbdd, type: 2}
   minValue: -5
   maxValue: 5
 --- !u!1 &4467280353603738836
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e84bde803f5dd8a4592a181fbe604bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliderVar: {fileID: 0}
+  sliderVar: {fileID: 11400000, guid: e5ee73580924aa4439c5fd21abb19e69, type: 2}
   minValue: 0
   maxValue: 0.1
 --- !u!1 &4467280354105623216
@@ -1738,14 +1738,14 @@ RectTransform:
   m_GameObject: {fileID: 4467280354105623216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4467280355096797626}
+  m_Father: {fileID: 4467280354551062405}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -828.99994, y: 420}
+  m_AnchoredPosition: {x: -640, y: -407}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4467280354105623228
@@ -1776,7 +1776,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Exposure
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1858,7 +1860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 4467280354105623231}
-  var: {fileID: 11400000, guid: 1e343135d76e848499aff37187fec6f9, type: 2}
+  var: {fileID: 11400000, guid: 3c49c81912cd56a4a81093496759dbdd, type: 2}
 --- !u!1 &4467280354130058576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,6 +2552,8 @@ RectTransform:
   - {fileID: 4467280354528838787}
   - {fileID: 4467280353603738837}
   - {fileID: 4467280354754067613}
+  - {fileID: 4467280353507591321}
+  - {fileID: 4467280354105623217}
   - {fileID: 4467280355096797626}
   m_Father: {fileID: 4467280354552184878}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3394,8 +3398,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4467280353507591321}
-  - {fileID: 4467280354105623217}
   - {fileID: 4467280353913245662}
   - {fileID: 4467280355223778922}
   m_Father: {fileID: 4467280354551062405}

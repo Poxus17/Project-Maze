@@ -69,6 +69,17 @@ public class ItemsManager : MonoBehaviour
         return toReturn;
     }
 
+    public List<StoreableItem> ExportInventoryList(ItemCategory category)
+    {
+        List<StoreableItem> toReturn = new List<StoreableItem>();
+
+        for (int i = 0; i < allItems.Length; i++)
+            if (inventoryMemory[i] && allItems[i].category == category)
+                toReturn.Add(allItems[i]);
+
+        return toReturn;
+    }
+
     public StoreableItem GetItem(int index)
     {
         return allItems[index];

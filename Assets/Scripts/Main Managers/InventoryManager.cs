@@ -28,7 +28,6 @@ public class InventoryManager : UIComponent
         }
 
         //LaunchComponentPersonalEvents += DisplayInventory;
-        LaunchComponentPersonalEvents += () => { SetSection(0); };
 
         inventorySections = GetComponentsInChildren<IInventorySection>(true);
     }

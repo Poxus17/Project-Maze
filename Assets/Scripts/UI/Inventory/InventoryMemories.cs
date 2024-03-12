@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class InventoryMemories : MonoBehaviour, IInventorySection
 {
     [SerializeField] InventorySlot[] slots;
+    [SerializeField] ItemCategory itemCategory;
     [SerializeField] PastObjectData inspectionItem;
     [SerializeField] GameObject background;
     [SerializeField] GameObject holdButton;
@@ -29,7 +30,7 @@ public class InventoryMemories : MonoBehaviour, IInventorySection
         int slotIndex = 0;
         background.SetActive(true);
 
-        List<StoreableItem> inventory = ItemsManager.instance.ExportInventoryList();
+        List<StoreableItem> inventory = ItemsManager.instance.ExportInventoryList(itemCategory);
 
         if (inventory.Count <= 0)
             return;

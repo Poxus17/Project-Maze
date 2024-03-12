@@ -55,7 +55,13 @@ public class ItemsManager : MonoBehaviour
         audioSource.Play();
         InspectionPacket.Copy(packet);
 
-        AddItem(packet.name);
+        AddPhysical(packet as PhysicalObject);
+    }
+
+    public void AddPhysical(PhysicalObject physicalObject){
+        
+        AddItem(physicalObject.name);
+        HoldItemManager.instance.RegisterHoldItem(physicalObject);
     }
 
     public List<StoreableItem> ExportInventoryList()

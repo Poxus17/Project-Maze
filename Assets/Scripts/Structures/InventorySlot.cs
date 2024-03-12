@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ITransmitterCompatible<string>
 {
     [SerializeField] CanvasGroup canvasGroup; //canvasGroup
     [SerializeField] Button button; //button.
@@ -15,7 +15,14 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     bool isPopulated = false;
     string objectName;
 
-    public void PopulateSlot(PastObjectData data)
+    private ValueTransmitter<string> transmitter;
+
+    public void Init(ValueTransmitter<string> transmitter)
+    {
+        this.transmitter = transmitter;
+    }
+
+    public void PopulateSlot(StoreableItem data)
     {
         isPopulated = true;
 
@@ -59,7 +66,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if(!isPopulated)
             return;
 
-        InventoryManager.Instance.InspectFromInventory(objectName);
+        transmitter.SetValue(objectName);
         MusicMan.instance.PlaySE(clip);
     }
 }

@@ -109,6 +109,7 @@ public class PastObjectManager : MonoBehaviour
     }
 
     #region Save system functions
+
     public bool[] GetInventoryData() { return inventoryMemory; }
 
     public bool[] GetPlacementData(){ return placedMemory; }

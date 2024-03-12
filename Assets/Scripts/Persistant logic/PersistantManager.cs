@@ -45,20 +45,25 @@ public class PersistantManager : MonoBehaviour
 
     public void RegisterPersistantComponent(PersistantComponent persistantComponent){
         persistantComponents.Add(persistantComponent);
+        persistantComponents.Sort((x, y) => x.priority.CompareTo(y.priority));
     }
 
     public void ReloadScene(){
         LoadScene(ActiveSceneIndex);
     }
 
-    public void LoadScene(int sceneIndex){
+    public void LoadScene(int sceneIndex, bool stealthLoad = false){
         
         /*if(OnLoadingStateChanged != null)
             OnLoadingStateChanged(true);*/
         isLoading = true;
 
         sceneToLoad.value = sceneIndex;
-        FadeManager.instance.Fade(true, LoadSceneAction);
+        FadeManager.instance.Fade(true, stealthLoad ? LoadDirectly : LoadSceneAction);
+    }
+
+    public void LoadDirectly(){
+        SceneManager.LoadScene(sceneToLoad.value);
     }
 
     public void LoadSceneAction(){

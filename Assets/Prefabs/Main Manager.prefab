@@ -190,7 +190,7 @@ MonoBehaviour:
   xrRendering: 1
   fullscreenPassthrough: 0
   allowDynamicResolution: 0
-  customRenderingSettings: 1
+  customRenderingSettings: 0
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
@@ -1202,6 +1202,7 @@ GameObject:
   - component: {fileID: 8238327395111638042}
   - component: {fileID: 2204093071011764040}
   - component: {fileID: 3770582147077292456}
+  - component: {fileID: 3070025443826971453}
   - component: {fileID: 7697507243317539848}
   - component: {fileID: 6334937288201034034}
   - component: {fileID: 2648530376824046037}
@@ -1406,6 +1407,30 @@ MonoBehaviour:
   InspectionPacket: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
   itemCount: {fileID: 11400000, guid: cd5ab9c6241946e46b6c7742a7651c06, type: 2}
   placedCount: {fileID: 11400000, guid: 4a08549f9c0f4c240b395b7bac99db99, type: 2}
+--- !u!114 &3070025443826971453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026873814267628513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01714c4ead79d9a4c8ca712da563651b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allItems:
+  - {fileID: 11400000, guid: b54cda4bffcdf9840b7d0104472782da, type: 2}
+  - {fileID: 11400000, guid: 6d7400dce464ca84fa900e4603144564, type: 2}
+  - {fileID: 11400000, guid: 565338aa238516640b1fb40d2411cf10, type: 2}
+  - {fileID: 11400000, guid: 836cc04eab350724bb5cf7924e94813f, type: 2}
+  - {fileID: 11400000, guid: 56460a57305c03f488c01d3cbea41e5b, type: 2}
+  - {fileID: 11400000, guid: c53490df2134dfc4c9ed1a6f8f138e78, type: 2}
+  - {fileID: 11400000, guid: 7677c4cbf1c585b43a78bef7f4dd8ee1, type: 2}
+  - {fileID: 11400000, guid: 5e706d8af6cd4314988a26b001fb4c1f, type: 2}
+  InspectionPacket: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
+  itemCount: {fileID: 11400000, guid: cd5ab9c6241946e46b6c7742a7651c06, type: 2}
+  placedCount: {fileID: 11400000, guid: 4a08549f9c0f4c240b395b7bac99db99, type: 2}
 --- !u!114 &7697507243317539848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1462,7 +1487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2482b93f9c2cf429cfec76dddf38e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveableEvents: []
+  saveableEvents:
+  - {fileID: 11400000, guid: eafb9528f75273e4c866e854d71f4912, type: 2}
   bvalsForMemory:
   - {fileID: 11400000, guid: 5bfc8590511fbeb4a8c26c2c526ee2a3, type: 2}
   - {fileID: 11400000, guid: abb3cfd4e97c3ff4ba11c74e50a37efb, type: 2}
@@ -1568,8 +1594,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 3770582147077292456}
-          m_TargetAssemblyTypeName: PastObjectManager, Assembly-CSharp
+        - m_Target: {fileID: 3070025443826971453}
+          m_TargetAssemblyTypeName: ItemsManager, Assembly-CSharp
           m_MethodName: MatchItemObjectState
           m_Mode: 1
           m_Arguments:
@@ -1594,6 +1620,7 @@ MonoBehaviour:
           m_CallState: 2
     publicEvents:
     - {fileID: 11400000, guid: 3281cf570d0dc7340a67502d2b054808, type: 2}
+  priority: 0
 --- !u!114 &2988022453628246839
 MonoBehaviour:
   m_ObjectHideFlags: 0

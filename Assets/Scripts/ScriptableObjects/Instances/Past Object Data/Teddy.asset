@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac04bb1827548d2428caa9f012ee89d2, type: 3}
   m_Name: Teddy
   m_EditorClassIdentifier: 
+  itemID: 1
+  category: 0
   name: Teddy bear
   icon: {fileID: 21300000, guid: 62420251b9695eb4cb48cb17750ba94b, type: 3}
-  clip: {fileID: 8300000, guid: 1a1b3545d673d3f4880ae6c9f68c3740, type: 3}
   itemPrefab: {fileID: 4655051896823121725, guid: ba13273973bf8974ab6aea91a6a09873, type: 3}
+  clip: {fileID: 8300000, guid: 1a1b3545d673d3f4880ae6c9f68c3740, type: 3}
   transcript: It all went to hell when you went missing. There are so many thing
     I wanna talk to you about... But I can't. All that's left now, are memories and
     confusion, and appearantly you old teddy bear. It once brought so much joy...

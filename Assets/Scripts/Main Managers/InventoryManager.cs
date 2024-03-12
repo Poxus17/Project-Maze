@@ -9,6 +9,9 @@ public class InventoryManager : UIComponent
     [SerializeField] GameObject background;
     [SerializeField] GameObject holdButton;
 
+    private IInventorySection[] inventorySections;
+    private int currentSectionIndex  = -1;
+
     //public List<PastObjectPacket> inventory { get; protected set; }
 
     public static InventoryManager Instance { get; private set; }
@@ -24,8 +27,10 @@ public class InventoryManager : UIComponent
             Destroy(this);
         }
 
-        LaunchComponentPersonalEvents += DisplayInventory;
+        //LaunchComponentPersonalEvents += DisplayInventory;
+        LaunchComponentPersonalEvents += () => { SetSection(0); };
 
+        inventorySections = GetComponentsInChildren<IInventorySection>();
     }
 
     /*public void StoreToInventory(PastObjectPacket packet)
@@ -36,18 +41,29 @@ public class InventoryManager : UIComponent
         }
     }*/
 
-    public void DisplayInventory()
+    public void SetSection(int index)
+    {
+        var isCurrentIndexInalid = currentSectionIndex ==  index || currentSectionIndex < 0;
+
+        if(!isCurrentIndexInalid)
+            inventorySections[currentSectionIndex].ClearOut();
+            
+        inventorySections[index].Launch();
+        currentSectionIndex = index;
+    }
+
+    /*public void DisplayInventory()
     {
         ClearSlots();
         int slotIndex = 0;
         background.SetActive(true);
 
-        List<PastObjectData> inventory = PastObjectManager.instance.ExportInventoryList();
+        List<StoreableItem> inventory = ItemsManager.instance.ExportInventoryList();
 
         if (inventory.Count <= 0)
             return;
 
-        foreach (PastObjectData pod in inventory)
+        foreach (StoreableItem pod in inventory)
         {
             slots[slotIndex].PopulateSlot(pod);
             slotIndex++;
@@ -65,7 +81,7 @@ public class InventoryManager : UIComponent
         background.SetActive(false);
         holdButton.SetActive(true);
 
-        List<PastObjectData> inventory = PastObjectManager.instance.ExportInventoryList();
+        List<StoreableItem> inventory = ItemsManager.instance.ExportInventoryList();
 
         foreach (PastObjectData pod in inventory)
         {
@@ -73,15 +89,23 @@ public class InventoryManager : UIComponent
             {
                 inspectionItem.Copy(pod);
                 UIManager.Instance.LaunchNestedUIComponent(0);
+                break;
             }
         }
     }
 
-    /*public void RemoveFromInventory(PastObjectPacket item)
+    public void RemoveFromInventory(PastObjectPacket item)
     {
         if (inventory.Contains(item))
         {
             inventory.Remove(item);
         }
     }*/
+}
+
+public interface IInventorySection{
+    public void Launch();
+    public void DisplayInventory();
+    public void ClearSlots();
+    public void ClearOut();
 }

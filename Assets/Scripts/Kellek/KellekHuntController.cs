@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -85,8 +86,13 @@ public class KellekHuntController : MainAiController
     //0 - Spawn in the ring
     public void SpawnIn()
     {
+        Debug.Log("Kellek spawn requested");
         if (itemCount.value < 2)
+        {
+            Debug.Log("Item requirement not met for spawn");
             return;
+        }
+            
 
         if(!turnedOn){
             spawnDisrupted = true;
@@ -411,14 +417,16 @@ public class KellekHuntController : MainAiController
 
     public bool CheckCloseRoamCap(){
         playerDistanceLast = playerDistance.value;
+        var sqrCloseDistance = closeDistance * closeDistance;
 
-        if(playerDistance.value < closeDistance)
+        if(playerDistance.value < sqrCloseDistance)
         {
             closeRoamCounter++;
 
             if(closeRoamCounter >= closeRoamCountThreshold)
             {
                 closeRoamCounter = 0;
+                Debug.Log("Close roam cap reached. Roaming away");
                 return true;
             }
 

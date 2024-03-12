@@ -504,6 +504,7 @@ MonoBehaviour:
   playerIsHiding: {fileID: 11400000, guid: 2e90d183c8a7a61418f6fbea77ce48a0, type: 2}
   playerIsCaught: {fileID: 11400000, guid: 65a992308e2378244bad3a076670db19, type: 2}
   initiateDeath: {fileID: 11400000, guid: 2eb3ba8104fcda740ae967617f2359b6, type: 2}
+  playerDistance: {fileID: 11400000, guid: 32df75f3ff07cca4cbc6dbc20258595e, type: 2}
   placeMarkers: 0
   forwardTargetClearDistance: 30
   wallDetectionThreshold: 5

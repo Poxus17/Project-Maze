@@ -6,6 +6,7 @@ public class PersistantComponent : MonoBehaviour
 {
     [SerializeField] string persistanceTag = "Generic"; //Must be changed in editor, or it'll cause an error.
     [SerializeField] TriggerEventPacket onGameSceneLoaded;
+    [SerializeField] public int priority = 0;
 
     private static List<PersistantID> _persistantTags = new List<PersistantID>();
     private void Awake(){
@@ -43,6 +44,7 @@ public class PersistantComponent : MonoBehaviour
     }
 
     public void OnGameSceneLoaded(){
+        Debug.Log("Executing onGameSceneLoaded event for " + gameObject.name);
         onGameSceneLoaded.Invoke();
     }
 }

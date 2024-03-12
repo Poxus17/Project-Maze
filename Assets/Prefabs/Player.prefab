@@ -600,6 +600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b3a8ffa617822439e1638a432927d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMovementSpeed: 10
 --- !u!1 &1385110150539732612
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,8 +764,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.534302, y: 3.6714282, z: 0.6087875}
-  m_Center: {x: -0.017977295, y: -1.0146887, z: -0.019454505}
+  m_Size: {x: 0.534302, y: 4.801601, z: 0.6087875}
+  m_Center: {x: -0.017977297, y: -1.5797751, z: -0.019454509}
 --- !u!82 &1385110150539732624
 AudioSource:
   m_ObjectHideFlags: 0
@@ -987,7 +988,19 @@ MonoBehaviour:
     m_ActionId: 51d34673-2a41-49b2-92ca-0e7e66c88843
     m_ActionName: UI/Point[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5542649861404909117}
+        m_TargetAssemblyTypeName: InteractionHandler, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 54351ec4-990a-4a23-8ebc-706c11ad7739
     m_ActionName: UI/Click[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -1416,6 +1429,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 576
+  tagString: {fileID: 11400000, guid: 8e94d94ea4db94a458efd9c7a6381a9c, type: 2}
+  onUi: {fileID: 11400000, guid: 914990af82954db478327b1b46c9ac63, type: 2}
   interactionLockedState: {fileID: 11400000, guid: 51915fccb63249443adc58ffcee1d50e, type: 2}
   lockedStateDetectionText: {fileID: 11400000, guid: 0393eb0d2a1447445a9711d734cbf90c, type: 2}
   lockStateEvent: {fileID: 11400000, guid: 5c6fe87199291794ba1bae89e1f877e2, type: 2}
@@ -1678,6 +1693,7 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     publicEvents: []
+  priority: 0
 --- !u!114 &5403442332309115810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1869,12 +1885,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4701841907974640489}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: ElevatorTeleport, Assembly-CSharp
         m_MethodName: ElevatorTeleportation
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -9,6 +9,8 @@ public class InputSystemHandler : MonoBehaviour
 {
     [SerializeField] PlayerInput playerInput;
 
+    public bool uiMode => playerInput.currentActionMap.name == "UI";
+
     public static InputSystemHandler instance;
     private void Awake()
     {

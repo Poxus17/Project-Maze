@@ -8,6 +8,7 @@ TagManager:
   - RoamPoint
   - Interact
   - Detect
+  - Puzzle
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Lightsafe
   - Ground
   - No Post
-  - 
+  - Object Interaction
   - 
   - 
   - 

@@ -21,8 +21,8 @@ public class PlayerSaveData
         position[1] = playerPos.y;
         position[2] = playerPos.z;
 
-        pastItemInventoryContents = PastObjectManager.instance.GetInventoryData();
-        placedPastItems = PastObjectManager.instance.GetPlacementData();
+        pastItemInventoryContents = ItemsManager.instance.GetInventoryData();
+        placedPastItems = ItemsManager.instance.GetPlacementData();
         eventsToTrigger = eventsMemory;
         bvals = bvalValues;
         this.sceneIndex = sceneIndex;

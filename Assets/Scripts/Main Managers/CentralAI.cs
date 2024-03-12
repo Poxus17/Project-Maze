@@ -73,6 +73,7 @@ public class CentralAI : MonoBehaviour
     //Ask kellek hunt controller to start shakeoff
     public void CommenseKellekShakeoff()
     {
+        Debug.Log("Commense Kellek Shakeoff");
         if(SectionsManager.instance.currentSection != 0)
             kellek.RequestShakeoff();
     }
@@ -80,6 +81,7 @@ public class CentralAI : MonoBehaviour
 
     public void ShakeoffConfirmed()
     {
+        Debug.Log("Shakeoff Confirmed");
         SpawnInRing();
     }
 
@@ -93,6 +95,7 @@ public class CentralAI : MonoBehaviour
 
     public void SpawnInRing()
     {
+        Debug.Log("Requested Spawn In Ring");
         if (itemCount.value < kellekItemCount)
             return;
 
@@ -102,7 +105,11 @@ public class CentralAI : MonoBehaviour
         }
 
         if(spawning)
+        {
+            Debug.Log("Already spawning. Spawn request terminated.");
             return;
+        }
+            
 
         if(kellek.instantSpawn)
         {
@@ -117,9 +124,14 @@ public class CentralAI : MonoBehaviour
     }
 
     private void SpawnKellek(){
-        if(SectionsManager.instance.currentSection == 0)
-            return;
+        Debug.Log("Attempting to spawn Kellek");
 
+        if(SectionsManager.instance.currentSection == 0)
+        {
+            Debug.Log("No Kellek section detected. Terminating spawn request.");
+        }
+
+        Debug.Log("Spawn confimed within CentralAI. Spawning Kellek.");
         kellek.SpawnIn();
         spawning = false;
     }

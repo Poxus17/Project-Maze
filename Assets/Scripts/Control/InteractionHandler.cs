@@ -9,6 +9,8 @@ public class InteractionHandler : MonoBehaviour
     [SerializeField] StringVariable currentDetectionText;
     [SerializeField] float detectionRange;
     [SerializeField] LayerMask mask;
+    [SerializeField] StringVariable tagString;
+    [SerializeField] BoolVariable onUi;
 
     [Space(5)]
     [Header("LockedState")]
@@ -33,7 +35,7 @@ public class InteractionHandler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Handle locked state
         if (interactionLockedState.value)
@@ -50,15 +52,16 @@ public class InteractionHandler : MonoBehaviour
             return;
             
         //Typical raycast
-        Ray ray = Camera.main.ViewportPointToRay(viewportRaypoint);
+        var mouseViewportPos = Camera.main.ScreenToViewportPoint(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
+        Ray ray = Camera.main.ViewportPointToRay(mouseViewportPos);
 
-
+        //Debug.DrawRay(ray.origin, ray.direction * detectionRange, Color.red);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, detectionRange,mask))
         {
             //Debug.Log("Hit " + hit.collider.gameObject);
             var hitObject = hit.collider.gameObject;
-            if ( hitObject.tag == "Interact")
+            if ( hitObject.tag == tagString.value)
             {
                 var currentInstanceId = hitObject.GetInstanceID();
 
@@ -96,7 +99,7 @@ public class InteractionHandler : MonoBehaviour
     public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
         Debug.Log("Interact called");
-        if (!context.started || exclusiveLocked)
+        if (!context.started || exclusiveLocked || onUi.value)
             return;
         else if (interactionLockedState.value)
         {

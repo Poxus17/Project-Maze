@@ -49,7 +49,7 @@ public class HidingSpotComponent : MonoBehaviour
         }
 
         //Replace with animation
-        UI_TextDisplay.Instance.DisplayText("Closing door...", closeDoorTime - 1);
+        //UI_TextDisplay.Instance.DisplayText("Closing door...", closeDoorTime - 1);
         GlobalTimerManager.instance.RegisterForTimer(Hide, closeDoorTime);
     }
 
@@ -85,12 +85,14 @@ public class HidingSpotComponent : MonoBehaviour
         }
 
         PlayerCameraHandler.instance.ReturnCamera();
+        PlayerCameraHandler.instance.EndCameraLend();
         InputSystemHandler.instance.SetInputActive(true);
     }
 
     private void OnDestroy() {
         exitAction.performed -= LeaveHideSpot;
         PlayerCameraHandler.instance.ReturnCamera();
+        PlayerCameraHandler.instance.EndCameraLend();
         InputSystemHandler.instance.SetInputActive(true);
     }
 }

@@ -41,8 +41,10 @@ public class GlobalTimerManager : MonoBehaviour
             if(listener.exitTime <= timer){
                 try{
                     listener.Invoke();
+                    //Debug.Log("Invoked timer callback " + listener.callbackName);
                 }
                 catch{
+                    Debug.LogError("Error invoking timer callback " + listener.callbackName);
                     if(!listener.ValidAction())
                         listeners.Remove(listener);
                 }

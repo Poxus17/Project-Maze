@@ -164,13 +164,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4425491021976777730}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.14030421, z: -0, w: 0.99010843}
+  m_LocalRotation: {x: 0, y: 0.06104851, z: 0, w: 0.99813485}
   m_LocalPosition: {x: 0.42138916, y: 0.8549054, z: -0.0041777417}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4425491021976873006}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 7, z: 0}
 --- !u!33 &4425491021977675778
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -270,13 +270,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4425491021976777732}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.10067499, z: -0, w: 0.99491936}
+  m_LocalRotation: {x: 0, y: -0.061048605, z: 0, w: 0.99813485}
   m_LocalPosition: {x: -0.4689978, y: 0.8549054, z: -0.0041831587}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4425491021976873006}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -7, z: 0}
 --- !u!33 &4425491021977675780
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -465,10 +465,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4425491021976873006}
-  - component: {fileID: 4425491021967280070}
   - component: {fileID: 3985069313095106893}
   - component: {fileID: 1263946209585788664}
   - component: {fileID: 4363445827250067524}
+  - component: {fileID: 7508540939024283444}
+  - component: {fileID: 9032969065920116293}
   m_Layer: 6
   m_Name: Iron_Maiden_open_Rusted
   m_TagString: Interact
@@ -496,27 +497,6 @@ Transform:
   - {fileID: 942502484969389146}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4425491021967280070
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4425491021976777742}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: e6173fb3afb70bf499344d94c25313f2, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3985069313095106893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,6 +525,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9032969065920116293}
+        m_TargetAssemblyTypeName: AnimatorCallBoard, Assembly-CSharp
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Enter
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 11400000, guid: b2471a37a71476b488d4c97483c9241b, type: 2}
@@ -619,3 +611,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.81060904, y: 1.7541779, z: 0.78565437}
   m_Center: {x: 0.0019292026, y: 0.9370341, z: -0.026000537}
+--- !u!95 &7508540939024283444
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425491021976777742}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 453a9c45338ee5d4598a67cdcfdfe305, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9032969065920116293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4425491021976777742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe42b827bd9a04a43b02757c6f8291bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

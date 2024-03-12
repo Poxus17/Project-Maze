@@ -17,14 +17,14 @@ public class UI_InventorManager : MonoBehaviour
 
     bool inspectionOpen;
     bool monologPlaying;
-    Dictionary<string, PastObjectData> inventoryIndex;
+    Dictionary<string, StoreableItem> inventoryIndex;
     AudioClip currentObjectClip;
 
     public static UI_InventorManager Instance;
 
     void Awake()
     {
-        inventoryIndex = new Dictionary<string, PastObjectData>();
+        inventoryIndex = new Dictionary<string, StoreableItem>();
 
         if (Instance == null)
         {
@@ -53,7 +53,7 @@ public class UI_InventorManager : MonoBehaviour
             #endregion
 
 
-            PastObjectData[] inventoryArr = PastObjectManager.instance.ExportInventoryList().ToArray();
+            StoreableItem[] inventoryArr = ItemsManager.instance.ExportInventoryList().ToArray();
             int counter = 0;
 
             for(int i = 0; i< scrollContent.GetComponent<RectTransform>().childCount; i++)
@@ -62,7 +62,7 @@ public class UI_InventorManager : MonoBehaviour
             }
             inventoryIndex.Clear();
 
-            foreach (PastObjectData item in inventoryArr)
+            foreach (StoreableItem item in inventoryArr)
             {
                 inventoryIndex.Add("Slot" + counter, item);
                 GameObject holder = Instantiate(slotPrefab, scrollContent.GetComponent<RectTransform>());
@@ -86,9 +86,20 @@ public class UI_InventorManager : MonoBehaviour
 
     public void InventoryInspection(string button)
     {
-        InspectSlot.Invoke(inventoryIndex[button]);
+        var slotContent = inventoryIndex[button];
+
+        if(!(slotContent is PastObjectData))
+        {
+            Debug.LogError("Request was made to inspect a non-past object item in the inventory\n" +
+                slotContent.name + "\n" +
+                "This should not have happened. Please check the scripts");
+            return;
+        }
+
+        slotContent = slotContent as PastObjectData;
+        InspectSlot.Invoke(slotContent as PastObjectData);
         background.SetActive(false);
-        currentObjectClip = inventoryIndex[button].clip;
+        currentObjectClip = (slotContent as PastObjectData).clip;
         inspectionOpen = true;
     }
 

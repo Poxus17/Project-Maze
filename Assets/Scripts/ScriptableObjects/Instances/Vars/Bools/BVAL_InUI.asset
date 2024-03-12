@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d34a6a35ee047142876f16d1bc94205, type: 3}
-  m_Name: InUI
+  m_Name: BVAL_InUI
   m_EditorClassIdentifier: 
   value: 0
   defaultVal: 0

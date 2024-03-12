@@ -21917,10 +21917,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map Piece 5
       objectReference: {fileID: 0}
-    - target: {fileID: 6732864798576422714, guid: 60db80e0f03ffac48b2c79dada70f6ba, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41049,10 +41045,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map Piece 7
       objectReference: {fileID: 0}
-    - target: {fileID: 6732864798576422714, guid: 60db80e0f03ffac48b2c79dada70f6ba, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 16
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -56070,10 +56062,6 @@ PrefabInstance:
     - target: {fileID: 6732864798576422714, guid: 60db80e0f03ffac48b2c79dada70f6ba, type: 3}
       propertyPath: m_Name
       value: Map Piece 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6732864798576422714, guid: 60db80e0f03ffac48b2c79dada70f6ba, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -85619,10 +85607,6 @@ PrefabInstance:
     - target: {fileID: 6732864798576422714, guid: 60db80e0f03ffac48b2c79dada70f6ba, type: 3}
       propertyPath: m_Name
       value: Map Piece 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6732864798576422714, guid: 60db80e0f03ffac48b2c79dada70f6ba, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

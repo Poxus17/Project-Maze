@@ -87,10 +87,10 @@ public class SaveManager : MonoBehaviour
         player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
 
         #region Load item data
-        PastObjectManager.instance.SetInventoryData(data.pastItemInventoryContents);
-        PastObjectManager.instance.SetPlacedData(data.placedPastItems);
-        PastObjectManager.instance.MatchItemObjectState();
-        PastObjectManager.instance.CountItems();
+        ItemsManager.instance.SetInventoryData(data.pastItemInventoryContents);
+        ItemsManager.instance.SetPlacedData(data.placedPastItems);
+        ItemsManager.instance.MatchItemObjectState();
+        ItemsManager.instance.CountItems();
         #endregion
 
         #region Call load events

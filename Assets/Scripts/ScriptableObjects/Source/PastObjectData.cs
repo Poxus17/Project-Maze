@@ -4,15 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "NewPastObjectData", menuName = "\"Special\" Variables/Past object data")]
-public class PastObjectData : ScriptableObject
+public class PastObjectData : PhysicalObject
 {
-    public string name;
-
-    public Sprite icon;
-
     public AudioClip clip;
-
-    public GameObject itemPrefab;
 
     [TextArea(15, 20)]
     public string transcript;

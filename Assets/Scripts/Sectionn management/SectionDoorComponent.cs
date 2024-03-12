@@ -4,6 +4,7 @@ public class SectionDoorComponent : MonoBehaviour
 {
     [SerializeField] int targetScene;
     [SerializeField] int targetSection;
+    [SerializeField] bool stealthLoad = false;
     [SerializeField] IntVariable sectionToLoad;
     [SerializeField] Vector3 targetPositionValue;
     [SerializeField] Vector3 targetEulerRotationValue;
@@ -14,6 +15,6 @@ public class SectionDoorComponent : MonoBehaviour
         sectionToLoad.value = targetSection;
         targetPositionVar.value = targetPositionValue;
         targetEulerRotationVar.value = targetEulerRotationValue;
-        PersistantManager.instance.LoadScene(targetScene);
+        PersistantManager.instance.LoadScene(targetScene, stealthLoad);
     }
 }

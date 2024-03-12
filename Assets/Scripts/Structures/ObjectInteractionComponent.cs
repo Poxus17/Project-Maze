@@ -16,7 +16,7 @@ public class ObjectInteractionComponent : MonoBehaviour
 
     public void Interact()
     {
-        PastObjectManager.instance.Interact(data);
+        ItemsManager.instance.AddMemory(data);
 
         UIManager.Instance.LaunchUIComponent(0);
 

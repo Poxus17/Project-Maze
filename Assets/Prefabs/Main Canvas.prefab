@@ -9415,7 +9415,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817cddea0b98c6f4aafd854339d07b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: []
+  slots:
+  - {fileID: 2593566590885691396}
+  - {fileID: 2029346234458061324}
+  - {fileID: 4102211068665831579}
+  - {fileID: 7706097386896708399}
+  - {fileID: 3206885143859100019}
+  - {fileID: 3725185985716915860}
+  - {fileID: 2451106258776520862}
+  - {fileID: 994533439633558028}
   inspectionItem: {fileID: 11400000, guid: be22e7ef992a2bb448eb6ea61331ba46, type: 2}
   background: {fileID: 2643805406322150282}
   holdButton: {fileID: 6209665214948887238}

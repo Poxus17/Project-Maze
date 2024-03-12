@@ -10,18 +10,11 @@ public class InventoryMemories : MonoBehaviour, IInventorySection
 
     private ValueTransmitter<string> inspectTransmitter;
 
-    private void Awake(){
-        inspectTransmitter = new ValueTransmitter<string>();
-        inspectTransmitter.SubscribeOnChange(InspectFromInventory);
-
-        foreach(InventorySlot slut in slots){
-            slut.Init(inspectTransmitter);
-        }
-    }
 
     public void ClearOut()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(false);
+        ClearSlots();
     }
 
     public void ClearSlots()
@@ -50,7 +43,15 @@ public class InventoryMemories : MonoBehaviour, IInventorySection
 
     public void Launch()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(true);
+        inspectTransmitter = new ValueTransmitter<string>();
+        inspectTransmitter.SubscribeOnChange(InspectFromInventory);
+
+        foreach(InventorySlot slut in slots){
+            slut.Init(inspectTransmitter);
+        }
+
+        DisplayInventory();
     }
 
     public void InspectFromInventory()

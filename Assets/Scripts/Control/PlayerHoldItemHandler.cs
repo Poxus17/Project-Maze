@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHoldItemHandler : MonoBehaviour
 {
     [SerializeField] Transform HoldItemTransform;
-    [SerializeField] PastObjectData inspectionItem;
+    [SerializeField] PhysicalObject inspectionItem;
     [SerializeField] BoolVariable isHolding;
     [SerializeField] AudioClip TakeItemClip;
     [SerializeField] AudioClip ShelveItemClip;

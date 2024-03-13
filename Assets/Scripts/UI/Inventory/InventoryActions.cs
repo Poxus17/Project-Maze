@@ -1,19 +1,21 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryActions : MonoBehaviour, IInventorySection
 {
     [SerializeField] InventorySlot[] slots;
+    [SerializeField] PhysicalObject inspectionItem;
     [SerializeField] ItemCategory itemCategory;
     [SerializeField] GameObject holdButton;
 
     private ValueTransmitter<string> inspectTransmitter;
 
-
     public void Launch()
     {
         gameObject.SetActive(true);
         inspectTransmitter = new ValueTransmitter<string>();
+        inspectTransmitter.SubscribeOnChange(OnValueChange);
         //inspectTransmitter.SubscribeOnChange(InspectFromInventory);
 
         foreach(InventorySlot slut in slots){
@@ -46,6 +48,21 @@ public class InventoryActions : MonoBehaviour, IInventorySection
     public void ClearOut()
     {
         gameObject.SetActive(false);
+        inspectTransmitter.UnsubscribeOnChange(OnValueChange);
         ClearSlots();
+    }
+
+    public void OnValueChange()
+    {
+        var inventory = ItemsManager.instance.ExportInventoryList(itemCategory);
+
+        foreach(ActionObject ao in inventory){
+            if(ao.name == inspectTransmitter.Value)
+            {
+                inspectionItem.Copy(ao);
+                holdButton.SetActive(true);
+                break;
+            }
+        }
     }
 }

@@ -4,4 +4,11 @@ using UnityEngine;
 public class ActionObject : PhysicalObject
 {
     public GameEvent action;
+
+    public void Copy(ActionObject other)
+    {
+        base.Copy(other);
+        itemPrefab = other.itemPrefab;
+        action = other.action;
+    }
 }

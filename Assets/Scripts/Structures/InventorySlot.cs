@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using System;
 
 public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ITransmitterCompatible<string>
 {
@@ -12,6 +13,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField] TMP_Text text; //text
     [SerializeField] AudioClip clip; //clip
 
+    private bool isChosen = false;
     bool isPopulated = false;
     string objectName;
 
@@ -36,6 +38,7 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void ClearSlot()
     {
+        DeselectInventorySlot();
         isPopulated = false;
 
         icon.enabled = false;
@@ -58,6 +61,9 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         if (!isPopulated)
             return;
 
+        if(isChosen)
+            return;
+
         canvasGroup.alpha = 0;
     }
 
@@ -68,5 +74,25 @@ public class InventorySlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         transmitter.SetValue(objectName);
         MusicMan.instance.PlaySE(clip);
+        isChosen = true;
+        canvasGroup.alpha = 1;
+        transmitter.SubscribeOnChange(CheckSelected);
+    }
+
+    public void CheckSelected(){
+        if(!isPopulated)
+            return;
+
+        if(transmitter.Value == objectName)
+            return;
+
+        DeselectInventorySlot();
+        transmitter.UnsubscribeOnChange(CheckSelected);
+    }
+
+    public void DeselectInventorySlot()
+    {
+        isChosen = false;
+        canvasGroup.alpha = 0;
     }
 }

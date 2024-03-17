@@ -53,5 +53,7 @@
     },
     "dotnet.preferCSharpExtension": "true/*",
     "editor.inlineSuggest.enabled": "false*/",
-    "dotnet.defaultSolution": "Project-Maze.sln"
+    "dotnet.defaultSolution": "Project-Maze.sln",
+    "docify.commentService.programmingLanguage": "c_sharp",
+    "docify.commentService.docstringFormat": "Google"
 }

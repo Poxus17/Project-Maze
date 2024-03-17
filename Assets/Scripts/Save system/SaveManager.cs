@@ -21,7 +21,6 @@ public class SaveManager : MonoBehaviour
     List<int> consumableIndexes;
     private PlayerSaveData data;
     private AbsoluteData absoluteData;
-    private GameObject player;
 
     [NonSerialized] public bool isLoading = false;
 
@@ -39,7 +38,6 @@ public class SaveManager : MonoBehaviour
         }
 
         consumableIndexes = new List<int>();
-        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
@@ -51,7 +49,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame()
     {
-        PlayerSaveData playerData = new PlayerSaveData(player, eventsMemory, FormatBvalArrayForSave(), PersistantManager.instance.ActiveSceneIndex, SectionsManager.instance.currentSection);
+        PlayerSaveData playerData = new PlayerSaveData(CentralAI.Instance.player, eventsMemory, FormatBvalArrayForSave(), PersistantManager.instance.ActiveSceneIndex, SectionsManager.instance.currentSection);
         SaveSystem.SavePlayer(playerData);
         Debug.Log("Game saved");
     }
@@ -84,7 +82,7 @@ public class SaveManager : MonoBehaviour
         
         isLoading = true;
 
-        player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+        CentralAI.Instance.player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
 
         #region Load item data
         ItemsManager.instance.SetInventoryData(data.pastItemInventoryContents);

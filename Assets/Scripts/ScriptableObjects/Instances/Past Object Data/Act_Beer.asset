@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c4e8101fa57b9448dfb752305f2f98, type: 3}
+  m_Name: Act_Beer
+  m_EditorClassIdentifier: 
+  itemID: -1
+  category: 2
+  name: Beer
+  icon: {fileID: 21300000, guid: 0e5486349a2e8d0438e6f6605744ce18, type: 3}
+  itemPrefab: {fileID: 6056477036442311074, guid: 5f5767a6edcc4aa4cb8e69aec058ab85, type: 3}
+  action: {fileID: 0}

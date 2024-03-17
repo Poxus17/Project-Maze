@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac04bb1827548d2428caa9f012ee89d2, type: 3}
+  m_Name: Mem_Old Radio
+  m_EditorClassIdentifier: 
+  itemID: 0
+  category: 0
+  name: Old radio
+  icon: {fileID: 21300000, guid: c6b577ce3f3eb054984f31b0491c6824, type: 3}
+  itemPrefab: {fileID: 8715874990073172086, guid: 15028148afeed4543a088389247c2aae, type: 3}
+  clip: {fileID: 8300000, guid: 5e298cc64ffa9e0418d9389cfac6c736, type: 3}
+  transcript: 'Our old radio. It used to work non-stop... Now it''s just silent.
+    Still frozen on Georgie''s favorite channel.
+
+
+    Let''s put you back in your
+    place.'

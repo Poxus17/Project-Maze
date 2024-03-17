@@ -7,6 +7,9 @@ public class PlayerSceneLoadComponent : MonoBehaviour
     [SerializeField] Vector3Variable targetPositionVar;
     [SerializeField] Vector3Variable targetEulerRotationVar;
 
+    private void Awake(){
+        MatchTransform();
+    }
     public void MatchTransform(){
 
         if(!LoadFlags.movementLoad) 

@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class StaticViewpoint : MonoBehaviour
 {
-    [SerializeField] float transitionTime = 1f;
     [SerializeField] bool changeMode = true;
     [SerializeField] Transform cameraRoot;
     [SerializeField] string viewInteractionTag;
@@ -21,7 +20,7 @@ public class StaticViewpoint : MonoBehaviour
         viewPosition = cameraRoot.position;
         viewRotation = cameraRoot.rotation;
         defaultLayerMask = gameObject.layer;
-        exitBind.performed += ExitStaticViewpoint;
+        exitBind.performed += ExitButton;
     }
 
     public void EnterStaticViewpoint(){
@@ -42,7 +41,12 @@ public class StaticViewpoint : MonoBehaviour
         exitBind.Enable();
     }
 
-    public void ExitStaticViewpoint(InputAction.CallbackContext context){
+    public void ExitButton(InputAction.CallbackContext context){
+        if(context.performed)
+            ExitStaticViewpoint();
+    }
+
+    public void ExitStaticViewpoint(){
         cameraRoot.position = viewPosition;
         cameraRoot.rotation = viewRotation;
 
@@ -61,7 +65,7 @@ public class StaticViewpoint : MonoBehaviour
         PlayerCameraHandler.instance.EndCameraLend();
     }
     void OnDestroy(){
-        exitBind.performed -= ExitStaticViewpoint;
+        exitBind.performed -= ExitButton;
         PlayerCameraHandler.instance.EndCameraLend();
     }
 }

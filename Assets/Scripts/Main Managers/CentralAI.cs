@@ -142,8 +142,13 @@ public class CentralAI : MonoBehaviour
         Listeners.Clear();
     }
 
-    public void FindKellek(){
+
+/// <summary>
+/// Registers all relevant instances of non persistant objects in the scene
+/// </summary>
+    public void FindInstances(){
         kellek = FindObjectOfType<KellekHuntController>();
+        player = GameObject.FindGameObjectWithTag("Player");
 
         roamManagers.Clear();
         var findRoamManagers = FindObjectsOfType<AiRoamManager>();

@@ -65551,19 +65551,20 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 902424072641693167, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1386630388244509420, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1385110150539732612, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
-      insertIndex: 30
+      insertIndex: 29
       addedObject: {fileID: 431708812}
     - targetCorrespondingSourceObject: {fileID: 1385110150539732612, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
-      insertIndex: 31
+      insertIndex: 30
       addedObject: {fileID: 431708822}
     - targetCorrespondingSourceObject: {fileID: 1385110150539732612, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
-      insertIndex: 32
+      insertIndex: 31
       addedObject: {fileID: 431708860}
   m_SourcePrefab: {fileID: 100100000, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
 --- !u!4 &1729776008050984214

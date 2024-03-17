@@ -8,7 +8,7 @@ public class InteractionHandler : MonoBehaviour
     [Header("Settings")]
     [SerializeField] StringVariable currentDetectionText;
     [SerializeField] float detectionRange;
-    [SerializeField] LayerMask mask;
+    [SerializeField] LayerMask interactionMask;
     [SerializeField] StringVariable tagString;
     [SerializeField] BoolVariable onUi;
 
@@ -18,6 +18,7 @@ public class InteractionHandler : MonoBehaviour
     [SerializeField] StringVariable lockedStateDetectionText;
     [SerializeField] GameEvent lockStateEvent;
 
+    private LayerMask mask;
     Vector3 viewportRaypoint;
     int castMask;
     int lastDetectedId;
@@ -32,6 +33,7 @@ public class InteractionHandler : MonoBehaviour
         viewportRaypoint = new Vector3(0.5f, 0.5f, 0);
         interactionLockedState.value = false;
         currentDetectionText.value = "";
+        mask = interactionMask;
     }
 
     // Update is called once per frame
@@ -56,8 +58,9 @@ public class InteractionHandler : MonoBehaviour
         Ray ray = Camera.main.ViewportPointToRay(mouseViewportPos);
 
         //Debug.DrawRay(ray.origin, ray.direction * detectionRange, Color.red);
+        
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, detectionRange,mask))
+        if (Physics.Raycast(ray, out hit, detectionRange, mask))
         {
             //Debug.Log("Hit " + hit.collider.gameObject);
             var hitObject = hit.collider.gameObject;
@@ -98,7 +101,10 @@ public class InteractionHandler : MonoBehaviour
 
     public void Interact(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
-        Debug.Log("Interact called");
+        if(context.started)
+            Debug.Log("interaction initiated");
+
+            
         if (!context.started || exclusiveLocked || onUi.value)
             return;
         else if (interactionLockedState.value)

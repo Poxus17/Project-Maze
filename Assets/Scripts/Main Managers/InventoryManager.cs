@@ -27,18 +27,13 @@ public class InventoryManager : UIComponent
             Destroy(this);
         }
 
-        //LaunchComponentPersonalEvents += DisplayInventory;
+        CloseComponentPersonalEvents += () => { 
+            if(currentSectionIndex > 0 ) inventorySections[currentSectionIndex].ClearOut();
+            currentSectionIndex = -1;
+            };
 
         inventorySections = GetComponentsInChildren<IInventorySection>(true);
     }
-
-    /*public void StoreToInventory(PastObjectPacket packet)
-    {
-        if (!inventory.Contains(packet))
-        {
-            inventory.Add(packet);
-        }
-    }*/
 
     public void SetSection(int index)
     {
@@ -51,6 +46,7 @@ public class InventoryManager : UIComponent
         currentSectionIndex = index;
     }
 
+#region Deprecated functions
     /*public void DisplayInventory()
     {
         ClearSlots();
@@ -66,6 +62,14 @@ public class InventoryManager : UIComponent
         {
             slots[slotIndex].PopulateSlot(pod);
             slotIndex++;
+        }
+    }
+
+    public void StoreToInventory(PastObjectPacket packet)
+    {
+        if (!inventory.Contains(packet))
+        {
+            inventory.Add(packet);
         }
     }
 
@@ -100,6 +104,8 @@ public class InventoryManager : UIComponent
             inventory.Remove(item);
         }
     }*/
+
+    #endregion
 }
 
 public interface IInventorySection{

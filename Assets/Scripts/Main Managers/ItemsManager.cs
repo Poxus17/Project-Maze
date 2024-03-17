@@ -193,6 +193,7 @@ public class ItemsManager : MonoBehaviour
     #endregion
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(ItemsManager), true)]
 public class ItemsManagerEditor : Editor
 {
@@ -210,3 +211,4 @@ public class ItemsManagerEditor : Editor
 
     }
 }
+#endif

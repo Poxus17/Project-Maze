@@ -27,13 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131822068103138}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.41648224, y: 1.0697467, z: -0.10330963}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4993766836906492}
   m_Father: {fileID: 4748468672303238}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33909056198193946
 MeshFilter:
@@ -54,9 +55,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 2
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -68,6 +72,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -80,6 +85,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &65307274698712402
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -88,9 +94,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131822068103138}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.83370215, y: 2.0798993, z: 0.03572999}
   m_Center: {x: -0.41938603, y: -0.017052412, z: 0.02588718}
 --- !u!259 &259583984249460658
@@ -112,6 +126,7 @@ LightProbeProxyVolume:
   m_ProbePositionMode: 0
   m_RefreshMode: 0
   m_QualityMode: 1
+  m_DataFormat: 1
 --- !u!1 &1386262553882048
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +141,6 @@ GameObject:
   - component: {fileID: 65727705245390638}
   - component: {fileID: 65239829576948782}
   - component: {fileID: 65564718031428854}
-  - component: {fileID: 114492744788807676}
   - component: {fileID: 111835899087841072}
   - component: {fileID: 65623167270157016}
   m_Layer: 0
@@ -143,13 +157,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386262553882048}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4317687519972860}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33291138464494984
 MeshFilter:
@@ -170,9 +185,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -184,6 +202,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -196,6 +215,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &65727705245390638
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -204,9 +224,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386262553882048}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.08795855, y: 2.1781437, z: 0.19680709}
   m_Center: {x: -0.45942736, y: 1.0850717, z: -0.0000019446015}
 --- !u!65 &65239829576948782
@@ -217,9 +245,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386262553882048}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.08795855, y: 2.1781437, z: 0.19680709}
   m_Center: {x: 0.4594274, y: 1.0850717, z: -0.0000019446015}
 --- !u!65 &65564718031428854
@@ -230,53 +266,19 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386262553882048}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1.0457052, y: 0.07984471, z: 0.19680709}
   m_Center: {x: -0.0013654828, y: 2.134221, z: -0.0000019446015}
---- !u!114 &114492744788807676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386262553882048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf9dcd1ddb5be1e4bac5da466bd9000f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerHeadTag: MainCamera
-  knob: {fileID: 4993766836906492}
-  controls:
-    openingSpeed: 1
-    closingSpeed: 1.3
-    closeStartFrom: 0.539
-    openMethod: 0
-    openButton: 101
-    autoClose: 0
-    OpenedAtStart: 0
-  AnimationNames:
-    OpeningAnim: Door_open
-    LockedAnim: Door_locked
-  doorSounds:
-    enabled: 1
-    open: {fileID: 0}
-    close: {fileID: 0}
-    closed: {fileID: 0}
-    volume: 1
-    pitchRandom: 0.2
-  doorTexts:
-    enabled: 0
-    openingText: Press [BUTTON] to open
-    closingText: Press [BUTTON] to close
-    lockText: You need a key!
-    TextPrefab: {fileID: 0}
-  keySystem:
-    enabled: 0
-    isUnlock: 0
-    LockPrefab: {fileID: 0}
 --- !u!111 &111835899087841072
 Animation:
   m_ObjectHideFlags: 0
@@ -301,9 +303,17 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386262553882048}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 1
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 1.1657264, y: 2.1851177, z: 2.5493624}
   m_Center: {x: -3.3111783e-16, y: 1.0859241, z: -0.12488395}
 --- !u!1 &1876595640714094
@@ -329,10 +339,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876595640714094}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.766, y: 0.039, z: 0.029}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4317687519972860}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

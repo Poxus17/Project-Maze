@@ -216,7 +216,7 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _Shininess: 0.7
-    - _Smoothness: 0.528
+    - _Smoothness: 0.168
     - _SmoothnessRemapMax: 1
     - _SmoothnessRemapMin: 0
     - _SpecPower: 89.13433

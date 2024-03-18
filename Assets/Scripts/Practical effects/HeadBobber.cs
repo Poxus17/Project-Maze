@@ -54,7 +54,7 @@ public class HeadBobber : MonoBehaviour
                 transform.localPosition.z
                 );
 
-            transform.localEulerAngles = new Vector3(0, 0, Mathf.Sin(-timer * bobbingSpeed / 2) * testingSwayRotationAmount.value);
+            //transform.localEulerAngles = new Vector3(0, 0, Mathf.Sin(-timer * bobbingSpeed / 2) * testingSwayRotationAmount.value);
         }
         else
         {
@@ -66,7 +66,7 @@ public class HeadBobber : MonoBehaviour
                 transform.localPosition.z
                 );
 
-            transform.localEulerAngles = new Vector3(0, 0, 0);
+            //transform.localEulerAngles = new Vector3(0, 0, 0);
         }
     }
 

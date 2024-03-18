@@ -82,7 +82,10 @@ public class SaveManager : MonoBehaviour
         
         isLoading = true;
 
-        CentralAI.Instance.player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+        try{
+            CentralAI.Instance.player.transform.position = new Vector3(data.position[0], data.position[1], data.position[2]);
+        }
+        catch{};
 
         #region Load item data
         ItemsManager.instance.SetInventoryData(data.pastItemInventoryContents);

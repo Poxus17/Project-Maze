@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 417898791}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0044403356, g: 0.0011801334, b: 0.0010777848, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -64819,6 +64819,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2530889080719682366, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2623588090091591618, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -65008,16 +65012,44 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1872
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.6452
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6034
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49310672
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.10323143
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8584258
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.09640675
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 10.21
+      value: 15.505
       objectReference: {fileID: 0}
     - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -48.936
+      value: -120.917
       objectReference: {fileID: 0}
     - target: {fileID: 3777178079461664573, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -8.742
+      value: -4.891
       objectReference: {fileID: 0}
     - target: {fileID: 3849585849710053696, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: m_Layer
@@ -65487,6 +65519,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8729191536190636956, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8755807441412150034, guid: 6f09cc4983157684889557c56d3af2c7, type: 3}
       propertyPath: teleportTarget.x
       value: -88.98596
@@ -65801,10 +65837,6 @@ PrefabInstance:
       propertyPath: inspectionParent
       value: 
       objectReference: {fileID: 422334135}
-    - target: {fileID: 7678431004651697491, guid: eb237a46229d9654da95110bfd82f2f2, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2277714773904047484, guid: eb237a46229d9654da95110bfd82f2f2, type: 3}
     - {fileID: 2672597702059152479, guid: eb237a46229d9654da95110bfd82f2f2, type: 3}

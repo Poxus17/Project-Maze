@@ -11,6 +11,8 @@ public class StringAnnouncerVariable : StringVariable
         announceEvent.Raise();
     }
 
+    public void AnnounceDefault() => AnnounceSet(defaultValue);
+
     public void QuiteSet(string newValue) => value = newValue;
 
     public void RaiseEvent() {announceEvent.Raise();}

@@ -25,8 +25,8 @@ public class FaceThePlayer : MonoBehaviour
 
     public void LookAtPlayer()
     {
-        var correctedPos = CentralAI.Instance.player.transform.position;
-        correctedPos.y = transform.position.y;
+        var correctedPos = PlayerCameraHandler.instance.position;
+        //correctedPos.y = transform.position.y;
         transform.rotation = Quaternion.LookRotation(correctedPos - transform.position) * Quaternion.Euler(faceOffset);
     }
 

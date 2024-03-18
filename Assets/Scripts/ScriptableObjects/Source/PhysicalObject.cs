@@ -5,4 +5,5 @@ using UnityEngine;
 public class PhysicalObject : StoreableItem
 {
     public GameObject itemPrefab;
+    public Vector3 holdEulerRotation;
 }

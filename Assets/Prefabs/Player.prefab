@@ -1425,7 +1425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentDetectionText: {fileID: 11400000, guid: df00361f35ca1ef4a8d8a994918a1143, type: 2}
   detectionRange: 7
-  mask:
+  interactionMask:
     serializedVersion: 2
     m_Bits: 576
   tagString: {fileID: 11400000, guid: 8e94d94ea4db94a458efd9c7a6381a9c, type: 2}

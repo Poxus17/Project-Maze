@@ -66,7 +66,7 @@ public class HoldItemManager : MonoBehaviour
 
     HoldItem GetItemByName(string name)
     {
-        foreach(HoldItem hi in items)
+        foreach(HoldItem hi in currentHoldInventory)
         {
             if (hi.name == name)
                 return hi;
@@ -77,18 +77,14 @@ public class HoldItemManager : MonoBehaviour
 
     public void RegisterHoldItem(PhysicalObject item){
 
-        return; //TODO: Implement this
         var itemObject = Instantiate(item.itemPrefab, transform);
+        itemObject.transform.localEulerAngles = item.holdEulerRotation;
 
         var holdItem = new HoldItem(item.name, itemObject);
         currentHoldInventory.Add(holdItem);
 
-        #if UNITY_EDITOR
         Debug.Log("Added item to hold, printing hold inventory");
-        foreach(HoldItem hi in currentHoldInventory){
-            Debug.Log(hi.name);
-        }
-        #endif
+        LogInventory();
     }
 
     public void RemoveHoldItem(string name){
@@ -96,9 +92,19 @@ public class HoldItemManager : MonoBehaviour
             if(hi.name == name){
                 Destroy(hi.item);
                 currentHoldInventory.Remove(hi);
+                Debug.Log("Removed item from hold, printing hold inventory");
+                LogInventory();
                 return;
             }
         }
+    }
+
+    private void LogInventory(){
+        string log = "Current hold inventory: ";
+        foreach(HoldItem hi in currentHoldInventory){
+            log += hi.name + ", ";
+        }
+        Debug.Log(log);
     }
 }
 

@@ -16,7 +16,7 @@ public class AnomalyComponent : MonoBehaviour
 
     private void Update(){
         NormalHate();
-        Debug.Log(hateMeter);
+        //Debug.Log(hateMeter);
     }
 
     private void NormalHate(){

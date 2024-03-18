@@ -108,7 +108,10 @@ public class ItemsManager : MonoBehaviour
     {
         for (int i = 0; i < allItems.Length; i++)
             if (allItems[i].name == name)
+            {
                 inventoryMemory[i] = false;
+                HoldItemManager.instance.RemoveHoldItem(name);
+            }
     }
 
     public void AddItem(string name)
@@ -117,6 +120,9 @@ public class ItemsManager : MonoBehaviour
             if (allItems[i].name == name)
             {
                 inventoryMemory[i] = true;
+
+                if(allItems[i] is PhysicalObject)
+                    HoldItemManager.instance.RegisterHoldItem(allItems[i] as PhysicalObject);
             }
     }
 
@@ -127,6 +133,7 @@ public class ItemsManager : MonoBehaviour
             {
                 inventoryMemory[i] = false;
                 placedMemory[i] = true;
+                HoldItemManager.instance.RemoveHoldItem(name);
             }
     }
 

@@ -14,15 +14,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1389a492176ea104ebe3973d3d02c098, type: 3}
       propertyPath: m_LocalScale.x
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1389a492176ea104ebe3973d3d02c098, type: 3}
       propertyPath: m_LocalScale.y
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1389a492176ea104ebe3973d3d02c098, type: 3}
       propertyPath: m_LocalScale.z
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1389a492176ea104ebe3973d3d02c098, type: 3}
       propertyPath: m_LocalPosition.x
@@ -127,3 +127,5 @@ MonoBehaviour:
   faceOffset: {x: 0, y: 0, z: 0}
   executeOnGameobjectActive: 0
   executeConstantly: 1
+  useLerp: 1
+  lerpSpeed: 3

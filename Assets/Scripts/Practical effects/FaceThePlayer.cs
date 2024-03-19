@@ -7,6 +7,8 @@ public class FaceThePlayer : MonoBehaviour
     [SerializeField] Vector3 faceOffset;
     [SerializeField] bool executeOnGameobjectActive;
     [SerializeField] bool executeConstantly;
+    [SerializeField] bool useLerp;
+    [SerializeField] float lerpSpeed;
 
     private void Start()
     {
@@ -20,7 +22,13 @@ public class FaceThePlayer : MonoBehaviour
 
     private void Update()
     {
-        LookAtPlayer();
+        if (!executeConstantly)
+            return;
+        
+        if (useLerp)
+            LerpLookAtPlayer();
+        else
+            LookAtPlayer();
     }
 
     public void LookAtPlayer()
@@ -28,6 +36,13 @@ public class FaceThePlayer : MonoBehaviour
         var correctedPos = PlayerCameraHandler.instance.position;
         //correctedPos.y = transform.position.y;
         transform.rotation = Quaternion.LookRotation(correctedPos - transform.position) * Quaternion.Euler(faceOffset);
+    }
+
+    public void LerpLookAtPlayer()
+    {
+        var correctedPos = PlayerCameraHandler.instance.position;
+        //correctedPos.y = transform.position.y;
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(correctedPos - transform.position) * Quaternion.Euler(faceOffset), Time.deltaTime * lerpSpeed);
     }
 
     public void StandBehindPlayer()

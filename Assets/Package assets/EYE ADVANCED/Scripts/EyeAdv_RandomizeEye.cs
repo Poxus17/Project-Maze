@@ -6,9 +6,10 @@ public class EyeAdv_RandomizeEye : MonoBehaviour
     private Renderer eyeRenderer;
 
     // Start is called before the first frame update
-    void Start()
-    {
+
+    private void OnEnable(){
         eyeRenderer = gameObject.GetComponent<Renderer>();
-        eyeRenderer.sharedMaterial.SetTexture("_IrisColorTex", irisTextures[Random.Range(0, irisTextures.Length)]);
+        eyeRenderer.material.SetTexture("_IrisColorTex", irisTextures[Random.Range(0, irisTextures.Length)]);
     }
+
 }

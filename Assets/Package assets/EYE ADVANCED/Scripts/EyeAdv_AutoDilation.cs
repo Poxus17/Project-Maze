@@ -20,7 +20,7 @@ public class EyeAdv_AutoDilation : MonoBehaviour {
 	private Renderer eyeRenderer;
 
 
-	void Start () {
+	void OnEnable () {
 		eyeRenderer = gameObject.GetComponent<Renderer>();
 		if (sceneLightObject != null){
 			sceneLight = sceneLightObject.GetComponent<Light>();

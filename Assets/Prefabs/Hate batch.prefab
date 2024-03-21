@@ -104,6 +104,7 @@ MonoBehaviour:
   hatePerSecond: 3
   calmPerSecond: 6
   reversed: 0
+  maxHateVariable: {fileID: 11400000, guid: 0797e44b585d30d4bb4a5644eba58d73, type: 2}
   hateCapEvent:
     localEvent:
       m_PersistentCalls:
@@ -136,8 +137,8 @@ MonoBehaviour:
   - {fileID: 4290290925477010917}
   minScale: 5
   maxScale: 30
-  updateRate: 3
-  flickerStringContent: 000101
+  updateRate: 1
+  flickerStringContent: 0101
   flickerString: {fileID: 11400000, guid: 98c4cfc5616cd9b48a23e9ecd74546f9, type: 2}
 --- !u!1001 &485026857991567650
 PrefabInstance:

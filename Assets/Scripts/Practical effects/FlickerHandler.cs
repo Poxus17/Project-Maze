@@ -10,7 +10,11 @@ public class FlickerHandler : MonoBehaviour
     [SerializeField] float offTime;
     [SerializeField] float absoluteMinimum;
     private Light light;
-    private bool flickerAllowed => flickerString.value.Any(c => c != '0' && c != '1');
+    private bool flickerBlock => flickerString.value.Any(c => c != '0' && c != '1');
+
+    private bool onGoingFlicker = false;
+    private bool queuedFlicker = false;
+    private int flickerIndex;
 
     private void Awake()
     {
@@ -18,10 +22,37 @@ public class FlickerHandler : MonoBehaviour
     }
 
     public void Flicker(){
-        if(flickerAllowed)
+        if(flickerBlock)
             return;
+
+        if(onGoingFlicker)
+            queuedFlicker = true;
+
+        onGoingFlicker = true;
+        flickerIndex = 0;
+        FlickerAction();
+    }
+
+    private void FlickerAction(){
         
-        StartCoroutine(FlickerCoroutine());
+        if(queuedFlicker)
+        {
+            queuedFlicker = false;
+            return;
+        }
+
+        bool isOn = flickerString.value[flickerIndex] == '1';
+        light.enabled = isOn;
+        flickerIndex++;
+
+        if(flickerIndex >= flickerString.value.Length)
+        {
+            onGoingFlicker = false;
+            light.enabled = true;
+            return;
+        }
+
+        GlobalTimerManager.instance.RegisterForTimer(FlickerAction, GetRandomFlicker(isOn ? onTime : offTime));
     }
 
     private IEnumerator FlickerCoroutine(){
@@ -40,7 +71,7 @@ public class FlickerHandler : MonoBehaviour
 
     public void FlickerCheck(){
         //Checks to see if any characters exist aside from 1 and 0
-        if(flickerAllowed)
+        if(flickerBlock)
             Debug.Log("Illegal flicker");
         else
             Debug.Log("Flicker is legal");

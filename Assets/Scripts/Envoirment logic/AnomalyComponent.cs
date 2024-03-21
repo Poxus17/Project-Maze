@@ -10,7 +10,10 @@ public class AnomalyComponent : MonoBehaviour
     [SerializeField] float hatePerSecond = 10;
     [SerializeField] float calmPerSecond = 5;
     [SerializeField] bool reversed = false;
+    [SerializeField] FloatVariable maxHateVariable;
     [SerializeField] TriggerEventPacket hateCapEvent;
+
+    private static bool newUpdate = false;
 
     private float hateMeter = 0;
     public float Hate => hateMeter;
@@ -33,6 +36,11 @@ public class AnomalyComponent : MonoBehaviour
 
     private void Update(){
         NormalHate();
+        UpdateMaxHate();
+    }
+
+    private void LateUpdate(){
+        newUpdate = true;
     }
 
     private void NormalHate(){
@@ -43,6 +51,18 @@ public class AnomalyComponent : MonoBehaviour
 
         if(hateMeter >= maxHate)
             hateCapEvent.Invoke();
+    }
+
+    private void UpdateMaxHate(){
+        
+        if(newUpdate){
+            maxHateVariable.value = hateMeter;
+            newUpdate = false;
+            return;
+        }
+
+        if(hateMeter > maxHateVariable.value)
+            maxHateVariable.value = hateMeter;
     }
 }
 

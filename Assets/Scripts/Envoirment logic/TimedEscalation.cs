@@ -1,5 +1,6 @@
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum EscalationType
 {
@@ -15,6 +16,7 @@ public class TimedEscalation : MonoBehaviour
     [SerializeField] float escalationTime;
     [SerializeField] bool escalateOnStart;
     [SerializeField] GameObject[] targets;
+    [SerializeField] UnityEvent onEnd;
 
     private int escalationIndex = 0;
     private int targetsLength;
@@ -47,7 +49,11 @@ public class TimedEscalation : MonoBehaviour
 
     public void Escalate(){
         if(escalationIndex >= targetsLength)
+        {
             gameObject.SetActive(false);
+            onEnd.Invoke();
+            return;
+        }
 
         targets[Mathf.Clamp(escalationIndex - 1,0,100)].SetActive(true); //oh god kill me it's horrible
         RegisterNextEscalation();

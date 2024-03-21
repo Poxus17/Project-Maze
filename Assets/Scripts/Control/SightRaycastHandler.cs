@@ -6,6 +6,7 @@ public class SightRaycastHandler : MonoBehaviour
     [SerializeField] string targetTag;
     
     private void OnTriggerEnter(Collider other){
+
         if(other.CompareTag(targetTag)){
             var detectable = other.GetComponent<IDetectable>();
 
@@ -15,6 +16,7 @@ public class SightRaycastHandler : MonoBehaviour
     }
 
     private void OnTriggerExit(Collider other){
+
         if(other.CompareTag(targetTag)){
             var detectable = other.GetComponent<IDetectable>();
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FaceThePlayer : MonoBehaviour
@@ -36,6 +34,13 @@ public class FaceThePlayer : MonoBehaviour
         var correctedPos = PlayerCameraHandler.instance.position;
         //correctedPos.y = transform.position.y;
         transform.rotation = Quaternion.LookRotation(correctedPos - transform.position) * Quaternion.Euler(faceOffset);
+    }
+
+    public static Quaternion GetFaceThePlayerRotation(Vector3 position, Vector3 faceOffset)
+    {
+        var correctedPos = PlayerCameraHandler.instance.position;
+        correctedPos.y = position.y;
+        return Quaternion.LookRotation(correctedPos - position) * Quaternion.Euler(faceOffset);
     }
 
     public void LerpLookAtPlayer()
